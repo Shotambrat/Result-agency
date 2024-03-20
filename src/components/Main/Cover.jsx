@@ -1,15 +1,54 @@
 import React, { useRef, useEffect, useState } from "react";
 import MainBg from "../../assets/img/mainBg.png";
-// import Emergency from '../../assets/img/emergency-truck.png'
-// import Equalizer from '../../assets/img/equalizer.png';
-// import FineIcon from '../../assets/img/fine-icon.png'
-// import Laptop from '../../assets/img/laptop.png';
-// import MedCase from '../../assets/img/medCase.png';
-// import ManDoctor from '../../assets/img/man-doctor.png';
+import Emergency from '../../assets/img/emergency-truck.png'
+import Equalizer from '../../assets/img/equalizer.png';
+import FineIcon from '../../assets/img/fine.png'
+import Laptop from '../../assets/img/laptop.png';
+import MedCase from '../../assets/img/medical-case.png';
+import ManDoctor from '../../assets/img/doctor-man.png';
+import { gsap } from "gsap";
+import Application from "../Modals/Application";
+
 
 const Cover = () => {
+  const [isModalOpen, setModalOpen] = useState(false);
+  const animaRef = useRef(null);
   const buttonRef = useRef(null);
   const [circlePos, setCirclePos] = useState({ x: -50, y: -50, opacity: 0 });
+
+  const openModal = () => setModalOpen(true);
+  const closeModal = () => setModalOpen(false);
+
+  useEffect(() => {
+    // GSAP анимация для дочерних элементов блока anima
+    gsap.fromTo(
+      animaRef.current.children,
+      { opacity: 0, y: 50 }, // Начальное состояние: прозрачность 0, смещение по Y на 20px
+      {
+        opacity: 1,
+        y: 0,
+        stagger: 0.2, // Задержка анимации между элементами
+        duration: 1, // Длительность анимации в секундах
+        onComplete: startLevitation
+      }
+    );
+  }, []);
+
+  const startLevitation = () => {
+    // Применяем анимацию к каждому дочернему элементу отдельно
+    gsap.utils.toArray(animaRef.current.children).forEach((child) => {
+      const duration = 1.5 + Math.random() * 1; // Длительность анимации от 1.5 до 2.5 секунд
+      const amplitude = 5 + Math.random() * 10; // Амплитуда левитации от 5 до 15px
+  
+      gsap.to(child, {
+        y: `+=${amplitude}`, // Смещение вверх на случайное значение
+        repeat: -1, // Бесконечное повторение
+        yoyo: true, // Возврат в исходное положение для создания эффекта левитации
+        ease: "sine.inOut",
+        duration: duration
+      });
+    });
+  };
 
   useEffect(() => {
     const button = buttonRef.current;
@@ -44,18 +83,20 @@ const Cover = () => {
     >
       <div className="flex flex-col items-center justify-center space-y-8">
         <div className="flex flex-col items-center justify-center space-y-4 w-[900px]">
-          <h1 className="text-[64px] font-light text-center font-roboto-flex z-20">
+          <h1 className="text-[64px] font-light text-center font-roboto-flex">
             Агенство маркетинга & IT в сфере медицины
           </h1>
-          <h4 className="text-4xl  text-center z-20">
+          <h4 className="text-4xl  text-center">
           Наше агентство эффективно продвигает клиники, фармацевтические предприятия, медицинских специалистов и другие связанные учреждения
           </h4>
         </div>
         <div className="flex items-center justify-center space-x-4">
           <div ref={buttonRef} className="relative inline-block rounded-[40px]">
-            <button className="px-6 py-4 pt-3 border border-solid border-button-color rounded-[40px] text-button-color text-center hover:bg-gradient-to-br w-full h-full focus:ring-2 focus:ring-offset-2 focus:ring-violet-200 active:animate-pulseText">
+            <button onClick={openModal} className="px-6 py-4 pt-3 border border-solid border-button-color rounded-[40px] text-button-color text-center hover:bg-gradient-to-br w-full h-full focus:ring-2 focus:ring-offset-2 focus:ring-violet-200 active:animate-pulseText">
               заказать обратный звонок
             </button>
+
+            <Application isOpen={isModalOpen} onClose={closeModal} />
             <div style={{ pointerEvents: "none" }} className="cursor-pointer absolute top-0 left-0 rounded-[40px] w-full h-full overflow-hidden -z-10">
               <div
                 className="cursor-pointer absolute bg-purple-300 rounded-full w-20 h-20 mix-blend-difference"
@@ -75,14 +116,14 @@ const Cover = () => {
           </button>
         </div>
       </div>
-      {/* <div>
-        <img className="absolute left-[170px] -top-[70px]" src={Emergency} alt="emergency-truck" />
-        <img className="absolute left-0 bottom-[40px]" src={FineIcon} alt="fine-icon" />
-        <img className="absolute left-[150px] bottom-0" src={Laptop} alt="laptop" />
-        <img className="absolute right-[150px] -top-[30px]" src={MedCase} alt="case-medical" />
-        <img className="absolute right-0 top-[100px]" src={Equalizer} alt="equalizer" />
-        <img className="absolute right-[50px] bottom-0" src={ManDoctor} alt="doctor-man" />
-      </div> */}
+      <div id="anima" ref={animaRef}>
+        <img className="absolute left-[170px] -top-[90px] z-0" src={Emergency} alt="emergency-truck" />
+        <img className="absolute -left-[100px] bottom-[40px] z-0" src={FineIcon} alt="fine-icon" />
+        <img className="absolute left-[200px] -bottom-[20px] z-0" src={Laptop} alt="laptop" />
+        <img className="absolute right-[150px] -top-[50px] z-0" src={MedCase} alt="case-medical" />
+        <img className="absolute -right-[150px] top-[50px] z-0" src={Equalizer} alt="equalizer" />
+        <img className="absolute right-[50px] -bottom-[18px] z-0" src={ManDoctor} alt="doctor-man" />
+      </div>
     </div>
   );
 };

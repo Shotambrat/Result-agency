@@ -12,7 +12,9 @@ module.exports = {
         'gradient-end': '#4A81EBA8',
         "header-text": 'rgba(25, 19, 89)',
         "button-color": '#7B72EB',
-        "uslugi-text": "#191359"
+        "uslugi-text": "#191359",
+        "footer-icon": "#7B72EB",
+        "rectangle": "#B6B3E8",
       },
       fontFamily: {
         'roboto-flex': ['"Roboto Flex"', 'sans-serif'],
