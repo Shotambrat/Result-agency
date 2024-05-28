@@ -1,250 +1,125 @@
-import React, { useRef, useEffect } from "react";
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
-import One from "./../../assets/img/one.svg";
-import Two from "../../assets/img/two.svg";
-import Three from "../../assets/img/three.svg";
-import Four from "../../assets/img/four.svg";
-import InternetWindow from "../../assets/img/internet-window.png";
-
-gsap.registerPlugin(ScrollTrigger);
+import React from "react";
+import InternetWindow from "../../assets/img/howWorkComp.png";
+import downArrow from "../../assets/img/down-arrow.svg";
 
 const HowWeWork = () => {
-  // Создаем ссылки на элементы для анимации
-  const verticalLineRef = useRef(null);
-  const horizontalLineRef1 = useRef(null);
-  const horizontalLineRef2 = useRef(null);
-  const block1Ref = useRef(null);
-  const block2Ref = useRef(null);
-  const block3Ref = useRef(null);
-  const block4Ref = useRef(null);
-  const block5Ref = useRef(null);
-  const block6Ref = useRef(null);
-  const contentRef1 = useRef(null);
-  const contentRef2 = useRef(null);
-  const contentRef3 = useRef(null);
-  const contentRef4 = useRef(null);
-  const contentRef5 = useRef(null);
-  const contentRef6 = useRef(null);
-
-  useEffect(() => {
-    gsap.fromTo(
-      verticalLineRef.current,
-      { scaleY: 0 },
-      {
-        scaleY: 1,
-        duration: 1,
-        ease: "none",
-        scrollTrigger: verticalLineRef.current,
-      }
-    );
-
-    gsap.fromTo(
-      horizontalLineRef1.current,
-      { scaleX: 0 },
-      {
-        scaleX: 1,
-        duration: 1,
-        ease: "none",
-        delay: 1,
-        scrollTrigger: horizontalLineRef1.current,
-      }
-    );
-
-    gsap.fromTo(
-      horizontalLineRef2.current,
-      { scaleX: 0 },
-      {
-        scaleX: 1,
-        duration: 1,
-        ease: "none",
-        delay: 1,
-        scrollTrigger: horizontalLineRef2.current,
-      }
-    );
-
-    gsap.fromTo(
-      [
-        block1Ref.current,
-        block2Ref.current,
-        block3Ref.current,
-        block4Ref.current,
-        block5Ref.current,
-        block6Ref.current,
-      ],
-      { autoAlpha: 0 },
-      {
-        autoAlpha: 1,
-        duration: 1,
-        ease: "none",
-        delay: 1.5,
-        stagger: 0.2,
-        scrollTrigger: block1Ref.current,
-      }
-    );
-
-    gsap.fromTo(
-      [
-        contentRef1.current,
-        contentRef2.current,
-        contentRef3.current,
-        contentRef4.current,
-        contentRef5.current,
-        contentRef6.current,
-      ],
-      { y: -20, autoAlpha: 0 },
-      {
-        y: 0,
-        autoAlpha: 1,
-        duration: 1,
-        ease: "none",
-        delay: 2.5,
-        stagger: 0.2,
-        scrollTrigger: contentRef1.current,
-      }
-    );
-  }, []);
-
   return (
     <div
       style={{
-        backgroundImage: `linear-gradient(to bottom, #99BBFD, #D2C2FF)`,
+        backgroundImage: `linear-gradient(to bottom, #A6C4FF 0%, #D2C2FF 100%)`,
       }}
-      className="w-10/12 h-auto rounded-[60px] overflow-hidden mx-auto my-8"
-    > 
-      <h2 style={{ color: '#5950C9'}} className="text-6xl font-bold text-center text-blue-500 mt-20">
-        Как у нас устроена работа
+      className="rounded-[8.73px] overflow-hidden mx-[0.625rem] my-8 sm:mx-4 md:mx-10"
+    >
+      <h2 className="text-[20px] font-bold text-center mt-4">
+        Как работает наше агентство
       </h2>
-      <div className="flex mt-12">
-        <div className="w-1/2">
-          <img src={InternetWindow} alt="internet-window" />
-        </div>
-        <div className="w-1/2 flex justify-center flex-col items-center relative -top-[30px]">
-          <h3 style={{ color: "#5950C9"}} className="w-3/4 mb-5 text-[30px]">
-            Оставьте заявку и получите рекомендации по оптимизации вашего
-            бизнеса совершенно бесплатно!
-          </h3>
-          <button className="relative -left-6 px-6 py-4 pt-3 bg-button-color text-white rounded-[40px] text-center transition duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-violet-200 hover:bg-gradient-to-r hover:from-[#ffffff]/30 hover:to-[#ffffff]/10 active:animate-pulseText">
-            бесплатная консультация
-          </button>
-        </div>
+      <div className="flex mt-6 justify-between">
+        <img src={InternetWindow} alt="internet-window" className="h-[6rem]" />
+        <h3 className="text-[#4A448E] text-[13px]">
+          Заполните заявку и получите экспертные рекомендации для повышения
+          эффективности вашего бизнеса – абсолютно бесплатно!
+        </h3>
       </div>
-      <div className="relative my-8">
-        <div
-          className="absolute inset-0 m-auto w-0.5 bg-black h-full"
-          ref={verticalLineRef}
-        ></div>
-        <div
-          className="absolute top-1/3 left-[100px] w-10/12 h-0.5 bg-black"
-          style={{ transform: "translateY(-50%)" }}
-          ref={horizontalLineRef1}
-        ></div>
-        <div className="flex justify-between h-64">
-          <div
-            className="w-[450px] flex ml-[100px] items-center"
-            ref={block1Ref}
-          >
-            <img src={One} alt="one" className="h-[130px]" />
-            <div ref={contentRef1} className="ml-9">
-              <h4 className="text-bolder text-[28px] leading-8 mb-[10px]">
-                Мы не делаем однотипных предложений
-              </h4>
-              <p>
-                Глубоко изучаем конкретный бизнес и решаем, что сработает лучше.
-                Тестируем гипотезы, не останавливаясь на классических
-                онлайн-инструментах
-              </p>
-            </div>
+      <div className="text-center mt-[14px]">
+        <button className="px-7 py-2 bg-button-color text-white rounded-[24px] text-center text-[13px] font-normal">
+          Бесплатная консультация
+        </button>
+      </div>
+      <div className="mx-[0.4375rem] mt-10 grid grid-cols-1 gap-y-16 pb-[13px]">
+        <div className="relative px-[0.8125rem] border-2 border-solid border-[#ffffff] rounded-[14px]">
+          <div className="absolute top-[-12%] left-[45%] bg-[#7B72EB] border-[4px] border-solid border-[#cccccc] w-10 h-10 rounded-full">
+            <p className="text-[19.2px] font-extrabold text-white text-center mt-[2px]">
+              1
+            </p>
           </div>
-          <div
-            className="w-[450px] ml-4 h-64 flex mr-[120px] items-center"
-            ref={block2Ref}
-          >
-            <img src={Two} alt="one" className="h-[130px]" />
-            <div ref={contentRef2} className="ml-8">
-            <h4 className="text-bolder text-[28px] leading-8 mb-[10px]">
-                Мы не делаем однотипных предложений
-              </h4>
-              <p>
-                Глубоко изучаем конкретный бизнес и решаем, что сработает лучше.
-                Тестируем гипотезы, не останавливаясь на классических
-                онлайн-инструментах
-              </p>
-            </div>
+          <h4 className="mt-[36px] text-[191359] text-[18.21px]">
+            Личная беседа и бриф
+          </h4>
+          <p className="text-[13px] mt-3 mb-4">
+            Обсуждение ваших предпочтений и целей, и объяснение наших условий и
+            задач с последующим формированием детального брифа, включая ключевые
+            аспекты будущего проекта
+          </p>
+          <div className="absolute bottom-[-22%] left-[45%]">
+            <img src={downArrow} alt="down arrow" className="w-10" />
           </div>
         </div>
-        <div
-          className="absolute top-2/3 left-[100px] w-10/12 h-0.5 bg-black"
-          style={{ transform: "translateY(-100%)" }}
-          ref={horizontalLineRef2}
-        ></div>
-        <div className="flex justify-between h-64">
-          <div
-            className="w-[450px] flex ml-[100px] items-center"
-            ref={block3Ref}
-          >
-            <img src={Three} alt="one" className="h-[130px]" />
-            <div ref={contentRef3} className="ml-1">
-            <h4 className="text-bolder text-[28px] leading-8 mb-[10px]">
-                Мы не делаем однотипных предложений
-              </h4>
-              <p>
-                Глубоко изучаем конкретный бизнес и решаем, что сработает лучше.
-                Тестируем гипотезы, не останавливаясь на классических
-                онлайн-инструментах
-              </p>
-            </div>
+        <div className="relative px-[0.8125rem] border-2 border-solid border-[#ffffff] rounded-[14px]">
+          <div className="absolute top-[-12%] left-[45%] bg-[#7B72EB] border-[4px] border-solid border-[#cccccc] w-10 h-10 rounded-full">
+            <p className="text-[19.2px] font-extrabold text-white text-center mt-[2px]">
+              2
+            </p>
           </div>
-          <div
-            className="w-[450px] ml-4 h-64 flex mr-[120px] items-center"
-            ref={block4Ref}
-          >
-            <img src={Four} alt="one" className="h-[130px] " />
-            <div ref={contentRef4} className="ml-8">
-            <h4 className="text-bolder text-[28px] leading-8 mb-[10px]">
-                Мы не делаем однотипных предложений
-              </h4>
-              <p>
-                Глубоко изучаем конкретный бизнес и решаем, что сработает лучше.
-                Тестируем гипотезы, не останавливаясь на классических
-                онлайн-инструментах
-              </p>
-            </div>
+          <h4 className="mt-[36px] text-[191359] text-[18.21px]">Анализ</h4>
+          <p className="text-[13px] mt-3 mb-4">
+            Запуск углубленного исследования рынка и аудитории клиента.
+            Определение сильных сторон и возможностей продвижения на фоне
+            конкурентов. Анализ целевой аудитории и ее потребностей
+          </p>
+          <div className="absolute bottom-[-19%] left-[45%]">
+            <img src={downArrow} alt="down arrow" className="w-10" />
           </div>
         </div>
-        <div className="flex justify-between h-64">
-          <div
-            className="w-[450px] flex ml-[100px] items-center"
-            ref={block5Ref}
-          >
-            <img src={Three} alt="one" className="h-[130px]" />
-            <div ref={contentRef5} className="ml-1">
-            <h4 className="text-bolder text-[28px] leading-8 mb-[10px]">
-                Мы не делаем однотипных предложений
-              </h4>
-              <p>
-                Глубоко изучаем конкретный бизнес и решаем, что сработает лучше.
-                Тестируем гипотезы, не останавливаясь на классических
-                онлайн-инструментах
-              </p>
-            </div>
+        <div className="relative px-[0.8125rem] border-2 border-solid border-[#ffffff] rounded-[14px]">
+          <div className="absolute top-[-12%] left-[45%] bg-[#7B72EB] border-[4px] border-solid border-[#cccccc] w-10 h-10 rounded-full">
+            <p className="text-[19.2px] font-extrabold text-white text-center mt-[2px]">
+              3
+            </p>
           </div>
-          <div
-            className="w-[450px] ml-4 h-64 flex mr-[120px] items-center"
-            ref={block6Ref}
-          >
-            <img src={Four} alt="one" className="h-[130px]" />
-            <div ref={contentRef6} className="ml-8">
-            <h4 className="text-bolder text-[28px] leading-8 mb-[10px]">
-                Мы не делаем однотипных предложений
-              </h4>
-              <p>
-                Глубоко изучаем конкретный бизнес и решаем, что сработает лучше.
-                Тестируем гипотезы, не останавливаясь на классических
-                онлайн-инструментах
-              </p>
-            </div>
+          <h4 className="mt-[36px] text-[191359] text-[18.21px]">Разработка проекта</h4>
+          <p className="text-[13px] mt-3 mb-4">
+            Разработка стратегии, создание контента, адаптированного под
+            аудиторию. Контроль проекта для обеспечения согласованной и
+            целенаправленной работы
+          </p>
+          <div className="absolute bottom-[-22%] left-[45%]">
+            <img src={downArrow} alt="down arrow" className="w-10" />
           </div>
+        </div>
+        <div className="relative px-[0.8125rem] border-2 border-solid border-[#ffffff] rounded-[14px]">
+          <div className="absolute top-[-12%] left-[45%] bg-[#7B72EB] border-[4px] border-solid border-[#cccccc] w-10 h-10 rounded-full">
+            <p className="text-[19.2px] font-extrabold text-white text-center mt-[2px]">
+              4
+            </p>
+          </div>
+          <h4 className="mt-[36px] text-[191359] text-[18.21px]">Утверждение</h4>
+          <p className="text-[13px] mt-3 mb-4">
+            Согласование конечного варианта стратегии и креатива с клиентом.
+            Внесение корректировок по замечаниям для достижения идеального
+            результата
+          </p>
+          <div className="absolute bottom-[-24%] left-[45%]">
+            <img src={downArrow} alt="down arrow" className="w-10" />
+          </div>
+        </div>
+        <div className="relative px-[0.8125rem] border-2 border-solid border-[#ffffff] rounded-[14px]">
+          <div className="absolute top-[-12%] left-[45%] bg-[#7B72EB] border-[4px] border-solid border-[#cccccc] w-10 h-10 rounded-full">
+            <p className="text-[19.2px] font-extrabold text-white text-center mt-[2px]">
+              5
+            </p>
+          </div>
+          <h4 className="mt-[36px] text-[191359] text-[18.21px]">Запуск проекта</h4>
+          <p className="text-[13px] mt-3 mb-4">
+            Официальный старт кампании. Мониторинг эффективности запущенных
+            мероприятий, корректировка стратегии в реальном времени для
+            максимального охвата и вовлечения
+          </p>
+          <div className="absolute bottom-[-22%] left-[45%]">
+            <img src={downArrow} alt="down arrow" className="w-10" />
+          </div>
+        </div>
+        <div className="relative px-[0.8125rem] border-2 border-solid border-[#ffffff] rounded-[14px]">
+          <div className="absolute top-[-12%] left-[45%] bg-[#7B72EB] border-[4px] border-solid border-[#cccccc] w-10 h-10 rounded-full">
+            <p className="text-[19.2px] font-extrabold text-white text-center mt-[2px]">
+              6
+            </p>
+          </div>
+          <h4 className="mt-[36px] text-[191359] text-[18.21px]">Настройка рекламы</h4>
+          <p className="text-[13px] mt-3 mb-4">
+            Запуск рекламных кампаний в социальных сетях и на других платформах.
+            Применение таргетинга и ретаргетинга для максимизации ROMI и
+            эффективной доставки ключевых сообщений целевой аудитории
+          </p>
         </div>
       </div>
     </div>

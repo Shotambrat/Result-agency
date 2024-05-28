@@ -6,7 +6,7 @@ import Facebook from '../assets/img/facebook-icon.svg';
 const Footer = () => {
   return (
     <div
-      className="h-[200px] flex justify-around"
+      className="h-[200px] lg:flex lg:justify-around"
       style={{
         background:
           "linear-gradient(to bottom right, #9F99E0 0%, #E8E6FE 14%, #EDEBFF 29%, #DDDAFA 43%, #FFFFFF 57%, #C6D6FF 74%, #F1F5FF 84%, #CEDCFF 100%)",
@@ -29,7 +29,7 @@ const Footer = () => {
         </a>
         <p>Политика конфиденциальности</p>
       </div>
-      <div className="flex justify-between w-1/3 mt-12">
+      <div className="lg:flex lg:justify-between w-1/3 mt-12">
         <a href="#" className="bg-footer-icon h-[60px] w-[60px] rounded-[15px] flex">
           <img src={Insta} alt="social-icon" />
         </a>

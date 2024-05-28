@@ -26,7 +26,7 @@ const Main = () => {
       <OurPartners />
       <MainArticle />
       <Brif />
-      <MapFooter />
+      {/* <MapFooter /> */}
       <Element name="contacts">
         <Footer />
       </Element>

@@ -1,48 +1,63 @@
-import React from 'react';
-import Terra from '../../assets/img/terra-pro.png';
-import Glotr from '../../assets/img/glotr-uz.png';
-import YellowPages from '../../assets/img/yellow-pages.png';
-import Intermed from '../../assets/img/intermed.png';
-import Mexclusive from '../../assets/img/m-exclusive.png';
-import PromUz from '../../assets/img/prom-uz.png';
-import AptekaUz from '../../assets/img/apteka-uz.png';
-import Serdsebiyenye from '../../assets/img/serdtsebiyeniye.png';
-import Slider from 'react-slick';
-import "slick-carousel/slick/slick.css"; 
-import "slick-carousel/slick/slick-theme.css";
-
+import React from "react";
+import Terra from "../../assets/img/terralab-logo.svg";
+import Glotr from "../../assets/img/glotr-logo.svg";
+import YellowPages from "../../assets/img/yellow-pages-logo.svg";
+import Intermed from "../../assets/img/Intermed_Innovation-logo.svg";
+import Mexclusive from "../../assets/img/exclusive-logo.svg";
+import PromUz from "../../assets/img/prom-logo.svg";
+import AptekaUz from "../../assets/img/Apteka-logo.svg";
+import Serdsebiyenye from "../../assets/img/unnamed-logo.svg";
+import Med24 from "../../assets/img/logo_med24 2.svg";
+import Top from "../../assets/img/top-logo.svg";
+import Megahertz from "../../assets/img/megahertz-logo.svg";
+import Prime from "../../assets/img/Prime_MedicalCenter_logo.svg";
 
 const OurPartners = () => {
-    // Настройки для Slider
-    const settings = {
-      dots: false,
-      infinite: true,
-      speed: 1200,
-      slidesToShow: 5,
-      slidesToScroll: 1,
-      autoplay: true,
-      autoplaySpeed: 900,
-      cssEase: "linear",
-      rtl: true, // Используем rtl для изменения направления прокрутки
-    };
-  
-    return (
-      <div>
-        <h2 className="text-center text-uslugi-text text-5xl font-bold mb-8">
-          Наши партнеры
-        </h2>
-        <Slider {...settings}>
-          <div className='slide pr-12'><img src={Terra} alt="Terra" className="mx-auto" /></div>
-          <div className='slide pr-12'><img src={Glotr} alt="Glotr" className="mx-auto" /></div>
-          <div className='slide pr-12'><img src={YellowPages} alt="Yellow Pages" className="mx-auto" /></div>
-          <div className='slide pr-12'><img src={Intermed} alt="Intermed" className="mx-auto" /></div>
-          <div className='slide pr-12'><img src={Mexclusive} alt="Mexclusive" className="mx-auto" /></div>
-          <div className='slide pr-12'><img src={PromUz} alt="PromUz" className="mx-auto" /></div>
-          <div className='slide pr-12'><img src={AptekaUz} alt="AptekaUz" className="mx-auto" /></div>
-          <div className='slide pr-12'><img src={Serdsebiyenye} alt="Serdsebiyenye" className="mx-auto" /></div>
-        </Slider>
+  return (
+    <div className="mx-[0.625rem] sm:mx-4 md:mx-10 border-2 border-[#4A448E] border-opacity-40 border-solid rounded-[14.67px]">
+      <h2 className="text-center text-[26px] md:text-[30px] lg:text-[34px] font-semibold pt-4 pb-[0.875rem] md:py-5 lg:py-6 border-b-2 border-solid border-[#4A448E] border-opacity-40">
+        Наши партнеры
+      </h2>
+      <div className="grid grid-cols-3 md:grid-cols-4 gap-x-4 gap-y-8 pt-5 pb-8 px-3 md:px-4 lg:px-8 md:py-8 lg:py-12">
+        <div className="">
+          <img src={Intermed} alt="Intermed" className="mx-auto" />
+        </div>
+        <div className="">
+          <img src={AptekaUz} alt="AptekaUz" className="mx-auto" />
+        </div>
+        <div className="">
+          <img src={YellowPages} alt="Yellow Pages" className="mx-auto" />
+        </div>
+        <div className="">
+          <img src={Glotr} alt="Glotr" className="mx-auto" />
+        </div>
+        <div className="">
+          <img src={PromUz} alt="PromUz" className="mx-auto" />
+        </div>
+        <div className="">
+          <img src={Mexclusive} alt="Mexclusive" className="mx-auto" />
+        </div>
+        <div className="">
+          <img src={Top} alt="Top" className="mx-auto" />
+        </div>
+        <div className="">
+          <img src={Megahertz} alt="Megahertz" className="mx-auto" />
+        </div>
+        <div className="">
+          <img src={Med24} alt="Med24" className="mx-auto" />
+        </div>
+        <div className="">
+          <img src={Terra} alt="Terra" className="mx-auto" />
+        </div>
+        <div className="">
+          <img src={Serdsebiyenye} alt="Serdsebiyenye" className="mx-auto" />
+        </div>
+        <div className="">
+          <img src={Prime} alt="Prime" className="mx-auto" />
+        </div>
       </div>
-    );
-  }
-  
-  export default OurPartners;
+    </div>
+  );
+};
+
+export default OurPartners;

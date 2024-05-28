@@ -1,49 +1,41 @@
 import React from "react";
-import Monitor from '../../assets/img/monitor.png'
+import Monitor from "../../assets/img/monitor.png";
 
 const MainArticle = () => {
   const articles = [
     {
-      title: "Мы не делаем однотипных предложений",
+      title: "Как социальные сети могут улучшить репутацию вашей клиники",
       category: "маркетинг",
     },
     {
-      title: "Мы не делаем однотипных предложений",
+      title: "Интерактивный опрос: оцените эффективность вашего маркетинга",
       category: "маркетинг",
     },
     {
-      title: "Мы не делаем однотипных предложений",
+      title: "SEO для медицинских сайтов: Полное руководство",
       category: "маркетинг",
     },
   ];
 
   return (
-    <div className="w-10/12 mx-auto mt-9">
-      <h2 className="text-5xl text-center text-uslugi-text font-bold mb-6">Наши статьи</h2>
-      <div className="flex justify-between space-x-4">
+    <div className="mx-[0.625rem] sm:mx-4 md:mx-10 mt-8">
+      <h2 className="text-[28px] font-semibold text-center mb-4">
+        Новые статьи
+      </h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-[0.625rem] gap-x-5 ">
         {articles.map((article, index) => (
-          <div
-            key={index}
-            className="flex flex-1 flex-col items-center text-white overflow-hidden"
-          >
-            <div className="flex-1 flex flex-col justify-center items-center p-4 bg-blue-500 rounded-[30px]">
-              <div className="w-full h-auto mb-4 flex items-center justify-center">
+          <div key={index} className="text-white">
+            <div className="p-4 bg-[#7B72EB] rounded-[14.32px]">
+              <div className="w-full h-auto mb-5 flex items-center justify-center ">
                 <img src={Monitor} alt="monitor" />
               </div>
               <div>
-              <p className=" text-2xl mb-4">{article.title}</p>
-              <button className="border-2 border-white text-white bg-transparent py-2 px-4 rounded-full hover:bg-gray-300 hover:text-blue-500 transition-colors">
-                {article.category}
-              </button>
-
+                <p className="text-[18px] font-medium mb-4 h-[5rem]">{article.title}</p>
+                <button className="text-[15px] font-medium border-[1px] border-white text-white bg-transparent py-1 px-8 rounded-full hover:bg-gray-300 hover:text-blue-500 transition-colors ">
+                  {article.category}
+                </button>
               </div>
             </div>
-            {/* Button outside of the blue block */}
-            <a
-              className="cursor-pointer w-2/3 mt-7 py-4 pt-3 bg-button-color text-white rounded-[40px] text-center transition duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-violet-200 hover:bg-gradient-to-r hover:from-[#ffffff]/30 hover:to-[#ffffff]/10 active:animate-pulseText"
-            >
-              Перейти в блог
-            </a>
           </div>
         ))}
       </div>
