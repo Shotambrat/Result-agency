@@ -1,45 +1,59 @@
 import React from "react";
-import Insta from '../assets/img/insta-icon.svg';
-import Teleramm from '../assets/img/telegram-icon.svg';
-import Facebook from '../assets/img/facebook-icon.svg';
+import Insta from "../assets/img/insta-icon.svg";
+import Teleramm from "../assets/img/telegram-icon.svg";
+import Facebook from "../assets/img/facebook-icon.svg";
 
 const Footer = () => {
   return (
-    <div
-      className="h-[200px] lg:flex lg:justify-around"
-      style={{
-        background:
-          "linear-gradient(to bottom right, #9F99E0 0%, #E8E6FE 14%, #EDEBFF 29%, #DDDAFA 43%, #FFFFFF 57%, #C6D6FF 74%, #F1F5FF 84%, #CEDCFF 100%)",
-        color: "#333", // Пример цвета текста, может быть изменен
-        padding: "20px", // Пример отступа, может быть изменен
-        textAlign: "center", // Пример выравнивания текста, может быть изменен
-      }}
-    >
-      {/* Содержимое футера */}
-      <div className="text-start">
-        <p className="my-6 font-bold text-[20px]">Ташкент, ул.Чинабад, 57</p>
-        <p>© 2023 RESULT AGENCY - <br /> создание и продвижение медицинских сайтов</p>
-      </div>
-      <div className="flex flex-col mt-4">
-        <a href="tel: +998900228073" className="text-[30px]">
-          +998 (90) 022-80-73
-        </a>
-        <a href="tel: +998900228073" className="text-[30px]">
-          +998 (90) 022-80-73
-        </a>
-        <p>Политика конфиденциальности</p>
-      </div>
-      <div className="lg:flex lg:justify-between w-1/3 mt-12">
-        <a href="#" className="bg-footer-icon h-[60px] w-[60px] rounded-[15px] flex">
-          <img src={Insta} alt="social-icon" />
-        </a>
-        <a href="#" className="bg-footer-icon h-[60px] w-[60px] rounded-[15px] flex justify-center items-center">
-          <img src={Teleramm} alt="social-icon" />
-        </a>
-        <a href="#" className="bg-footer-icon h-[60px] w-[60px] rounded-[15px] flex justify-end items-end">
-          <img src={Facebook} alt="social-icon" className="relative right-0 -bottom-[6px]"/>
-        </a>
-      </div>
+    <div className="grid grid-cols-3 sm:grid-cols-6 lg:grid-cols-7 pb-8 px-[0.625rem] sm:px-4 md:px-10 xl:px-24 2xl:px-[6.875rem]">
+      <a
+        href="#"
+        className="bg-footer-icon h-[60px] w-[60px] rounded-[15px] flex sm:col-span-2 lg:col-span-1 lg:order-9 mx-auto lg:mt-0"
+      >
+        <img src={Insta} alt="social-icon" />
+      </a>
+      <a
+        href="#"
+        className="bg-[#24A1DE] h-[60px] w-[60px] rounded-[15px] flex justify-center items-center lg:order-[10] sm:col-span-2 lg:col-span-1 mx-auto lg:mt-0"
+      >
+        <img src={Teleramm} alt="social-icon" />
+      </a>
+      <a
+        href="#"
+        className="bg-[#4267B2] h-[60px] w-[60px] rounded-[15px] flex justify-end items-end lg:order-[11] sm:col-span-2 lg:col-span-1 mx-auto lg:mt-0"
+      >
+        <img
+          src={Facebook}
+          alt="social-icon"
+          className="relative right-0 -bottom-[6px]"
+        />
+      </a>
+
+      <a
+        href="tel: +998900228073"
+        className="text-center text-lg mt-7 font-normal sm:mt-6 lg:mt-0 sm:order-2 col-span-3 lg:col-span-2 lg:order-6"
+      >
+        +998 (90) 509-25-62
+      </a>
+      <a
+        href="tel: +998900228073"
+        className="text-center text-lg font-normal mt-6 sm:mt-0 lg:mt-3 lg:order-[13] sm:order-4 col-span-3 lg:col-span-2"
+      >
+        +998 (90) 022-80-73
+      </a>
+      <p className="text-center text-[1rem] font-normal mt-6 sm:mt-2 sm:order-7 lg:order-1 col-span-3 lg:col-span-2">
+        Ташкент, ул.Чинабад, 10
+      </p>
+
+      <p className="text-center text-[1rem] leading-5 lg:leading-6 mt-6 sm:mt-6 lg:mt-6 sm:order-3 lg:order-8 col-span-3 lg:col-span-2 lg:row-[span_5_/_span_11]">
+        © 2023 RESULT AGENCY - <br /> Медицинский маркетинг & IT
+      </p>
+      <p className="text-center mt-6 sm:mt-2 lg:mt-0 font-normal text-[0.8125rem] sm:order-6 lg:order-[20] col-span-3 lg:col-span-2">
+        Политика конфиденциальности
+      </p>
+
+      <p className="hidden lg:flex lg:col-span-3 lg:order-3"></p>
+      <p className="hidden lg:flex lg:col-span-3 lg:order-[15]"></p>
     </div>
   );
 };

@@ -52,9 +52,9 @@ const MainCases = () => {
     },
   ];
   return (
-    <div className="mt-8 sm:mx-4 md:mx-10">
-      <h2 className="text-center text-[28px] font-semibold mb-4">Наши Кейсы</h2>
-      <div className="grid grid-cols-2 sm:grid-cols-3 p-[0.625rem] sm:p-0 gap-x-[0.625rem] gap-y-5">
+    <div className="mt-8 lg:mt-[3rem] sm:mx-4 md:mx-10 xl:mx-20 2xl:mx-[6.875rem]">
+      <h2 className="text-center md:text-left text-[28px] md:text-[32px] font-semibold mb-4">Наши Кейсы</h2>
+      <div className="grid grid-cols-2 sm:grid-cols-3 p-[0.625rem] sm:p-0 gap-x-[0.625rem] xl:gap-x-5 gap-y-5">
         {cases1.map((elem, index) => (
           <div key={index} className="">
             <div className="h-[6.5rem] rounded-[7.39px] lg:h-56 border-[1px] border-solid border-[4A448E]"></div>

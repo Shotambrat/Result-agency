@@ -44,14 +44,14 @@ const Application = ({ isOpen, onClose }) => {
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center">
-      <div className="w-4/5 lg:w-1/3 lg:h-1/2 lg:my-8 bg-gradient-to-b from-blue-600 to-purple-600 p-8 rounded-[20px] relative">
+      <div className="w-4/5 md:w-2/4 lg:w-1/3 lg:h-1/2 lg:my-8 xl:w-1/4  bg-gradient-to-b from-blue-600 to-purple-600 p-8 rounded-[20px] relative">
         <button
           onClick={onClose}
           className="absolute top-0 right-0 m-4 text-white text-2xl"
         >
           X
         </button>
-        <div className="flex-1 ml-4">
+        <div className="flex-1">
           <form className="flex flex-col space-y-6">
             <input
               type="text"

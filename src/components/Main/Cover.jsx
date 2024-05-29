@@ -42,23 +42,23 @@ const Cover = () => {
       className="w-full h-screen flex justify-center items-center bg-cover bg-center"
     >
       <div className="flex flex-col items-center justify-center lg:space-y-8 xs:mx-14 sm:mx-[5rem] md:mx-[7rem]">
-        <div className="flex flex-col items-center justify-center mt-12 lg:space-y-4 lg:w-[900px]">
-          <h1 className="font-semibold text-[36px] xs:text-[44px] sm:text-[48px] md:text-[52px] text-[#191359] lg:text-[58px] lg:font-light text-center font-roboto-flex leading-9 xs:leading-[3rem]">
+        <div className="flex flex-col items-center justify-center mt-12 lg:w-[900px]">
+          <h1 className="font-semibold text-[36px] xs:text-[44px] sm:text-[48px] md:text-[52px] 2xl:text-[64px] text-[#191359] lg:text-[58px] lg:font-light text-center font-roboto-flex leading-9 xs:leading-[3rem]">
             Медицинский маркетинг & IT
           </h1>
-          <h4 className="text-[#000000] text-[17px] xs:text-[20px] sm:text-[22px] md:text-[24px] lg:text-[28px] font-regular mt-7 md:mt-12 mx-5 sm:mx-9 md:mx-12 text-center">
+          <h4 className="text-[#000000] text-[17px] xs:text-[20px] sm:text-[22px] md:text-[24px] lg:text-[28px] 2xl:text-[32px] font-regular mt-7 md:mt-12 mx-5 sm:mx-9 md:mx-12 text-center">
             Result Agency эффективно продвигает клиники, фармацевтические
             предприятия, медицинских специалистов и другие компании
           </h4>
         </div>
-        <div className="flex items-center justify-center space-x-4 w-full mt-12 xs:mt-16 md:mt-20 lg:mt-24">
+        <div className="flex items-center justify-center w-full mt-12 xs:mt-16 md:mt-20 lg:mt-24">
           <div
             ref={buttonRef}
             className="relative inline-block rounded-[40px] w-full mx-3 sm:w-[70%] lg:w-[45%]"
           >
             <button
               onClick={openModal}
-              className="px-6 py-4 pt-3 border border-solid text-black text-[20px] xs:text-[21px] font-normal border-button-color rounded-[40px] text-center hover:bg-gradient-to-br w-full h-full focus:ring-2 focus:ring-offset-2 focus:ring-violet-200 active:animate-pulseText"
+              className="px-6 py-4 pt-3 border border-solid text-black text-[20px] xs:text-[21px] 2xl:text-[25px] font-normal border-button-color rounded-[40px] text-center hover:bg-gradient-to-br w-full h-full focus:ring-2 focus:ring-offset-2 focus:ring-violet-200 active:animate-pulseText"
             >
               Оставить заявку
             </button>

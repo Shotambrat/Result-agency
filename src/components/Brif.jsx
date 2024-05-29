@@ -41,7 +41,7 @@ const Brif = () => {
   const displayValue = isFocused || inputValue ? formatValue(inputValue) : "";
 
   return (
-    <div className="mt-8 mx-[0.625rem] sm:mx-4 md:mx-10 sm:px-8 sm:py-6 lg:w-[50%] lg:rounded-[41px] lg:mt-24 bg-gradient-to-br from-[#7B72EB] to-purple-600 p-4 rounded-[14.32px]">
+    <div className="mt-8 mb-14 mx-[0.625rem] sm:mx-4 md:mx-10 xl:mx-20 2xl:mx-[6.875rem] sm:px-8 sm:py-6 lg:w-[50%] lg:rounded-[41px] lg:mt-24 bg-gradient-to-br from-[#7B72EB] to-purple-600 p-4 rounded-[14.32px]">
       {/* Left Block */}
       <div className="">
         {/* <img
@@ -51,10 +51,10 @@ const Brif = () => {
           className="w-1/2 -mr-[100px] relative -left-[100px] top-0"
         /> */}
         <div>
-          <h3 className="text-white text-[18px] sm:text-[30px] lg:text-[24px] mb-2 leading-8">
+          <h3 className="text-white text-[18px] sm:text-[30px] lg:text-[24px] 2xl:text-[32px] mb-2 leading-8">
             Оставьте заявку,чтобы обсудить проект
           </h3>
-          <p className="text-white text-[13px] sm:text-[15px] lg:text-[12px] mt-4 font-normal">
+          <p className="text-white text-[13px] sm:text-[15px] lg:text-[12px] 2xl:text-[17px] mt-4 font-normal">
             Мы свяжемся с вами для уточнения вопросов о дальнейшем
             сотрудничестве
           </p>
@@ -69,8 +69,7 @@ const Brif = () => {
             type="text"
             placeholder="ФИО"
             required
-            style={{ fontSize: "15px" }}
-            className="bg-transparent border-b-2 border-white text-white placeholder-white focus:border-green-500 focus:outline-none focus:border-b-[3px] pb-2"
+            className="text-[15px] 2xl:text-[20px] bg-transparent border-b-2 border-white text-white placeholder-white focus:border-green-500 focus:outline-none focus:border-b-[3px] pb-2"
           />
           <input
             type="tel"
@@ -80,19 +79,16 @@ const Brif = () => {
             onChange={handleChange}
             onFocus={handleFocus}
             onBlur={handleBlur}
-            style={{ fontSize: "15px" }}
-            className="bg-transparent border-b-2 border-white text-white placeholder-white focus:border-green-500 focus:outline-none focus:border-b-[3px] pb-2"
+            className="text-[15px] 2xl:text-[20px] bg-transparent border-b-2 border-white text-white placeholder-white focus:border-green-500 focus:outline-none focus:border-b-[3px] pb-2"
           />
           <input
             placeholder="Удобное время для звонка"
             required
-            style={{ fontSize: "15px" }}
-            className="bg-transparent border-b-2 border-white text-white placeholder-white focus:border-green-500 focus:outline-none focus:border-b-[3px] pb-2"
+            className="text-[15px] 2xl:text-[20px] bg-transparent border-b-2 border-white text-white placeholder-white focus:border-green-500 focus:outline-none focus:border-b-[3px] pb-2"
           />
           <textarea
             placeholder="Ожидаемый результат"
-            style={{ fontSize: "15px" }}
-            className="bg-transparent border-b-2 border-white text-white placeholder-white focus:border-green-500 focus:outline-none focus:border-b-[3px]"
+            className="text-[15px] 2xl:text-[20px] bg-transparent border-b-2 border-white text-white placeholder-white focus:border-green-500 focus:outline-none focus:border-b-[3px]"
           />
           <button
             type="submit"

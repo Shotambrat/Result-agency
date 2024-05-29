@@ -18,8 +18,8 @@ const MainArticle = () => {
   ];
 
   return (
-    <div className="mx-[0.625rem] sm:mx-4 md:mx-10 mt-8">
-      <h2 className="text-[28px] font-semibold text-center mb-4">
+    <div className="mx-[0.625rem] lg:mt-[3rem] sm:mx-4 md:mx-10 xl:mx-20 2xl:mx-[6.875rem] mt-8">
+      <h2 className="text-[28px] sm:text-[32px] 2xl:text-[64px] font-semibold text-center mb-4 sm:text-left">
         Новые статьи
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-[0.625rem] gap-x-5 ">
@@ -30,8 +30,12 @@ const MainArticle = () => {
                 <img src={Monitor} alt="monitor" />
               </div>
               <div>
-                <p className="text-[18px] font-medium mb-4 h-[5rem]">{article.title}</p>
-                <button className="text-[15px] font-medium border-[1px] border-white text-white bg-transparent py-1 px-8 rounded-full hover:bg-gray-300 hover:text-blue-500 transition-colors ">
+                <div className="h-[5rem] 2xl:h-[10rem] mb-4">
+                  <p className="text-[18px] 2xl:text-[28px] 2xl:h-[10rem] font-medium overflow-y-hidden">
+                    {article.title}
+                  </p>
+                </div>
+                <button className="text-[15px] 2xl:text-[22px] font-medium border-[1px] 2xl:mb-4 border-white text-white bg-transparent py-1 px-8 rounded-full hover:bg-gray-300 hover:text-blue-500 transition-colors ">
                   {article.category}
                 </button>
               </div>
