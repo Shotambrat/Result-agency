@@ -14,13 +14,13 @@ const Footer = () => {
       </a>
       <a
         href="#"
-        className="bg-[#24A1DE] h-[60px] w-[60px] rounded-[15px] flex justify-center items-center lg:order-[10] sm:col-span-2 lg:col-span-1 mx-auto lg:mt-0"
+        className="bg-footer-icon h-[60px] w-[60px] rounded-[15px] flex justify-center items-center lg:order-[10] sm:col-span-2 lg:col-span-1 mx-auto lg:mt-0"
       >
         <img src={Teleramm} alt="social-icon" />
       </a>
       <a
         href="#"
-        className="bg-[#4267B2] h-[60px] w-[60px] rounded-[15px] flex justify-end items-end lg:order-[11] sm:col-span-2 lg:col-span-1 mx-auto lg:mt-0"
+        className="bg-footer-icon h-[60px] w-[60px] rounded-[15px] flex justify-end items-end lg:order-[11] sm:col-span-2 lg:col-span-1 mx-auto lg:mt-0"
       >
         <img
           src={Facebook}
@@ -41,11 +41,11 @@ const Footer = () => {
       >
         +998 (90) 022-80-73
       </a>
-      <p className="text-center text-[1rem] font-normal mt-6 sm:mt-2 sm:order-7 lg:order-1 col-span-3 lg:col-span-2">
+      <p className="text-center text-[1rem] lg:text-lg font-normal mt-6 sm:mt-2 sm:order-7 lg:order-1 col-span-3 lg:col-span-2">
         Ташкент, ул.Чинабад, 10
       </p>
 
-      <p className="text-center text-[1rem] leading-5 lg:leading-6 mt-6 sm:mt-6 lg:mt-6 sm:order-3 lg:order-8 col-span-3 lg:col-span-2 lg:row-[span_5_/_span_11]">
+      <p className="text-center text-[1rem] lg:text-lg leading-5 lg:leading-6 mt-6 sm:mt-6 lg:mt-6 sm:order-3 lg:order-8 col-span-3 lg:col-span-2 lg:row-[span_5_/_span_11]">
         © 2023 RESULT AGENCY - <br /> Медицинский маркетинг & IT
       </p>
       <p className="text-center mt-6 sm:mt-2 lg:mt-0 font-normal text-[0.8125rem] sm:order-6 lg:order-[20] col-span-3 lg:col-span-2">

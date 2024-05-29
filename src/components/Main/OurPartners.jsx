@@ -14,12 +14,12 @@ import Prime from "../../assets/img/Prime_MedicalCenter_logo.svg";
 
 const OurPartners = () => {
   return (
-    <div className="mx-[0.625rem] lg:mt-[3rem] sm:mx-4 md:mx-10 xl:mx-20 2xl:mx-[6.875rem] border-2 border-[#4A448E] border-opacity-40 border-solid rounded-[14.67px]">
+    <div className="mx-[0.625rem] lg:mt-[3rem] sm:mx-4 md:mx-10 xl:mx-20 2xl:mx-[6.875rem] border-2 border-[#4A448E] border-opacity-40 border-solid rounded-[14.67px] lg:rounded-3xl">
       <h2 className="text-center text-[26px] md:text-[30px] lg:text-[34px] 2xl:text-[64px] font-semibold pt-4 pb-[0.875rem] md:py-5 lg:py-6 border-b-2 border-solid border-[#4A448E] border-opacity-40">
         Наши партнеры
       </h2>
-      <div className="grid grid-cols-3 md:grid-cols-4 gap-x-4 gap-y-8 pt-5 pb-8 px-3 md:px-4 lg:px-8 md:py-8 lg:py-12">
-        <div className="order-1">
+      <div className="grid grid-cols-3 md:grid-cols-4 gap-x-4 gap-y-8 md:gap-y-12 lg:gap-y-16 xl:gap-y-20 2xl:gap-y-24 pt-5 pb-8 px-3 md:px-4 lg:px-8 md:py-8 lg:py-12">
+        <div className="order-1 ">
           <img src={Intermed} alt="Intermed" className="mx-auto" />
         </div>
         <div className="order-2">

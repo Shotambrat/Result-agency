@@ -22,7 +22,7 @@ module.exports = {
         "header-text": 'rgba(25, 19, 89)',
         "button-color": '#7B72EB',
         "uslugi-text": "#191359",
-        "footer-icon": "#E1306C",
+        "footer-icon": "#7B72EB",
         "rectangle": "#B6B3E8",
       },
       fontFamily: {

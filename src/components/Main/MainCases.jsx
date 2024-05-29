@@ -57,7 +57,7 @@ const MainCases = () => {
       <div className="grid grid-cols-2 sm:grid-cols-3 p-[0.625rem] sm:p-0 gap-x-[0.625rem] xl:gap-x-5 gap-y-5">
         {cases1.map((elem, index) => (
           <div key={index} className="">
-            <div className="h-[6.5rem] rounded-[7.39px] lg:h-56 border-[1px] border-solid border-[4A448E]"></div>
+            <div className="h-[6.5rem] rounded-[7.39px] lg:rounded-3xl lg:h-56 border-[1px] border-solid border-[4A448E]"></div>
             <h4 className="text-[#191359] font-medium md:font-semibold text-[20px] md:text-[24px] mt-2">
               {elem.title}
             </h4>

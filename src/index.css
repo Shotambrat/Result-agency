@@ -32,3 +32,19 @@ code {
     transform: scale(0.90);
   }
 }
+
+.container-with-blur {
+  position: relative;
+  display: grid;
+}
+
+.container-with-blur::before {
+  content: '';
+  grid-area: 1 / 1 / 2 / 2;
+  background: inherit;
+  filter: blur(10px); /* Adjust the blur amount as needed */
+}
+
+.container-with-blur > *:not(:first-child) {
+  grid-area: 1 / 1 / 2 / 2;
+}

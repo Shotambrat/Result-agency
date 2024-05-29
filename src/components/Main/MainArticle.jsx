@@ -25,7 +25,7 @@ const MainArticle = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-[0.625rem] gap-x-5 ">
         {articles.map((article, index) => (
           <div key={index} className="text-white">
-            <div className="p-4 bg-[#7B72EB] rounded-[14.32px]">
+            <div className="p-4 bg-[#7B72EB] rounded-[14.32px] lg:rounded-3xl">
               <div className="w-full h-auto mb-5 flex items-center justify-center ">
                 <img src={Monitor} alt="monitor" />
               </div>
