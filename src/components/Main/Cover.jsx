@@ -46,7 +46,7 @@ const Cover = () => {
           <h1 className="font-semibold text-[36px] xs:text-[44px] sm:text-[48px] md:text-[52px] 2xl:text-[52px] text-[#191359] lg:font-semibold text-center font-roboto-flex leading-9 xs:leading-[3rem]">
             МЕДИЦИНСКИЙ МАРКЕТИНГ & IT
           </h1>
-          <h4 className="text-[#000000] text-[17px] xs:text-[20px] sm:text-[22px] md:text-[24px] lg:text-[28px] lg:px-4 font-regular mt-7 md:mt-12 mx-5 sm:mx-9 md:mx-12 text-center leading-9">
+          <h4 className="text-[#000000] text-[16px] xs:text-[20px] sm:text-[22px] md:text-[24px] lg:text-[28px] lg:px-4 font-regular mt-7 md:mt-12 mx-5 sm:mx-9 md:mx-12 text-center leading-5 xl:leading-9">
             Result Agency эффективно продвигает клиники, фармацевтические
             предприятия, медицинских специалистов и другие компании
           </h4>
@@ -58,7 +58,7 @@ const Cover = () => {
           >
             <button
               onClick={openModal}
-              className="px-6 py-4 pt-3 border border-solid text-black text-[20px] xs:text-[21px] 2xl:text-[22px] font-normal border-button-color rounded-[40px] text-center hover:bg-gradient-to-br w-full h-full focus:ring-2 focus:ring-offset-2 focus:ring-violet-200 active:animate-pulseText"
+              className="px-6 py-2 xl:py-4 pt-3 align-middle border border-solid text-black text-[20px] xs:text-[21px] 2xl:text-[22px] font-normal border-button-color rounded-[40px] text-center hover:bg-gradient-to-br w-full h-full focus:ring-2 focus:ring-offset-2 focus:ring-violet-200 active:animate-pulseText"
             >
               Оставить заявку
             </button>
