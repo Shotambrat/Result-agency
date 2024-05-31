@@ -1,14 +1,27 @@
-import React, { useRef } from "react";
+import React, { useState } from "react";
 import Seo from "../../assets/img/seo.png";
 import Smm from "../../assets/img/smm.png";
 import SiteDev from "../../assets/img/SiteDev.png";
 import Brand from "../../assets/img/brand.png";
 import Ads from "../../assets/img/Ads.png";
 import Bot from "../../assets/img/Bot.png";
+import Up from "../../assets/img/VectorUP.svg";
 
 const MainService = () => {
-  const iconRefs = useRef([]);
-  iconRefs.current = [];
+  const [services, setServices] = useState({
+    smm: false,
+    sites: false,
+    ads: false,
+    seo: false,
+    bot: false,
+    brand: false,
+  });
+
+  function handleChangeCard(name) {
+    setServices({ ...services, [name]: !services[name] });
+  }
+
+  console.log(services);
 
   return (
     <div>
@@ -60,67 +73,255 @@ const MainService = () => {
 
       <div className="mt-[1.875rem] lg:mt-[3rem] mx-[0.625rem] sm:mx-4 md:mx-10 xl:mx-20 2xl:mx-[6.875rem]">
         <div className="">
-          <h2 className="text-center md:text-left text-[28px] md:text-[32px] 2xl:text-[64px] font-bold">Услуги</h2>
+          <h2 className="text-center md:text-left text-[28px] md:text-[32px] 2xl:text-[64px] font-bold">
+            Услуги
+          </h2>
           <div className="mt-4 grid grid-cols-2 sm:grid-cols-3 gap-y-4 xl:gap-x-6 gap-x-[0.625rem]">
-            <div className="relative rounded-[13.14px] lg:rounded-3xl w-[45vw] sm:w-[30vw] md:w-[29vw] xl:w-[27.5vw] h-[11rem] md:h-[16rem] xl:h-[21rem] 2xl:h-[25rem] bg-gradient-to-b from-[#EAE9FD] to-[#7F75FF]">
-              <img
-                src={Smm}
-                alt="icons"
-                className="absolute right-0 sm:w-[9rem] md:w-[10rem] lg:w-[12rem] xl:w-[12rem]"
-              />
-              <p className="absolute left-[10%] bottom-[12%] font-medium text-[13px] sm:text-[15px] md:text-[18px] xl:text-[22px] 2xl:text-[40px] text-white leading-5 xl:leading-7 2xl:leading-9">
-                SMM
-              </p>
+            <div className="relative rounded-[13.14px] lg:rounded-3xl w-[45vw] sm:w-[30vw] md:w-[29vw] xl:w-[27.5vw] h-[11rem] md:h-[18rem] lg:h-[21rem] xl:h-[24rem] 2xl:h-[32rem] bg-gradient-to-b from-[#EAE9FD] to-[#7F75FF]">
+              {services["smm"] ? (
+                <div className="h-full py-4 px-4 grid grid-cols-1 bg-[#E2E0FD] rounded-[13.14px] lg:rounded-3xl">
+                  <a href="/" className="text-[8px] font-semibold block">
+                    Одностраничный сайт
+                  </a>
+                  <a href="/" className="text-[8px] font-semibold block">
+                    Одностраничный сайт Tilda
+                  </a>
+                  <a href="/" className="text-[8px] font-semibold block">
+                    Многостраничный сайт
+                  </a>
+                  <a href="/" className="text-[8px] font-semibold block">
+                    Многостраничный сайт
+                  </a>
+                  <a href="/" className="text-[8px] font-semibold block">
+                    Многостраничный сайт Tilda
+                  </a>
+                  <a href="/" className="text-[8px] font-semibold block">
+                    Другой сайт
+                  </a>
+                  <div
+                    className="absolute bottom-4 right-4 w-8 h-auto"
+                    onClick={() => handleChangeCard("smm")}
+                  >
+                    <img src={Up} alt="Arrow up" />
+                  </div>
+                </div>
+              ) : (
+                <div onClick={() => handleChangeCard("smm")}>
+                  <img
+                    src={Smm}
+                    alt="icons"
+                    className="absolute right-0 sm:w-[9rem] md:w-[10rem] lg:w-[12rem] xl:w-[12rem]"
+                  />
+                  <p className="absolute left-[10%] bottom-[12%] font-medium text-[13px] sm:text-[15px] md:text-[18px] xl:text-[22px] 2xl:text-[40px] text-white leading-5 xl:leading-7 2xl:leading-9">
+                    SMM
+                  </p>
+                </div>
+              )}
             </div>
-            <div className="relative rounded-[13.14px] lg:rounded-3xl w-[45vw] sm:w-[30vw] md:w-[29vw] xl:w-[27.5vw] h-[11rem] md:h-[16rem] xl:h-[21rem] 2xl:h-[25rem] bg-gradient-to-b from-[#EAE9FD] to-[#7F75FF]">
-              <img
-                src={SiteDev}
-                alt="icons"
-                className="absolute right-0 sm:w-[9rem] md:w-[10rem] xl:w-[12rem]"
-              />
-              <p className="absolute left-[10%] bottom-[12%] font-medium text-[13px] sm:text-[15px] md:text-[18px] xl:text-[22px] 2xl:text-[40px] text-white leading-5 xl:leading-7 2xl:leading-9">
-                Разработка <br /> сайтов
-              </p>
+            <div className="relative rounded-[13.14px] lg:rounded-3xl w-[45vw] sm:w-[30vw] md:w-[29vw] xl:w-[27.5vw] h-[11rem] md:h-[18rem] lg:h-[21rem] xl:h-[24rem] 2xl:h-[32rem] bg-gradient-to-b from-[#EAE9FD] to-[#7F75FF]">
+              {services["sites"] ? (
+                <div className="h-full py-4 px-4 grid grid-cols-1 bg-[#E2E0FD] rounded-[13.14px] lg:rounded-3xl">
+                  <a href="/" className="text-[12px] font-semibold block">
+                    Одностраничный сайт
+                  </a>
+                  <a href="/" className="text-[12px] font-semibold block">
+                    Одностраничный сайт Tilda
+                  </a>
+                  <a href="/" className="text-[12px] font-semibold block">
+                    Многостраничный сайт
+                  </a>
+                  <a href="/" className="text-[12px] font-semibold block">
+                    Многостраничный сайт
+                  </a>
+                  <a href="/" className="text-[12px] font-semibold block">
+                    Многостраничный сайт Tilda
+                  </a>
+                  <a href="/" className="text-[12px] font-semibold block">
+                    Другой сайт
+                  </a>
+                  <div
+                    className="absolute bottom-4 right-4 w-8 h-auto"
+                    onClick={() => handleChangeCard("sites")}
+                  >
+                    <img src={Up} alt="Arrow up" />
+                  </div>
+                </div>
+              ) : (
+                <div onClick={() => handleChangeCard("sites")}>
+                  <img
+                    src={SiteDev}
+                    alt="icons"
+                    className="absolute right-0 sm:w-[9rem] md:w-[10rem] xl:w-[12rem]"
+                  />
+                  <p className="absolute left-[10%] bottom-[12%] font-medium text-[13px] sm:text-[15px] md:text-[18px] xl:text-[22px] 2xl:text-[40px] text-white leading-5 xl:leading-7 2xl:leading-9">
+                    Разработка <br /> сайтов
+                  </p>
+                </div>
+              )}
             </div>
-            <div className="relative rounded-[13.14px] lg:rounded-3xl w-[45vw] sm:w-[30vw] md:w-[29vw] xl:w-[27.5vw] h-[11rem] md:h-[16rem] xl:h-[21rem] 2xl:h-[25rem] bg-gradient-to-b from-[#EAE9FD] to-[#7F75FF]">
-              <img
-                src={Seo}
-                alt="icons"
-                className="absolute right-0 top-4 sm:w-[9rem] md:w-[10rem] lg:w-[12rem] xl:w-[12rem]"
-              />
-              <p className="absolute left-[10%] bottom-[12%] font-medium text-[13px] sm:text-[15px] md:text-[18px] xl:text-[22px] 2xl:text-[40px] text-white leading-5 xl:leading-7 2xl:leading-9">
-                SEO
-              </p>
+            <div className="relative rounded-[13.14px] lg:rounded-3xl w-[45vw] sm:w-[30vw] md:w-[29vw] xl:w-[27.5vw] h-[11rem] md:h-[18rem] lg:h-[21rem] xl:h-[24rem] 2xl:h-[32rem] bg-gradient-to-b from-[#EAE9FD] to-[#7F75FF]">
+              {services["seo"] ? (
+                <div className="h-full py-4 px-4 grid grid-cols-1 bg-[#E2E0FD] rounded-[13.14px] lg:rounded-3xl">
+                  <a href="/" className="text-[12px] font-semibold block">
+                    Одностраничный сайт
+                  </a>
+                  <a href="/" className="text-[12px] font-semibold block">
+                    Одностраничный сайт Tilda
+                  </a>
+                  <a href="/" className="text-[12px] font-semibold block">
+                    Многостраничный сайт
+                  </a>
+                  <a href="/" className="text-[12px] font-semibold block">
+                    Многостраничный сайт
+                  </a>
+                  <a href="/" className="text-[12px] font-semibold block">
+                    Многостраничный сайт Tilda
+                  </a>
+                  <a href="/" className="text-[12px] font-semibold block">
+                    Другой сайт
+                  </a>
+                  <div
+                    className="absolute bottom-4 right-4 w-8 h-auto"
+                    onClick={() => handleChangeCard("seo")}
+                  >
+                    <img src={Up} alt="Arrow up" />
+                  </div>
+                </div>
+              ) : (
+                <div onClick={() => handleChangeCard("seo")}>
+                  <img
+                    src={Seo}
+                    alt="icons"
+                    className="absolute right-0 top-4 sm:w-[9rem] md:w-[10rem] lg:w-[12rem] xl:w-[12rem]"
+                  />
+                  <p className="absolute left-[10%] bottom-[12%] font-medium text-[13px] sm:text-[15px] md:text-[18px] xl:text-[22px] 2xl:text-[40px] text-white leading-5 xl:leading-7 2xl:leading-9">
+                    SEO
+                  </p>
+                </div>
+              )}
             </div>
-            <div className="relative rounded-[13.14px] lg:rounded-3xl w-[45vw] sm:w-[30vw] md:w-[29vw] xl:w-[27.5vw] h-[11rem] md:h-[16rem] xl:h-[21rem] 2xl:h-[25rem] bg-gradient-to-b from-[#EAE9FD] to-[#7F75FF]">
-              <img
-                src={Bot}
-                alt="icons"
-                className="absolute right-0 sm:w-[9rem] md:w-[10rem] xl:w-[12rem]"
-              /> 
-              <p className="absolute left-[10%] bottom-[12%] font-medium text-[13px] sm:text-[15px] md:text-[18px] xl:text-[22px] 2xl:text-[40px] text-white leading-5 xl:leading-7 2xl:leading-9">
-                Разработка <br /> Telegram-ботов
-              </p>
+            <div className="relative rounded-[13.14px] lg:rounded-3xl w-[45vw] sm:w-[30vw] md:w-[29vw] xl:w-[27.5vw] h-[11rem] md:h-[18rem] lg:h-[21rem] xl:h-[24rem] 2xl:h-[32rem] bg-gradient-to-b from-[#EAE9FD] to-[#7F75FF]">
+              {services["bot"] ? (
+                <div className="h-full py-4 px-4 grid grid-cols-1 bg-[#E2E0FD] rounded-[13.14px] lg:rounded-3xl">
+                  <a href="/" className="text-[12px] font-semibold block">
+                    Одностраничный сайт
+                  </a>
+                  <a href="/" className="text-[12px] font-semibold block">
+                    Одностраничный сайт Tilda
+                  </a>
+                  <a href="/" className="text-[12px] font-semibold block">
+                    Многостраничный сайт
+                  </a>
+                  <a href="/" className="text-[12px] font-semibold block">
+                    Многостраничный сайт
+                  </a>
+                  <a href="/" className="text-[12px] font-semibold block">
+                    Многостраничный сайт Tilda
+                  </a>
+                  <a href="/" className="text-[12px] font-semibold block">
+                    Другой сайт
+                  </a>
+                  <div
+                    className="absolute bottom-4 right-4 w-8 h-auto"
+                    onClick={() => handleChangeCard("bot")}
+                  >
+                    <img src={Up} alt="Arrow up" />
+                  </div>
+                </div>
+              ) : (
+                <div onClick={() => handleChangeCard("bot")}>
+                  <img
+                    src={Bot}
+                    alt="icons"
+                    className="absolute right-0 sm:w-[9rem] md:w-[10rem] xl:w-[12rem]"
+                  />
+                  <p className="absolute left-[10%] bottom-[12%] font-medium text-[13px] sm:text-[15px] md:text-[18px] xl:text-[22px] 2xl:text-[40px] text-white leading-5 xl:leading-7 2xl:leading-9">
+                    Разработка <br /> Telegram-ботов
+                  </p>
+                </div>
+              )}
             </div>
-            <div className="relative rounded-[13.14px] lg:rounded-3xl w-[45vw] sm:w-[30vw] md:w-[29vw] xl:w-[27.5vw] h-[11rem] md:h-[16rem] xl:h-[21rem] 2xl:h-[25rem] bg-gradient-to-b from-[#EAE9FD] to-[#7F75FF]">
-              <img
-                src={Ads}
-                alt="icons"
-                className="absolute right-0 sm:w-[9rem] md:w-[10rem] xl:w-[12rem]"
-              />
-              <p className="absolute left-[10%] bottom-[12%] font-medium text-[13px] sm:text-[15px] md:text-[18px] xl:text-[22px] 2xl:text-[40px] text-white leading-5 xl:leading-7 2xl:leading-9">
-                Запуск <br /> рекламы
-              </p>
+            <div className="relative rounded-[13.14px] lg:rounded-3xl w-[45vw] sm:w-[30vw] md:w-[29vw] xl:w-[27.5vw] h-[11rem] md:h-[18rem] lg:h-[21rem] xl:h-[24rem] 2xl:h-[32rem] bg-gradient-to-b from-[#EAE9FD] to-[#7F75FF]">
+              {services["ads"] ? (
+                <div className="h-full py-4 px-4 grid grid-cols-1 bg-[#E2E0FD] rounded-[13.14px] lg:rounded-3xl">
+                  <a href="/" className="text-[12px] font-semibold block">
+                    Одностраничный сайт
+                  </a>
+                  <a href="/" className="text-[12px] font-semibold block">
+                    Одностраничный сайт Tilda
+                  </a>
+                  <a href="/" className="text-[12px] font-semibold block">
+                    Многостраничный сайт
+                  </a>
+                  <a href="/" className="text-[12px] font-semibold block">
+                    Многостраничный сайт
+                  </a>
+                  <a href="/" className="text-[12px] font-semibold block">
+                    Многостраничный сайт Tilda
+                  </a>
+                  <a href="/" className="text-[12px] font-semibold block">
+                    Другой сайт
+                  </a>
+                  <div
+                    className="absolute bottom-4 right-4 w-8 h-auto"
+                    onClick={() => handleChangeCard("ads")}
+                  >
+                    <img src={Up} alt="Arrow up" />
+                  </div>
+                </div>
+              ) : (
+                <div onClick={() => handleChangeCard("ads")}>
+                  <img
+                    src={Ads}
+                    alt="icons"
+                    className="absolute right-0 sm:w-[9rem] md:w-[10rem] xl:w-[12rem]"
+                  />
+                  <p className="absolute left-[10%] bottom-[12%] font-medium text-[13px] sm:text-[15px] md:text-[18px] xl:text-[22px] 2xl:text-[40px] text-white leading-5 xl:leading-7 2xl:leading-9">
+                    Запуск <br /> рекламы
+                  </p>
+                </div>
+              )}
             </div>
-            <div className="relative rounded-[13.14px] w-[45vw] sm:w-[30vw] md:w-[29vw] xl:w-[27.5vw] h-[11rem] md:h-[16rem] xl:h-[21rem] 2xl:h-[25rem] bg-gradient-to-b from-[#EAE9FD] to-[#7F75FF]">
-              <img
-                src={Brand}
-                alt="icons"
-                className="absolute right-0 sm:w-[9rem] lg:rounded-3xl md:w-[10rem] lg:w-[12rem] xl:w-[12rem]"
-              />
-              <p className="absolute left-[10%] bottom-[12%] font-medium text-[13px] sm:text-[15px] md:text-[18px] xl:text-[22px] 2xl:text-[40px] text-white leading-5 xl:leading-7 2xl:leading-9">
-                Брендинг
-              </p>
+            <div className="relative rounded-[13.14px] w-[45vw] sm:w-[30vw] md:w-[29vw] xl:w-[27.5vw] h-[11rem] md:h-[18rem] lg:h-[21rem] xl:h-[24rem] 2xl:h-[32rem] bg-gradient-to-b from-[#EAE9FD] to-[#7F75FF]">
+              {services["brand"] ? (
+                <div className="h-full py-4 px-4 grid grid-cols-1 bg-[#E2E0FD] rounded-[13.14px] lg:rounded-3xl">
+                  <a href="/" className="text-[12px] font-semibold block">
+                    Одностраничный сайт
+                  </a>
+                  <a href="/" className="text-[12px] font-semibold block">
+                    Одностраничный сайт Tilda
+                  </a>
+                  <a href="/" className="text-[12px] font-semibold block">
+                    Многостраничный сайт
+                  </a>
+                  <a href="/" className="text-[12px] font-semibold block">
+                    Многостраничный сайт
+                  </a>
+                  <a href="/" className="text-[12px] font-semibold block">
+                    Многостраничный сайт Tilda
+                  </a>
+                  <a href="/" className="text-[12px] font-semibold block">
+                    Другой сайт
+                  </a>
+                  <div
+                    className="absolute bottom-4 right-4 w-8 h-auto"
+                    onClick={() => handleChangeCard("brand")}
+                  >
+                    <img src={Up} alt="Arrow up" />
+                  </div>
+                </div>
+              ) : (
+                <div onClick={() => handleChangeCard("brand")}>
+                  <img
+                    src={Brand}
+                    alt="icons"
+                    className="absolute right-0 sm:w-[9rem] lg:rounded-3xl md:w-[10rem] lg:w-[12rem] xl:w-[12rem]"
+                  />
+                  <p className="absolute left-[10%] bottom-[12%] font-medium text-[13px] sm:text-[15px] md:text-[18px] xl:text-[22px] 2xl:text-[40px] text-white leading-5 xl:leading-7 2xl:leading-9">
+                    Брендинг
+                  </p>
+                </div>
+              )}
             </div>
           </div>
         </div>
