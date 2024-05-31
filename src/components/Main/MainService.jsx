@@ -1,8 +1,8 @@
 import React, { useRef } from "react";
-import Seo from "../../assets/img/Seo.png";
-import Smm from "../../assets/img/Smm.png";
+import Seo from "../../assets/img/seo.png";
+import Smm from "../../assets/img/smm.png";
 import SiteDev from "../../assets/img/SiteDev.png";
-import Brand from "../../assets/img/Brand.png";
+import Brand from "../../assets/img/brand.png";
 import Ads from "../../assets/img/Ads.png";
 import Bot from "../../assets/img/Bot.png";
 
