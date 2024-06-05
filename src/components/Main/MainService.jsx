@@ -71,7 +71,7 @@ const MainService = () => {
 
       <div className="mt-[1.875rem] lg:mt-[3rem]">
         <div className="">
-          <h2 className="text-center md:text-left text-[28px] md:text-[32px] 2xl:text-[64px] font-bold">
+          <h2 className="text-center md:text-left text-[28px] md:text-[32px] 2xl:text-[64px] font-bold text-headings-color">
             Услуги
           </h2>
           <div className="mt-4 grid grid-cols-2 sm:grid-cols-3 gap-y-4 xl:gap-x-6 gap-x-[0.625rem] lg:gap-x-[1rem]">

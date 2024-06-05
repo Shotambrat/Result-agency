@@ -25,6 +25,8 @@ module.exports = {
         "uslugi-text": "#191359",
         "footer-icon": "#7B72EB",
         "rectangle": "#B6B3E8",
+        "headings-color": "#191359",
+        "how-we-work-color": "#4A448E"
       },
       fontFamily: {
         'roboto-flex': ['"Roboto Flex"', 'sans-serif'],

@@ -3,6 +3,50 @@ import InternetWindow from "../../assets/img/howWorkComp.svg";
 import downArrow from "../../assets/img/down-arrow.svg";
 
 const HowWeWork = () => {
+  let data = [
+    {
+      title: "Личная беседа и бриф",
+      subtitle: `Обсуждение ваших предпочтений и целей, и объяснение наших условий и
+      задач с последующим формированием детального брифа, включая ключевые
+      аспекты будущего проекта`,
+      style: "md:bottom-[8%] md:left-auto md:right-[-30px] md:-rotate-90",
+    },
+    {
+      title: "Анализ",
+      subtitle: `Запуск углубленного исследования рынка и аудитории клиента.
+      Определение сильных сторон и возможностей продвижения на фоне
+      конкурентов. Анализ целевой аудитории и ее потребностей`,
+      style: "",
+    },
+    {
+      title: "Разработка проекта",
+      subtitle: `Разработка стратегии, создание контента, адаптированного под
+      аудиторию. Контроль проекта для обеспечения согласованной и
+      целенаправленной работы`,
+      style: "md:rotate-90 md:bottom-[7%] md:left-[-30px]",
+    },
+    {
+      title: "Утверждение",
+      subtitle: `Согласование конечного варианта стратегии и креатива с клиентом.
+      Внесение корректировок по замечаниям для достижения идеального
+      результата`,
+      style: "",
+    },
+    {
+      title: "Запуск проекта",
+      subtitle: `Официальный старт кампании. Мониторинг эффективности запущенных
+      мероприятий, корректировка стратегии в реальном времени для
+      максимального охвата и вовлечения`,
+      style: "md:bottom-[8%] md:left-auto md:right-[-30px] md:-rotate-90",
+    },
+    {
+      title: "Настройка рекламы",
+      subtitle: `Запуск рекламных кампаний в социальных сетях и на других платформах.
+      Применение таргетинга и ретаргетинга для максимизации ROMI и
+      эффективной доставки ключевых сообщений целевой аудитории`,
+      style: "",
+    },
+  ];
   return (
     <div
       style={{
@@ -17,9 +61,9 @@ const HowWeWork = () => {
         <img
           src={InternetWindow}
           alt="internet-window"
-          className="h-[6rem] xs:h-[8rem] sm:h-[12rem] 2xl:h-[24rem] col-span-2 sm:col-span-1 sm:row-span-2"
+          className="h-[6rem] xs:h-[8rem] sm:h-[12rem] lg:h-[16rem] 2xl:h-[24rem] col-span-2 sm:col-span-1 sm:row-span-2 mx-auto"
         />
-        <h3 className="text-[#4a448e ] pr-2 text-[13px] xs:text-[15px] md:text-[20px] 2xl:text-[32px] col-span-3 sm:col-span-1 leading-4 md:leading-6 2xl:leading-10">
+        <h3 className="text-how-we-work-color pr-2 xl:pr-16 text-[13px] xs:text-[15px] md:text-[20px] xl:text-[24px] 2xl:text-[32px] col-span-3 sm:col-span-1 leading-4 md:leading-6 2xl:leading-10">
           Заполните заявку и получите экспертные рекомендации для повышения
           эффективности вашего бизнеса – абсолютно бесплатно!
         </h3>
@@ -29,8 +73,8 @@ const HowWeWork = () => {
           </button>
         </div>
       </div>
-      <div className="mx-[0.4375rem] xl:mb-8 2xl:mb-12 md:px-4 lg:px-8 xl:px-[8%] mt-10 grid grid-cols-1 sm:px-24 md:grid-cols-2 md:gap-x-[38px] gap-y-16 md:gap-y-[38px] pb-[13px]">
-        <div className="order-1 relative px-[0.8125rem] border-2 border-solid border-[#ffffff] rounded-[14px] lg:rounded-3xl">
+      <div className=" mx-[0.4375rem] xl:mb-8 2xl:mb-12 md:px-4 lg:px-8 xl:px-[8%] mt-10 grid grid-cols-1 sm:px-24 md:grid-cols-2 md:gap-x-[38px] gap-y-16 md:gap-y-[38px] pb-[13px] rounded-[14px] lg:rounded-3xl">
+        <div className="bg-white bg-opacity-40 order-1 relative px-[0.8125rem] lg:px-8 2xl:pl-0 2xl:pr-4 border-[1px] md:border-2 border-solid border-[#ffffff] rounded-[14px] lg:rounded-3xl">
           <div className="absolute top-[-12%] left-[calc(50%-1.25rem)] md:top-[calc(50%-1.25rem)] 2xl:top-[calc(50%-2rem)] md:left-[-1.3rem] 2xl:left-[-2.2rem] bg-[#7B72EB] border-[4px] border-solid border-[#cccccc] w-10 h-10 2xl:w-16 2xl:h-16 rounded-full">
             <p className="text-[19.2px] 2xl:text-[40px] font-extrabold text-white text-center mt-[2px] 2xl:mt-0">
               1
@@ -48,7 +92,7 @@ const HowWeWork = () => {
             <img src={downArrow} alt="down arrow" className="w-4" />
           </div>
         </div>
-        <div className="order-2 relative px-[0.8125rem] border-2 border-solid border-[#ffffff] rounded-[14px]  lg:rounded-3xl">
+        <div className="bg-white bg-opacity-40 order-2 relative px-[0.8125rem] lg:px-8 2xl:pl-0 2xl:pr-4 border-[1px] md:border-2 border-solid border-[#ffffff] rounded-[14px]  lg:rounded-3xl">
           <div className="absolute top-[-12%] left-[calc(50%-1.25rem)] md:top-[calc(50%-1.25rem)] 2xl:top-[calc(50%-2rem)] md:left-[-1.3rem] 2xl:left-[-2.2rem] bg-[#7B72EB] border-[4px] border-solid border-[#cccccc] w-10 h-10 2xl:w-16 2xl:h-16 rounded-full">
             <p className="text-[19.2px] 2xl:text-[40px] font-extrabold text-white text-center mt-[2px] 2xl:mt-0">
               2
@@ -66,7 +110,7 @@ const HowWeWork = () => {
             <img src={downArrow} alt="down arrow" className="w-4" />
           </div>
         </div>
-        <div className="order-3 md:order-4 relative px-[0.8125rem] border-2 border-solid border-[#ffffff] rounded-[14px]  lg:rounded-3xl">
+        <div className="bg-white bg-opacity-40 order-3 md:order-4 relative px-[0.8125rem] lg:px-8 2xl:pl-0 2xl:pr-4 border-[1px] md:border-2 border-solid border-[#ffffff] rounded-[14px]  lg:rounded-3xl">
           <div className="absolute top-[-12%] left-[calc(50%-1.25rem)] md:top-[calc(50%-1.25rem)] 2xl:top-[calc(50%-2rem)] md:left-[-1.3rem] 2xl:left-[-2.2rem] bg-[#7B72EB] border-[4px] border-solid border-[#cccccc] w-10 h-10 2xl:w-16 2xl:h-16 rounded-full">
             <p className="text-[19.2px] 2xl:text-[40px] font-extrabold text-white text-center mt-[2px] 2xl:mt-0">
               3
@@ -84,7 +128,7 @@ const HowWeWork = () => {
             <img src={downArrow} alt="down arrow" className="w-4" />
           </div>
         </div>
-        <div className="order-4 md:order-3 relative px-[0.8125rem] border-2 border-solid border-[#ffffff] rounded-[14px]  lg:rounded-3xl">
+        <div className="bg-white bg-opacity-40 order-4 md:order-3 relative px-[0.8125rem] lg:px-8 2xl:pl-0 2xl:pr-4 border-[1px] md:border-2 border-solid border-[#ffffff] rounded-[14px]  lg:rounded-3xl">
           <div className="absolute top-[-12%] left-[calc(50%-1.25rem)] md:top-[calc(50%-1.25rem)] 2xl:top-[calc(50%-2rem)] md:left-[-1.3rem] 2xl:left-[-2.2rem] bg-[#7B72EB] border-[4px] border-solid border-[#cccccc] w-10 h-10 2xl:w-16 2xl:h-16 rounded-full">
             <p className="text-[19.2px] 2xl:text-[40px] font-extrabold text-white text-center mt-[2px] 2xl:mt-0">
               4
@@ -102,7 +146,7 @@ const HowWeWork = () => {
             <img src={downArrow} alt="down arrow" className="w-4" />
           </div>
         </div>
-        <div className="order-5 relative px-[0.8125rem] border-2 border-solid border-[#ffffff] rounded-[14px]  lg:rounded-3xl">
+        <div className="bg-white bg-opacity-40 order-5 relative px-[0.8125rem] border-[1px] lg:px-8 2xl:pl-0 2xl:pr-4 md:border-2 border-solid  border-[#ffffff] rounded-[14px]  lg:rounded-3xl">
           <div className="absolute top-[-12%] left-[calc(50%-1.25rem)] md:top-[calc(50%-1.25rem)] 2xl:top-[calc(50%-2rem)] md:left-[-1.3rem] 2xl:left-[-2.2rem] bg-[#7B72EB] border-[4px] border-solid border-[#cccccc] w-10 h-10 2xl:w-16 2xl:h-16 rounded-full">
             <p className="text-[19.2px] 2xl:text-[40px] font-extrabold text-white text-center mt-[2px] 2xl:mt-0">
               5
@@ -120,7 +164,7 @@ const HowWeWork = () => {
             <img src={downArrow} alt="down arrow" className="w-4" />
           </div>
         </div>
-        <div className="order-6 relative px-[0.8125rem] border-2 border-solid border-[#ffffff] rounded-[14px]  lg:rounded-3xl">
+        <div className="bg-white bg-opacity-40 order-6 relative px-[0.8125rem] border-[1px] lg:px-8 2xl:pl-0 2xl:pr-4 md:border-2 border-solid border-[#ffffff] rounded-[14px]  lg:rounded-3xl">
           <div className="absolute top-[-12%] left-[calc(50%-1.25rem)] md:top-[calc(50%-1.25rem)] 2xl:top-[calc(50%-2rem)] md:left-[-1.3rem] 2xl:left-[-2.2rem] bg-[#7B72EB] border-[4px] border-solid border-[#cccccc] w-10 h-10 2xl:w-16 2xl:h-16 rounded-full">
             <p className="text-[19.2px] 2xl:text-[40px] font-extrabold text-white text-center mt-[2px] 2xl:mt-0">
               6
