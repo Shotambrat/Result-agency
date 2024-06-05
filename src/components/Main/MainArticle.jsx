@@ -18,7 +18,7 @@ const MainArticle = () => {
   ];
 
   return (
-    <div className="mx-[0.625rem] lg:mt-[3rem] sm:mx-4 md:mx-10 xl:mx-20 2xl:mx-[6.875rem] mt-8">
+    <div className="lg:mt-[3rem] mx-[0.625rem] sm:mx-4 md:mx-10 xl:mx-20 2xl:mx-[6.875rem] 3xl:max-w-[1500px] 3xl:mx-auto mt-8">
       <h2 className="text-[28px] sm:text-[32px] 2xl:text-[64px] font-semibold text-center mb-4 sm:text-left">
         Новые статьи
       </h2>

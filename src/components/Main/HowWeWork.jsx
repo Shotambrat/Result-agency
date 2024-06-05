@@ -1,5 +1,5 @@
 import React from "react";
-import InternetWindow from "../../assets/img/howWorkComp.png";
+import InternetWindow from "../../assets/img/howWorkComp.svg";
 import downArrow from "../../assets/img/down-arrow.svg";
 
 const HowWeWork = () => {
@@ -8,7 +8,7 @@ const HowWeWork = () => {
       style={{
         backgroundImage: `linear-gradient(to bottom, #c6d4f1  0%, #e6dffc 100%)`,
       }}
-      className="rounded-[16px] lg:rounded-3xl overflow-hidden mx-[0.625rem] my-8 xs:px-8 sm:px-0 sm:mx-4 md:mx-10 xl:mx-20 2xl:mx-[6.875rem] lg:mt-[3rem]"
+      className="rounded-[16px] lg:rounded-3xl overflow-hidden my-8 xs:px-8 sm:px-0 mx-[0.625rem] sm:mx-4 md:mx-10 xl:mx-20 2xl:mx-[6.875rem] 3xl:max-w-[1500px] 3xl:mx-auto lg:mt-[3rem]"
     >
       <h2 className="text-[20px] xs:text-[24px] md:text-[30px] 2xl:text-[56px] font-bold text-center mt-4 xs:mt-6">
         Как работает наше агентство
@@ -19,7 +19,7 @@ const HowWeWork = () => {
           alt="internet-window"
           className="h-[6rem] xs:h-[8rem] sm:h-[12rem] 2xl:h-[24rem] col-span-2 sm:col-span-1 sm:row-span-2"
         />
-        <h3 className="text-[#4A448E] pr-2 text-[13px] xs:text-[15px] md:text-[20px] 2xl:text-[32px] col-span-3 sm:col-span-1 leading-6 2xl:leading-8">
+        <h3 className="text-[#4a448e ] pr-2 text-[13px] xs:text-[15px] md:text-[20px] 2xl:text-[32px] col-span-3 sm:col-span-1 leading-4 md:leading-6 2xl:leading-10">
           Заполните заявку и получите экспертные рекомендации для повышения
           эффективности вашего бизнеса – абсолютно бесплатно!
         </h3>
@@ -44,8 +44,8 @@ const HowWeWork = () => {
             задач с последующим формированием детального брифа, включая ключевые
             аспекты будущего проекта
           </p>
-          <div className="absolute bottom-[-40px] left-[45%] md:bottom-[8%] md:left-auto md:right-[-40px] md:-rotate-90">
-            <img src={downArrow} alt="down arrow" className="w-10" />
+          <div className="absolute bottom-[-40px] left-[calc(50%-8px)] md:bottom-[8%] md:left-auto md:right-[-30px] md:-rotate-90">
+            <img src={downArrow} alt="down arrow" className="w-4" />
           </div>
         </div>
         <div className="order-2 relative px-[0.8125rem] border-2 border-solid border-[#ffffff] rounded-[14px]  lg:rounded-3xl">
@@ -62,8 +62,8 @@ const HowWeWork = () => {
             Определение сильных сторон и возможностей продвижения на фоне
             конкурентов. Анализ целевой аудитории и ее потребностей
           </p>
-          <div className="absolute bottom-[-40px] left-[45%]">
-            <img src={downArrow} alt="down arrow" className="w-10" />
+          <div className="absolute bottom-[-40px] left-[calc(50%-8px)]">
+            <img src={downArrow} alt="down arrow" className="w-4" />
           </div>
         </div>
         <div className="order-3 md:order-4 relative px-[0.8125rem] border-2 border-solid border-[#ffffff] rounded-[14px]  lg:rounded-3xl">
@@ -80,8 +80,8 @@ const HowWeWork = () => {
             аудиторию. Контроль проекта для обеспечения согласованной и
             целенаправленной работы
           </p>
-          <div className="absolute bottom-[-40px] left-[45%] md:rotate-90 md:bottom-[7%] md:left-[-40px]">
-            <img src={downArrow} alt="down arrow" className="w-10" />
+          <div className="absolute bottom-[-40px] left-[calc(50%-8px)] md:rotate-90 md:bottom-[7%] md:left-[-30px]">
+            <img src={downArrow} alt="down arrow" className="w-4" />
           </div>
         </div>
         <div className="order-4 md:order-3 relative px-[0.8125rem] border-2 border-solid border-[#ffffff] rounded-[14px]  lg:rounded-3xl">
@@ -98,8 +98,8 @@ const HowWeWork = () => {
             Внесение корректировок по замечаниям для достижения идеального
             результата
           </p>
-          <div className="absolute bottom-[-40px] left-[45%]">
-            <img src={downArrow} alt="down arrow" className="w-10" />
+          <div className="absolute bottom-[-40px] left-[calc(50%-8px)]">
+            <img src={downArrow} alt="down arrow" className="w-4" />
           </div>
         </div>
         <div className="order-5 relative px-[0.8125rem] border-2 border-solid border-[#ffffff] rounded-[14px]  lg:rounded-3xl">
@@ -116,8 +116,8 @@ const HowWeWork = () => {
             мероприятий, корректировка стратегии в реальном времени для
             максимального охвата и вовлечения
           </p>
-          <div className="absolute bottom-[-40px] left-[45%] md:bottom-[8%] md:left-auto md:right-[-40px] md:-rotate-90">
-            <img src={downArrow} alt="down arrow" className="w-10" />
+          <div className="absolute bottom-[-40px] left-[calc(50%-8px)] md:bottom-[8%] md:left-auto md:right-[-30px] md:-rotate-90">
+            <img src={downArrow} alt="down arrow" className="w-4" />
           </div>
         </div>
         <div className="order-6 relative px-[0.8125rem] border-2 border-solid border-[#ffffff] rounded-[14px]  lg:rounded-3xl">

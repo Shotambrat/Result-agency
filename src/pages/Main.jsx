@@ -5,9 +5,8 @@ import MainCases from "../components/Main/MainCases";
 import HowWeWork from "../components/Main/HowWeWork";
 import OurPartners from "../components/Main/OurPartners";
 import MainArticle from "../components/Main/MainArticle";
-import Brif from "../components/Brif";
+import Brief from "../components/Brief";
 import Footer from "./Footer";
-import MapFooter from "../components/MapFooter";
 import { Element } from "react-scroll";
 
 const Main = () => {
@@ -25,7 +24,7 @@ const Main = () => {
       <HowWeWork />
       <OurPartners />
       <MainArticle />
-      <Brif />
+      <Brief />
       {/* <MapFooter /> */}
       <Element name="contacts">
         <Footer />

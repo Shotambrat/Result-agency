@@ -14,7 +14,7 @@ import Prime from "../../assets/img/Prime_MedicalCenter_logo.svg";
 
 const OurPartners = () => {
   return (
-    <div className="mx-[0.625rem] lg:mt-[3rem] sm:mx-4 md:mx-10 xl:mx-20 2xl:mx-[6.875rem] border-2 border-[#4A448E] border-opacity-40 border-solid rounded-[14.67px] lg:rounded-3xl">
+    <div className="mx-[0.625rem] sm:mx-4 md:mx-10 xl:mx-20 2xl:mx-[6.875rem] 3xl:max-w-[1500px] 3xl:mx-auto lg:mt-[3rem] border-2 border-[#4A448E] border-opacity-40 border-solid rounded-[14.67px] lg:rounded-3xl">
       <h2 className="text-center text-[26px] md:text-[30px] lg:text-[34px] 2xl:text-[64px] font-semibold pt-4 pb-[0.875rem] md:py-5 lg:py-6 border-b-2 border-solid border-[#4A448E] border-opacity-40">
         Наши партнеры
       </h2>

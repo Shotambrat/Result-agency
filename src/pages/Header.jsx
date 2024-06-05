@@ -34,12 +34,12 @@ const Header = () => {
 
   return (
     <header className="header w-[100vw] bg-white bg-opacity-30 backdrop-filter backdrop-blur-3xl fixed top-0 z-10">
-      <div className=" lg:max-w-7xl mx-auto px-[0.625rem] sm:px-6 lg:px-8">
-        <div className="flex items-center content-center justify-between h-16">
+      <div className=" lg:max-w-7xl mx-auto px-[0.625rem] sm:px-6 lg:px-[6.25rem]">
+        <div className="flex items-center content-center justify-between h-16 3xl:h-24">
           <div className="flex items-center">
             <div className="flex-shrink-0">
               <img
-                class="w-[5.45rem] h-[3.125rem] xs:w-[7.5rem] xs:h-[4rem] lg:h-[94] lg:w-[169]"
+                className="w-[5.45rem] h-[3.125rem] xs:w-[7.5rem] xs:h-[4rem] lg:h-[94px] lg:w-[169px]"
                 src={Logo}
                 alt="Логотип"
               />
@@ -66,7 +66,7 @@ const Header = () => {
                 to="home"
                 smooth={true}
                 duration={500}
-                class="text-header-text hover:text-blue-700 px-3 py-2 rounded-md text-sm font-medium cursor-pointer"
+                className="text-header-text hover:text-blue-700 px-3 py-2 rounded-md text-sm xl:text-lg font-medium cursor-pointer"
               >
                 О нас
               </Link>
@@ -74,7 +74,7 @@ const Header = () => {
                 to="services"
                 smooth={true}
                 duration={500}
-                class="text-header-text hover:text-blue-700 px-3 py-2 rounded-md text-sm font-medium cursor-pointer"
+                className="text-header-text hover:text-blue-700 px-3 py-2 rounded-md text-sm xl:text-lg font-medium cursor-pointer"
               >
                 Услуги
               </Link>
@@ -82,7 +82,7 @@ const Header = () => {
                 to="cases"
                 smooth={true}
                 duration={500}
-                class="text-header-text hover:text-blue-700 px-3 py-2 rounded-md text-sm font-medium cursor-pointer"
+                className="text-header-text hover:text-blue-700 px-3 py-2 rounded-md text-sm xl:text-lg font-medium cursor-pointer"
               >
                 Наши кейсы
               </Link>
@@ -90,14 +90,14 @@ const Header = () => {
                 to="contacts"
                 smooth={true}
                 duration={500}
-                class="text-header-text hover:text-blue-700 px-3 py-2 rounded-md text-sm font-medium cursor-pointer"
+                className="text-header-text hover:text-blue-700 px-3 py-2 rounded-md text-sm xl:text-lg font-medium cursor-pointer"
               >
                 Контакты
               </Link>
             </div>
           </div>
-          <div class="">
-            <div class="ml-4 flex items-center md:ml-6">
+          <div className="">
+            <div className="ml-4 flex items-center md:ml-6 xl:text-lg">
               <h1 className="hidden md:block">
                 <a href="Tel:+998900228073">+998900228073</a>
               </h1>
@@ -105,7 +105,7 @@ const Header = () => {
                 className="flex content-center ml-[1.1rem]"
                 id="container-language"
               >
-                <button className="flex items-center justify-end border-[1px] border-solid border-[#191359] rounded-[48px] pl-4 pr-2 py-1 ">
+                <button className="flex self-center items-center justify-end border-[1px] border-solid border-[#191359] rounded-[48px] pl-4 pr-2 h-6 md:py-1">
                   <p className="text-[#191359] text-[11px] font-light xs:text-[12px] md:text-[14px]">Русский</p>
                   <img src={LanLogo} alt="language icon" className="pl-2" />
                 </button>

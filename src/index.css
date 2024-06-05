@@ -8,12 +8,6 @@
   font-family: 'Roboto Flex', sans-serif;
 }
 
-html {
-  margin: 0;
-  padding: 0;
-  width: 100vw;
-}
-
 body {
   font-family: 'Roboto Flex', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
