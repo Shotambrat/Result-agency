@@ -31,8 +31,8 @@ module.exports = {
         "vivodBorder": "#b5aff5"
       },
       fontFamily: {
-        'roboto-flex': ['Roboto Flex', 'sans-serif'],
-        'abel': ['Abel', "sans-serif"]
+        'roboto-flex': ['"Roboto Flex"', 'sans-serif'],
+        'abel': ['"Abel"', "sans-serif"]
       },
     },
   },

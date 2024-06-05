@@ -10,7 +10,7 @@ const HowWeWork = () => {
       задач с последующим формированием детального брифа, включая ключевые
       аспекты будущего проекта`,
       style: "md:bottom-[8%] md:left-auto md:right-[-30px] md:-rotate-90",
-      order: "order-1"
+      order: "order-1",
     },
     {
       title: "Анализ",
@@ -18,7 +18,7 @@ const HowWeWork = () => {
       Определение сильных сторон и возможностей продвижения на фоне
       конкурентов. Анализ целевой аудитории и ее потребностей`,
       style: "",
-      order: "order-2"
+      order: "order-2",
     },
     {
       title: "Разработка проекта",
@@ -26,7 +26,7 @@ const HowWeWork = () => {
       аудиторию. Контроль проекта для обеспечения согласованной и
       целенаправленной работы`,
       style: "md:rotate-90 md:bottom-[7%] md:left-[-30px]",
-      order: "order-3 md:order-4"
+      order: "order-3 md:order-4",
     },
     {
       title: "Утверждение",
@@ -34,7 +34,7 @@ const HowWeWork = () => {
       Внесение корректировок по замечаниям для достижения идеального
       результата`,
       style: "",
-      order: "order-4 md:order-3"
+      order: "order-4 md:order-3",
     },
     {
       title: "Запуск проекта",
@@ -42,7 +42,7 @@ const HowWeWork = () => {
       мероприятий, корректировка стратегии в реальном времени для
       максимального охвата и вовлечения`,
       style: "md:bottom-[8%] md:left-auto md:right-[-30px] md:-rotate-90",
-      order: "order-5"
+      order: "order-5",
     },
     {
       title: "Настройка рекламы",
@@ -50,7 +50,7 @@ const HowWeWork = () => {
       Применение таргетинга и ретаргетинга для максимизации ROMI и
       эффективной доставки ключевых сообщений целевой аудитории`,
       style: "",
-      order: "order-6"
+      order: "order-6",
     },
   ];
   let dataLength = data.length;
@@ -59,7 +59,7 @@ const HowWeWork = () => {
       style={{
         backgroundImage: `linear-gradient(to bottom, #c6d4f1  0%, #e6dffc 100%)`,
       }}
-      className="rounded-[16px] lg:rounded-3xl overflow-hidden my-8 xs:px-8 sm:px-0 mx-[0.625rem] 3xl:max-w-[1500px] 3xl:mx-auto lg:mt-[3rem]"
+      className="rounded-[16px] lg:rounded-3xl overflow-hidden my-8 xs:px-8 sm:px-0 mx-[0.625rem] sm:mx-4 md:mx-10 xl:mx-20 2xl:mx-[6.875rem]  3xl:max-w-[1500px] 3xl:mx-auto lg:mt-[3rem]"
     >
       <h2 className="text-[20px] xs:text-[24px] md:text-[30px] 2xl:text-[56px] font-bold text-center mt-4 xs:mt-6">
         Как работает наше агентство
@@ -81,9 +81,11 @@ const HowWeWork = () => {
         </div>
       </div>
       <div className=" mx-[0.4375rem] xl:mb-8 2xl:mb-12 md:px-4 lg:px-8 xl:px-[8%] mt-10 grid grid-cols-1 sm:px-24 md:grid-cols-2 md:gap-x-[38px] gap-y-16 md:gap-y-[38px] pb-[13px] rounded-[14px] lg:rounded-3xl">
-      {data.map((data, index) => {
+        {data.map((data, index) => {
           return (
-            <div className={`bg-white bg-opacity-40 ${data.order} relative px-[0.8125rem] lg:px-8 2xl:pl-0 2xl:pr-4 border-[1px] md:border-2 border-solid border-[#ffffff] rounded-[14px] lg:rounded-3xl`}>
+            <div
+              className={`bg-white bg-opacity-40 ${data.order} relative px-[0.8125rem] lg:px-8 2xl:pl-0 2xl:pr-4 border-[1px] md:border-2 border-solid border-[#ffffff] rounded-[14px] lg:rounded-3xl`}
+            >
               <div className="absolute top-[-12%] left-[calc(50%-1.25rem)] md:top-[calc(50%-1.25rem)] 2xl:top-[calc(50%-2rem)] md:left-[-1.3rem] 2xl:left-[-2.2rem] bg-[#7B72EB] border-[4px] border-solid border-[#cccccc] w-10 h-10 2xl:w-16 2xl:h-16 rounded-full">
                 <p className="text-[19.2px] 2xl:text-[40px] font-extrabold text-white text-center mt-[2px] 2xl:mt-0">
                   {index + 1}

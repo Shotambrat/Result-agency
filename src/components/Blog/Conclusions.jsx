@@ -12,7 +12,7 @@ export default function Conclusions() {
       <h2 className="pt-11 text-[31.17px] font-semibold md:text-left md:ml-11">
         Выводы
       </h2>
-      <p className="mt-8 mx-11 mb-14 text-[18px] text-left">
+      <p className="font-[abel] mt-8 md:mt-6 mx-11 mb-14 text-[20px] text-left">
         Lorem ipsum dolor sit amet consectetur. Et elit interdum eget maecenas
         molestie in ac quisque. Sit nam congue turpis tellus tellus mattis
         vulputate. Cursus eu auctor nam aliquet quam. Risus feugiat volutpat
