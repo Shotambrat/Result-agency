@@ -10,6 +10,7 @@ const HowWeWork = () => {
       задач с последующим формированием детального брифа, включая ключевые
       аспекты будущего проекта`,
       style: "md:bottom-[8%] md:left-auto md:right-[-30px] md:-rotate-90",
+      order: "order-1"
     },
     {
       title: "Анализ",
@@ -17,6 +18,7 @@ const HowWeWork = () => {
       Определение сильных сторон и возможностей продвижения на фоне
       конкурентов. Анализ целевой аудитории и ее потребностей`,
       style: "",
+      order: "order-2"
     },
     {
       title: "Разработка проекта",
@@ -24,6 +26,7 @@ const HowWeWork = () => {
       аудиторию. Контроль проекта для обеспечения согласованной и
       целенаправленной работы`,
       style: "md:rotate-90 md:bottom-[7%] md:left-[-30px]",
+      order: "order-3 md:order-4"
     },
     {
       title: "Утверждение",
@@ -31,6 +34,7 @@ const HowWeWork = () => {
       Внесение корректировок по замечаниям для достижения идеального
       результата`,
       style: "",
+      order: "order-4 md:order-3"
     },
     {
       title: "Запуск проекта",
@@ -38,6 +42,7 @@ const HowWeWork = () => {
       мероприятий, корректировка стратегии в реальном времени для
       максимального охвата и вовлечения`,
       style: "md:bottom-[8%] md:left-auto md:right-[-30px] md:-rotate-90",
+      order: "order-5"
     },
     {
       title: "Настройка рекламы",
@@ -45,8 +50,10 @@ const HowWeWork = () => {
       Применение таргетинга и ретаргетинга для максимизации ROMI и
       эффективной доставки ключевых сообщений целевой аудитории`,
       style: "",
+      order: "order-6"
     },
   ];
+  let dataLength = data.length;
   return (
     <div
       style={{
@@ -74,111 +81,31 @@ const HowWeWork = () => {
         </div>
       </div>
       <div className=" mx-[0.4375rem] xl:mb-8 2xl:mb-12 md:px-4 lg:px-8 xl:px-[8%] mt-10 grid grid-cols-1 sm:px-24 md:grid-cols-2 md:gap-x-[38px] gap-y-16 md:gap-y-[38px] pb-[13px] rounded-[14px] lg:rounded-3xl">
-        <div className="bg-white bg-opacity-40 order-1 relative px-[0.8125rem] lg:px-8 2xl:pl-0 2xl:pr-4 border-[1px] md:border-2 border-solid border-[#ffffff] rounded-[14px] lg:rounded-3xl">
-          <div className="absolute top-[-12%] left-[calc(50%-1.25rem)] md:top-[calc(50%-1.25rem)] 2xl:top-[calc(50%-2rem)] md:left-[-1.3rem] 2xl:left-[-2.2rem] bg-[#7B72EB] border-[4px] border-solid border-[#cccccc] w-10 h-10 2xl:w-16 2xl:h-16 rounded-full">
-            <p className="text-[19.2px] 2xl:text-[40px] font-extrabold text-white text-center mt-[2px] 2xl:mt-0">
-              1
-            </p>
-          </div>
-          <h4 className="mt-[36px] md:mt-4 md:ml-8 2xl:ml-16 text-[#191359] font-semibold text-[18.21px] xs:text-[22px] 2xl:text-[34.34px]">
-            Личная беседа и бриф
-          </h4>
-          <p className="text-[13px] xs:text-[16px] 2xl:text-[21.46px] text-[#191359] mt-3 mb-4 md:ml-8 2xl:ml-16 2xl:mr-10 leading-5 2xl:leading-6">
-            Обсуждение ваших предпочтений и целей, и объяснение наших условий и
-            задач с последующим формированием детального брифа, включая ключевые
-            аспекты будущего проекта
-          </p>
-          <div className="absolute bottom-[-40px] left-[calc(50%-8px)] md:bottom-[8%] md:left-auto md:right-[-30px] md:-rotate-90">
-            <img src={downArrow} alt="down arrow" className="w-4" />
-          </div>
-        </div>
-        <div className="bg-white bg-opacity-40 order-2 relative px-[0.8125rem] lg:px-8 2xl:pl-0 2xl:pr-4 border-[1px] md:border-2 border-solid border-[#ffffff] rounded-[14px]  lg:rounded-3xl">
-          <div className="absolute top-[-12%] left-[calc(50%-1.25rem)] md:top-[calc(50%-1.25rem)] 2xl:top-[calc(50%-2rem)] md:left-[-1.3rem] 2xl:left-[-2.2rem] bg-[#7B72EB] border-[4px] border-solid border-[#cccccc] w-10 h-10 2xl:w-16 2xl:h-16 rounded-full">
-            <p className="text-[19.2px] 2xl:text-[40px] font-extrabold text-white text-center mt-[2px] 2xl:mt-0">
-              2
-            </p>
-          </div>
-          <h4 className="mt-[36px] md:mt-4 md:ml-8 2xl:ml-16 text-[#191359] font-semibold text-[18.21px] xs:text-[22px] 2xl:text-[34.34px]">
-            Анализ
-          </h4>
-          <p className="text-[13px] xs:text-[16px] 2xl:text-[21.46px] text-[#191359] mt-3 mb-4 md:ml-8 2xl:ml-16 2xl:mr-10 leading-5 2xl:leading-6">
-            Запуск углубленного исследования рынка и аудитории клиента.
-            Определение сильных сторон и возможностей продвижения на фоне
-            конкурентов. Анализ целевой аудитории и ее потребностей
-          </p>
-          <div className="absolute bottom-[-40px] left-[calc(50%-8px)]">
-            <img src={downArrow} alt="down arrow" className="w-4" />
-          </div>
-        </div>
-        <div className="bg-white bg-opacity-40 order-3 md:order-4 relative px-[0.8125rem] lg:px-8 2xl:pl-0 2xl:pr-4 border-[1px] md:border-2 border-solid border-[#ffffff] rounded-[14px]  lg:rounded-3xl">
-          <div className="absolute top-[-12%] left-[calc(50%-1.25rem)] md:top-[calc(50%-1.25rem)] 2xl:top-[calc(50%-2rem)] md:left-[-1.3rem] 2xl:left-[-2.2rem] bg-[#7B72EB] border-[4px] border-solid border-[#cccccc] w-10 h-10 2xl:w-16 2xl:h-16 rounded-full">
-            <p className="text-[19.2px] 2xl:text-[40px] font-extrabold text-white text-center mt-[2px] 2xl:mt-0">
-              3
-            </p>
-          </div>
-          <h4 className="mt-[36px] md:mt-4 md:ml-8 2xl:ml-16 text-[#191359] font-semibold text-[18.21px] xs:text-[22px] 2xl:text-[34.34px]">
-            Разработка проекта
-          </h4>
-          <p className="text-[13px] xs:text-[16px] 2xl:text-[21.46px] text-[#191359] mt-3 mb-4 md:ml-8 2xl:ml-16 2xl:mr-10 leading-5 2xl:leading-6">
-            Разработка стратегии, создание контента, адаптированного под
-            аудиторию. Контроль проекта для обеспечения согласованной и
-            целенаправленной работы
-          </p>
-          <div className="absolute bottom-[-40px] left-[calc(50%-8px)] md:rotate-90 md:bottom-[7%] md:left-[-30px]">
-            <img src={downArrow} alt="down arrow" className="w-4" />
-          </div>
-        </div>
-        <div className="bg-white bg-opacity-40 order-4 md:order-3 relative px-[0.8125rem] lg:px-8 2xl:pl-0 2xl:pr-4 border-[1px] md:border-2 border-solid border-[#ffffff] rounded-[14px]  lg:rounded-3xl">
-          <div className="absolute top-[-12%] left-[calc(50%-1.25rem)] md:top-[calc(50%-1.25rem)] 2xl:top-[calc(50%-2rem)] md:left-[-1.3rem] 2xl:left-[-2.2rem] bg-[#7B72EB] border-[4px] border-solid border-[#cccccc] w-10 h-10 2xl:w-16 2xl:h-16 rounded-full">
-            <p className="text-[19.2px] 2xl:text-[40px] font-extrabold text-white text-center mt-[2px] 2xl:mt-0">
-              4
-            </p>
-          </div>
-          <h4 className="mt-[36px] md:mt-4 md:ml-8 2xl:ml-16 text-[#191359] font-semibold text-[18.21px] xs:text-[22px] 2xl:text-[34.34px]">
-            Утверждение
-          </h4>
-          <p className="text-[13px] xs:text-[16px] 2xl:text-[21.46px] text-[#191359] mt-3 mb-4 md:ml-8 2xl:ml-16 2xl:mr-10 leading-5 2xl:leading-6">
-            Согласование конечного варианта стратегии и креатива с клиентом.
-            Внесение корректировок по замечаниям для достижения идеального
-            результата
-          </p>
-          <div className="absolute bottom-[-40px] left-[calc(50%-8px)]">
-            <img src={downArrow} alt="down arrow" className="w-4" />
-          </div>
-        </div>
-        <div className="bg-white bg-opacity-40 order-5 relative px-[0.8125rem] border-[1px] lg:px-8 2xl:pl-0 2xl:pr-4 md:border-2 border-solid  border-[#ffffff] rounded-[14px]  lg:rounded-3xl">
-          <div className="absolute top-[-12%] left-[calc(50%-1.25rem)] md:top-[calc(50%-1.25rem)] 2xl:top-[calc(50%-2rem)] md:left-[-1.3rem] 2xl:left-[-2.2rem] bg-[#7B72EB] border-[4px] border-solid border-[#cccccc] w-10 h-10 2xl:w-16 2xl:h-16 rounded-full">
-            <p className="text-[19.2px] 2xl:text-[40px] font-extrabold text-white text-center mt-[2px] 2xl:mt-0">
-              5
-            </p>
-          </div>
-          <h4 className="mt-[36px] md:mt-4 md:ml-8 2xl:ml-16 text-[#191359] font-semibold text-[18.21px] xs:text-[22px] 2xl:text-[34.34px]">
-            Запуск проекта
-          </h4>
-          <p className="text-[13px] xs:text-[16px] 2xl:text-[21.46px] text-[#191359] mt-3 mb-4 md:ml-8 2xl:ml-16 2xl:mr-10 leading-5 2xl:leading-6">
-            Официальный старт кампании. Мониторинг эффективности запущенных
-            мероприятий, корректировка стратегии в реальном времени для
-            максимального охвата и вовлечения
-          </p>
-          <div className="absolute bottom-[-40px] left-[calc(50%-8px)] md:bottom-[8%] md:left-auto md:right-[-30px] md:-rotate-90">
-            <img src={downArrow} alt="down arrow" className="w-4" />
-          </div>
-        </div>
-        <div className="bg-white bg-opacity-40 order-6 relative px-[0.8125rem] border-[1px] lg:px-8 2xl:pl-0 2xl:pr-4 md:border-2 border-solid border-[#ffffff] rounded-[14px]  lg:rounded-3xl">
-          <div className="absolute top-[-12%] left-[calc(50%-1.25rem)] md:top-[calc(50%-1.25rem)] 2xl:top-[calc(50%-2rem)] md:left-[-1.3rem] 2xl:left-[-2.2rem] bg-[#7B72EB] border-[4px] border-solid border-[#cccccc] w-10 h-10 2xl:w-16 2xl:h-16 rounded-full">
-            <p className="text-[19.2px] 2xl:text-[40px] font-extrabold text-white text-center mt-[2px] 2xl:mt-0">
-              6
-            </p>
-          </div>
-          <h4 className="mt-[36px] md:mt-4 md:ml-8 2xl:ml-16 text-[#191359] font-semibold text-[18.21px] xs:text-[22px] 2xl:text-[34.34px]">
-            Настройка рекламы
-          </h4>
-          <p className="text-[13px] xs:text-[16px] 2xl:text-[21.46px] text-[#191359] mt-3 mb-4 md:ml-8 2xl:ml-16 2xl:mr-10 leading-5 2xl:leading-6">
-            Запуск рекламных кампаний в социальных сетях и на других платформах.
-            Применение таргетинга и ретаргетинга для максимизации ROMI и
-            эффективной доставки ключевых сообщений целевой аудитории
-          </p>
-        </div>
+      {data.map((data, index) => {
+          console.log(data);
+          return (
+            <div className={`bg-white bg-opacity-40 ${data.order} relative px-[0.8125rem] lg:px-8 2xl:pl-0 2xl:pr-4 border-[1px] md:border-2 border-solid border-[#ffffff] rounded-[14px] lg:rounded-3xl`}>
+              <div className="absolute top-[-12%] left-[calc(50%-1.25rem)] md:top-[calc(50%-1.25rem)] 2xl:top-[calc(50%-2rem)] md:left-[-1.3rem] 2xl:left-[-2.2rem] bg-[#7B72EB] border-[4px] border-solid border-[#cccccc] w-10 h-10 2xl:w-16 2xl:h-16 rounded-full">
+                <p className="text-[19.2px] 2xl:text-[40px] font-extrabold text-white text-center mt-[2px] 2xl:mt-0">
+                  {index + 1}
+                </p>
+              </div>
+              <h4 className="mt-[36px] md:mt-4 md:ml-8 2xl:ml-16 text-[#191359] font-semibold text-[18.21px] xs:text-[22px] 2xl:text-[34.34px]">
+                {data.title}
+              </h4>
+              <p className="text-[13px] xs:text-[16px] 2xl:text-[21.46px] text-[#191359] mt-3 mb-4 md:ml-8 2xl:ml-16 2xl:mr-10 leading-5 2xl:leading-6">
+                {data.subtitle}
+              </p>
+              <div
+                className={`absolute bottom-[-40px] left-[calc(50%-8px)] ${
+                  dataLength === index + 1 ? "hidden" : data.style
+                }`}
+              >
+                <img src={downArrow} alt="down arrow" className="w-4" />
+              </div>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
