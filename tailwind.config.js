@@ -26,10 +26,13 @@ module.exports = {
         "footer-icon": "#7B72EB",
         "rectangle": "#B6B3E8",
         "headings-color": "#191359",
-        "how-we-work-color": "#4A448E"
+        "how-we-work-color": "#4A448E",
+        "blog-themeBg": "#7B72EB",
+        "vivodBorder": "#b5aff5"
       },
       fontFamily: {
-        'roboto-flex': ['"Roboto Flex"', 'sans-serif'],
+        'roboto-flex': ['Roboto Flex', 'sans-serif'],
+        'abel': ['Abel', "sans-serif"]
       },
     },
   },
