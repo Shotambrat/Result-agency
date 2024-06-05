@@ -4,7 +4,7 @@ export default function AboutClient() {
   return (
     <>
       <div className="mt-16 xl:mt-[4.5rem] 2xl:mt-20">
-        <h6 className="pb-8 md:pb-4 font-semibold text-md leading-5 xs:text-[24px] lg:text-[28px] xl:text-[32px]">
+        <h6 className="pb-4 font-semibold text-md leading-5 xs:text-[24px] lg:text-[28px] xl:text-[32px]">
           Мы не делаем однотипных предложений
         </h6>
         <p className="font-[abel] md:mt-4 text-[11px] xs:text-[14px] lg:text-[16px] xl:text-[18px] 2xl:text-[21px] font-regular">
