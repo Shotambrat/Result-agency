@@ -1,4 +1,4 @@
-import React, { useRef ,useState} from "react";
+import React, { useRef, useState } from "react";
 import Seo from "../../assets/img/seo.png";
 import Smm from "../../assets/img/smm.png";
 import SiteDev from "../../assets/img/SiteDev.png";
@@ -7,18 +7,46 @@ import Ads from "../../assets/img/Ads.png";
 import Bot from "../../assets/img/Bot.png";
 
 import ServiceModal from './call_window/ServiceModal';
+
 const MainService = () => {
+  const [services, setServices] = useState({
+    smm: false,
+    sites: false,
+    ads: false,
+    seo: false,
+    bot: false,
+    brand: false,
+  });
+
+  // function handleOpenCard(name) {
+  //   setServices({ ...services, [name]: !services[name] });
+  // }
+
+  // function handleCloseCard() {
+  //   setServices({
+  //     smm: false,
+  //     sites: false,
+  //     ads: false,
+  //     seo: false,
+  //     bot: false,
+  //     brand: false,
+  //   });
+
+  function handleChangeCard(name) {
+    setServices({ ...services, [name]: !services[name] });
+  }
+
   const iconRefs = useRef([]);
   iconRefs.current = [];
 
 
   const [open, setOpen] = useState(false);
   const handleOpenServiceModal = () => {
-      setOpen(true);
+    setOpen(true);
   }
 
   const handleCloseServiceModal = () => {
-      setOpen(false);
+    setOpen(false);
   }
 
   return (
@@ -73,19 +101,19 @@ const MainService = () => {
         <div className="">
           <h2 className="text-center md:text-left text-[28px] md:text-[32px] 2xl:text-[64px] font-bold">Услуги</h2>
           <div className="mt-4 grid grid-cols-2 sm:grid-cols-3 gap-y-4 xl:gap-x-6 gap-x-[0.625rem]">
-          <>
-          { open ? <ServiceModal close={handleCloseServiceModal} /> : <> <div onClick={handleOpenServiceModal} className="relative rounded-[13.14px] lg:rounded-3xl w-[45vw] sm:w-[30vw] md:w-[29vw] xl:w-[27.5vw] h-[11rem] md:h-[16rem] xl:h-[21rem] 2xl:h-[25rem] bg-gradient-to-b from-[#EAE9FD] to-[#7F75FF]">
-              <img
-                src={Smm}
-                alt="icons"
-                className="absolute right-0 sm:w-[9rem] md:w-[10rem] lg:w-[12rem] xl:w-[12rem]"
-              />
-              <p className="absolute left-[10%] bottom-[12%] font-medium text-[13px] sm:text-[15px] md:text-[18px] xl:text-[22px] 2xl:text-[40px] text-white leading-5 xl:leading-7 2xl:leading-9">
-                SMM
-              </p>
-            </div></>}
+            <>
+              {services["smm"] ? <ServiceModal close={() => handleChangeCard("smm")} /> : <> <div onClick={() => handleChangeCard("smm")} className="relative rounded-[13.14px] lg:rounded-3xl w-[45vw] sm:w-[30vw] md:w-[29vw] xl:w-[27.5vw] h-[11rem] md:h-[16rem] xl:h-[21rem] 2xl:h-[25rem] bg-gradient-to-b from-[#EAE9FD] to-[#7F75FF]">
+                <img
+                  src={Smm}
+                  alt="icons"
+                  className="absolute right-0 sm:w-[9rem] md:w-[10rem] lg:w-[12rem] xl:w-[12rem]"
+                />
+                <p className="absolute left-[10%] bottom-[12%] font-medium text-[13px] sm:text-[15px] md:text-[18px] xl:text-[22px] 2xl:text-[40px] text-white leading-5 xl:leading-7 2xl:leading-9">
+                  SMM
+                </p>
+              </div></>}
             </>
-            { open ? <ServiceModal close={handleCloseServiceModal} /> : <> <div onClick={handleOpenServiceModal} className="relative rounded-[13.14px] lg:rounded-3xl w-[45vw] sm:w-[30vw] md:w-[29vw] xl:w-[27.5vw] h-[11rem] md:h-[16rem] xl:h-[21rem] 2xl:h-[25rem] bg-gradient-to-b from-[#EAE9FD] to-[#7F75FF]">
+            {services["sites"] ? <ServiceModal close={() => handleChangeCard("sites")} /> : <> <div onClick={() => handleChangeCard("sites")} className="relative rounded-[13.14px] lg:rounded-3xl w-[45vw] sm:w-[30vw] md:w-[29vw] xl:w-[27.5vw] h-[11rem] md:h-[16rem] xl:h-[21rem] 2xl:h-[25rem] bg-gradient-to-b from-[#EAE9FD] to-[#7F75FF]">
               <img
                 src={SiteDev}
                 alt="icons"
@@ -110,7 +138,7 @@ const MainService = () => {
                 src={Bot}
                 alt="icons"
                 className="absolute right-0 sm:w-[9rem] md:w-[10rem] xl:w-[12rem]"
-              /> 
+              />
               <p className="absolute left-[10%] bottom-[12%] font-medium text-[13px] sm:text-[15px] md:text-[18px] xl:text-[22px] 2xl:text-[40px] text-white leading-5 xl:leading-7 2xl:leading-9">
                 Разработка <br /> Telegram-ботов
               </p>
