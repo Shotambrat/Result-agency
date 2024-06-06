@@ -14,7 +14,7 @@ module.exports = {
       'lg': '1024px',
       'xl': '1280px',
       '2xl': '1440px',
-      '3xl': '1600px'
+      '3xl': '1500px'
     },
 
     extend: {
@@ -34,7 +34,9 @@ module.exports = {
         "headings-color": "#191359",
         "how-we-work-color": "#4A448E",
         "blog-themeBg": "#7B72EB",
-        "vivodBorder": "#b5aff5"
+        "vivodBorder": "#b5aff5",
+        "cases-border": "#d3d2e4",
+        "howWeWork-border": "#e6e8fa"
       },
       fontFamily: {
         'roboto-flex': ['"Roboto Flex"', 'sans-serif'],

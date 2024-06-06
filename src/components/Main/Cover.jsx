@@ -46,10 +46,10 @@ const Cover = () => {
       <div className="3xl:max-w-[1500px] 3xl:mx-auto">
         <div className="flex flex-col items-center justify-center mt-24 lg:mt-44 mb-20 lg:mb-40 xs:mx-14 sm:mx-[5rem] md:mx-[7rem] ">
           <div className="flex flex-col items-center justify-center mt-12 lg:w-[900px]">
-            <h1 className="font-semibold text-[30px] xs:text-[44px] sm:text-[48px] md:text-[52px] lg:text-[48px] 2xl:text-[52px] text-[#191359] lg:font-semibold text-center font-roboto-flex leading-9 xs:leading-[3rem]">
+            <h1 className="font-semibold text-[30px] xs:text-[44px] sm:text-[48px] md:text-[52px] lg:text-[48px] 2xl:text-[52px] text-headings-color lg:font-semibold text-center font-roboto-flex leading-9 xs:leading-[3rem]">
               МЕДИЦИНСКИЙ <br className="lg:hidden"/> МАРКЕТИНГ & IT
             </h1>
-            <h4 className="text-[#000000] text-[16px] xs:text-[20px] sm:text-[22px] md:text-[24px] lg:text-[26px] lg:px-8 xl:text-[28px] xl:px-4 font-regular mt-7 md:mt-12 mx-5 sm:mx-9 md:mx-12 text-center leading-5 lg:leading-6 xl:leading-9">
+            <h4 className="text-black text-[16px] xs:text-[20px] sm:text-[22px] md:text-[24px] lg:text-[26px] lg:px-8 xl:text-[28px] xl:px-4 font-regular mt-7 md:mt-12 mx-5 sm:mx-9 md:mx-12 text-center leading-5 lg:leading-6 xl:leading-9">
               Result Agency эффективно продвигает клиники, фармацевтические
               предприятия, медицинских специалистов и другие компании
             </h4>

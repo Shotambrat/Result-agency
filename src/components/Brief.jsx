@@ -42,32 +42,15 @@ const Brief = () => {
   return (
     <div className="lg:mt-24 mb-14 relative flex justify-center items-end h-[62rem] lg:h-[32rem] 2xl:h-[35rem]">
       <div className="w-full h-[37rem] lg:h-full lg:absolute relative left-0 lg:top-0">
-        <a
-          href="https://yandex.uz/maps/org/173898485881/?utm_medium=mapframe&utm_source=maps"
-          className="text-[#eee] text-[12px] absolute top-0"
-        >
-          Intermed Innovation
-        </a>
-        <a
-          href="https://yandex.uz/maps/10335/tashkent/category/medical_center_clinic/184106108/?utm_medium=mapframe&utm_source=maps"
-          className="text-[#eee] text-[12px] absolute top-[14px]"
-        >
-          Медцентр, клиника в Ташкенте
-        </a>
-        <a
-          href="https://yandex.uz/maps/10335/tashkent/category/medical_laboratory/184106078/?utm_medium=mapframe&utm_source=maps"
-          className="text-[#eee] text-[12px] absolute top-[14px]"
-        >
-          Медицинская лаборатория в Ташкенте
-        </a>
         <iframe
           title="Intermed Innovation"
-          src="https://yandex.uz/map-widget/v1/?ll=69.280676%2C41.350121&mode=poi&poi%5Bpoint%5D=69.291036%2C41.350889&poi%5Buri%5D=ymapsbm1%3A%2F%2Forg%3Foid%3D173898485881&z=13"
-          width="560"
-          height="400"
-          frameborder="1"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5990.263666042327!2d69.28771283321369!3d41.349488163895295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38aef35418406693%3A0xf91e0631f842852c!2sINTERMED%20Innovation!5e0!3m2!1sru!2s!4v1717666382849!5m2!1sru!2s"
+          width="600"
+          height="450"
+          className="relative top-0 left-0 w-full h-full border-none"
           allowfullscreen="true"
-          className="relative top-0 left-0 w-full h-full"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
         ></iframe>
       </div>
       <div className="absolute top-0 left-0 lg:relative w-full 3xl:w-[1500px] h-[32rem] lg:h-full flex items-center">

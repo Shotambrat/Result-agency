@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import InternetWindow from "../../assets/img/howWorkComp.svg";
 import downArrow from "../../assets/img/down-arrow.svg";
+import { gsap } from "gsap";
 
 const HowWeWork = () => {
   let data = [
@@ -54,6 +55,40 @@ const HowWeWork = () => {
     },
   ];
   let dataLength = data.length;
+
+  const itemRefs = useRef([]);
+  const containerRef = useRef();
+
+  const options = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 1.0,
+  };
+
+  useEffect(() => {
+    const animateSteps = () => {
+      gsap.from(itemRefs.current, {
+        opacity: 0,
+        y: 0,
+        duration: 3,
+        stagger: 0.5,
+      });
+    };
+
+    const animateHidden = () => {
+      gsap.to(itemRefs.current, {
+        opacity: 0,
+      });
+    };
+
+    const observer = new IntersectionObserver(animateSteps, options);
+    if (containerRef.current) observer.observe(containerRef.current);
+
+    return () => {
+      if (containerRef.current) observer.unobserve(containerRef.current);
+    };
+  }, [itemRefs, options]);
+
   return (
     <div
       style={{
@@ -80,21 +115,26 @@ const HowWeWork = () => {
           </button>
         </div>
       </div>
-      <div className=" mx-[0.4375rem] xl:mb-8 2xl:mb-12 md:px-4 lg:px-8 xl:px-[8%] mt-10 grid grid-cols-1 sm:px-24 md:grid-cols-2 md:gap-x-[38px] gap-y-16 md:gap-y-[38px] pb-[13px] rounded-[14px] lg:rounded-3xl">
+      <div
+        ref={containerRef}
+        className=" mx-[0.4375rem] xl:mb-8 2xl:mb-12 md:px-4 lg:px-8 xl:px-[8%] mt-10 grid grid-cols-1 sm:px-24 md:grid-cols-2 md:gap-x-[38px] gap-y-16 md:gap-y-[38px] pb-[13px] rounded-[14px] lg:rounded-3xl"
+      >
         {data.map((data, index) => {
           return (
             <div
-              className={`bg-white bg-opacity-40 ${data.order} relative px-[0.8125rem] lg:px-8 2xl:pl-0 2xl:pr-4 border-[1px] md:border-2 border-solid border-[#ffffff] rounded-[14px] lg:rounded-3xl`}
+              key={index}
+              ref={(el) => (itemRefs.current[index] = el)}
+              className={`bg-white bg-opacity-40 ${data.order} relative px-[0.8125rem] lg:px-8 2xl:pl-0 2xl:pr-4 border-[1px] md:border-2 border-solid border-white rounded-[14px] lg:rounded-3xl`}
             >
-              <div className="absolute top-[-12%] left-[calc(50%-1.25rem)] md:top-[calc(50%-1.25rem)] 2xl:top-[calc(50%-2rem)] md:left-[-1.3rem] 2xl:left-[-2.2rem] bg-[#7B72EB] border-[4px] border-solid border-[#cccccc] w-10 h-10 2xl:w-16 2xl:h-16 rounded-full">
+              <div className="absolute top-[-12%] left-[calc(50%-1.25rem)] md:top-[calc(50%-1.25rem)] 2xl:top-[calc(50%-2rem)] md:left-[-1.3rem] 2xl:left-[-2.2rem] bg-footer-icon border-[4px] border-howWeWork-border w-10 h-10 2xl:w-16 2xl:h-16 rounded-full">
                 <p className="text-[19.2px] 2xl:text-[40px] font-extrabold text-white text-center mt-[2px] 2xl:mt-0">
                   {index + 1}
                 </p>
               </div>
-              <h4 className="mt-[36px] md:mt-4 md:ml-8 2xl:ml-16 text-[#191359] font-semibold text-[18.21px] xs:text-[22px] 2xl:text-[34.34px]">
+              <h4 className="mt-[36px] md:mt-4 md:ml-8 2xl:ml-16 text-headings-color font-semibold text-[18.21px] xs:text-[22px] 2xl:text-[34.34px]">
                 {data.title}
               </h4>
-              <p className="text-[13px] xs:text-[16px] 2xl:text-[21.46px] text-[#191359] mt-3 mb-4 md:ml-8 2xl:ml-16 2xl:mr-10 leading-5 2xl:leading-6">
+              <p className="text-[13px] xs:text-[16px] 2xl:text-[21.46px] text-headings-color mt-3 mb-4 md:ml-8 2xl:ml-16 2xl:mr-10 leading-5 2xl:leading-6">
                 {data.subtitle}
               </p>
               <div
