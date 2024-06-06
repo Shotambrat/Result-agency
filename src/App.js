@@ -5,6 +5,7 @@ import Header from "./pages/Header";
 import Brief from "./components/Brief";
 import Footer from "./pages/Footer";
 import { Element } from "react-scroll";
+import Cases from "./pages/Cases";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/blog/:blog" element={<Blog />}></Route>
+          <Route path="/cases" element={<Cases />}></Route>
         </Routes>
         <Brief />
         {/* <MapFooter /> */}

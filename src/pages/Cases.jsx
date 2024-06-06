@@ -4,14 +4,15 @@ import logoresbig from "../../src/assets/img/logoresbig.png";
 import SwiperCases from '../components/Cases/OurCasesSlider';
 import ToTopButton from '../components/Blog/ToTopButton';
 import ButtonPodrobnee from '../components/Cases/ButtonPodrobnee';
+import BackButton from '../components/Blog/BackButton';
 import Brief from '../components/Brief';
 
 const Cases = () => {
   return (
-    <div className='pt-16 mx-[10px]'>
+    <div className=' mx-[10px]'>
       {/* будет кнопка назад */}
       <div>
-        <button></button>
+        <BackButton/>
       </div>
 
       <div class="mx-auto flex h-auto flex-col bg-indigo-500 text-white rounded-2xl p-6 shadow-lg w-64 m:w-4/5 ">
@@ -119,7 +120,6 @@ const Cases = () => {
 
       </div >
         <ToTopButton/>
-        <Brief/>
       </div>
     
   )
