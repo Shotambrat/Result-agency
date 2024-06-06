@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@400;700&display=swap');
 
 * {
@@ -44,4 +45,21 @@ code {
 
 .container-with-blur > *:not(:first-child) {
   grid-area: 1 / 1 / 2 / 2;
+}
+
+.gradient-item-cases {
+  background: linear-gradient(108deg, rgba(214, 210, 255, 0.71) 3.65%, rgba(219, 217, 241, 0.82) 28.98%, rgba(238, 237, 251, 0.90) 43.13%, rgba(219, 216, 255, 0.87) 71.34%, rgba(206, 220, 255, 0.94) 95.74%);
+}
+.border-item-cases {
+  border: 3px solid rgba(123, 114, 235, 0.44);
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #7B72EB;
+}
+
+.swiper-pagination-custom .swiper-pagination-bullet {
+  background-color: #7B72EB;;
+  width: 15px;
+  height: 15px;
 }

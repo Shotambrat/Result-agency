@@ -4,7 +4,11 @@ module.exports = {
   important: "#root",
   theme: {
     screens: {
+      'm': '352px',
+      'l': '402px',
+      's': '444px',
       'xs': '480px',
+      'xxs': '550px',
       'sm': '640px',
       'md': '768px',
       'lg': '1024px',
@@ -18,6 +22,8 @@ module.exports = {
         pulseText: 'pulseText 0.3s ease-in-out',
       },
       colors: {
+        'cases-text': "#4A448E",
+        'purpleText': '#4E4A83',
         'gradient-start': '#8A66F0A8',
         'gradient-end': '#4A81EBA8',
         "header-text": 'rgba(25, 19, 89)',
