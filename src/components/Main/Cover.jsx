@@ -89,12 +89,12 @@ const Cover = () => {
         <img
           src={dnkLeft}
           alt="DNK"
-          className="absolute top-[-5%] left-[-38%] xs:top-[-18%] xs:left-[-40%] md:top-[-25%] md:left-[-40%] lg:top-[-10%] lg:left-[-50%] xl:top-[-17%] xl:left-[-45%] 3xl:left-[-38%]"
+          className="absolute bottom-[70%] right-[37%] md:bottom-[33%] md:right-[40%] lg:bottom-[25%] lg:right-[50%] xl:bottom-[15%] xl:right-[45%] 2xl:bottom-[7%] 3xl:right-[45%]"
         />
         <img
           src={dnkRight}
           alt="DNK"
-          className="absolute bottom-[-5%] right-[-50%] xs:bottom-[-10%] sm:bottom-[-12%] md:bottom-[-13%] md:right-[-50%] lg:bottom-[-22%] lg:right-[-46%] xl:bottom-[-26%] 2xl:bottom-[-30%] z-[0]"
+          className="absolute top-[58%] left-[50%] xs:top-[42%] sm:top-[22%] md:top-[15%] md:left-[50%] lg:top-[5%] lg:left-[45%] xl:top-[-5%] 2xl:top-[-15%] z-[0]"
         />
       </div>
     </div>
