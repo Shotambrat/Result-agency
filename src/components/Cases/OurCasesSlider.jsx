@@ -29,16 +29,16 @@ const SwiperCases = () => {
           className="flex justify-center"
         >
           <SwiperSlide>
-            <img src={zaglushkaslider} alt="slider-icon" className="mx-auto"/>
+            <img src={zaglushkaslider} alt="slider-icon" className="mx-auto s:w-3/4 md:w-full"/>
           </SwiperSlide>
           <SwiperSlide>
-            <img src={zaglushkaslider} alt="slider-icon" className="mx-auto"/>
+            <img src={zaglushkaslider} alt="slider-icon" className="mx-auto s:w-3/4 md:w-full"/>
           </SwiperSlide>
           <SwiperSlide>
-            <img src={zaglushkaslider} alt="slider-icon" className="mx-auto"/>
+            <img src={zaglushkaslider} alt="slider-icon" className="mx-auto s:w-3/4 md:w-full"/>
           </SwiperSlide>
           <SwiperSlide>
-            <img src={zaglushkaslider} alt="slider-icon" className="mx-auto"/>
+            <img src={zaglushkaslider} alt="slider-icon" className="mx-auto s:w-3/4 md:w-full"/>
           </SwiperSlide>
         </Swiper>
         <div className="swiper-pagination-custom w-24 mt-[10px] h-4 rounded-full inline-block mx-auto mt-4 flex justify-center "></div>

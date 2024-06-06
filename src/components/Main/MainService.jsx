@@ -39,15 +39,6 @@ const MainService = () => {
   const iconRefs = useRef([]);
   iconRefs.current = [];
 
-  const [open, setOpen] = useState(false);
-  const handleOpenServiceModal = () => {
-    setOpen(true);
-  };
-
-  const handleCloseServiceModal = () => {
-    setOpen(false);
-  };
-
   return (
     <div className="mx-[0.625rem] sm:mx-4 md:mx-10 xl:mx-20 2xl:mx-[6.875rem] 3xl:max-w-[1500px] 3xl:mx-auto">
       <div

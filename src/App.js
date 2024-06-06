@@ -6,7 +6,6 @@ import Brief from "./components/Brief";
 import Cases from "./pages/Cases";
 import Footer from "./pages/Footer";
 import { Element } from "react-scroll";
-import Cases from "./pages/Cases";
 
 function App() {
   return (
