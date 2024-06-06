@@ -3,6 +3,14 @@ import InternetWindow from "../../assets/img/howWorkComp.svg";
 import downArrow from "../../assets/img/down-arrow.svg";
 import { gsap } from "gsap";
 
+const options = {
+  root: null,
+  rootMargin: "0px",
+  threshold: 0.1,
+};
+
+let selectNavTimeout;
+
 const HowWeWork = () => {
   let data = [
     {
@@ -59,35 +67,36 @@ const HowWeWork = () => {
   const itemRefs = useRef([]);
   const containerRef = useRef();
 
-  const options = {
-    root: null,
-    rootMargin: "0px",
-    threshold: 1.0,
-  };
-
   useEffect(() => {
-    const animateSteps = () => {
-      gsap.from(itemRefs.current, {
-        opacity: 0,
-        y: 0,
-        duration: 3,
-        stagger: 0.5,
-      });
-    };
+    itemRefs.current.forEach((item) => {
+      gsap.set(item, { opacity: 0 });
+    });
 
-    const animateHidden = () => {
+    // Animate to opacity 1 when the component mounts
+    const animateSteps = () => {
       gsap.to(itemRefs.current, {
-        opacity: 0,
+        opacity: 1,
+        duration: 4,
+        stagger: 0.3, // Stagger animation for each item
       });
     };
 
     const observer = new IntersectionObserver(animateSteps, options);
-    if (containerRef.current) observer.observe(containerRef.current);
+    if (containerRef.current) {
+      selectNavTimeout = setTimeout(() => {
+        observer.observe(containerRef.current);
+      }, 1000);
+    } else {
+      // deselect navigation link corresponding to section
+      // cancel timeout when section has left screen
+      clearTimeout(selectNavTimeout);
+    }
 
     return () => {
+      // eslint-disable-next-line
       if (containerRef.current) observer.unobserve(containerRef.current);
     };
-  }, [itemRefs, options]);
+  }, []);
 
   return (
     <div
