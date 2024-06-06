@@ -1,12 +1,45 @@
 import React, { useRef, useState } from "react";
-import Seo from "../../assets/img/seo.png";
-import Smm from "../../assets/img/smm.png";
-import SiteDev from "../../assets/img/SiteDev.png";
-import Brand from "../../assets/img/brand.png";
-import Ads from "../../assets/img/Ads.png";
-import Bot from "../../assets/img/Bot.png";
+import Seo from "../../assets/img/Seo.svg";
+import Smm from "../../assets/img/Smm.svg";
+import SiteDev from "../../assets/img/SiteDev.svg";
+import Brand from "../../assets/img/brand.svg";
+import Ads from "../../assets/img/Ads.svg";
+import Bot from "../../assets/img/Bot.svg";
 
 import ServiceModal from "./call_window/ServiceModal";
+
+let data = [
+  {
+    name: "SMM",
+    nameForFunction: "smm",
+    img: Smm,
+  },
+  {
+    name: `Разработка <br/> сайтов`,
+    nameForFunction: "sites",
+    img: SiteDev,
+  },
+  {
+    name: "Запуск <br /> рекламы",
+    nameForFunction: "ads",
+    img: Ads,
+  },
+  {
+    name: "Seo",
+    nameForFunction: "seo",
+    img: Seo,
+  },
+  {
+    name: "Разработка <br /> Telegram-ботов",
+    nameForFunction: "bot",
+    img: Bot,
+  },
+  {
+    name: "Брендинг",
+    nameForFunction: "brand",
+    img: Brand,
+  },
+];
 
 const MainService = () => {
   const [services, setServices] = useState({
@@ -18,21 +51,8 @@ const MainService = () => {
     brand: false,
   });
 
-  // function handleOpenCard(name) {
-  //   setServices({ ...services, [name]: !services[name] });
-  // }
-
-  // function handleCloseCard() {
-  //   setServices({
-  //     smm: false,
-  //     sites: false,
-  //     ads: false,
-  //     seo: false,
-  //     bot: false,
-  //     brand: false,
-  //   });
-
   function handleChangeCard(name) {
+    console.log(name);
     setServices({ ...services, [name]: !services[name] });
   }
 
@@ -54,7 +74,7 @@ const MainService = () => {
         <div className="grid grid-cols-2 sm:grid-cols-4 items-center pt-4 pb-5 px-[0.375rem] gap-x-2 gap-y-7">
           <div className="order-1 sm:order-2">
             <p className="text-[32.33px] text-[#5950C9] font-bold lg:text-[40px] 2xl:text-[76px]">
-              +25%
+              25%
             </p>
             <p className="md:h-[40px] lg:h-20 2xl:h-[6.2rem] text-[13px] lg:text-[16px] 2xl:text-[24px] text-[#3E3B6B] font-normal text-center px-4 lg:pb-8">
               Увеличение трафика
@@ -62,7 +82,7 @@ const MainService = () => {
           </div>
           <div className="order-2 sm:order-3">
             <p className="text-[32.33px] text-[#5950C9] font-bold lg:text-[40px] 2xl:text-[76px]">
-              +40%
+              40%
             </p>
             <p className="text-[13px] lg:text-[16px] 2xl:text-[24px] text-[#3E3B6B] font-normal text-center lg:pb-8">
               Суммарно увеличено <br /> количество клиентов
@@ -93,150 +113,36 @@ const MainService = () => {
             Услуги
           </h2>
           <div className="mt-4 grid grid-cols-2 sm:grid-cols-3 gap-x-[0.625rem] lg:gap-x-[1rem] xl:gap-x-6 gap-y-5 lg:gap-y-12">
-            <>
-              {services["smm"] ? (
-                <ServiceModal close={() => handleChangeCard("smm")} />
-              ) : (
-                <>
-                  {" "}
-                  <div
-                    onClick={() => handleChangeCard("smm")}
-                    className="relative rounded-[13.14px] lg:rounded-3xl  h-[11rem] md:h-[16rem] xl:h-[21rem] 2xl:h-[25rem] bg-gradient-to-b from-[#EAE9FD] to-[#7F75FF]"
-                  >
-                    <img
-                      src={Smm}
-                      alt="icons"
-                      className="absolute right-0 sm:w-[9rem] md:w-[10rem] lg:w-[12rem] xl:w-[12rem]"
+            {data.map((data, index) => {
+              return (
+                <div key={index}>
+                  {services[data.nameForFunction] ? (
+                    <ServiceModal
+                      close={handleChangeCard}
+                      name={data.nameForFunction}
                     />
-                    <p className="absolute left-[10%] bottom-[12%] font-medium text-[13px] sm:text-[15px] md:text-[18px] xl:text-[22px] 2xl:text-[40px] text-white leading-5 xl:leading-7 2xl:leading-9">
-                      SMM
-                    </p>
-                  </div>
-                </>
-              )}
-            </>
-            {services["sites"] ? (
-              <ServiceModal close={() => handleChangeCard("sites")} />
-            ) : (
-              <>
-                {" "}
-                <div
-                  onClick={() => handleChangeCard("sites")}
-                  className="relative rounded-[13.14px] lg:rounded-3xl  h-[11rem] md:h-[16rem] xl:h-[21rem] 2xl:h-[25rem] bg-gradient-to-b from-[#EAE9FD] to-[#7F75FF]"
-                >
-                  <img
-                    src={SiteDev}
-                    alt="icons"
-                    className="absolute right-0 sm:w-[9rem] md:w-[10rem] xl:w-[12rem]"
-                  />
-                  <p className="absolute left-[10%] bottom-[12%] font-medium text-[13px] sm:text-[15px] md:text-[18px] xl:text-[22px] 2xl:text-[40px] text-white leading-5 xl:leading-7 2xl:leading-9">
-                    Разработка <br /> сайтов
-                  </p>
+                  ) : (
+                    <div
+                      className="relative rounded-[13.14px] lg:rounded-3xl h-[11rem] md:h-[18rem] lg:h-[21rem] xl:h-[24rem] 2xl:h-[30rem] bg-gradient-to-b from-[#EAE9FD] to-[#7F75FF]"
+                      onClick={() => handleChangeCard(data.nameForFunction)}
+                    >
+                      <img
+                        src={data.img}
+                        alt="icons"
+                        className="absolute right-0 lg:rounded-3xl w-[70%] h-[70%]"
+                      />
+                      <p
+                        dangerouslySetInnerHTML={{ __html: data.name }}
+                        className="absolute left-[10%] bottom-[12%] font-medium text-[13px] sm:text-[15px] md:text-[18px] lg:text-[24px] xl:text-[28px] 2xl:text-[40px] text-white leading-5 xl:leading-7 2xl:leading-10"
+                      ></p>
+                    </div>
+                  )}
                 </div>
-              </>
-            )}
-            <div className="relative rounded-[13.14px] lg:rounded-3xl  h-[11rem] md:h-[16rem] xl:h-[21rem] 2xl:h-[25rem] bg-gradient-to-b from-[#EAE9FD] to-[#7F75FF]">
-              <img
-                src={Seo}
-                alt="icons"
-                className="absolute right-0 top-4 sm:w-[9rem] md:w-[10rem] lg:w-[12rem] xl:w-[12rem]"
-              />
-              <p className="absolute left-[10%] bottom-[12%] font-medium text-[13px] sm:text-[15px] md:text-[18px] xl:text-[22px] 2xl:text-[40px] text-white leading-5 xl:leading-7 2xl:leading-9">
-                SEO
-              </p>
-            </div>
-            <div className="relative rounded-[13.14px] lg:rounded-3xl  h-[11rem] md:h-[16rem] xl:h-[21rem] 2xl:h-[25rem] bg-gradient-to-b from-[#EAE9FD] to-[#7F75FF]">
-              <img
-                src={Bot}
-                alt="icons"
-                className="absolute right-0 sm:w-[9rem] md:w-[10rem] xl:w-[12rem]"
-              />
-              <p className="absolute left-[10%] bottom-[12%] font-medium text-[13px] sm:text-[15px] md:text-[18px] xl:text-[22px] 2xl:text-[40px] text-white leading-5 xl:leading-7 2xl:leading-9">
-                Разработка <br /> Telegram-ботов
-              </p>
-            </div>
-            <div className="relative rounded-[13.14px] lg:rounded-3xl  h-[11rem] md:h-[16rem] xl:h-[21rem] 2xl:h-[25rem] bg-gradient-to-b from-[#EAE9FD] to-[#7F75FF]">
-              <img
-                src={Ads}
-                alt="icons"
-                className="absolute right-0 sm:w-[9rem] md:w-[10rem] xl:w-[12rem]"
-              />
-              <p className="absolute left-[10%] bottom-[12%] font-medium text-[13px] sm:text-[15px] md:text-[18px] xl:text-[22px] 2xl:text-[40px] text-white leading-5 xl:leading-7 2xl:leading-9">
-                Запуск <br /> рекламы
-              </p>
-            </div>
-            <div className="relative rounded-[13.14px]  h-[11rem] md:h-[16rem] xl:h-[21rem] 2xl:h-[25rem] bg-gradient-to-b from-[#EAE9FD] to-[#7F75FF]">
-              <img
-                src={Brand}
-                alt="icons"
-                className="absolute right-0 sm:w-[9rem] lg:rounded-3xl md:w-[10rem] lg:w-[12rem] xl:w-[12rem]"
-              />
-              <p className="absolute left-[10%] bottom-[12%] font-medium text-[13px] sm:text-[15px] md:text-[18px] xl:text-[22px] 2xl:text-[40px] text-white leading-5 xl:leading-7 2xl:leading-9">
-                Брендинг
-              </p>
-            </div>
+              );
+            })}
           </div>
         </div>
       </div>
-      {/* <div
-        style={{
-          backgroundImage:
-            "linear-gradient(to left, #9F99E0 0%, #DDDAFA 43%, #C6D6FF 74%, #CEDCFF 100%)",
-        }}
-        className="w-10/12 h-[300px] mt-9 mx-auto rounded-[40px]"
-      >
-        <h3
-          style={{ color: "#373181" }}
-          className="relative top-4 text-center text-[30px] leading-9"
-        >
-          <span className="font-bold">Медецинский маркетинг</span> <br /> к
-          вашим улугам
-        </h3>
-        <div className="w-full lg:flex lg:justify-between mt-12">
-          <div className="w-[200px] text-center">
-            <h1
-              style={{ color: "#5950C9" }}
-              className="text-[64px] text-center font-extrabold"
-            >
-              13
-            </h1>{" "}
-            <p style={{ color: "#3E3B6B" }}>
-              Партнеров со скидками для наших клиентов
-            </p>
-          </div>
-          <div className="w-[200px] text-center">
-            <h1
-              style={{ color: "#5950C9" }}
-              className="text-[64px] text-center font-extrabold"
-            >
-              +25%
-            </h1>{" "}
-            <p style={{ color: "#3E3B6B" }}>
-              Увеличен средний чек наших клиентов
-            </p>
-          </div>
-          <div className="w-[200px] text-center">
-            <h1
-              style={{ color: "#5950C9" }}
-              className="text-[64px] text-center font-extrabold"
-            >
-              +60%
-            </h1>{" "}
-            <p style={{ color: "#3E3B6B" }}>
-              Суммарно увеличено количество клиентов
-            </p>
-          </div>
-          <div className="w-[200px] text-center">
-            <h1
-              style={{ color: "#5950C9" }}
-              className="text-[64px] text-center font-extrabold"
-            >
-              х2
-            </h1>{" "}
-            <p style={{ color: "#3E3B6B" }}>Увеличено число заявок и звонков</p>
-          </div>
-        </div>
-      </div> */}
     </div>
   );
 };

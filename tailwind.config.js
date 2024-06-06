@@ -34,7 +34,9 @@ module.exports = {
         "headings-color": "#191359",
         "how-we-work-color": "#4A448E",
         "blog-themeBg": "#7B72EB",
-        "vivodBorder": "#b5aff5"
+        "vivodBorder": "#b5aff5",
+        "cases-border": "#d3d2e4",
+        "howWeWork-border": "#e6e8fa"
       },
       fontFamily: {
         'roboto-flex': ['"Roboto Flex"', 'sans-serif'],
