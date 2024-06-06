@@ -58,14 +58,14 @@ const Cases = () => {
       Результаты
       </div>
       
-      <div>  {/*будет колонка для грида при десктоп */}
+      <div >  {/*будет колонка для грида при десктоп */}
         <div className='relative mt-[48px] w-full'>
           {/* левая полоса */}
           <div className='absolute'>
-            <div className="flex justify-center items-center min-h-screen ml-[5px] z-50 m:ml-[8px] l:ml-[12.5px] s:ml-[14px] xs:ml-[20px] xxs:ml-[27px] sm:ml-[34px]">
+            <div className="flex mt-[60px] justify-center items-center min-h-full ml-[5px] z-50 m:ml-[8px] l:ml-[12.5px] s:ml-[14px] xs:ml-[20px] xxs:ml-[27px] sm:ml-[34px]">
               <div className="relative z-10 ">
                 <div className="absolute  left-1/2 transform-translate-x-1/2 w-[5px] bg-footer-icon h-full"></div>
-                <div className=" relative flex flex-col gap-[135px] items-center space-y-10">
+                <div className=" relative flex flex-col gap-[140px] items-center space-y-10">
                   <div className="w-[40px] h-[40px] bg-footer-icon rounded-full border-4 border-white"></div>
                   <div className="w-[40px] h-[40px] bg-footer-icon rounded-full border-4 border-white"></div>
                   <div className="w-[40px] h-[40px] bg-footer-icon rounded-full border-4 border-white"></div>
