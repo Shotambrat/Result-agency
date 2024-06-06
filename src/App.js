@@ -3,6 +3,7 @@ import Blog from "./pages/Blog";
 import Home from "./pages/Home";
 import Header from "./pages/Header";
 import Brief from "./components/Brief";
+import Cases from "./pages/Cases";
 import Footer from "./pages/Footer";
 import { Element } from "react-scroll";
 import Cases from "./pages/Cases";

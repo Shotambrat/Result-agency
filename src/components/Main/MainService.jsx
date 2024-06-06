@@ -6,7 +6,7 @@ import Brand from "../../assets/img/brand.png";
 import Ads from "../../assets/img/Ads.png";
 import Bot from "../../assets/img/Bot.png";
 
-import ServiceModal from './call_window/ServiceModal';
+import ServiceModal from "./call_window/ServiceModal";
 
 const MainService = () => {
   const [services, setServices] = useState({
@@ -39,20 +39,19 @@ const MainService = () => {
   const iconRefs = useRef([]);
   iconRefs.current = [];
 
-
   const [open, setOpen] = useState(false);
   const handleOpenServiceModal = () => {
     setOpen(true);
-  }
+  };
 
   const handleCloseServiceModal = () => {
     setOpen(false);
-  }
+  };
 
   return (
-    <div>
+    <div className="mx-[0.625rem] sm:mx-4 md:mx-10 xl:mx-20 2xl:mx-[6.875rem] 3xl:max-w-[1500px] 3xl:mx-auto">
       <div
-        className="mt-6 sm:mt-8 rounded-[17px] lg:rounded-3xl text-center mx-[0.625rem] sm:mx-4 md:mx-10 xl:mx-20 2xl:mx-[6.875rem]"
+        className="mt-6 sm:mt-8 rounded-[17px] lg:rounded-3xl text-center"
         style={{
           background:
             "linear-gradient(to bottom right, #D6D2FF 0%, #DBD9F1 28%, #EEEDFB 43%, #DBD8FF 74%, #CEDCFF 100%)",
@@ -97,33 +96,55 @@ const MainService = () => {
         </div>
       </div>
 
-      <div className="mt-[1.875rem] lg:mt-[3rem] mx-[0.625rem] sm:mx-4 md:mx-10 xl:mx-20 2xl:mx-[6.875rem]">
+      <div className="mt-[1.875rem] lg:mt-[3rem]">
         <div className="">
-          <h2 className="text-center md:text-left text-[28px] md:text-[32px] 2xl:text-[64px] font-bold">Услуги</h2>
-          <div className="mt-4 grid grid-cols-2 sm:grid-cols-3 gap-y-4 xl:gap-x-6 gap-x-[0.625rem]">
+          <h2 className="text-center md:text-left text-[28px] md:text-[32px] 2xl:text-[64px] font-bold">
+            Услуги
+          </h2>
+          <div className="mt-4 grid grid-cols-2 sm:grid-cols-3 gap-x-[0.625rem] lg:gap-x-[1rem] xl:gap-x-6 gap-y-5 lg:gap-y-12">
             <>
-              {services["smm"] ? <ServiceModal close={() => handleChangeCard("smm")} /> : <> <div onClick={() => handleChangeCard("smm")} className="relative rounded-[13.14px] lg:rounded-3xl w-[45vw] sm:w-[30vw] md:w-[29vw] xl:w-[27.5vw] h-[11rem] md:h-[16rem] xl:h-[21rem] 2xl:h-[25rem] bg-gradient-to-b from-[#EAE9FD] to-[#7F75FF]">
-                <img
-                  src={Smm}
-                  alt="icons"
-                  className="absolute right-0 sm:w-[9rem] md:w-[10rem] lg:w-[12rem] xl:w-[12rem]"
-                />
-                <p className="absolute left-[10%] bottom-[12%] font-medium text-[13px] sm:text-[15px] md:text-[18px] xl:text-[22px] 2xl:text-[40px] text-white leading-5 xl:leading-7 2xl:leading-9">
-                  SMM
-                </p>
-              </div></>}
+              {services["smm"] ? (
+                <ServiceModal close={() => handleChangeCard("smm")} />
+              ) : (
+                <>
+                  {" "}
+                  <div
+                    onClick={() => handleChangeCard("smm")}
+                    className="relative rounded-[13.14px] lg:rounded-3xl  h-[11rem] md:h-[16rem] xl:h-[21rem] 2xl:h-[25rem] bg-gradient-to-b from-[#EAE9FD] to-[#7F75FF]"
+                  >
+                    <img
+                      src={Smm}
+                      alt="icons"
+                      className="absolute right-0 sm:w-[9rem] md:w-[10rem] lg:w-[12rem] xl:w-[12rem]"
+                    />
+                    <p className="absolute left-[10%] bottom-[12%] font-medium text-[13px] sm:text-[15px] md:text-[18px] xl:text-[22px] 2xl:text-[40px] text-white leading-5 xl:leading-7 2xl:leading-9">
+                      SMM
+                    </p>
+                  </div>
+                </>
+              )}
             </>
-            {services["sites"] ? <ServiceModal close={() => handleChangeCard("sites")} /> : <> <div onClick={() => handleChangeCard("sites")} className="relative rounded-[13.14px] lg:rounded-3xl w-[45vw] sm:w-[30vw] md:w-[29vw] xl:w-[27.5vw] h-[11rem] md:h-[16rem] xl:h-[21rem] 2xl:h-[25rem] bg-gradient-to-b from-[#EAE9FD] to-[#7F75FF]">
-              <img
-                src={SiteDev}
-                alt="icons"
-                className="absolute right-0 sm:w-[9rem] md:w-[10rem] xl:w-[12rem]"
-              />
-              <p className="absolute left-[10%] bottom-[12%] font-medium text-[13px] sm:text-[15px] md:text-[18px] xl:text-[22px] 2xl:text-[40px] text-white leading-5 xl:leading-7 2xl:leading-9">
-                Разработка <br /> сайтов
-              </p>
-            </div></>}
-            <div className="relative rounded-[13.14px] lg:rounded-3xl w-[45vw] sm:w-[30vw] md:w-[29vw] xl:w-[27.5vw] h-[11rem] md:h-[16rem] xl:h-[21rem] 2xl:h-[25rem] bg-gradient-to-b from-[#EAE9FD] to-[#7F75FF]">
+            {services["sites"] ? (
+              <ServiceModal close={() => handleChangeCard("sites")} />
+            ) : (
+              <>
+                {" "}
+                <div
+                  onClick={() => handleChangeCard("sites")}
+                  className="relative rounded-[13.14px] lg:rounded-3xl  h-[11rem] md:h-[16rem] xl:h-[21rem] 2xl:h-[25rem] bg-gradient-to-b from-[#EAE9FD] to-[#7F75FF]"
+                >
+                  <img
+                    src={SiteDev}
+                    alt="icons"
+                    className="absolute right-0 sm:w-[9rem] md:w-[10rem] xl:w-[12rem]"
+                  />
+                  <p className="absolute left-[10%] bottom-[12%] font-medium text-[13px] sm:text-[15px] md:text-[18px] xl:text-[22px] 2xl:text-[40px] text-white leading-5 xl:leading-7 2xl:leading-9">
+                    Разработка <br /> сайтов
+                  </p>
+                </div>
+              </>
+            )}
+            <div className="relative rounded-[13.14px] lg:rounded-3xl  h-[11rem] md:h-[16rem] xl:h-[21rem] 2xl:h-[25rem] bg-gradient-to-b from-[#EAE9FD] to-[#7F75FF]">
               <img
                 src={Seo}
                 alt="icons"
@@ -133,7 +154,7 @@ const MainService = () => {
                 SEO
               </p>
             </div>
-            <div className="relative rounded-[13.14px] lg:rounded-3xl w-[45vw] sm:w-[30vw] md:w-[29vw] xl:w-[27.5vw] h-[11rem] md:h-[16rem] xl:h-[21rem] 2xl:h-[25rem] bg-gradient-to-b from-[#EAE9FD] to-[#7F75FF]">
+            <div className="relative rounded-[13.14px] lg:rounded-3xl  h-[11rem] md:h-[16rem] xl:h-[21rem] 2xl:h-[25rem] bg-gradient-to-b from-[#EAE9FD] to-[#7F75FF]">
               <img
                 src={Bot}
                 alt="icons"
@@ -143,7 +164,7 @@ const MainService = () => {
                 Разработка <br /> Telegram-ботов
               </p>
             </div>
-            <div className="relative rounded-[13.14px] lg:rounded-3xl w-[45vw] sm:w-[30vw] md:w-[29vw] xl:w-[27.5vw] h-[11rem] md:h-[16rem] xl:h-[21rem] 2xl:h-[25rem] bg-gradient-to-b from-[#EAE9FD] to-[#7F75FF]">
+            <div className="relative rounded-[13.14px] lg:rounded-3xl  h-[11rem] md:h-[16rem] xl:h-[21rem] 2xl:h-[25rem] bg-gradient-to-b from-[#EAE9FD] to-[#7F75FF]">
               <img
                 src={Ads}
                 alt="icons"
@@ -153,7 +174,7 @@ const MainService = () => {
                 Запуск <br /> рекламы
               </p>
             </div>
-            <div className="relative rounded-[13.14px] w-[45vw] sm:w-[30vw] md:w-[29vw] xl:w-[27.5vw] h-[11rem] md:h-[16rem] xl:h-[21rem] 2xl:h-[25rem] bg-gradient-to-b from-[#EAE9FD] to-[#7F75FF]">
+            <div className="relative rounded-[13.14px]  h-[11rem] md:h-[16rem] xl:h-[21rem] 2xl:h-[25rem] bg-gradient-to-b from-[#EAE9FD] to-[#7F75FF]">
               <img
                 src={Brand}
                 alt="icons"
