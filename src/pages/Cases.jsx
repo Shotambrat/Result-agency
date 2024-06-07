@@ -61,7 +61,7 @@ const Cases = () => {
         <div class="mt-4 sm:mt-0 relative sm:block sm:ml-8 lg:flex-1 lg:flex ">
           <ul class="list-disc  text-[24px] font-normal leading-[48px] list-inside  sm:text-[23px] sm:leading-[40px] sm:ml-8 sm:mt-0 lg:ml-0 lg:mt-0 lg:text-[24px] lg:leading-[48px]">
             <li >отжумания</li>
-            <li>пресс качат</li>
+            <li>пресс каЧат</li>
             <li>бег 10000000км</li>
           </ul>
         </div>
