@@ -1,6 +1,7 @@
 import React from 'react'
 import logo_zaglushka_mob from "../../src/assets/img/logo_zaglushka_mob.png";
 import logoresbig from "../../src/assets/img/logoresbig.png";
+import logo_big_upside_down from "../../src/assets/img/logo_big_upside_down.png";
 import SwiperCases from '../components/Cases/OurCasesSlider';
 import ToTopButton from '../components/Blog/ToTopButton';
 import ButtonPodrobnee from '../components/Cases/ButtonPodrobnee';
@@ -9,35 +10,43 @@ import Brief from '../components/Brief';
 
 const Cases = () => {
   return (
-    <div className=' mx-[10px] lg:mx-[80px]'>
+  <div>
       {/* будет кнопка назад */}
-      <div>
+      <div className='3xl:ml-[50px]'>
         <BackButton/>
       </div>
+    <div className=' mx-[10px] lg:mx-[80px] 2xl:max-w-[1185px] 2xl:mx-auto'>
 
-      <div class="mx-auto flex h-auto flex-col bg-indigo-500 text-white rounded-2xl p-6 shadow-lg w-64 m:w-4/5 ">
-        <div class="rounded-xl flex items-center justify-center h-auto mb-4">
-          <img src={logo_zaglushka_mob} className='w-11/12' alt="social-icon" />
+      <div class="mx-auto flex h-auto flex-col bg-button-color text-white rounded-[26px] p-[14px] shadow-lg w-64  m:w-4/5  lg:flex-row lg:w-full lg:items-center lg:justify-between lg:min-h-[277px] lg:p-[26px] 2xl:max-w-[1185px] 2xl:mt-[20px]">
+        {/* Левая колонка с логотипом */}
+        <div class="flex items-center justify-center h-auto mb-4 lg:mb-0">
+          <img src={logo_zaglushka_mob} className='w-full rounded-[22px] lg:w-[320px] lg:h-[220px]' alt="social-icon" />
         </div>
-        <h2 class="text-center text-xl font-semibold mb-4 mt-2 m:text-2xl md:mt-6 md:mb-8 md:text-3xl">Контент-план для Intermed Innovation</h2>
-        <div class="space-y-8">
-          <div className="flex justify-between gap-x-8 items-center">
-            <span className="text-xl md:text-2xl">Заявок</span>
-            <span className="font-bold text-4xl md:text-5xl">+25%</span>
+
+  {/* Правая колонка с текстом и показателями */}
+      <div class="lg:space-y-0 lg:flex lg:space-x-8 lg:w-3/4 lg:flex-col">
+        <h2 class="text-center text-xl font-semibold mb-4 mt-2 m:text-2xl md:mt-6 md:mb-8 md:text-3xl lg:text-[29px] lg:mb-[65px] xl:text-[35px] 2xl:text-[40px]">
+          Контент-план для Intermed Innovation
+        </h2>
+        <div class="flex flex-col space-y-8 lg:flex-row lg:space-y-0 lg:space-x-8 lg:justify-around">
+          <div class="flex justify-between gap-x-8 items-center flex-row lg:gap-x-0 lg:gap-y-4 lg:flex-col-reverse">
+            <span class="text-xl md:text-2xl">Заявок</span>
+            <span class="font-bold text-4xl md:text-3xl lg:text-4xl xl:text-[40px] 2xl:text-[48px]">+25%</span>
           </div>
-          <div className="flex justify-between gap-x-8 items-center">
-            <span className='ml-4 text-xl md:text-2xl'>ROI</span>
-            <span className="font-bold text-4xl md:text-5xl">+40%</span>
+          <div class="flex justify-between gap-x-8 items-center lg:flex-col lg:gap-x-0 lg:gap-y-4 lg:flex-col-reverse">
+            <span class='ml-4 text-xl md:text-2xl lg:ml-0'>ROI</span>
+            <span class="font-bold text-4xl md:text-3xl lg:text-4xl xl:text-[40px] 2xl:text-[48px]">+40%</span>
           </div>
-          <div className="flex justify-between gap-x-8 items-center">
-            <span className="text-xl md:text-2xl">Клиентов</span>
-            <span className="font-bold text-4xl mr-6 md:text-5xl">×2</span>
+          <div class="flex justify-between gap-x-8 items-center lg:flex-col lg:gap-x-0 lg:gap-y-3 lg:flex-col-reverse">
+            <span class="text-xl md:text-2xl">Клиентов</span>
+            <span class="font-bold text-4xl mr-6 md:text-3xl lg:mr-0 lg:text-4xl xl:text-[40px] 2xl:text-[48px]">×2</span>
           </div>
         </div>
       </div>
+    </div>
 
       <div className='text-uslugi-text inline-block mt-10 sm:mx-[15px]'>
-        <span className=' block font-semibold text-3xl mb-[7px] s:text-4xl '>О клиенте</span>
+        <span className=' block font-semibold text-3xl mb-[7px] s:text-4xl lg:mb-[15px]'>О клиенте</span>
         <span className='block text-[17px] sm:text-[18px]'>Lorem ipsum dolor sit amet consectetur. Et elit interdum eget maecenas molestie in ac quisque</span>
       </div>
 
@@ -45,83 +54,98 @@ const Cases = () => {
         <div><ButtonPodrobnee/></div>
       </div>
 
-      <div class="gradient-item-cases rounded-[30px] border-item-cases p-8 shadow-md items-center mx-auto min-h-[343px] s:w-4/5">
-        <div className='flex text-uslugi-text flex-col items-center'>
-          <h2 class="text-[35px] font-bold mb-4">Запросы</h2>
-          <ul class="list-disc text-[24px] font-normal leading-[48px] list-inside mt-[30px]">
-            <li>отжумания</li>
+      <div class="flex flex-col gradient-item-cases rounded-[30px] border-item-cases p-8 shadow-md items-center mx-auto min-h-[343px] sm:w-4/5 sm:flex-row sm:justify-between sm:items-center sm:min-h-[250px] lg:flex lg:w-full lg:justify-between lg:min-h-[250px] 2xl:max-w-[1185px]">
+        <div class="text-uslugi-text flex flex-col items-center sm:items-start sm:justify-around lg:flex-1 lg:ml-8">
+          <h2 class="text-[35px] font-bold mb-4 sm:text-[30px] sm:mb-0 lg:text-[35px] lg:mb-0 lg:ml-[30%] 2xl:text-[43px]">Запросы</h2>
+        </div>
+        <div class="mt-4 sm:mt-0 relative sm:block sm:ml-8 lg:flex-1 lg:flex ">
+          <ul class="list-disc  text-[24px] font-normal leading-[48px] list-inside  sm:text-[23px] sm:leading-[40px] sm:ml-8 sm:mt-0 lg:ml-0 lg:mt-0 lg:text-[24px] lg:leading-[48px]">
+            <li >отжумания</li>
             <li>пресс качат</li>
             <li>бег 10000000км</li>
           </ul>
         </div>
       </div>
-      <div class="rounded-[16px] border-[1px] border-uslugi-text p-4 font-semibold text-cases-text text-[36px] mt-[54px] text-center s:w-4/5 mx-auto">
-      Результаты
+
+
+    <div className='lg:grid lg:grid-cols-[30%_1fr]'>
+      <div>{/*будет 1 колонка для грида при десктоп */}
+        <div class="rounded-[20px] min-h-[105px] border-[1px] flex justify-center items-center border-uslugi-text p-4 font-semibold text-cases-text text-[36px] mt-[54px] text-center s:max-w-[350px] mx-auto lg:text-[33px] lg:max-h-[125px] lg:max-w-[370px] 2xl:min-h-[120px]">
+        Результаты
+        </div>
+        <div className='hidden w-full mb-14 lg:block'>
+          <img src={logo_big_upside_down} alt="logo_big" className='mt-[41px] mx-auto '/>
+        </div>
+
       </div>
-      
-      <div >  {/*будет колонка для грида при десктоп */}
-        <div className='relative mt-[48px]  w-full'>
-          {/* левая полоса */}
-          <div className='absolute ml-[2%]  m:ml-[3%] l:ml-[3.5%] s:ml-[4%] xs:ml-[4.6%] xxs:ml-[5%] sm:ml-[6%] md:ml-[6.2%] lg:ml-[6.3%] 2xl:ml-[6.5%]'>
-            <div className="flex mt-[50px] justify-center items-center min-h-full ">
-              <div className="relative z-10 flex flex-col items-center ">
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-[5px] bg-footer-icon xxs:w-[7px] lg:w-[10px]" style={{ top: "0", bottom: "0" }}></div>
-                <div className="relative flex flex-col gap-[190px]  items-center lg:gap-[180px]">
-                <div className="relative w-[40px] h-[40px] bg-footer-icon rounded-full border-4 border-white z-10 lg:w-[50px] lg:h-[50px]" ></div>
-                  <div className="relative w-[40px] h-[40px] bg-footer-icon rounded-full border-4 border-white z-10 lg:w-[50px] lg:h-[50px]" ></div>
-                  <div className="relative w-[40px] h-[40px] bg-footer-icon rounded-full border-4 border-white z-10 lg:w-[50px] lg:h-[50px]" ></div>
+
+
+        <div >  {/*будет 2 колонка для грида при десктоп */}
+          <div className='relative mt-[48px]  w-full lg:mt-[100px]'>
+            {/* левая полоса */}
+            <div className='absolute ml-[2%]  m:ml-[3%] l:ml-[3.5%] s:ml-[4%] xs:ml-[4.6%] xxs:ml-[5%] sm:ml-[6%] md:ml-[6.2%] lg:ml-[0%]'>
+              <div className="flex mt-[50px] justify-center items-center min-h-full ">
+                <div className="relative z-10 flex flex-col items-center ">
+                  <div className="absolute left-1/2 transform -translate-x-1/2 w-[5px] bg-footer-icon xxs:w-[7px] lg:w-[10px]" style={{ top: "0", bottom: "0" }}></div>
+                  <div className="relative flex flex-col gap-[190px]  items-center lg:gap-[180px]">
+                  <div className="relative w-[40px] h-[40px] bg-footer-icon rounded-full border-4 border-white z-10 lg:w-[55px] lg:h-[55px]" ></div>
+                    <div className="relative w-[40px] h-[40px] bg-footer-icon rounded-full border-4 border-white z-10 lg:w-[55px] lg:h-[55px]" ></div>
+                    <div className="relative w-[40px] h-[40px] bg-footer-icon rounded-full border-4 border-white z-10 lg:w-[55px] lg:h-[55px]" ></div>
+                  </div>
                 </div>
               </div>
             </div>
+            
+            {/* правая контейнер с сообщ */}
+            <div className='relative flex flex-col items-end md:w-11/5 lg:w-10/12 lg:ml-[15%]     2xl:ml-[0%]         2xl:w-full'>
+              <div className='rounded-[12px] min-h-[147px] w-11/12 bg-footer-icon lg:bg-keys_item-bg p-1 l:pt-[15px]'>
+                <div className='ml-[36px] lg:ml-[10px]'>
+                  <span className='text-[17px]  text-white font-medium l:text-[18px] sm:text-[19px]'>Мы не делаем однотипных предложений</span>
+                  <p className='text-[13px] text-white mt-[5px] font-normal l:mt-[15px] sm:text-[15px]'>Lorem ipsum dolor sit amet consectetur. 
+                  Diam nec sem a purus amet tellus. Eget a lacus amet aenean nisl sit. </p>
+                </div>
+              </div>
+              <div className='my-[21px] flex justify-end'>
+                <ButtonPodrobnee/>
+              </div>
+
+              <div className='rounded-[12px] h-[147px] w-11/12 bg-footer-icon lg:bg-keys_item-bg p-1 l:pt-[15px] '>
+                <div className='ml-[36px]'>
+                  <span className='text-[17px]  text-white font-medium l:text-[18px] sm:text-[19px]'>Мы не делаем однотипных предложений</span>
+                  <p className='text-[13px] text-white mt-[5px] font-normal l:mt-[15px] sm:text-[15px]'>Lorem ipsum dolor sit amet consectetur. 
+                  Diam nec sem a purus amet tellus. Eget a lacus amet aenean nisl sit. </p>
+                </div>
+              </div>
+              <div className='my-[21px] flex justify-end'><ButtonPodrobnee/></div>
+
+              <div className='rounded-[12px] h-[147px] w-11/12 bg-footer-icon lg:bg-keys_item-bg p-1 l:pt-[15px]'>
+                <div className='ml-[36px]'>
+                  <span className='text-[17px]  text-white font-medium l:text-[18px] sm:text-[19px]'>Мы не делаем однотипных предложений</span>
+                  <p className='text-[13px] text-white mt-[5px] font-normal l:mt-[15px] sm:text-[15px]'>Lorem ipsum dolor sit amet consectetur. 
+                  Diam nec sem a purus amet tellus. Eget a lacus amet aenean nisl sit. </p>
+                </div>
+              </div>
+              <div className='my-[21px] flex justify-end'><ButtonPodrobnee/></div>
+            </div>
           </div>
-          
-          {/* правая контейнер с сообщ */}
-          <div className='relative flex flex-col items-end md:w-11/5'>
-            <div className='rounded-[12px] min-h-[147px] w-11/12 bg-footer-icon p-1 l:pt-[15px]'>
-              <div className='ml-[36px]'>
-                <span className='text-[17px]  text-white font-medium l:text-[18px] sm:text-[19px]'>Мы не делаем однотипных предложений</span>
-                <p className='text-[13px] text-white mt-[5px] font-normal l:mt-[15px] sm:text-[15px]'>Lorem ipsum dolor sit amet consectetur. 
-                Diam nec sem a purus amet tellus. Eget a lacus amet aenean nisl sit. </p>
-              </div>
-            </div>
-            <div className='my-[21px] flex justify-end'>
-              <ButtonPodrobnee/>
-            </div>
+          {/* Конец полосы с мессендж */}
 
-            <div className='rounded-[12px] h-[147px] w-11/12 bg-footer-icon p-1 l:pt-[15px] '>
-              <div className='ml-[36px]'>
-                <span className='text-[17px]  text-white font-medium l:text-[18px] sm:text-[19px]'>Мы не делаем однотипных предложений</span>
-                <p className='text-[13px] text-white mt-[5px] font-normal l:mt-[15px] sm:text-[15px]'>Lorem ipsum dolor sit amet consectetur. 
-                Diam nec sem a purus amet tellus. Eget a lacus amet aenean nisl sit. </p>
-              </div>
-            </div>
-            <div className='my-[21px] flex justify-end'><ButtonPodrobnee/></div>
-
-            <div className='rounded-[12px] h-[147px] w-11/12 bg-footer-icon p-1 l:pt-[15px]'>
-              <div className='ml-[36px]'>
-                <span className='text-[17px]  text-white font-medium l:text-[18px] sm:text-[19px]'>Мы не делаем однотипных предложений</span>
-                <p className='text-[13px] text-white mt-[5px] font-normal l:mt-[15px] sm:text-[15px]'>Lorem ipsum dolor sit amet consectetur. 
-                Diam nec sem a purus amet tellus. Eget a lacus amet aenean nisl sit. </p>
-              </div>
-            </div>
-            <div className='my-[21px] flex justify-end'><ButtonPodrobnee/></div>
+          <div className='w-full mb-14 lg:hidden'>
+            <img src={logoresbig} alt="logo_big" className='my-0 mx-auto'/>
           </div>
         </div>
-        {/* Конец полосы с мессендж */}
-
-        <div className='w-full mb-14'>
-        <img src={logoresbig} alt="logo_big" className='my-0 mx-auto'/>
-        </div>
-
       </div>
 
       <div className='w-full flex self-center items-center justify-center content-center'>
         
         <SwiperCases/>
-
       </div >
-        <ToTopButton/>
-      </div>
+    </div >
+    <div className='3xl:ml-[50px]'>
+      <ToTopButton/>
+    </div>
+       
+  </div>
     
   )
 }

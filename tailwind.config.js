@@ -22,6 +22,7 @@ module.exports = {
         pulseText: 'pulseText 0.3s ease-in-out',
       },
       colors: {
+        'keys_item-bg': "rgba(123, 114, 235, 0.80)",
         'cases-text': "#4A448E",
         'purpleText': '#4E4A83',
         'gradient-start': '#8A66F0A8',
