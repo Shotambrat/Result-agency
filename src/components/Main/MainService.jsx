@@ -13,31 +13,37 @@ let data = [
     name: "SMM",
     nameForFunction: "smm",
     img: Smm,
+    style: "order-1 md:order-1",
   },
   {
     name: `Разработка <br/> сайтов`,
     nameForFunction: "sites",
     img: SiteDev,
+    style: "order-2 md:order-2",
   },
   {
     name: "Запуск <br /> рекламы",
     nameForFunction: "ads",
     img: Ads,
+    style: "order-5 md:order-3",
   },
   {
     name: "Seo",
     nameForFunction: "seo",
     img: Seo,
+    style: "order-3 md:order-4",
   },
   {
     name: "Разработка <br /> Telegram-ботов",
     nameForFunction: "bot",
     img: Bot,
+    style: "order-4 md:order-5",
   },
   {
     name: "Брендинг",
     nameForFunction: "brand",
     img: Brand,
+    style: "order-6 md:order-6",
   },
 ];
 
@@ -115,7 +121,7 @@ const MainService = () => {
           <div className="mt-4 grid grid-cols-2 sm:grid-cols-3 gap-x-[0.625rem] lg:gap-x-[1rem] xl:gap-x-6 gap-y-5 lg:gap-y-12">
             {data.map((data, index) => {
               return (
-                <div key={index}>
+                <div key={index} className={`${data.style}`}>
                   {services[data.nameForFunction] ? (
                     <ServiceModal
                       close={handleChangeCard}
@@ -123,7 +129,7 @@ const MainService = () => {
                     />
                   ) : (
                     <div
-                      className="relative rounded-[13.14px] lg:rounded-3xl h-[11rem] md:h-[18rem] lg:h-[21rem] xl:h-[24rem] 2xl:h-[30rem] bg-gradient-to-b from-[#EAE9FD] to-[#7F75FF]"
+                      className=" relative rounded-[13.14px] lg:rounded-3xl h-[11rem] md:h-[18rem] lg:h-[21rem] xl:h-[24rem] 2xl:h-[30rem] bg-gradient-to-b from-[#EAE9FD] to-[#7F75FF]"
                       onClick={() => handleChangeCard(data.nameForFunction)}
                     >
                       <img

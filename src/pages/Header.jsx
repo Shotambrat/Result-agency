@@ -5,8 +5,7 @@ import LanLogo from "./../assets/img/Language icon.svg";
 import Menu from "./../assets/img/menu.svg";
 import { Link } from "react-scroll";
 
-const Header = () => {
-  const [isNavOpen, setIsNavOpen] = useState(false);
+const Header = ({isNavOpen, setIsNavOpen}) => {
   const [scrollTimeout, setScrollTimeout] = useState(null);
 
   useEffect(() => {
@@ -44,23 +43,8 @@ const Header = () => {
                 alt="Логотип"
               />
             </div>
-            {/* <div className="-mr-2 flex md:hidden">
-              <button
-                onClick={() => setIsNavOpen(!isNavOpen)}
-                className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
-              >
-                <span className="sr-only">Open main menu</span>
-                {isNavOpen ? (
-                  // XIcon
-                  <div className="block h-6 w-6" />
-                ) : (
-                  // MenuIcon
-                  <div className="block h-6 w-6" />
-                )}
-              </button>
-            </div> */}
           </div>
-          <div className={`${isNavOpen ? "block" : "hidden"} lg:block`}>
+          <div className={`hidden lg:block`}>
             <div className="flex items-baseline space-x-4">
               <Link
                 to="home"
@@ -106,11 +90,13 @@ const Header = () => {
                 id="container-language"
               >
                 <button className="flex self-center items-center justify-end border-[1px] border-solid border-[#191359] rounded-[48px] pl-4 pr-2 h-6 md:py-1">
-                  <p className="text-[#191359] text-[11px] font-light xs:text-[12px] md:text-[14px]">Русский</p>
+                  <p className="text-[#191359] text-[11px] font-light xs:text-[12px] md:text-[14px]">
+                    Русский
+                  </p>
                   <img src={LanLogo} alt="language icon" className="pl-2" />
                 </button>
-                <button className="ml-2 md:ml-4 lg:hidden">
-                  <img src={Menu} alt="Menu icon" className="w-8"/>
+                <button onClick={() => setIsNavOpen(prew => !prew)} className="ml-2 md:ml-4 lg:hidden">
+                  <img src={Menu} alt="Menu icon" className="w-8" />
                 </button>
               </div>
             </div>
