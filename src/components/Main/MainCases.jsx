@@ -32,7 +32,7 @@ const MainCases = () => {
         ))}
         <div>
           <div className="rounded-[7.39px] text-[14px] md:text-xl lg:text-2xl lg:rounded-3xl h-[6.5rem] xs:h-36 md:h-40 lg:h-56 xl:h-[15rem] 2xl:h-[17rem] 3xl:h-[19rem] cursor-pointer border-[1px] border-solid border-[#d3d2e4] flex justify-center items-center">
-            Заполнить бриф
+            {t("cases-card-create")}
           </div>
         </div>
       </div>

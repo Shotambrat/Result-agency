@@ -1,6 +1,9 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const Application = ({ isOpen, onClose }) => {
+  const { t } = useTranslation();
+
   const [inputValue, setInputValue] = useState("");
   // Состояние для определения фокуса на инпуте
   const [isFocused, setIsFocused] = useState(false);
@@ -41,6 +44,28 @@ const Application = ({ isOpen, onClose }) => {
 
   if (!isOpen) return null;
 
+  const handleInvalid = (e) => {
+    e.target.setCustomValidity("");
+    if (!e.target.validity.valid) {
+      e.target.setCustomValidity(t("form-error-message"));
+    }
+  };
+
+  const handleInput = (e) => {
+    e.target.setCustomValidity("");
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    if (form.checkValidity()) {
+      // Form submission logic here
+      console.log("Form submitted:", inputValue);
+    } else {
+      form.reportValidity(); // This will trigger the custom validation messages
+    }
+  };
+
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 z-[50] flex justify-center items-center top-0">
       <div className="md:w-2/4 lg:w-1/3 lg:my-8 xl:w-2/5 2xl:w-1/4 bg-gradient-to-b from-[#746FAE] to-[#8A66F0] p-8 rounded-[20px] relative">
@@ -55,24 +80,30 @@ const Application = ({ isOpen, onClose }) => {
             <input
               type="text"
               name="name"
-              placeholder="Имя"
+              placeholder={t("cover-form-name")}
               required
+              onInvalid={handleInvalid}
+              onInput={handleInput}
               style={{ fontSize: "18px" }}
               className="bg-transparent border-b-2 border-white text-white placeholder-white focus:border-green-500 focus:outline-none focus:border-b-[3px] pb-2"
             />
             <input
               type="email"
               name="email"
-              placeholder="Эл. почта"
+              placeholder={t("cover-form-email")}
               required
+              onInvalid={handleInvalid}
+              onInput={handleInput}
               style={{ fontSize: "18px" }}
               className="bg-transparent border-b-2 border-white text-white placeholder-white focus:border-green-500 focus:outline-none focus:border-b-[3px] pb-2"
             />
             <input
               type="text"
               name="phone"
-              placeholder="Телефон"
+              placeholder={t("cover-form-phone")}
               required
+              onInvalid={handleInvalid}
+              onInput={handleInput}
               value={displayValue}
               onChange={handleChange}
               onFocus={handleFocus}
@@ -82,7 +113,7 @@ const Application = ({ isOpen, onClose }) => {
             />
             <textarea
               name="message"
-              placeholder="Ваше сообщение"
+              placeholder={t("cover-form-message")}
               style={{ fontSize: "18px" }}
               className="bg-transparent border-b-2 border-white text-white placeholder-white focus:border-green-500 focus:outline-none focus:border-b-[3px] pb-2"
             />
@@ -91,7 +122,7 @@ const Application = ({ isOpen, onClose }) => {
                 type="submit"
                 className="mt-4 bg-gray-300 bg-opacity-30 border-2 text-white py-2 px-2 xs:px-8 rounded-full hover:bg-gray-200 hover:text-uslugi-text transition-colors"
               >
-                Заказать обратный звонок
+                {t("cover-form-button")}
               </button>
             </div>
           </form>

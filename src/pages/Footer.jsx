@@ -22,11 +22,11 @@ const Footer = () => {
         +998 (90) 022-80-73
       </a>
       <p className="text-center text-[1rem] lg:text-lg font-normal mt-6 sm:mt-2 sm:order-7 lg:order-1 col-span-3 lg:col-span-2">
-        Ташкент, ул.Чинабад, 10
+        {t("footer-adress")}
       </p>
 
       <p className="text-center text-[1rem] lg:text-lg leading-5 lg:leading-6 mt-6 sm:mt-6 lg:mt-6 sm:order-3 lg:order-8 col-span-3 lg:col-span-2 lg:row-[span_5_/_span_11]">
-        © 2023 RESULT AGENCY - <br /> {t("footer-private-motto")}
+        © 2023 RESULT AGENCY - <br /> {t("footer-motto")}
       </p>
       <p className="text-center mt-6 sm:mt-2 lg:mt-0 font-normal text-[0.8125rem] sm:order-6 lg:order-[20] col-span-3 lg:col-span-2">
         {t("footer-private-policy")}

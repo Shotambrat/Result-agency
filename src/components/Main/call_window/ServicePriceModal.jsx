@@ -20,7 +20,7 @@ export default function ServiceModal({
       <div className="p-4 w-4/5 rounded-[11px] h-auto m:p-6 xs:px-7 xs:py-3 sm:px-9  2xl:p-10 2xl:w-3/4 lg:rounded-[41px] bg-gradient-to-b from-[#746FAE] to-[#8A66F0] flex items-start justify-center flex-col lg:px-9 lg:py-9 price-list">
         <div className="flex w-full justify-between align-baseline price-list-upp">
           <span className="l:mb-[5px] s:mb-[7px] text-[15px] text-white xs:text-[19px] sm:text-[20px]  md:text-[24px] xl:text-[29px] 2xl:text-[30px] 2xl:mb-[0px] font-semibold  lg:mb-[14px] page-list-text">
-            {t(`service-modal-title${defaultNumber}`)}
+            {t(`service-card-title${defaultNumber}`)}
           </span>
           <button
             className="bg-transparent border-none close-button"
@@ -47,8 +47,8 @@ export default function ServiceModal({
             ◻️ {t(`service-card-title${defaultNumber}`)}
           </li>
           <li className={liStyle}>💵 {t(`service-modal-price${defaultNumber}`)}</li>
-          <li className={liStyle}>💻 размер: {t(`service-modal-size${defaultNumber}`)}</li>
-          <li className={liStyle}>⏱️ срок: {t(`service-modal-duration${defaultNumber}`)}</li>
+          <li className={liStyle}>💻 {t("service-size")}: {t(`service-modal-size${defaultNumber}`)}</li>
+          <li className={liStyle}>⏱️ {t("service-term")}: {t(`service-modal-duration${defaultNumber}`)}</li>
           <li className={liStyle}>{t(`service-modal-condition${defaultNumber}`)}</li>
           <li className={liStyle}>🛍 {t(`service-modal-services${defaultNumber}`)}</li>
           <li className={liStyle}>{t(`service-modal-webDev${defaultNumber}`)}</li>
