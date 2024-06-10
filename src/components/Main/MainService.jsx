@@ -5,6 +5,7 @@ import SiteDev from "../../assets/img/SiteDev.svg";
 import Brand from "../../assets/img/brand.svg";
 import Ads from "../../assets/img/Ads.svg";
 import Bot from "../../assets/img/Bot.svg";
+import { gsap } from 'gsap';
 
 import ServiceModal from "./call_window/ServiceModal";
 import { useTranslation } from "react-i18next";
@@ -50,7 +51,23 @@ let data = [
 ];
 
 const MainService = () => {
-  
+
+
+
+
+  const imgRefs = useRef([]);
+
+  const handleMouseEnter = (index) => {
+    gsap.to(imgRefs.current[index], { scale: 1.2, x: -30, duration: 0.3 });
+  };
+
+  const handleMouseLeave = (index) => {
+    gsap.to(imgRefs.current[index], { scale: 1, x: 0, duration: 0.3 });
+  };
+
+
+
+
   const { t } = useTranslation();
 
   const [services, setServices] = useState({
@@ -145,22 +162,41 @@ const MainService = () => {
                       name={data.nameForFunction}
                     />
                   ) : (
-                    <div
-                      className=" relative rounded-[13.14px] lg:rounded-3xl h-[11rem] md:h-[18rem] lg:h-[21rem] xl:h-[24rem] 2xl:h-[30rem] bg-gradient-to-b from-[#EAE9FD] to-[#7F75FF]"
-                      onClick={() => handleChangeCard(data.nameForFunction)}
-                    >
-                      <img
-                        src={data.img}
-                        alt="icons"
-                        className="absolute right-0 lg:rounded-3xl w-[70%] h-[70%]"
-                      />
-                      <p
-                        dangerouslySetInnerHTML={{
-                          __html: t(`service-card${index + 1}-title`),
-                        }}
-                        className="absolute left-[10%] bottom-[12%] font-medium text-[13px] sm:text-[15px] md:text-[18px] lg:text-[24px] xl:text-[28px] 2xl:text-[40px] text-white leading-5 xl:leading-7 2xl:leading-10"
-                      ></p>
-                    </div>
+<div
+      className="relative rounded-[13.14px] lg:rounded-3xl h-[11rem] md:h-[18rem] lg:h-[21rem] xl:h-[24rem] 2xl:h-[30rem] bg-gradient-to-b from-[#EAE9FD] to-[#7F75FF]"
+      onClick={() => handleChangeCard(data.nameForFunction)}
+      onMouseEnter={() => handleMouseEnter(index)}
+      onMouseLeave={() => handleMouseLeave(index)}
+    >
+      <img
+        ref={(el) => (imgRefs.current[index] = el)}
+        src={data.img}
+        alt="icons"
+        className="absolute right-0 lg:rounded-3xl w-[70%] h-[70%]"
+      />
+      <p
+        dangerouslySetInnerHTML={{
+          __html: t(`service-card${index + 1}-title`),
+        }}
+        className="absolute left-[10%] bottom-[12%] font-medium text-[13px] sm:text-[15px] md:text-[18px] lg:text-[24px] xl:text-[28px] 2xl:text-[40px] text-white leading-5 xl:leading-7 2xl:leading-10"
+      ></p>
+    </div>
+                    // <div
+                    //   className=" relative rounded-[13.14px] lg:rounded-3xl h-[11rem] md:h-[18rem] lg:h-[21rem] xl:h-[24rem] 2xl:h-[30rem] bg-gradient-to-b from-[#EAE9FD] to-[#7F75FF]"
+                    //   onClick={() => handleChangeCard(data.nameForFunction)}
+                    // >
+                    //   <img
+                    //     src={data.img}
+                    //     alt="icons"
+                    //     className="absolute right-0 lg:rounded-3xl w-[70%] h-[70%]"
+                    //   />
+                    //   <p
+                    //     dangerouslySetInnerHTML={{
+                    //       __html: t(`service-card${index + 1}-title`),
+                    //     }}
+                    //     className="absolute left-[10%] bottom-[12%] font-medium text-[13px] sm:text-[15px] md:text-[18px] lg:text-[24px] xl:text-[28px] 2xl:text-[40px] text-white leading-5 xl:leading-7 2xl:leading-10"
+                    //   ></p>
+                    // </div>
                   )}
                 </div>
               );
