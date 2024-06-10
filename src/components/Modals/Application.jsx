@@ -42,8 +42,8 @@ const Application = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center">
-      <div className="md:w-2/4 lg:w-1/3 lg:h-1/2 lg:my-8 xl:w-2/5 2xl:w-1/4 bg-gradient-to-b from-[#746FAE] to-[#8A66F0] p-8 rounded-[20px] relative">
+    <div className="fixed inset-0 bg-black bg-opacity-50 z-[50] flex justify-center items-center top-0">
+      <div className="md:w-2/4 lg:w-1/3 lg:my-8 xl:w-2/5 2xl:w-1/4 bg-gradient-to-b from-[#746FAE] to-[#8A66F0] p-8 rounded-[20px] relative">
         <button
           onClick={onClose}
           className="absolute top-0 right-0 m-4 text-white text-2xl"

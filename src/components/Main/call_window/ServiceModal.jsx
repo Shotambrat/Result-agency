@@ -32,7 +32,6 @@ export default function ServiceModal({ close, name }) {
       hosting: "Хостинг на 3 месяца",
       domen: "Доменное имя на 1 год",
       expCode: "Экспорт кода (при желании заказчика)",
-      name: "smm",
     },
     {
       title: "Одностраничный сайт Tilda",
