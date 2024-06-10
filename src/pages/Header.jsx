@@ -61,7 +61,7 @@ const Header = ({ isNavOpen, setIsNavOpen }) => {
 
   return (
     <header className="header w-[100vw] bg-white bg-opacity-30 backdrop-filter backdrop-blur-3xl fixed top-0 z-20 py-3 3xl:py-0">
-      <div className=" lg:max-w-7xl mx-auto px-[0.625rem] sm:px-6 lg:px-[6.25rem]">
+      <div className="lg:max-w-7xl mx-auto px-[0.625rem] sm:px-6 lg:px-[3rem]">
         <div className="flex items-center content-center justify-between h-16 3xl:h-24">
           <NavLink to="/" className="flex items-center" onClick={toTop}>
             <div className="flex-shrink-0">
