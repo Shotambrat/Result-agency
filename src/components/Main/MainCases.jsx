@@ -3,30 +3,35 @@ import { Link } from 'react-router-dom';
 
 const MainCases = () => {
   function toTop() {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0});
   }
   
   const cases1 = [
     {
+      route: "/case",
       title: "Наши кейсы",
       description: "Lorem",
     },
     {
+      route: "/case",
       title: "Наши кейсы",
       description:
         "Lorem ipsum dolor sit amet consectetur. Hendrerit placerat ultricies erat donec. ",
     },
     {
+      route: "/case",
       title: "Наши кейсы",
       description:
         "Lorem ipsum dolor sit amet consectetur. Hendrerit placerat ultricies erat donec. ",
     },
     {
+      route: "/case",
       title: "Наши кейсы",
       description:
         "Lorem ipsum dolor sit amet consectetur. Hendrerit placerat ultricies erat donec. ",
     },
     {
+      route: "/case",
       title: "Наши кейсы",
       description:
         "Lorem ipsum dolor sit amet consectetur. Hendrerit placerat ultricies erat donec. ",
@@ -43,7 +48,7 @@ const MainCases = () => {
           <div key={index} className="">
             <Link 
               onClick={() => toTop()}
-              to="/Cases">
+              to="/cases">
               <div className="rounded-[7.39px] lg:rounded-3xl h-[6.5rem] xs:h-36 md:h-40 lg:h-56 xl:h-[15rem] 2xl:h-[17rem] 3xl:h-[19rem] border-[1px] border-solid border-cases-border">
               </div>
             </Link>

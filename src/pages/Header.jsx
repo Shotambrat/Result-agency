@@ -3,7 +3,7 @@ import { gsap } from "gsap";
 import Logo from "./../assets/img/logo.png";
 import LanLogo from "./../assets/img/Language icon.svg";
 import Menu from "./../assets/img/menu.svg";
-import { Link } from "react-scroll";
+import { Link } from 'react-scroll';
 import { NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import i18next from "i18next";
