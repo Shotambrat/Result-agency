@@ -17,110 +17,7 @@ export default function ServiceModal({ close, name }) {
     setOpenPrice(false);
   };
 
-  const servicesData = [
-    {
-      title: "Одностраничный сайт",
-      siteFor: "Статичный сайт для специалиста или небольшой клиники.",
-      price: "300$",
-      size: "1 страница",
-      duration: "1 месяц",
-      condition: "(при быстром получении запрашиваемой информации от клиента)",
-      services: "Пакет услуг",
-      webDev: "Разработка сайта",
-      completion: "Заполнение контентом на 2 языках",
-      integration: "Интеграция с CMS панелью",
-      indexation: "Индексация в Google",
-      seo: "SEO оптимизация под ключевые слова",
-      hosting: "Хостинг на 3 месяца",
-      domen: "Доменное имя на 1 год",
-      expCode: "Экспорт кода (при желании заказчика)",
-    },
-    {
-      title: "Одностраничный сайт Tilda",
-      siteFor: "Статичный сайт для специалиста или небольшой 2.",
-      price: "400$",
-      size: "1 страница",
-      duration: "2 недели",
-      condition: "(при быстром получении запрашиваемой информации от клиента)",
-      services: "Пакет услуг",
-      webDev: "Разработка сайта",
-      completion: "Заполнение контентом на 2 языках",
-      integration: "Интеграция с CMS панелью",
-      indexation: "Индексация в Google",
-      seo: "SEO оптимизация под ключевые слова",
-      hosting: "Хостинг на 3 месяца",
-      domen: "Доменное имя на 1 год",
-      expCode: "Экспорт кода (при желании заказчика)",
-    },
-    {
-      title: "Многостраничный сайт",
-      siteFor: "Статичный сайт для специалиста или небольшой 3.",
-      price: "500$",
-      size: "1 страница",
-      duration: "2 недели",
-      condition: "(при быстром получении запрашиваемой информации от клиента)",
-      services: "Пакет услуг",
-      webDev: "Разработка сайта",
-      completion: "Заполнение контентом на 2 языках",
-      integration: "Интеграция с CMS панелью",
-      indexation: "Индексация в Google",
-      seo: "SEO оптимизация под ключевые слова",
-      hosting: "Хостинг на 3 месяца",
-      domen: "Доменное имя на 1 год",
-      expCode: "Экспорт кода (при желании заказчика)",
-    },
-    {
-      title: "Многостраничный сайтa",
-      siteFor: "Статичный сайт для специалиста или небольшой клиники.",
-      price: "600$",
-      size: "1 страница",
-      duration: "2 недели",
-      condition: "(при быстром получении запрашиваемой информации от клиента)",
-      services: "Пакет услуг",
-      webDev: "Разработка сайта",
-      completion: "Заполнение контентом на 2 языках",
-      integration: "Интеграция с CMS панелью",
-      indexation: "Индексация в Google",
-      seo: "SEO оптимизация под ключевые слова",
-      hosting: "Хостинг на 3 месяца",
-      domen: "Доменное имя на 1 год",
-      expCode: "Экспорт кода (при желании заказчика)",
-    },
-    {
-      title: "Многостраничный сайт Tilda",
-      siteFor: "Статичный сайт для специалиста или небольшой клиники.",
-      price: "700$",
-      size: "1 страница",
-      duration: "2 недели",
-      condition: "(при быстром получении запрашиваемой информации от клиента)",
-      services: "Пакет услуг",
-      webDev: "Разработка сайта",
-      completion: "Заполнение контентом на 2 языках",
-      integration: "Интеграция с CMS панелью",
-      indexation: "Индексация в Google",
-      seo: "SEO оптимизация под ключевые слова",
-      hosting: "Хостинг на 3 месяца",
-      domen: "Доменное имя на 1 год",
-      expCode: "Экспорт кода (при желании заказчика)",
-    },
-    {
-      title: "Другие сайты",
-      siteFor: "Статичный сайт для специалиста или небольшой клиники.",
-      price: "800$",
-      size: "1 страница",
-      duration: "2 недели",
-      condition: "(при быстром получении запрашиваемой информации от клиента)",
-      services: "Пакет услуг",
-      webDev: "Разработка сайта",
-      completion: "Заполнение контентом на 2 языках",
-      integration: "Интеграция с CMS панелью",
-      indexation: "Индексация в Google",
-      seo: "SEO оптимизация под ключевые слова",
-      hosting: "Хостинг на 3 месяца",
-      domen: "Доменное имя на 1 год",
-      expCode: "Экспорт кода (при желании заказчика)",
-    },
-  ];
+  const servicesData = [{}, {}, {}, {}, {}, {}];
 
   return (
     <>
@@ -141,9 +38,9 @@ export default function ServiceModal({ close, name }) {
               <p
                 className="hover:underline text-[10.5px] py-[1.5px] cursor-pointer text-left font-semibold text-purpleText inline-block m:py-[0.5px] m:text-[11px] l:text-[12.5px] l:py-[0px] s:py-[3px] xs:text-[14px] xs:py-[3px] xs:px-[4.5px] sm:py-[2px]  sm:px-[4px] sm:text-[13px] md:text-[16.5px] md:px-[7px] md:py-[5px] lg:text-[18px] lg:px-[13px] lg:py-[7px] xl:py-[10px] xl:px-[20px] xl:text-[19px] 2xl:text-[25px] "
                 key={index}
-                onClick={() => handleOpenServicePriceModal(index+1)}
+                onClick={() => handleOpenServicePriceModal(index + 1)}
               >
-                {t(`service-card-title${index+1}`)}
+                {t(`service-card-title${index + 1}`)}
               </p>
             );
           })}

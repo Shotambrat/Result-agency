@@ -34,13 +34,14 @@
   "service-card5-title": "Разработка <br> Telegram-ботов",
   "service-card6-title": "Брендинг",
 
-  "service-modal-title1": "Одностраничный сайт",
-  "service-modal-title2": "Одностраничный сайт Tilda",
-  "service-modal-title3": "Многостраничный сайт",
-  "service-modal-title4": "Многостраничный сайтa",
-  "service-modal-title5": "Многостраничный сайт Tilda",
-  "service-modal-title6": "Другие сайты",
+  "service-card-title1": "Одностраничный сайт",
+  "service-card-title2": "Одностраничный сайт Tilda",
+  "service-card-title3": "Многостраничный сайт",
+  "service-card-title4": "Многостраничный сайтa",
+  "service-card-title5": "Многостраничный сайт Tilda",
+  "service-card-title6": "Другие сайты",
 
+  "service-modal-title1": "Статичный сайт для специалиста или небольшой клиники 1",
   "service-modal-siteFor1": "Статичный сайт для специалиста или небольшой клиники 1",
   "service-modal-price1": "300$",
   "service-modal-size1": "1 страница",
@@ -174,6 +175,7 @@
   "brief-form-button": "Оставить заявку",
 
   "footer-private-policy": "Политика конфиденциальности",
+  "footer-private-motto": "Медицинский маркетинг & IT",
 
   "blog-title": "Мы не делаем однотипных предложений",
   "blog-subtitle": "Lorem ipsum dolor sit amet consectetur. Et elit interdum eget maecenas molestie in ac quisque. Sit nam congue turpis tellus tellus mattis vulputate. Cursus eu auctor nam aliquet quam. Risus feugiat volutpat massa nunc quis erat fermentum elit magna. Aliquam duis lectus mauris nibh amet sed viverra. Arcu tellus est eget dictum nulla etiam.",
@@ -183,5 +185,27 @@
   "blog-conclution-subtitle": "Lorem ipsum dolor sit amet consectetur. Et elit interdum eget maecenas molestie in ac quisque. Sit nam congue turpis tellus tellus mattis vulputate. Cursus eu auctor nam aliquet quam. Risus feugiat volutpat massa nunc quis erat fermentum elit magna. Aliquam duis lectus mauris nibh amet sed viverra. Arcu tellus est eget dictum nulla etiam.",
 
   "back-button": "назад",
-  "up-button": "наверх"
+  "up-button": "наверх",
+  "moreDetails-button": "Подробнее",
+
+  "cases-plan-title": "Контент-план для Intermed Innovation",
+  "cases-plan-application": "Заявок",
+  "cases-plan-ROI": "ROI",
+  "cases-plan-client": "Клиентов",
+
+  "cases-about-client-title": "О клиенте",
+  "cases-about-client-subtitle": "Lorem ipsum dolor sit amet consectetur. Et elit interdum eget maecenas molestie in ac quisque",
+
+  "cases-requests-title": "Запросы",
+  "cases-request1": "отжумания",
+  "cases-request2": "пресс качат",
+  "cases-request3": "бег 10000000км",
+
+  "cases-results-title": "Результаты",
+  "cases-results-card1-title": "Мы не делаем однотипных предложений",
+  "cases-results-card1-subtitle": "Lorem ipsum dolor sit amet consectetur. Diam nec sem a purus amet tellus. Eget a lacus amet aenean nisl sit.",
+  "cases-results-card2-title": "Мы не делаем однотипных предложений",
+  "cases-results-card2-subtitle": "Lorem ipsum dolor sit amet consectetur. Diam nec sem a purus amet tellus. Eget a lacus amet aenean nisl sit.",
+  "cases-results-card3-title": "Мы не делаем однотипных предложений",
+  "cases-results-card3-subtitle": "Lorem ipsum dolor sit amet consectetur. Diam nec sem a purus amet tellus. Eget a lacus amet aenean nisl sit."
 }

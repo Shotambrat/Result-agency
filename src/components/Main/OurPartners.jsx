@@ -11,12 +11,15 @@ import Med24 from "../../assets/img/logo_med24 2.svg";
 import Top from "../../assets/img/top-logo.svg";
 import Megahertz from "../../assets/img/megahertz-logo.svg";
 import Prime from "../../assets/img/Prime_MedicalCenter_logo.svg";
+import { useTranslation } from "react-i18next";
 
 const OurPartners = () => {
+const { t } = useTranslation();
+
   return (
     <div className="mx-[0.625rem] sm:mx-4 md:mx-10 xl:mx-20 2xl:mx-[6.875rem] 3xl:max-w-[1500px] 3xl:mx-auto lg:mt-[3rem] border-2 border-[#4A448E] border-opacity-40 border-solid rounded-[14.67px] lg:rounded-3xl">
       <h2 className="text-center text-[26px] md:text-[30px] lg:text-[34px] 2xl:text-[64px] font-semibold pt-4 pb-[0.875rem] md:py-5 lg:py-6 border-b-2 border-solid border-[#4A448E] border-opacity-40">
-        Наши партнеры
+        {t(`our-partnest-title`)}
       </h2>
       <div className="grid grid-cols-3 md:grid-cols-4 gap-x-4 gap-y-8 md:gap-y-12 lg:gap-y-16 xl:gap-y-20 2xl:gap-y-24 pt-5 pb-8 px-3 md:px-4 lg:px-8 md:py-8 lg:py-12">
         <div className="order-1 ">

@@ -44,7 +44,7 @@ export default function ServiceModal({
         </div>
         <ul className="lg:p-4 lg:px-8">
           <li className={liStyle}>
-            ◻️ {t(`service-modal-siteFor${defaultNumber}`)}
+            ◻️ {t(`service-card-title${defaultNumber}`)}
           </li>
           <li className={liStyle}>💵 {t(`service-modal-price${defaultNumber}`)}</li>
           <li className={liStyle}>💻 размер: {t(`service-modal-size${defaultNumber}`)}</li>
