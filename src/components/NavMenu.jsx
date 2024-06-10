@@ -22,9 +22,8 @@ export default function NavMenu({ isNavOpen, setIsNavOpen }) {
       <div
         onClick={() => {
           setIsNavOpen((prew) => !prew);
-          toTop();
         }}
-        className="absolute top-2 right-2"
+        className="absolute top-4 right-4"
       >
         <img src={logoBack} alt="close" className="text-right w-12 h-12" />
       </div>
