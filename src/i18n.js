@@ -3,13 +3,12 @@ import { initReactI18next } from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 import HttpApi from "i18next-http-backend";
 
-const DEFAULT_LOCALE = "uz";
+const DEFAULT_LOCALE = "ru";
 
 const domainLocaleMap = {
   "localhost:3000": "ru",
   "uz.result.uz": "uz",
   "ru.result.uz": "ru",
-  "en.result.uz": "en",
 };
 
 const domainDetector = {
@@ -44,7 +43,7 @@ i18n
   // for all options read: https://www.i18next.com/overview/configuration-options
   .use(HttpApi)
   .init({
-    supportedLngs: ["uz", "ru", "en", "sa"],
+    supportedLngs: ["uz", "ru"],
     fallbackLng: "ru",
     customDetectors: [domainDetector],
     detection: {

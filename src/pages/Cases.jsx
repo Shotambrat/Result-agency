@@ -141,11 +141,11 @@ const Cases = () => {
                 <span className="text-xl md:text-2xl">Заявок</span>
                 <span className="font-bold text-4xl md:text-3xl lg:text-4xl xl:text-[40px] 2xl:text-[48px]">+25%</span>
               </div>
-              <div ref={(el) => { titleStatic2.current = el; static2InViewRef(el); }} className="flex justify-between gap-x-8 items-center lg:flex-col lg:gap-x-0 lg:gap-y-4 lg:flex-col-reverse">
+              <div ref={(el) => { titleStatic2.current = el; static2InViewRef(el); }} className="flex justify-between gap-x-8 items-center lg:gap-x-0 lg:gap-y-4 lg:flex-col-reverse">
                 <span className='ml-4 text-xl md:text-2xl lg:ml-0'>ROI</span>
                 <span className="font-bold text-4xl md:text-3xl lg:text-4xl xl:text-[40px] 2xl:text-[48px]">+40%</span>
               </div>
-              <div ref={(el) => { titleStatic3.current = el; static3InViewRef(el); }} className="flex justify-between gap-x-8 items-center lg:flex-col lg:gap-x-0 lg:gap-y-3 lg:flex-col-reverse">
+              <div ref={(el) => { titleStatic3.current = el; static3InViewRef(el); }} className="flex justify-between gap-x-8 items-center lg:gap-x-0 lg:gap-y-3 lg:flex-col-reverse">
                 <span className="text-xl md:text-2xl">Клиентов</span>
                 <span className="font-bold text-4xl mr-6 md:text-3xl lg:mr-0 lg:text-4xl xl:text-[40px] 2xl:text-[48px]">×2</span>
           </div>
