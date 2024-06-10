@@ -4,7 +4,7 @@ export default function ServiceModal({defaultNumber, data, siteFor, title, condi
     let liStyle = "text-[12px] list-disc text-left text-white font-light m:text-[12.5px] l:my-[2px] s:text-[13px] xs:text-[16px] sm:text-[17px] md:text-[18px] lg:text-[21px] xl:text-[23px] 2xl:text-[22px] 2xl:my-[0px]"
     
     return (
-        <div className="fixed inset-0 flex items-center justify-center z-10 backdrop-blur-md shadow-md  modal-container-price">
+        <div className=" fixed inset-0 flex items-center justify-center z-[21] backdrop-blur-md shadow-md  modal-container-price">
             <div className='p-4 w-4/5 rounded-[11px] h-auto m:p-6 xs:px-7 xs:py-3 sm:px-9  2xl:p-10 2xl:w-3/4 lg:rounded-[41px] bg-gradient-to-b from-[#746FAE] to-[#8A66F0] flex items-start justify-center flex-col lg:px-9 lg:py-9 price-list'>
                 <div className='flex w-full justify-between align-baseline price-list-upp'>
                     <span className='l:mb-[5px] s:mb-[7px] text-[15px] text-white xs:text-[19px] sm:text-[20px]  md:text-[24px] xl:text-[29px] 2xl:text-[30px] 2xl:mb-[0px] font-semibold  lg:mb-[14px] page-list-text'>{data[defaultNumber].title}</span>

@@ -15,7 +15,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Header isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} />
+        <Header isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen}/>
         <NavMenu isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen}/>
         <Routes>
           <Route path="/" element={<Home />}></Route>

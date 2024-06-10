@@ -7,7 +7,7 @@ export default function ToTopButton() {
   return (
     <button
       onClick={() => toTop()}
-      className="my-16 ml-4 sm:ml-10 md:ml-16 lg:ml-10 xl:ml-16 2xl:ml-20 border-2 border-header-text border-solid py-1 px-10 font-normal text-[20px] rounded-[30px] cursor-pointer"
+      className=" ml-4 sm:ml-10 md:ml-16 lg:ml-10 xl:ml-16 2xl:ml-20 border-2 border-header-text border-solid py-1 px-10 font-normal text-[20px] rounded-[30px] cursor-pointer"
     >
       наверх
     </button>

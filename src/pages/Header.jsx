@@ -32,7 +32,7 @@ const Header = ({isNavOpen, setIsNavOpen}) => {
   }, [scrollTimeout]);
 
   return (
-    <header className="header w-[100vw] bg-white bg-opacity-30 backdrop-filter backdrop-blur-3xl fixed top-0 z-10">
+    <header className="header w-[100vw] bg-white bg-opacity-30 backdrop-filter backdrop-blur-3xl fixed top-0 z-20">
       <div className=" lg:max-w-7xl mx-auto px-[0.625rem] sm:px-6 lg:px-[6.25rem]">
         <div className="flex items-center content-center justify-between h-16 3xl:h-24">
           <div className="flex items-center">
