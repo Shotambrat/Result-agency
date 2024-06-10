@@ -10,7 +10,7 @@ export default function Blog() {
   return (
     <>
       <Header />
-      <div className="mt-20 lg:mt-24 3xl:mt-28 mb-8 lg:mb-10 2xl:mb-12 3xl:mb-14">
+      <div className="mt-24 lg:mt-28 3xl:mt-32 mb-8 lg:mb-10 2xl:mb-12 3xl:mb-14">
         <BackButton />
       </div>
       <div className="mx-[0.625rem] sm:mx-8 md:mx-12 lg:mx-16 xl:mx-[6.5rem] 2xl:mx-40 3xl:max-w-[1500px] 3xl:mx-auto text-headings-color">
