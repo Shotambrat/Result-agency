@@ -6,9 +6,25 @@ import Menu from "./../assets/img/menu.svg";
 import { Link } from "react-scroll";
 import { NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import i18next from "i18next";
+import i18n from "i18next";
+import cookies from "js-cookie";
 
 const Header = ({ isNavOpen, setIsNavOpen }) => {
+  const [openLanguage, setOpenLanguage] = useState(false);
+  const { t } = useTranslation();
+
+  const currentLanguage = cookies.get("i18next") || "ru";
+
+  function handleChangeLanguage() {
+    if (currentLanguage === "ru") {
+      i18n.changeLanguage("uz");
+    } else {
+      i18n.changeLanguage("ru");
+    }
+
+    setOpenLanguage((prew) => (prew = !prew));
+  }
+
   const [scrollTimeout, setScrollTimeout] = useState(null);
   function toTop() {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -58,7 +74,7 @@ const Header = ({ isNavOpen, setIsNavOpen }) => {
                 duration={500}
                 className="text-header-text hover:text-blue-700 px-3 py-2 rounded-md text-sm xl:text-lg font-medium cursor-pointer"
               >
-                О нас
+                {t("header-aboutUs")}
               </Link>
               <Link
                 to="services"
@@ -66,7 +82,7 @@ const Header = ({ isNavOpen, setIsNavOpen }) => {
                 duration={500}
                 className="text-header-text hover:text-blue-700 px-3 py-2 rounded-md text-sm xl:text-lg font-medium cursor-pointer"
               >
-                Услуги
+                {t("header-services")}
               </Link>
               <Link
                 to="cases"
@@ -74,7 +90,7 @@ const Header = ({ isNavOpen, setIsNavOpen }) => {
                 duration={500}
                 className="text-header-text hover:text-blue-700 px-3 py-2 rounded-md text-sm xl:text-lg font-medium cursor-pointer"
               >
-                Наши кейсы
+                {t("header-cases")}
               </Link>
               <Link
                 to="contacts"
@@ -82,40 +98,45 @@ const Header = ({ isNavOpen, setIsNavOpen }) => {
                 duration={500}
                 className="text-header-text hover:text-blue-700 px-3 py-2 rounded-md text-sm xl:text-lg font-medium cursor-pointer"
               >
-                Контакты
+                {t("header-contacts")}
               </Link>
             </div>
           </div>
-          <div className="">
-            <div className="ml-4 flex items-center md:ml-6 xl:text-lg">
-              <h1 className="hidden md:block">
-                <a href="Tel:+998900228073">+998900228073</a>
-              </h1>
-              <div
-                className="flex content-center ml-[1.1rem]"
-                id="container-language"
-              >
-                <div className="flex self-center items-start relative">
-                  <button className="flex items-center border-[1px] border-solid border-[#191359] rounded-[48px] pl-4 pr-2 h-6 md:py-1">
-                    <p className="text-[#191359] text-[11px] font-light xs:text-[12px] md:text-[14px]">
-                      Русский
-                    </p>
-                    <img src={LanLogo} alt="language icon" className="pl-2" />
-                  </button>
-                  <button className="w-full flex items-center bottom-[-100%] absolute text-start pl-2 border-[1px] border-solid border-cases-border rounded-[48px] h-6">
-                    <p className="text-[#191359] text-[11px] font-light xs:text-[12px] md:text-[14px]">
-                      O'zbekcha
-                    </p>
-                  </button>
-                </div>
+          <div className="ml-4 flex items-center md:ml-6 xl:text-lg">
+            <h1 className="hidden md:block">
+              <a href="Tel:+998900228073">+998900228073</a>
+            </h1>
+            <div
+              className="flex content-center ml-[1.1rem]"
+              id="container-language"
+            >
+              <div className="flex self-center items-start relative">
                 <button
-
-                  onClick={() => setIsNavOpen((prew) => !prew)}
-                  className="ml-2 md:ml-4 lg:hidden"
+                  onClick={() => setOpenLanguage((prew) => !prew)}
+                  className="flex items-center border-[1px] border-solid border-[#191359] rounded-[48px] pl-4 pr-2 h-6 md:py-1"
                 >
-                  <img src={Menu} alt="Menu icon" className="w-8" />
+                  <p className="text-[#191359] text-[11px] font-light xs:text-[12px] md:text-[14px]">
+                    {t("header-language")}
+                  </p>
+                  <img src={LanLogo} alt="language icon" className="pl-2" />
                 </button>
+                {openLanguage && (
+                  <button
+                    onClick={() => handleChangeLanguage()}
+                    className="w-full flex items-center bottom-[-100%] absolute text-start pl-2 border-[1px] border-solid border-cases-border rounded-[48px] h-6"
+                  >
+                    <p className="text-[#191359] text-[11px] font-light xs:text-[12px] md:text-[14px]">
+                      {currentLanguage !== "ru" ? "Русский" : "O'zbekcha"}
+                    </p>
+                  </button>
+                )}
               </div>
+              <button
+                onClick={() => setIsNavOpen((prew) => !prew)}
+                className="ml-2 md:ml-4 lg:hidden"
+              >
+                <img src={Menu} alt="Menu icon" className="w-8" />
+              </button>
             </div>
           </div>
         </div>

@@ -7,6 +7,7 @@ import Ads from "../../assets/img/Ads.svg";
 import Bot from "../../assets/img/Bot.svg";
 
 import ServiceModal from "./call_window/ServiceModal";
+import { useTranslation } from "react-i18next";
 
 let data = [
   {
@@ -48,6 +49,8 @@ let data = [
 ];
 
 const MainService = () => {
+  const { t } = useTranslation();
+
   const [services, setServices] = useState({
     smm: false,
     sites: false,
@@ -82,33 +85,45 @@ const MainService = () => {
             <p className="text-[32.33px] text-[#5950C9] font-bold lg:text-[40px] 2xl:text-[76px]">
               25%
             </p>
-            <p className="md:h-[40px] lg:h-20 2xl:h-[6.2rem] text-[13px] lg:text-[16px] 2xl:text-[24px] text-[#3E3B6B] font-normal text-center px-4 lg:pb-8">
-              Увеличение трафика
-            </p>
+            <p
+              dangerouslySetInnerHTML={{
+                __html: t(`service-info-cart2-subtitle`),
+              }}
+              className="md:h-[40px] lg:h-20 2xl:h-[6.2rem] text-[13px] lg:text-[16px] 2xl:text-[24px] text-[#3E3B6B] font-normal text-center px-4 lg:pb-8"
+            ></p>
           </div>
           <div className="order-2 sm:order-3">
             <p className="text-[32.33px] text-[#5950C9] font-bold lg:text-[40px] 2xl:text-[76px]">
               40%
             </p>
-            <p className="text-[13px] lg:text-[16px] 2xl:text-[24px] text-[#3E3B6B] font-normal text-center lg:pb-8">
-              Суммарно увеличено <br /> количество клиентов
-            </p>
+            <p
+              dangerouslySetInnerHTML={{
+                __html: t(`service-info-cart3-subtitle`),
+              }}
+              className="text-[13px] lg:text-[16px] 2xl:text-[24px] text-[#3E3B6B] font-normal text-center lg:pb-8"
+            ></p>
           </div>
           <div className="order-3 sm:order-1">
             <p className="text-[32.33px] text-[#5950C9] font-bold lg:text-[40px] 2xl:text-[76px]">
               26
             </p>
-            <p className="text-[13px] lg:text-[16px] 2xl:text-[24px] text-[#3E3B6B] font-normal text-center lg:pb-8">
-              Успешно выполненных <br /> проектов
-            </p>
+            <p
+              dangerouslySetInnerHTML={{
+                __html: t(`service-info-cart1-subtitle`),
+              }}
+              className="text-[13px] lg:text-[16px] 2xl:text-[24px] text-[#3E3B6B] font-normal text-center lg:pb-8"
+            ></p>
           </div>
           <div className="order-4">
             <p className="text-[32.33px] text-[#5950C9] font-bold lg:text-[40px] 2xl:text-[76px]">
               х2
             </p>
-            <p className="text-[13px] lg:text-[16px] 2xl:text-[24px] text-[#3E3B6B] font-normal text-center lg:pb-8">
-              Увеличено число <br /> заявок и звонков
-            </p>
+            <p
+              dangerouslySetInnerHTML={{
+                __html: t(`service-info-cart4-subtitle`),
+              }}
+              className="text-[13px] lg:text-[16px] 2xl:text-[24px] text-[#3E3B6B] font-normal text-center lg:pb-8"
+            ></p>
           </div>
         </div>
       </div>
@@ -138,7 +153,9 @@ const MainService = () => {
                         className="absolute right-0 lg:rounded-3xl w-[70%] h-[70%]"
                       />
                       <p
-                        dangerouslySetInnerHTML={{ __html: data.name }}
+                        dangerouslySetInnerHTML={{
+                          __html: t(`service-card${index + 1}-title`),
+                        }}
                         className="absolute left-[10%] bottom-[12%] font-medium text-[13px] sm:text-[15px] md:text-[18px] lg:text-[24px] xl:text-[28px] 2xl:text-[40px] text-white leading-5 xl:leading-7 2xl:leading-10"
                       ></p>
                     </div>

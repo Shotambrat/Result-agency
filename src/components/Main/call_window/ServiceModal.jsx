@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import ServicePriceModal from "./ServicePriceModal";
 // import './ServiceModal.css'
+import { useTranslation } from "react-i18next";
 
 export default function ServiceModal({ close, name }) {
   const [openPrice, setOpenPrice] = useState(false);
   const [state, setState] = useState(0);
+  const { t } = useTranslation();
 
   const handleOpenServicePriceModal = (index) => {
     setState(index);
@@ -139,9 +141,9 @@ export default function ServiceModal({ close, name }) {
               <p
                 className="hover:underline text-[10.5px] py-[1.5px] cursor-pointer text-left font-semibold text-purpleText inline-block m:py-[0.5px] m:text-[11px] l:text-[12.5px] l:py-[0px] s:py-[3px] xs:text-[14px] xs:py-[3px] xs:px-[4.5px] sm:py-[2px]  sm:px-[4px] sm:text-[13px] md:text-[16.5px] md:px-[7px] md:py-[5px] lg:text-[18px] lg:px-[13px] lg:py-[7px] xl:py-[10px] xl:px-[20px] xl:text-[19px] 2xl:text-[25px] "
                 key={index}
-                onClick={() => handleOpenServicePriceModal(index)}
+                onClick={() => handleOpenServicePriceModal(index+1)}
               >
-                {elem.title}
+                {t(`service-card-title${index+1}`)}
               </p>
             );
           })}
