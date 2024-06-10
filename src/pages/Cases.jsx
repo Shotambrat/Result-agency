@@ -122,7 +122,7 @@ const Cases = () => {
   return (
     <div>
       {/* будет кнопка назад */}
-      <div className='3xl:ml-[50px]'>
+      <div className='mt-[75px] mb-[30px] lg:mt-[110px] lg:mb-[51px] 3xl:ml-[9%]'>
         <BackButton />
       </div>
       <div className='mx-[10px] lg:mx-[80px] 2xl:max-w-[1185px] 2xl:mx-auto'>
@@ -256,7 +256,7 @@ const Cases = () => {
         <SwiperCases/>
       </div >
     </div >
-    <div className='mt-[60px] 3xl:ml-[50px]'>
+    <div className='mb-[50px] mt-[60px] lg:mb-[30px] 3xl:ml-[9%]'>
       <ToTopButton/>
     </div>
        

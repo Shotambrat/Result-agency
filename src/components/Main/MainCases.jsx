@@ -1,6 +1,11 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
 const MainCases = () => {
+  function toTop() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+  
   const cases1 = [
     {
       title: "Наши кейсы",
@@ -36,7 +41,12 @@ const MainCases = () => {
       <div className="grid grid-cols-2 sm:grid-cols-3 p-[0.625rem] sm:p-0 gap-x-[0.625rem] lg:gap-x-[1rem] xl:gap-x-6 gap-y-5">
         {cases1.map((elem, index) => (
           <div key={index} className="">
-            <div className="rounded-[7.39px] lg:rounded-3xl h-[6.5rem] xs:h-36 md:h-40 lg:h-56 xl:h-[15rem] 2xl:h-[17rem] 3xl:h-[19rem] border-[1px] border-solid border-cases-border"></div>
+            <Link 
+              onClick={() => toTop()}
+              to="/Cases">
+              <div className="rounded-[7.39px] lg:rounded-3xl h-[6.5rem] xs:h-36 md:h-40 lg:h-56 xl:h-[15rem] 2xl:h-[17rem] 3xl:h-[19rem] border-[1px] border-solid border-cases-border">
+              </div>
+            </Link>
             <h4 className="text-headings-color font-medium md:font-semibold text-[20px] md:text-[24px] mt-2">
               {elem.title}
             </h4>
