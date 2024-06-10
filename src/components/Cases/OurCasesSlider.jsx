@@ -24,7 +24,7 @@ const SwiperCases = () => {
   };
 
   return (
-    <div className="w-full max-w-[1025px] mx-auto mt-5 relative">
+    <div className="w-full sm:w-10/12 xl:w-full mx-auto mt-5 relative">
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
@@ -48,7 +48,7 @@ const SwiperCases = () => {
             <img
               src={image}
               alt={`slider-icon-${index}`}
-              className="mx-auto w-4/6 xl:w-[100%] rounded-[28px] cursor-pointer"
+              className="mx-auto w-full sm:w-10/12 xl:max-w-[1025px] rounded-[28px] cursor-pointer"
               onClick={() => handleOpenModal(image)}
             />
           </SwiperSlide>
