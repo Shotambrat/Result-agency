@@ -10,7 +10,6 @@ import { gsap } from 'gsap';
 import ServiceModal from "./call_window/ServiceModal";
 import { useTranslation } from "react-i18next";
 
-
 let data = [
   {
     name: "SMM",
@@ -97,7 +96,7 @@ const MainService = () => {
         }}
       >
         <h5 className="text-[#4E4A83] text-[17.02px] font-semibold pt-5 sm:pt-6 xs:text-[18px] sm:text-[20px] md:text-[22px] lg:text-[28px] 2xl:text-[40px]">
-          Предоставляемые результаты
+          {t("service-info-title")}
         </h5>
         <div className="grid grid-cols-2 sm:grid-cols-4 items-center pt-4 pb-5 px-[0.375rem] gap-x-2 gap-y-7">
           <div className="order-1 sm:order-2">
@@ -150,7 +149,7 @@ const MainService = () => {
       <div className="mt-[1.875rem] lg:mt-[3rem]">
         <div className="">
           <h2 className="text-center md:text-left text-[28px] md:text-[32px] 2xl:text-[64px] font-bold">
-            Услуги
+            {t("service-title")}
           </h2>
           <div className="mt-4 grid grid-cols-2 sm:grid-cols-3 gap-x-[0.625rem] lg:gap-x-[1rem] xl:gap-x-6 gap-y-5 lg:gap-y-12">
             {data.map((data, index) => {

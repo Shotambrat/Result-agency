@@ -2,8 +2,11 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import FooterSocial from "./FooterSocial";
 import logoBack from "../assets/img/logoBackButton.svg";
+import { useTranslation } from "react-i18next";
 
 export default function NavMenu({ isNavOpen, setIsNavOpen }) {
+  const { t } = useTranslation();
+
   function toTop() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
@@ -33,7 +36,7 @@ export default function NavMenu({ isNavOpen, setIsNavOpen }) {
         to="/"
         className="text-center mt-[6rem] text-[24px]"
       >
-        О нас
+        {t("header-aboutUs")}
       </NavLink>
       <NavLink
         onClick={() => {
@@ -43,7 +46,7 @@ export default function NavMenu({ isNavOpen, setIsNavOpen }) {
         to="/"
         className="text-center text-[24px]"
       >
-        Услуги
+        {t("header-services")}
       </NavLink>
       <NavLink
         onClick={() => {
@@ -53,7 +56,7 @@ export default function NavMenu({ isNavOpen, setIsNavOpen }) {
         to="/"
         className="text-center text-[24px]"
       >
-        Наши кейсы
+        {t("header-cases")}
       </NavLink>
       <NavLink
         onClick={() => {
@@ -63,7 +66,7 @@ export default function NavMenu({ isNavOpen, setIsNavOpen }) {
         to="/"
         className="text-center text-[24px]"
       >
-        Контакты
+        {t("header-contacts")}
       </NavLink>
       <a href="Tel:+998900228073" className="text-center text-[24px]">
         +998900228073

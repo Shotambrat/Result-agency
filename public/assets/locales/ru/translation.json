@@ -131,6 +131,8 @@
   "service-modal-hosting6": "Хостинг на 3 месяца",
   "service-modal-domen6": "Доменное имя на 1 год",
   "service-modal-expCode6": "Экспорт кода (при желании заказчика)",
+  "service-size": "размер",
+  "service-term": "срок",
 
   "cases-title": "Наши Кейсы",
 
@@ -176,7 +178,7 @@
   "new-articles-card2-theme": "Интерактивный опрос: оцените эффективность вашего маркетинга",
   "new-articles-card2-group": "маркетинг",
   "new-articles-card3-theme": "SEO для медицинских сайтов: Полное руководство",
-  "new-articles-card4-group": "маркетинг",
+  "new-articles-card3-group": "маркетинг",
 
   "brief-form-title": "Оставьте заявку,чтобы обсудить проект",
   "brief-form-subtitle": "Мы свяжемся с вами для уточнения вопросов о дальнейшем сотрудничестве",
@@ -187,14 +189,16 @@
   "brief-form-button": "Оставить заявку",
 
   "footer-private-policy": "Политика конфиденциальности",
-  "footer-private-motto": "Медицинский маркетинг & IT",
+  "footer-motto": "Медицинский маркетинг & IT",
+  "footer-adress": "Ташкент, ул.Чинабад, 10",
 
+  "blog-theme": "Тема блога",
   "blog-title": "Мы не делаем однотипных предложений",
   "blog-subtitle": "Lorem ipsum dolor sit amet consectetur. Et elit interdum eget maecenas molestie in ac quisque. Sit nam congue turpis tellus tellus mattis vulputate. Cursus eu auctor nam aliquet quam. Risus feugiat volutpat massa nunc quis erat fermentum elit magna. Aliquam duis lectus mauris nibh amet sed viverra. Arcu tellus est eget dictum nulla etiam.",
   "blog-client-title": "Мы не делаем однотипных предложений",
   "blog-client-subtitle": "Lorem ipsum dolor sit amet consectetur. Et elit interdum eget maecenas molestie in ac quisque. Sit nam congue turpis tellus tellus mattis vulputate. Cursus eu auctor nam aliquet quam. Risus feugiat volutpat massa nunc quis erat fermentum elit magna. Aliquam duis lectus mauris nibh amet sed viverra. Arcu tellus est eget dictum nulla etiam.",
   "blog-conclusions-title": "Выводы",
-  "blog-conclution-subtitle": "Lorem ipsum dolor sit amet consectetur. Et elit interdum eget maecenas molestie in ac quisque. Sit nam congue turpis tellus tellus mattis vulputate. Cursus eu auctor nam aliquet quam. Risus feugiat volutpat massa nunc quis erat fermentum elit magna. Aliquam duis lectus mauris nibh amet sed viverra. Arcu tellus est eget dictum nulla etiam.",
+  "blog-conclusions-subtitle": "Lorem ipsum dolor sit amet consectetur. Et elit interdum eget maecenas molestie in ac quisque. Sit nam congue turpis tellus tellus mattis vulputate. Cursus eu auctor nam aliquet quam. Risus feugiat volutpat massa nunc quis erat fermentum elit magna. Aliquam duis lectus mauris nibh amet sed viverra. Arcu tellus est eget dictum nulla etiam.",
 
   "back-button": "назад",
   "up-button": "наверх",
@@ -219,5 +223,7 @@
   "cases-results-card2-title": "Мы не делаем однотипных предложений",
   "cases-results-card2-subtitle": "Lorem ipsum dolor sit amet consectetur. Diam nec sem a purus amet tellus. Eget a lacus amet aenean nisl sit.",
   "cases-results-card3-title": "Мы не делаем однотипных предложений",
-  "cases-results-card3-subtitle": "Lorem ipsum dolor sit amet consectetur. Diam nec sem a purus amet tellus. Eget a lacus amet aenean nisl sit."
+  "cases-results-card3-subtitle": "Lorem ipsum dolor sit amet consectetur. Diam nec sem a purus amet tellus. Eget a lacus amet aenean nisl sit.",
+
+  "form-error-message": "Пожалуйста, заполните это поле."
 }

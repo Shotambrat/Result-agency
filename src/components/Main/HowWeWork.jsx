@@ -1,8 +1,9 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import InternetWindow from "../../assets/img/howWorkComp.svg";
 import downArrow from "../../assets/img/down-arrow.svg";
 import { gsap } from "gsap";
 import { useTranslation } from "react-i18next";
+import Application from "../Modals/Application";
 
 const options = {
   root: null,
@@ -14,6 +15,10 @@ let selectNavTimeout;
 
 const HowWeWork = () => {
   const { t } = useTranslation();
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  const openModal = () => setModalOpen(true);
+  const closeModal = () => setModalOpen(false);
 
   let data = [
     {
@@ -120,12 +125,16 @@ const HowWeWork = () => {
         <h3 className="text-how-we-work-color pr-2 xl:pr-16 text-[13px] xs:text-[15px] md:text-[20px] xl:text-[24px] 2xl:text-[32px] col-span-3 sm:col-span-1 leading-4 md:leading-6 2xl:leading-10">
           {t("howWeWork-subtitle")}
         </h3>
-        <div className="col-span-5 text-center sm:text-left mt-4 sm:col-span-1">
+        <div
+          onClick={() => openModal()}
+          className="col-span-5 text-center sm:text-left mt-4 sm:col-span-1"
+        >
           <button className="px-7 xs:px-10 sm:px-8 py-2 sm:py-4 bg-button-color text-white rounded-[24px] sm:rounded-full text-center text-[13px] xs:text-[15px] md:text-[18px] 2xl:text-[20px] font-normal">
             {t("howWeWork-button")}
           </button>
         </div>
       </div>
+      <Application isOpen={isModalOpen} onClose={closeModal} />
       <div
         ref={containerRef}
         className=" mx-[0.4375rem] xl:mb-8 2xl:mb-12 md:px-4 lg:px-8 xl:px-[8%] mt-10 grid grid-cols-1 sm:px-24 md:grid-cols-2 md:gap-x-[38px] gap-y-16 md:gap-y-[38px] pb-[13px] rounded-[14px] lg:rounded-3xl"
