@@ -148,7 +148,7 @@ const Cases = () => {
   return (
     <div>
       {/* будет кнопка назад */}
-      <div className="mt-[75px] mb-[30px] lg:mt-[110px] lg:mb-[51px] 3xl:ml-[9%]">
+      <div className="mt-[120px] mb-[30px] lg:mt-[110px] lg:mb-[51px] 3xl:ml-[9%]">
         <BackButton />
       </div>
       <div className="mx-[10px] lg:mx-[80px] 2xl:max-w-[1185px] 2xl:mx-auto">
