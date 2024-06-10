@@ -256,7 +256,7 @@ const Cases = () => {
         <SwiperCases/>
       </div >
     </div >
-    <div className='3xl:ml-[50px]'>
+    <div className='mt-[60px] 3xl:ml-[50px]'>
       <ToTopButton/>
     </div>
        

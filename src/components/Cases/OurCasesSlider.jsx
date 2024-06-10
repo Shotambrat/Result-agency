@@ -56,9 +56,9 @@ const SwiperCases = () => {
       </Swiper>
       <div className="swiper-pagination-custom w-24 mt-[10px] h-4 rounded-full inline-block mx-auto mt-4 flex justify-center"></div>
 
-      <div className="swiper-button-next lg:flex hidden items-center justify-center" style={navButtonStyle}>
+      <div className="swiper-button-next lg:!flex !hidden items-center justify-center" style={navButtonStyle}>
       </div>
-      <div className="swiper-button-prev lg:flex hidden items-center justify-center" style={navButtonStyle}>
+      <div className="swiper-button-prev lg:!flex !hidden items-center justify-center" style={navButtonStyle}>
       </div>
 
       <Modal open={open} onClose={handleCloseModal} center>
