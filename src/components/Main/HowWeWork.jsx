@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import InternetWindow from "../../assets/img/howWorkComp.svg";
 import downArrow from "../../assets/img/down-arrow.svg";
 import { gsap } from "gsap";
+import { useTranslation } from "react-i18next";
 
 const options = {
   root: null,
@@ -12,6 +13,8 @@ const options = {
 let selectNavTimeout;
 
 const HowWeWork = () => {
+  const { t } = useTranslation();
+
   let data = [
     {
       title: "Личная беседа и бриф",
@@ -106,7 +109,7 @@ const HowWeWork = () => {
       className="rounded-[16px] lg:rounded-3xl overflow-hidden my-8 xs:px-8 sm:px-0 mx-[0.625rem] sm:mx-4 md:mx-10 xl:mx-20 2xl:mx-[6.875rem]  3xl:max-w-[1500px] 3xl:mx-auto lg:mt-[3rem]"
     >
       <h2 className="text-[20px] xs:text-[24px] md:text-[30px] 2xl:text-[56px] font-bold text-center mt-4 xs:mt-6">
-        Как работает наше агентство
+        {t("howWeWork-title")}
       </h2>
       <div className="grid grid-cols-5 sm:grid-cols-2 mt-6 justify-between sm:px-8 md:px-12 lg:px-[10%]">
         <img
@@ -115,12 +118,11 @@ const HowWeWork = () => {
           className="h-[6rem] xs:h-[8rem] sm:h-[12rem] lg:h-[16rem] 2xl:h-[24rem] col-span-2 sm:col-span-1 sm:row-span-2 mx-auto"
         />
         <h3 className="text-how-we-work-color pr-2 xl:pr-16 text-[13px] xs:text-[15px] md:text-[20px] xl:text-[24px] 2xl:text-[32px] col-span-3 sm:col-span-1 leading-4 md:leading-6 2xl:leading-10">
-          Заполните заявку и получите экспертные рекомендации для повышения
-          эффективности вашего бизнеса – абсолютно бесплатно!
+          {t("howWeWork-subtitle")}
         </h3>
         <div className="col-span-5 text-center sm:text-left mt-4 sm:col-span-1">
           <button className="px-7 xs:px-10 sm:px-8 py-2 sm:py-4 bg-button-color text-white rounded-[24px] sm:rounded-full text-center text-[13px] xs:text-[15px] md:text-[18px] 2xl:text-[20px] font-normal">
-            Бесплатная консультация
+            {t("howWeWork-button")}
           </button>
         </div>
       </div>
@@ -141,10 +143,10 @@ const HowWeWork = () => {
                 </p>
               </div>
               <h4 className="mt-[36px] md:mt-4 md:ml-8 2xl:ml-16 text-headings-color font-semibold text-[18.21px] xs:text-[22px] 2xl:text-[34.34px]">
-                {data.title}
+                {t(`howWeWork-card${index + 1}-title`)}
               </h4>
               <p className="text-[13px] xs:text-[16px] 2xl:text-[21.46px] text-headings-color mt-3 mb-4 md:ml-8 2xl:ml-16 2xl:mr-10 leading-5 2xl:leading-6">
-                {data.subtitle}
+                {t(`howWeWork-card${index + 1}-subtitle`)}
               </p>
               <div
                 className={`absolute bottom-[-40px] left-[calc(50%-8px)] ${

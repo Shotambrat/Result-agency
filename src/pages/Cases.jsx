@@ -1,15 +1,15 @@
-
-import React, { useEffect, useRef } from 'react';
-import { useInView } from 'react-intersection-observer';
+import React, { useEffect, useRef } from "react";
+import { useInView } from "react-intersection-observer";
 import logo_zaglushka_mob from "../../src/assets/img/logo_zaglushka_mob.png";
 import logoresbig from "../../src/assets/img/logoresbig.png";
 import logo_big_upside_down from "../../src/assets/img/logo_big_upside_down.png";
-import SwiperCases from '../components/Cases/OurCasesSlider';
-import ToTopButton from '../components/Blog/ToTopButton';
-import ButtonPodrobnee from '../components/Cases/ButtonPodrobnee';
-import BackButton from '../components/Blog/BackButton';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import SwiperCases from "../components/Cases/OurCasesSlider";
+import ToTopButton from "../components/Blog/ToTopButton";
+import ButtonPodrobnee from "../components/Cases/ButtonPodrobnee";
+import BackButton from "../components/Blog/BackButton";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useTranslation } from "react-i18next";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -21,28 +21,47 @@ const Cases = () => {
   const titleZapros = useRef(null);
   const titleUl = useRef(null);
 
+  const [titleInViewRef, titleInView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+  const [static1InViewRef, static1InView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+  const [static2InViewRef, static2InView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+  const [static3InViewRef, static3InView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+  const [zaprosInViewRef, zaprosInView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+  const [ulInViewRef, ulInView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
 
-  const [titleInViewRef, titleInView] = useInView({ triggerOnce: true, threshold: 0.1 });
-  const [static1InViewRef, static1InView] = useInView({ triggerOnce: true, threshold: 0.1 });
-  const [static2InViewRef, static2InView] = useInView({ triggerOnce: true, threshold: 0.1 });
-  const [static3InViewRef, static3InView] = useInView({ triggerOnce: true, threshold: 0.1 });
-  const [zaprosInViewRef, zaprosInView] = useInView({ triggerOnce: true, threshold: 0.1 });
-  const [ulInViewRef, ulInView] = useInView({ triggerOnce: true, threshold: 0.1 });
-
-  useEffect(() => {//анимация для сообщений ,которая срабатывает при скролле
-    gsap.utils.toArray('.animated-block').forEach((block) => {
-      gsap.fromTo(block, 
-        { opacity: 0, y: 150 }, 
-        { 
-          opacity: 1, 
-          y: 0, 
+  useEffect(() => {
+    //анимация для сообщений ,которая срабатывает при скролле
+    gsap.utils.toArray(".animated-block").forEach((block) => {
+      gsap.fromTo(
+        block,
+        { opacity: 0, y: 150 },
+        {
+          opacity: 1,
+          y: 0,
           duration: 0.5,
           scrollTrigger: {
             trigger: block,
-            start: 'top 80%', 
-            end: 'bottom 20%',
-            toggleActions: 'play none none reverse',
-          }
+            start: "top 80%",
+            end: "bottom 20%",
+            toggleActions: "play none none reverse",
+          },
         }
       );
     });
@@ -50,17 +69,18 @@ const Cases = () => {
 
   useEffect(() => {
     if (titleInView) {
-      gsap.fromTo(titleRef.current, 
+      gsap.fromTo(
+        titleRef.current,
         {
           x: 150,
           y: 0,
           opacity: 0,
-        }, 
+        },
         {
           duration: 2.5,
           x: 0,
           opacity: 1,
-          ease: 'power3.out',
+          ease: "power3.out",
         }
       );
     }
@@ -78,191 +98,266 @@ const Cases = () => {
           duration: 1,
           y: 0,
           opacity: 1,
-          ease: 'power3.out',
+          ease: "power3.out",
           stagger: 0.3, // Пауза между анимацией для каждого элемента в 0.3 секунды
         }
       );
     }
   }, [static1InView, static2InView, static3InView]);
 
-  useEffect(() => { //анимация "запрос"
+  useEffect(() => {
+    //анимация "запрос"
     if (zaprosInView) {
-      gsap.fromTo(titleZapros.current, 
+      gsap.fromTo(
+        titleZapros.current,
         {
           y: 150,
           opacity: 0,
-        }, 
+        },
         {
           duration: 2.5,
           y: 0,
           opacity: 1,
-          ease: 'power3.out',
+          ease: "power3.out",
         }
       );
     }
   }, [zaprosInView]);
 
-  useEffect(() => { //анимация списка ul
+  useEffect(() => {
+    //анимация списка ul
     if (ulInView) {
-      gsap.fromTo(titleUl.current, 
+      gsap.fromTo(
+        titleUl.current,
         {
           y: -150,
           opacity: 0,
-        }, 
+        },
         {
           duration: 2.5,
           y: 0,
           opacity: 1,
-          ease: 'power3.out',
+          ease: "power3.out",
         }
       );
     }
   }, [ulInView]);
-  
+
+  const { t } = useTranslation();
+
   return (
     <div>
       {/* будет кнопка назад */}
-      <div className='mt-[75px] mb-[30px] lg:mt-[110px] lg:mb-[51px] 3xl:ml-[9%]'>
+      <div className="mt-[75px] mb-[30px] lg:mt-[110px] lg:mb-[51px] 3xl:ml-[9%]">
         <BackButton />
       </div>
-      <div className='mx-[10px] lg:mx-[80px] 2xl:max-w-[1185px] 2xl:mx-auto'>
+      <div className="mx-[10px] lg:mx-[80px] 2xl:max-w-[1185px] 2xl:mx-auto">
         <div className="mx-auto flex h-auto flex-col bg-button-color text-white rounded-[26px] p-[14px] shadow-lg w-64 m:w-4/5 lg:flex-row lg:w-full lg:items-center lg:justify-between lg:min-h-[277px] lg:p-[26px] 2xl:max-w-[1185px] 2xl:mt-[20px]">
           {/* Левая колонка с логотипом */}
           <div className="flex items-center justify-center h-auto mb-4 lg:mb-0">
-            <img src={logo_zaglushka_mob} className='w-full rounded-[22px] lg:w-[320px] lg:h-[220px]' alt="social-icon" />
+            <img
+              src={logo_zaglushka_mob}
+              className="w-full rounded-[22px] lg:w-[320px] lg:h-[220px]"
+              alt="social-icon"
+            />
           </div>
           {/* Правая колонка с текстом и показателями */}
           <div className="lg:space-y-0 lg:flex lg:space-x-8 lg:w-3/4 lg:flex-col">
-            <h2 ref={(el) => { titleRef.current = el; titleInViewRef(el); }} className="text-center text-xl font-semibold mb-4 mt-2 m:text-2xl md:mt-6 md:mb-8 md:text-3xl lg:text-[29px] lg:mb-[65px] xl:text-[35px] 2xl:text-[40px]">
-              Контент-план для Intermed Innovation
+            <h2
+              ref={(el) => {
+                titleRef.current = el;
+                titleInViewRef(el);
+              }}
+              className="text-center text-xl font-semibold mb-4 mt-2 m:text-2xl md:mt-6 md:mb-8 md:text-3xl lg:text-[29px] lg:mb-[65px] xl:text-[35px] 2xl:text-[40px]"
+            >
+              {t("cases-plan-title")}
             </h2>
             <div className="flex flex-col space-y-8 lg:flex-row lg:space-y-0 lg:space-x-8 lg:justify-around">
-              <div ref={(el) => { titleStatic1.current = el; static1InViewRef(el); }} className="flex justify-between gap-x-8 items-center flex-row lg:gap-x-0 lg:gap-y-4 lg:flex-col-reverse">
-                <span className="text-xl md:text-2xl">Заявок</span>
-                <span className="font-bold text-4xl md:text-3xl lg:text-4xl xl:text-[40px] 2xl:text-[48px]">+25%</span>
+              <div
+                ref={(el) => {
+                  titleStatic1.current = el;
+                  static1InViewRef(el);
+                }}
+                className="flex justify-between gap-x-8 items-center flex-row lg:gap-x-0 lg:gap-y-4 lg:flex-col-reverse"
+              >
+                <span className="text-xl md:text-2xl">
+                  {t("cases-plan-application")}
+                </span>
+                <span className="font-bold text-4xl md:text-3xl lg:text-4xl xl:text-[40px] 2xl:text-[48px]">
+                  +25%
+                </span>
               </div>
-              <div ref={(el) => { titleStatic2.current = el; static2InViewRef(el); }} className="flex justify-between gap-x-8 items-center lg:gap-x-0 lg:gap-y-4 lg:flex-col-reverse">
-                <span className='ml-4 text-xl md:text-2xl lg:ml-0'>ROI</span>
-                <span className="font-bold text-4xl md:text-3xl lg:text-4xl xl:text-[40px] 2xl:text-[48px]">+40%</span>
+              <div
+                ref={(el) => {
+                  titleStatic2.current = el;
+                  static2InViewRef(el);
+                }}
+                className="flex justify-between gap-x-8 items-center lg:gap-x-0 lg:gap-y-4 lg:flex-col-reverse"
+              >
+                <span className="ml-4 text-xl md:text-2xl lg:ml-0">
+                  {t("cases-plan-ROI")}
+                </span>
+                <span className="font-bold text-4xl md:text-3xl lg:text-4xl xl:text-[40px] 2xl:text-[48px]">
+                  +40%
+                </span>
               </div>
-              <div ref={(el) => { titleStatic3.current = el; static3InViewRef(el); }} className="flex justify-between gap-x-8 items-center lg:gap-x-0 lg:gap-y-3 lg:flex-col-reverse">
-                <span className="text-xl md:text-2xl">Клиентов</span>
-                <span className="font-bold text-4xl mr-6 md:text-3xl lg:mr-0 lg:text-4xl xl:text-[40px] 2xl:text-[48px]">×2</span>
+              <div
+                ref={(el) => {
+                  titleStatic3.current = el;
+                  static3InViewRef(el);
+                }}
+                className="flex justify-between gap-x-8 items-center lg:gap-x-0 lg:gap-y-3 lg:flex-col-reverse"
+              >
+                <span className="text-xl md:text-2xl">
+                  {t("cases-plan-client")}
+                </span>
+                <span className="font-bold text-4xl mr-6 md:text-3xl lg:mr-0 lg:text-4xl xl:text-[40px] 2xl:text-[48px]">
+                  ×2
+                </span>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
 
-      <div className='text-uslugi-text inline-block mt-10 sm:mx-[15px]'>
-        <span className=' block font-semibold text-3xl mb-[7px] s:text-4xl lg:mb-[15px]'>О клиенте</span>
-        <span className='block text-[17px] sm:text-[18px]'>Lorem ipsum dolor sit amet consectetur. Et elit interdum eget maecenas molestie in ac quisque</span>
-      </div>
-
-      <div className='mb-[51px] mt-[21px] flex justify-end '>
-        <div><ButtonPodrobnee/></div>
-      </div>
-
-      <div class="flex flex-col gradient-item-cases rounded-[30px] border-item-cases p-8 shadow-md items-center mx-auto min-h-[343px] sm:w-4/5 sm:flex-row sm:justify-between sm:items-center sm:min-h-[250px] lg:flex lg:w-full lg:justify-between lg:min-h-[250px] 2xl:max-w-[1185px]">
-        <div ref={(el) => { titleZapros.current = el; zaprosInViewRef(el); }} class="text-uslugi-text flex flex-col items-center sm:items-start sm:justify-around lg:flex-1 lg:ml-8">
-          <h2 class="text-[35px] font-bold mb-4 sm:text-[30px] sm:mb-0 lg:text-[35px] lg:mb-0 lg:ml-[30%] 2xl:text-[43px]">Запросы</h2>
-        </div>
-        <div class="mt-4 sm:mt-0 relative sm:block sm:ml-8 lg:flex-1 lg:flex ">
-          <ul ref={(el) => { titleUl.current = el; ulInViewRef(el); }} class="list-disc  text-[24px] font-normal leading-[48px] list-inside  sm:text-[23px] sm:leading-[40px] sm:ml-8 sm:mt-0 lg:ml-0 lg:mt-0 lg:text-[24px] lg:leading-[48px]">
-            <li >отжумания</li>
-            <li>пресс каЧат</li>
-            <li>бег 10000000км</li>
-          </ul>
-        </div>
-      </div>
-
-
-    <div className='lg:grid lg:grid-cols-[30%_1fr]'>
-      <div>{/*будет 1 колонка для грида при десктоп */}
-        <div class="rounded-[20px] min-h-[105px] border-[1px] flex justify-center items-center border-uslugi-text p-4 font-semibold text-cases-text text-[36px] mt-[54px] text-center s:max-w-[350px] mx-auto lg:text-[33px] lg:max-h-[125px] lg:max-w-[370px] 2xl:min-h-[120px]">
-        Результаты
-        </div>
-        <div className='hidden w-full mb-14 lg:block'>
-          <img src={logo_big_upside_down} alt="logo_big" className='mt-[41px] mx-auto '/>
+        <div className="text-uslugi-text inline-block mt-10 sm:mx-[15px]">
+          <span className=" block font-semibold text-3xl mb-[7px] s:text-4xl lg:mb-[15px]">
+            {t("cases-about-client-title")}
+          </span>
+          <span className="block text-[17px] sm:text-[18px]">
+            {t("cases-about-client-subtitle")}
+          </span>
         </div>
 
-      </div>
+        <div className="mb-[51px] mt-[21px] flex justify-end ">
+          <div>
+            <ButtonPodrobnee />
+          </div>
+        </div>
 
+        <div class="flex flex-col gradient-item-cases rounded-[30px] border-item-cases p-8 shadow-md items-center mx-auto min-h-[343px] sm:w-4/5 sm:flex-row sm:justify-between sm:items-center sm:min-h-[250px] lg:flex lg:w-full lg:justify-between lg:min-h-[250px] 2xl:max-w-[1185px]">
+          <div
+            ref={(el) => {
+              titleZapros.current = el;
+              zaprosInViewRef(el);
+            }}
+            class="text-uslugi-text flex flex-col items-center sm:items-start sm:justify-around lg:flex-1 lg:ml-8"
+          >
+            <h2 class="text-[35px] font-bold mb-4 sm:text-[30px] sm:mb-0 lg:text-[35px] lg:mb-0 lg:ml-[30%] 2xl:text-[43px]">
+              {t("cases-requests-title")}
+            </h2>
+          </div>
+          <div class="mt-4 sm:mt-0 relative sm:block sm:ml-8 lg:flex-1 lg:flex ">
+            <ul
+              ref={(el) => {
+                titleUl.current = el;
+                ulInViewRef(el);
+              }}
+              class="list-disc  text-[24px] font-normal leading-[48px] list-inside  sm:text-[23px] sm:leading-[40px] sm:ml-8 sm:mt-0 lg:ml-0 lg:mt-0 lg:text-[24px] lg:leading-[48px]"
+            >
+              <li>{t("cases-request1")}</li>
+              <li>{t("cases-request2")}</li>
+              <li>{t("cases-request3")}</li>
+            </ul>
+          </div>
+        </div>
 
-        <div >  {/*будет 2 колонка для грида при десктоп */}
-          <div className='relative mt-[48px]  w-full lg:mt-[100px]'>
-            {/* левая полоса */}
-            <div className='absolute ml-[2%]  m:ml-[3%] l:ml-[3.5%] s:ml-[4%] xs:ml-[4.6%] xxs:ml-[5%] sm:ml-[6%] md:ml-[6.2%] '>
-              <div className="flex mt-[50px] justify-center items-center min-h-full ">
-                <div className="relative z-10 flex flex-col items-center ">
-                  <div className="absolute left-1/2 transform -translate-x-1/2 w-[5px] bg-footer-icon xxs:w-[7px] lg:w-[10px]" style={{ top: "0", bottom: "0" }}></div>
-                  <div className="relative flex flex-col gap-[190px]  items-center lg:gap-[185px]">
-                  <div className="relative w-[40px] h-[40px] bg-footer-icon rounded-full border-4 border-white z-10 lg:w-[55px] lg:h-[55px]" ></div>
-                    <div className="relative w-[40px] h-[40px] bg-footer-icon rounded-full border-4 border-white z-10 lg:w-[55px] lg:h-[55px]" ></div>
-                    <div className="relative w-[40px] h-[40px] bg-footer-icon rounded-full border-4 border-white z-10 lg:w-[55px] lg:h-[55px]" ></div>
+        <div className="lg:grid lg:grid-cols-[30%_1fr]">
+          <div>
+            {/*будет 1 колонка для грида при десктоп */}
+            <div class="rounded-[20px] min-h-[105px] border-[1px] flex justify-center items-center border-uslugi-text p-4 font-semibold text-cases-text text-[36px] mt-[54px] text-center s:max-w-[350px] mx-auto lg:text-[33px] lg:max-h-[125px] lg:max-w-[370px] 2xl:min-h-[120px]">
+              {t("cases-results-title")}
+            </div>
+            <div className="hidden w-full mb-14 lg:block">
+              <img
+                src={logo_big_upside_down}
+                alt="logo_big"
+                className="mt-[41px] mx-auto "
+              />
+            </div>
+          </div>
+
+          <div>
+            {" "}
+            {/*будет 2 колонка для грида при десктоп */}
+            <div className="relative mt-[48px]  w-full lg:mt-[100px]">
+              {/* левая полоса */}
+              <div className="absolute ml-[2%]  m:ml-[3%] l:ml-[3.5%] s:ml-[4%] xs:ml-[4.6%] xxs:ml-[5%] sm:ml-[6%] md:ml-[6.2%] ">
+                <div className="flex mt-[50px] justify-center items-center min-h-full ">
+                  <div className="relative z-10 flex flex-col items-center ">
+                    <div
+                      className="absolute left-1/2 transform -translate-x-1/2 w-[5px] bg-footer-icon xxs:w-[7px] lg:w-[10px]"
+                      style={{ top: "0", bottom: "0" }}
+                    ></div>
+                    <div className="relative flex flex-col gap-[190px]  items-center lg:gap-[185px]">
+                      <div className="relative w-[40px] h-[40px] bg-footer-icon rounded-full border-4 border-white z-10 lg:w-[55px] lg:h-[55px]"></div>
+                      <div className="relative w-[40px] h-[40px] bg-footer-icon rounded-full border-4 border-white z-10 lg:w-[55px] lg:h-[55px]"></div>
+                      <div className="relative w-[40px] h-[40px] bg-footer-icon rounded-full border-4 border-white z-10 lg:w-[55px] lg:h-[55px]"></div>
+                    </div>
                   </div>
                 </div>
               </div>
+
+              {/* правый контейнер с сообщ */}
+              <div className="relative flex flex-col items-end md:w-11/5 lg:w-10/12 lg:ml-[15%] 2xl:ml-[0%] 2xl:w-full">
+                <div className="animated-block py-[15px] rounded-[12px] min-h-[147px] w-11/12 bg-footer-icon lg:bg-keys_item-bg p-1 2xl:py-[25px] 2xl:px-[20px] 2xl:max-w-[700px]">
+                  <div className="ml-[36px] lg:ml-[10px]">
+                    <span className="text-[17px] text-white font-medium l:text-[18px] sm:text-[19px] 2xl:text-[24px]">
+                      {t("cases-results-card1-title")}
+                    </span>
+                    <p className="text-[13px] text-white mt-[5px] font-normal l:mt-[15px] sm:text-[15px] 2xl:text-[19px]">
+                      {t("cases-results-card1-subtitle")}
+                    </p>
+                  </div>
+                </div>
+                <div className="my-[21px] flex justify-end">
+                  <ButtonPodrobnee />
+                </div>
+
+                <div className="animated-block py-[15px] rounded-[12px] min-h-[147px] w-11/12 bg-footer-icon lg:bg-keys_item-bg p-1 2xl:py-[25px] 2xl:px-[20px] 2xl:max-w-[700px]">
+                  <div className="ml-[36px] lg:ml-[10px]">
+                    <span className="text-[17px] text-white font-medium l:text-[18px] sm:text-[19px] 2xl:text-[24px]">
+                      {t("cases-results-card2-title")}
+                    </span>
+                    <p className="text-[13px] text-white mt-[5px] font-normal l:mt-[15px] sm:text-[15px] 2xl:text-[19px]">
+                      {t("cases-results-card2-subtitle")}
+                    </p>
+                  </div>
+                </div>
+                <div className="my-[21px] flex justify-end">
+                  <ButtonPodrobnee />
+                </div>
+
+                <div className="animated-block py-[15px] rounded-[12px] min-h-[147px] w-11/12 bg-footer-icon lg:bg-keys_item-bg p-1 2xl:py-[25px] 2xl:px-[20px] 2xl:max-w-[700px]">
+                  <div className="ml-[36px] lg:ml-[10px]">
+                    <span className="text-[17px] text-white font-medium l:text-[18px] sm:text-[19px] 2xl:text-[24px]">
+                      {t("cases-results-card3-title")}
+                    </span>
+                    <p className="text-[13px] text-white mt-[5px] font-normal l:mt-[15px] sm:text-[15px] 2xl:text-[19px]">
+                      {t("cases-results-card3-subtitle")}
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="my-[21px] flex justify-end">
+                <ButtonPodrobnee />
+              </div>
             </div>
-            
-            {/* правый контейнер с сообщ */}
-    <div className='relative flex flex-col items-end md:w-11/5 lg:w-10/12 lg:ml-[15%] 2xl:ml-[0%] 2xl:w-full'>
-      <div className='animated-block py-[15px] rounded-[12px] min-h-[147px] w-11/12 bg-footer-icon lg:bg-keys_item-bg p-1 2xl:py-[25px] 2xl:px-[20px] 2xl:max-w-[700px]'>
-        <div className='ml-[36px] lg:ml-[10px]'>
-          <span className='text-[17px] text-white font-medium l:text-[18px] sm:text-[19px] 2xl:text-[24px]'>Мы не делаем однотипных предложений</span>
-          <p className='text-[13px] text-white mt-[5px] font-normal l:mt-[15px] sm:text-[15px] 2xl:text-[19px]'>
-            Lorem ipsum dolor sit amet consectetur. Diam nec sem a purus amet tellus. Eget a lacus amet aenean nisl sit.
-          </p>
-        </div>
-      </div>
-      <div className='my-[21px] flex justify-end'>
-        <ButtonPodrobnee />
-      </div>
-
-      <div className='animated-block py-[15px] rounded-[12px] min-h-[147px] w-11/12 bg-footer-icon lg:bg-keys_item-bg p-1 2xl:py-[25px] 2xl:px-[20px] 2xl:max-w-[700px]'>
-        <div className='ml-[36px] lg:ml-[10px]'>
-          <span className='text-[17px] text-white font-medium l:text-[18px] sm:text-[19px] 2xl:text-[24px]'>Мы не делаем однотипных предложений</span>
-          <p className='text-[13px] text-white mt-[5px] font-normal l:mt-[15px] sm:text-[15px] 2xl:text-[19px]'>
-            Lorem ipsum dolor sit amet consectetur. Diam nec sem a purus amet tellus. Eget a lacus amet aenean nisl sit.
-          </p>
-        </div>
-      </div>
-      <div className='my-[21px] flex justify-end'>
-        <ButtonPodrobnee />
-      </div>
-
-      <div className='animated-block py-[15px] rounded-[12px] min-h-[147px] w-11/12 bg-footer-icon lg:bg-keys_item-bg p-1 2xl:py-[25px] 2xl:px-[20px] 2xl:max-w-[700px]'>
-        <div className='ml-[36px] lg:ml-[10px]'>
-          <span className='text-[17px] text-white font-medium l:text-[18px] sm:text-[19px] 2xl:text-[24px]'>Мы не делаем однотипных предложений</span>
-          <p className='text-[13px] text-white mt-[5px] font-normal l:mt-[15px] sm:text-[15px] 2xl:text-[19px]'>
-            Lorem ipsum dolor sit amet consectetur. Diam nec sem a purus amet tellus. Eget a lacus amet aenean nisl sit.
-          </p>
-        </div>
-        </div>
-      </div>
-      <div className='my-[21px] flex justify-end'>
-        <ButtonPodrobnee />
-      </div>
-    </div>
-          {/* Конец полосы с мессендж */}
-
-          <div className='w-full mb-14 lg:hidden'>
-            <img src={logoresbig} alt="logo_big" className='my-0 mx-auto'/>
+            {/* Конец полосы с мессендж */}
+            <div className="w-full mb-14 lg:hidden">
+              <img src={logoresbig} alt="logo_big" className="my-0 mx-auto" />
+            </div>
           </div>
         </div>
+
+        <div className="w-full flex self-center items-center justify-center content-center">
+          <SwiperCases />
+        </div>
       </div>
-
-      <div className='w-full flex self-center items-center justify-center content-center'>
-        
-        <SwiperCases/>
-      </div >
-    </div >
-    <div className='mb-[50px] mt-[60px] lg:mb-[30px] 3xl:ml-[9%]'>
-      <ToTopButton/>
+      <div className="mb-[50px] mt-[60px] lg:mb-[30px] 3xl:ml-[9%]">
+        <ToTopButton />
+      </div>
     </div>
-       
-  </div>
-    
-  )
-}
+  );
+};
 
-export default Cases
+export default Cases;

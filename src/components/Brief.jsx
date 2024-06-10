@@ -1,6 +1,9 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const Brief = () => {
+  const { t } = useTranslation();
+
   const [inputValue, setInputValue] = useState("");
   // Состояние для определения фокуса на инпуте
   const [isFocused, setIsFocused] = useState(false);
@@ -74,11 +77,10 @@ const Brief = () => {
         /> */}
               <div>
                 <h3 className="text-white text-[18px] sm:text-[30px] lg:text-[24px] 2xl:text-[32px] mb-2 leading-8">
-                  Оставьте заявку,чтобы обсудить проект
+                  {t("brief-form-title")}
                 </h3>
                 <p className="text-white text-[13px] sm:text-[15px] lg:text-[12px] 2xl:text-[17px] mt-4 font-normal">
-                  Мы свяжемся с вами для уточнения вопросов о дальнейшем
-                  сотрудничестве
+                  {t("brief-form-subtitle")}
                 </p>
               </div>
             </div>
@@ -89,13 +91,13 @@ const Brief = () => {
                 {/* Assuming you're asking for name, email, phone, and a message */}
                 <input
                   type="text"
-                  placeholder="ФИО"
+                  placeholder={t("brief-form-name")}
                   required
                   className="text-[15px] 2xl:text-[20px] bg-transparent border-b-4 border-white text-white placeholder-white focus:border-green-500 focus:outline-none focus:border-b-[3px] pb-2"
                 />
                 <input
                   type="tel"
-                  placeholder="Номер телефона"
+                  placeholder={t("brief-form-phone")}
                   required
                   value={displayValue}
                   onChange={handleChange}
@@ -104,19 +106,19 @@ const Brief = () => {
                   className="text-[15px] 2xl:text-[20px] bg-transparent border-b-4 border-white text-white placeholder-white focus:border-green-500 focus:outline-none focus:border-b-[3px] pb-2"
                 />
                 <input
-                  placeholder="Удобное время для звонка"
+                  placeholder={t("brief-form-time")}
                   required
                   className="text-[15px] 2xl:text-[20px] bg-transparent border-b-4 border-white text-white placeholder-white focus:border-green-500 focus:outline-none focus:border-b-[3px] pb-2"
                 />
                 <textarea
-                  placeholder="Ожидаемый результат"
+                  placeholder={t("brief-form-result")}
                   className="text-[15px] 2xl:text-[20px] bg-transparent border-b-4 border-white text-white placeholder-white focus:border-green-500 focus:outline-none focus:border-b-[3px]"
                 />
                 <button
                   type="submit"
                   className="mt-4 sm:mr-auto sm:ml-2 sm:px-16 bg-gray-300 bg-opacity-30 border-2 text-white py-2 rounded-full hover:bg-gray-200 hover:text-uslugi-text transition-colors"
                 >
-                  Оставить заявку
+                  {t("brief-form-button")}
                 </button>
               </form>
             </div>
