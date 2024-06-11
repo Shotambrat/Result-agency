@@ -60,7 +60,7 @@ const Header = ({ isNavOpen, setIsNavOpen }) => {
   }, [scrollTimeout]);
 
   return (
-    <header className="header w-[100vw] bg-white bg-opacity-30 backdrop-filter backdrop-blur-3xl fixed top-0 z-20 py-3 3xl:py-0">
+    <header className="header w-[100vw] h-[60px] lg:h-auto bg-white bg-opacity-30 backdrop-filter backdrop-blur-lg fixed top-0 z-20 py-0 lg:py-3 3xl:py-0">
       <div className="lg:max-w-7xl mx-auto px-[0.625rem] sm:px-6 lg:px-[3rem]">
         <div className="flex items-center content-center justify-between h-16 3xl:h-24">
           <NavLink to="/" className="flex items-center" onClick={toTop}>
@@ -116,10 +116,115 @@ const Header = ({ isNavOpen, setIsNavOpen }) => {
               className="flex content-center ml-[1.1rem]"
               id="container-language"
             >
+
+
+
+
+
+{/* <div className="flex self-center items-start relative">
+      <button
+        onClick={() => setOpenLanguage((prev) => !prev)}
+        className="flex items-center border-[1px] border-solid border-[#191359] rounded-[48px] pl-4 pr-2 h-6 md:py-1 transition duration-300"
+      >
+        <p className="text-[#191359] text-[11px] font-light xs:text-[12px] md:text-[14px]">
+          {currentLanguage !== "ru" ? "O'zbekcha" : "Русский"}
+        </p>
+        <img 
+          src={currentLanguage === "ru" ? RussiaFlag : UzbekistanFlag} 
+          alt="language flag" 
+          className="pl-2 h-4 w-4 ml-2"
+        />
+      </button>
+      <div
+        className={`absolute w-full bottom-[-100%] text-start pl-2 border-[1px] border-solid border-cases-border rounded-[48px] overflow-hidden transition-all duration-300 ease-in-out transform ${
+          openLanguage ? 'max-h-10 opacity-100 translate-y-0' : 'max-h-0 opacity-0 translate-y-[-10px]'
+        }`}
+      >
+        <button
+          onClick={handleChangeLanguage}
+          className="w-full flex items-center h-6"
+        >
+          <p className="text-[#191359] text-[11px] font-light xs:text-[12px] md:text-[14px]">
+            {currentLanguage !== "ru" ? "Русский" : "O'zbekcha"}
+          </p>
+          <img 
+            src={currentLanguage === "ru" ? UzbekistanFlag : RussiaFlag} 
+            alt="language flag" 
+            className="pl-2 h-4 w-4 ml-2"
+          />
+        </button>
+      </div>
+    </div> */}
+
+
+
+
+
               <div className="flex self-center items-start relative">
                 <button
                   onClick={() => setOpenLanguage((prev) => !prev)}
-                  className="flex items-center border-[1px] border-solid border-[#191359] rounded-[48px] pl-4 pr-2 h-6 md:py-1"
+                  className="flex items-center border-[1px] border-solid border-[#191359] rounded-[48px] pl-4 pr-2 h-6 md:py-1 transition duration-300"
+                >
+                  <p className="text-[#191359] text-[11px] font-light xs:text-[12px] md:text-[14px]">
+                    {t("header-language")}
+                  </p>
+                  <img src={LanLogo} alt="language icon" className="pl-2" />
+                </button>
+                <div
+                  className={`absolute w-full bottom-[-100%] text-start pl-2 border-[1px] border-solid border-cases-border rounded-[48px] overflow-hidden transition-all duration-300 ease-in-out transform ${
+                    openLanguage ? 'max-h-10 opacity-100 translate-y-0' : 'max-h-0 opacity-0 translate-y-[-10px]'
+                  }`}
+                >
+                  <button
+                    onClick={handleChangeLanguage}
+                    className="w-full flex items-center h-6"
+                  >
+                    <p className="text-[#191359] text-[11px] font-light xs:text-[12px] md:text-[14px]">
+                      {currentLanguage !== "ru" ? "Русский" : "O'zbekcha"}
+                    </p>
+                  </button>
+                </div>
+              </div>
+
+
+
+
+
+
+                  {/* <div className="flex self-center items-start relative">
+                    <button
+                      onClick={() => setOpenLanguage((prev) => !prev)}
+                      className="flex items-center border-[1px] border-solid border-[#191359] rounded-[48px] pl-4 pr-2 h-6 md:py-1"
+                    >
+                      <p className="text-[#191359] text-[11px] font-light xs:text-[12px] md:text-[14px]">
+                        {t("header-language")}
+                      </p>
+                      <img src={LanLogo} alt="language icon" className="pl-2" />
+                    </button>
+                    <div
+                      className={`transition-all duration-300 ${
+                        openLanguage ? 'max-h-10 opacity-100' : 'max-h-0 opacity-0'
+                      } overflow-hidden absolute w-full bottom-[-100%] text-start pl-2 border-[1px] border-solid border-cases-border rounded-[48px] h-6`}
+                    >
+                      <button
+                        onClick={handleChangeLanguage}
+                        className="w-full flex items-center text-start"
+                      >
+                        <p className="text-[#191359] text-[11px] font-light xs:text-[12px] md:text-[14px]">
+                          {currentLanguage !== "ru" ? "Русский" : "O'zbekcha"}
+                        </p>
+                      </button>
+                    </div>
+                  </div> */}
+
+
+
+
+
+              {/* <div className="flex self-center items-start relative">
+                <button
+                  onClick={() => setOpenLanguage((prev) => !prev)}
+                  className="flex items-center border-[1px] border-solid border-[#191359] rounded-[48px] pl-4 pr-2 h-6 md:py-1 "
                 >
                   <p className="text-[#191359] text-[11px] font-light xs:text-[12px] md:text-[14px]">
                     {t("header-language")}
@@ -136,10 +241,10 @@ const Header = ({ isNavOpen, setIsNavOpen }) => {
                     </p>
                   </button>
                 )}
-              </div>
+              </div> */}
               <button
                 onClick={() => setIsNavOpen((prev) => !prev)}
-                className="ml-2 md:ml-4 lg:hidden"
+                className="ml-2 md:ml-4 lg:hidden "
               >
                 <img src={Menu} alt="Menu icon" className="w-8" />
               </button>

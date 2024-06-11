@@ -64,6 +64,12 @@ code {
   height: 15px;
 }
 
+@media screen and (min-height: 850px) {
+  .dnk-left {
+   top: -5%;
+  }
+}
+
 /* :root {
   --swiper-navigation-color: #E49A38;
   --swiper-navigation-background-color: #E49A38;

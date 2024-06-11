@@ -161,11 +161,11 @@ const MainService = () => {
                       name={data.nameForFunction}
                     />
                   ) : (
-<div
-      className=" relative rounded-[13.14px] lg:rounded-3xl h-[11rem] md:h-[18rem] lg:h-[21rem] xl:h-[24rem] 2xl:h-[30rem] bg-gradient-to-b from-[#EAE9FD] to-[#7F75FF]"
-      onClick={() => handleChangeCard(data.nameForFunction)}
-      onMouseEnter={() => handleMouseEnter(index)}
-      onMouseLeave={() => handleMouseLeave(index)}
+    <div
+    className="relative rounded-[13.14px] lg:rounded-3xl h-[11rem] md:h-[18rem] lg:h-[21rem] xl:h-[24rem] 2xl:h-[30rem] bg-gradient-to-b from-[#EAE9FD] to-[#7F75FF] transition-transform duration-500 ease-in-out transform hover:scale-105"
+    onClick={() => handleChangeCard(data.nameForFunction)}
+    onMouseEnter={() => handleMouseEnter(index)}
+    onMouseLeave={() => handleMouseLeave(index)}
     >
       <img
         ref={(el) => (imgRefs.current[index] = el)}

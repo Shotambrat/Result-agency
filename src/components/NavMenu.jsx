@@ -15,7 +15,7 @@ export default function NavMenu({ isNavOpen, setIsNavOpen }) {
     <div
       className={
         isNavOpen
-          ? "grid grid-col-1 justify-center w-full xxs:w-[65%] sm:w-[55%] md:w-[50%] h-screen fixed z-[100] top-0 right-0 bg-white lg:hidden"
+          ? "grid grid-col-1 justify-center w-full xxs:w-[65%] sm:w-[55%] md:w-[50%] h-screen fixed z-[100] top-0 right-0 bg-white lg:hidden "
           : "hidden"
       }
     >
