@@ -66,23 +66,20 @@ const HowWeWork = () => {
   let dataLength = data.length;
 
   const titleRef = useRef();
+  const titleContainerRef = useRef();
+  const ImageSubtitleRef = useRef();
   const subtitleRef = useRef();
   const imageRef = useRef();
   const buttonRef = useRef();
   const cardRefs = useRef([]);
   const containerRef = useRef();
 
-  const [titleInViewRef, titleInView] = useInView({
+  const [titleContainerInViewRef, titleContainerInView] = useInView({
     triggerOnce: true,
-    threshold: 0.2,
+    threshold: 0.01,
   });
 
-  const [subtitleInViewRef, subtitleInView] = useInView({
-    triggerOnce: true,
-    threshold: 0.2,
-  });
-
-  const [imageInViewRef, imageInView] = useInView({
+  const [imageSubtitleInViewRef, imageSubtitleInView] = useInView({
     triggerOnce: true,
     threshold: 0.2,
   });
@@ -93,26 +90,22 @@ const HowWeWork = () => {
   });
 
   // Animation for title
-  gsap.set(titleRef.current, { y: -50, x: 0, opacity: 0 });
+  gsap.set(titleRef.current, { y: -100, x: 0, opacity: 0 });
   useEffect(() => {
-    if (titleInView) {
-      gsap.to(
-        titleRef.current,
-
-        {
-          duration: 4,
-          y: 0,
-          opacity: 1,
-          ease: "power3.out",
-        }
-      );
+    if (titleContainerInView) {
+      gsap.to(titleRef.current, {
+        duration: 4,
+        y: 0,
+        opacity: 1,
+        ease: "power3.out",
+      });
     }
-  }, [titleInView, titleInViewRef]);
+  }, [titleContainerInView]);
 
   // Animation for subtitle
-  gsap.set(subtitleRef.current, { x: 150, y: 0, opacity: 0 });
   useEffect(() => {
-    if (subtitleInView) {
+    gsap.set(subtitleRef.current, { x: 150, y: 0, opacity: 0 });
+    if (imageSubtitleInView) {
       gsap.to(subtitleRef.current, {
         duration: 4,
         x: 0,
@@ -120,23 +113,20 @@ const HowWeWork = () => {
         ease: "power3.out",
       });
     }
-  }, [subtitleInView, subtitleInViewRef]);
+  }, [imageSubtitleInView]);
 
   // Animation for image
   gsap.set(imageRef.current, { x: -150, y: 0, opacity: 0 });
   useEffect(() => {
-    if (imageInView) {
-      gsap.to(
-        imageRef.current,
-        {
-          duration: 4,
-          x: 0,
-          opacity: 1,
-          ease: "power3.out",
-        }
-      );
+    if (imageSubtitleInView) {
+      gsap.to(imageRef.current, {
+        duration: 4,
+        x: 0,
+        opacity: 1,
+        ease: "power3.out",
+      });
     }
-  }, [imageInView]);
+  }, [imageSubtitleInView]);
 
   // Animation for button
   gsap.set(buttonRef.current, { opacity: 0, y: 100, x: 0 });
@@ -201,6 +191,10 @@ const HowWeWork = () => {
 
   return (
     <div
+      ref={(el) => {
+        titleContainerRef.current = el;
+        titleContainerInViewRef(el);
+      }}
       style={{
         backgroundImage: `linear-gradient(to bottom, #c6d4f1  0%, #e6dffc 100%)`,
       }}
@@ -209,17 +203,21 @@ const HowWeWork = () => {
       <h2
         ref={(el) => {
           titleRef.current = el;
-          titleInViewRef(el);
         }}
         className="text-[20px] xs:text-[24px] md:text-[30px] 2xl:text-[56px] font-bold text-center mt-4 xs:mt-6"
       >
         {t("howWeWork-title")}
       </h2>
-      <div className="grid grid-cols-5 sm:grid-cols-2 mt-6 justify-between sm:px-8 md:px-12 lg:px-[10%]">
+      <div
+        ref={(el) => {
+          ImageSubtitleRef.current = el;
+          imageSubtitleInViewRef(el);
+        }}
+        className="grid grid-cols-5 sm:grid-cols-2 mt-6 justify-between sm:px-8 md:px-12 lg:px-[10%]"
+      >
         <img
           ref={(el) => {
             imageRef.current = el;
-            imageInViewRef(el);
           }}
           src={InternetWindow}
           alt="internet-window"
@@ -228,7 +226,6 @@ const HowWeWork = () => {
         <h3
           ref={(el) => {
             subtitleRef.current = el;
-            subtitleInViewRef(el);
           }}
           className="text-how-we-work-color pr-2 xl:pr-16 text-[13px] xs:text-[15px] md:text-[20px] xl:text-[24px] 2xl:text-[32px] col-span-3 sm:col-span-1 leading-4 md:leading-6 2xl:leading-10"
         >
