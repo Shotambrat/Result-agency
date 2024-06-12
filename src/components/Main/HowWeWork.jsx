@@ -93,9 +93,8 @@ const HowWeWork = () => {
   });
 
   // Animation for title
+  gsap.set(titleRef.current, { y: -50, x: 0, opacity: 0 });
   useEffect(() => {
-    gsap.set(titleRef.current, { y: -50, x: 0, opacity: 0 });
-
     if (titleInView) {
       gsap.to(
         titleRef.current,
@@ -111,9 +110,8 @@ const HowWeWork = () => {
   }, [titleInView, titleInViewRef]);
 
   // Animation for subtitle
+  gsap.set(subtitleRef.current, { x: 150, y: 0, opacity: 0 });
   useEffect(() => {
-    gsap.set(subtitleRef.current, { x: 150, y: 0, opacity: 0 });
-
     if (subtitleInView) {
       gsap.to(subtitleRef.current, {
         duration: 4,
@@ -125,9 +123,8 @@ const HowWeWork = () => {
   }, [subtitleInView, subtitleInViewRef]);
 
   // Animation for image
+  gsap.set(imageRef.current, { x: -150, y: 0, opacity: 0 });
   useEffect(() => {
-    gsap.set(imageRef.current, { x: -150, y: 0, opacity: 0 });
-
     if (imageInView) {
       gsap.to(
         imageRef.current,
@@ -142,9 +139,8 @@ const HowWeWork = () => {
   }, [imageInView]);
 
   // Animation for button
+  gsap.set(buttonRef.current, { opacity: 0, y: 100, x: 0 });
   useEffect(() => {
-    gsap.set(buttonRef.current, { opacity: 0, y: 100, x: 0 });
-
     if (buttonInView) {
       gsap.to(buttonRef.current, {
         duration: 4,
