@@ -13,64 +13,60 @@ export default function NavMenu({ isNavOpen, setIsNavOpen }) {
 
   return (
     <div
-      className={
-        isNavOpen
-          ? "grid grid-col-1 justify-center w-full xxs:w-[65%] sm:w-[55%] md:w-[50%] h-screen fixed z-[100] top-0 right-0 bg-white lg:hidden "
-          : "hidden"
-      }
+      className={`fixed top-0 right-0 h-screen bg-white transition-transform duration-300 z-[100] ${
+        isNavOpen ? "transform translate-x-0" : "transform translate-x-full"
+      } w-full xxs:w-[65%] sm:w-[55%] md:w-[50%] lg:hidden flex flex-col items-center`}
     >
       <div
         onClick={() => {
-          setIsNavOpen((prew) => !prew);
+          setIsNavOpen((prev) => !prev);
         }}
         className="absolute top-4 right-4"
       >
         <img src={logoBack} alt="close" className="text-right w-12 h-12" />
       </div>
-      <NavLink
-        onClick={() => {
-          setIsNavOpen((prew) => !prew);
-          toTop();
-        }}
-        to="/"
-        className="text-center mt-[6rem] text-[24px]"
-      >
-        {t("header-aboutUs")}
-      </NavLink>
-      <NavLink
-        onClick={() => {
-          setIsNavOpen((prew) => !prew);
-          toTop();
-        }}
-        to="/"
-        className="text-center text-[24px]"
-      >
-        {t("header-services")}
-      </NavLink>
-      <NavLink
-        onClick={() => {
-          setIsNavOpen((prew) => !prew);
-          toTop();
-        }}
-        to="/"
-        className="text-center text-[24px]"
-      >
-        {t("header-cases")}
-      </NavLink>
-      <NavLink
-        onClick={() => {
-          setIsNavOpen((prew) => !prew);
-          toTop();
-        }}
-        to="/"
-        className="text-center text-[24px]"
-      >
-        {t("header-contacts")}
-      </NavLink>
-      <a href="Tel:+998900228073" className="text-center text-[24px]">
-        +998900228073
-      </a>
-      <div className="flex gap-x-10 m:gap-12 l:gap-16">
+      <nav className="mt-20 flex flex-col items-center space-y-12 text-[24px]">
+        <NavLink
+          onClick={() => {
+            setIsNavOpen((prev) => !prev);
+            toTop();
+          }}
+          to="/"
+        >
+          {t("header-aboutUs")}
+        </NavLink>
+        <NavLink
+          onClick={() => {
+            setIsNavOpen((prev) => !prev);
+            toTop();
+          }}
+          to="/"
+        >
+          {t("header-services")}
+        </NavLink>
+        <NavLink
+          onClick={() => {
+            setIsNavOpen((prev) => !prev);
+            toTop();
+          }}
+          to="/"
+        >
+          {t("header-cases")}
+        </NavLink>
+        <NavLink
+          onClick={() => {
+            setIsNavOpen((prev) => !prev);
+            toTop();
+          }}
+          to="/"
+        >
+          {t("header-contacts")}
+        </NavLink>
+        <a href="Tel:+998900228073" className="text-center">
+          +998900228073
+        </a>
+      </nav>
+      <div className="flex justify-center gap-x-10 mt-12">
         <FooterSocial />
       </div>
     </div>
