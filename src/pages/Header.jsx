@@ -4,14 +4,15 @@ import Logo from "./../assets/img/logo.png";
 import LanLogo from "./../assets/img/Language icon.svg";
 import Menu from "./../assets/img/menu.svg";
 import { Link } from 'react-scroll';
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import i18n from "i18next";
 import cookies from "js-cookie";
 
-const Header = ({ isNavOpen, setIsNavOpen }) => {
+const Header = ({ setIsNavOpen }) => {
   const [openLanguage, setOpenLanguage] = useState(false);
   const { t } = useTranslation();
+  const location = useLocation();
 
   const currentLanguage = cookies.get("i18next") || "ru";
 
@@ -74,14 +75,16 @@ const Header = ({ isNavOpen, setIsNavOpen }) => {
           </NavLink>
           <div className={`hidden lg:block`}>
             <div className="flex items-baseline space-x-4">
-              <Link
-                to="home"
-                smooth={true}
-                duration={500}
-                className="text-header-text hover:text-blue-700 px-3 py-2 rounded-md text-sm xl:text-lg font-medium cursor-pointer"
-              >
-                {t("header-aboutUs")}
-              </Link>
+            {(location.pathname === "/cases" || location.pathname === "/Cases") && (
+                <NavLink
+                  to="/"
+                  smooth={true}
+                  duration={500}
+                  className="text-header-text hover:text-blue-700 px-3 py-2 rounded-md text-sm xl:text-lg font-medium cursor-pointer"
+                >
+                  {t("header-aboutUs")}
+                </NavLink>
+              )}
               <Link
                 to="services"
                 smooth={true}
@@ -156,10 +159,6 @@ const Header = ({ isNavOpen, setIsNavOpen }) => {
       </div>
     </div> */}
 
-
-
-
-
               <div className="flex self-center items-start relative">
                 <button
                   onClick={() => setOpenLanguage((prev) => !prev)}
@@ -185,11 +184,6 @@ const Header = ({ isNavOpen, setIsNavOpen }) => {
                   </button>
                 </div>
               </div>
-
-
-
-
-
 
                   {/* <div className="flex self-center items-start relative">
                     <button
