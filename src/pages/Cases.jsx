@@ -68,7 +68,7 @@ const Cases = () => {
   }, []);
 
   useEffect(() => {
-    if (titleInView) {
+    if (titleInView && titleRef.current) {
       gsap.fromTo(
         titleRef.current,
         {
@@ -87,7 +87,7 @@ const Cases = () => {
   }, [titleInView]);
 
   useEffect(() => {
-    if (static1InView || static2InView || static3InView) {
+    if ((static1InView || static2InView || static3InView) && titleStatic1.current && titleStatic2.current && titleStatic3.current) {
       gsap.fromTo(
         [titleStatic1.current, titleStatic2.current, titleStatic3.current],
         {
@@ -107,7 +107,7 @@ const Cases = () => {
 
   useEffect(() => {
     //анимация "запрос"
-    if (zaprosInView) {
+    if (zaprosInView && titleZapros.current) {
       gsap.fromTo(
         titleZapros.current,
         {
@@ -126,7 +126,7 @@ const Cases = () => {
 
   useEffect(() => {
     //анимация списка ul
-    if (ulInView) {
+    if (ulInView && titleUl.current) {
       gsap.fromTo(
         titleUl.current,
         {
