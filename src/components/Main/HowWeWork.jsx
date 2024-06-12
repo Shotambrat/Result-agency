@@ -181,16 +181,8 @@ const HowWeWork = () => {
     const showItems = () => {
       gsap.to(cardRefs.current, {
         opacity: 1,
-        duration: 4,
-        stagger: 0.7,
-      });
-    };
-
-    const hideItems = () => {
-      gsap.to(cardRefs.current, {
-        opacity: 0,
         duration: 3,
-        stagger: 0.2,
+        stagger: 0.4,
       });
     };
 
@@ -208,14 +200,12 @@ const HowWeWork = () => {
             }`
         ) {
           showItems();
-        } else {
-          hideItems();
         }
       });
     };
 
     const observerCards = new IntersectionObserver(observerCallback, {
-      threshold: [0, 0.2, 0.3, 0.5, 1],
+      threshold: [0.2, 0.3, 0.5,],
     });
 
     if (containerRef.current) {
