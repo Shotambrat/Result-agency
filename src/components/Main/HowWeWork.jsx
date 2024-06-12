@@ -74,34 +74,31 @@ const HowWeWork = () => {
 
   const [titleInViewRef, titleInView] = useInView({
     triggerOnce: true,
-    threshold: 0.5,
+    threshold: 0.2,
   });
 
   const [subtitleInViewRef, subtitleInView] = useInView({
     triggerOnce: true,
-    threshold: 0.5,
+    threshold: 0.2,
   });
 
   const [imageInViewRef, imageInView] = useInView({
     triggerOnce: true,
-    threshold: 0.5,
+    threshold: 0.2,
   });
 
   const [buttonInViewRef, buttonInView] = useInView({
     triggerOnce: true,
-    threshold: 0.5,
+    threshold: 0.2,
   });
 
   // Animation for title
+  gsap.set(titleRef.current, { y: -50, x: 0, opacity: 0 });
   useEffect(() => {
     if (titleInView) {
-      gsap.fromTo(
+      gsap.to(
         titleRef.current,
-        {
-          y: -50,
-          x: 0,
-          opacity: 0,
-        },
+
         {
           duration: 4,
           y: 0,
@@ -110,38 +107,27 @@ const HowWeWork = () => {
         }
       );
     }
-  }, [titleInView]);
+  }, [titleInView, titleInViewRef]);
 
   // Animation for subtitle
+  gsap.set(subtitleRef.current, { x: 150, y: 0, opacity: 0 });
   useEffect(() => {
     if (subtitleInView) {
-      gsap.fromTo(
-        subtitleRef.current,
-        {
-          x: 150,
-          y: 0,
-          opacity: 0,
-        },
-        {
-          duration: 4,
-          x: 0,
-          opacity: 1,
-          ease: "power3.out",
-        }
-      );
+      gsap.to(subtitleRef.current, {
+        duration: 4,
+        x: 0,
+        opacity: 1,
+        ease: "power3.out",
+      });
     }
-  }, [subtitleInView]);
+  }, [subtitleInView, subtitleInViewRef]);
 
   // Animation for image
+  gsap.set(imageRef.current, { x: -150, y: 0, opacity: 0 });
   useEffect(() => {
     if (imageInView) {
-      gsap.fromTo(
+      gsap.to(
         imageRef.current,
-        {
-          x: -150,
-          y: 0,
-          opacity: 0,
-        },
         {
           duration: 4,
           x: 0,
@@ -153,22 +139,15 @@ const HowWeWork = () => {
   }, [imageInView]);
 
   // Animation for button
+  gsap.set(buttonRef.current, { opacity: 0, y: 100, x: 0 });
   useEffect(() => {
     if (buttonInView) {
-      gsap.fromTo(
-        buttonRef.current,
-        {
-          x: 0,
-          y: 100,
-          opacity: 0,
-        },
-        {
-          duration: 4,
-          y: 0,
-          opacity: 1,
-          ease: "power3.out",
-        }
-      );
+      gsap.to(buttonRef.current, {
+        duration: 4,
+        y: 0,
+        opacity: 1,
+        ease: "power3.out",
+      });
     }
   }, [buttonInView]);
 
@@ -205,7 +184,7 @@ const HowWeWork = () => {
     };
 
     const observerCards = new IntersectionObserver(observerCallback, {
-      threshold: [0.2, 0.3, 0.5,],
+      threshold: [0.2, 0.3, 0.5],
     });
 
     if (containerRef.current) {
