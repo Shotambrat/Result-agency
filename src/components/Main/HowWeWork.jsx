@@ -11,8 +11,6 @@ const options = {
   threshold: 0.1,
 };
 
-let selectNavTimeout;
-
 const HowWeWork = () => {
   const { t } = useTranslation();
   const [isModalOpen, setModalOpen] = useState(false);
@@ -20,7 +18,7 @@ const HowWeWork = () => {
   const openModal = () => setModalOpen(true);
   const closeModal = () => setModalOpen(false);
 
-  let data = [
+  const data = [
     {
       title: "Личная беседа и бриф",
       subtitle: `Обсуждение ваших предпочтений и целей, и объяснение наших условий и
@@ -70,7 +68,7 @@ const HowWeWork = () => {
       order: "order-6",
     },
   ];
-  let dataLength = data.length;
+  const dataLength = data.length;
 
   const itemRefs = useRef([]);
   const containerRef = useRef();
@@ -80,29 +78,28 @@ const HowWeWork = () => {
       gsap.set(item, { opacity: 0 });
     });
 
-    // Animate to opacity 1 when the component mounts
-    const animateSteps = () => {
-      gsap.to(itemRefs.current, {
-        opacity: 1,
-        duration: 4,
-        stagger: 0.3, // Stagger animation for each item
+    const animateSteps = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          gsap.to(itemRefs.current, {
+            opacity: 1,
+            duration: 4,
+            stagger: 0.3,
+          });
+        }
       });
     };
 
     const observer = new IntersectionObserver(animateSteps, options);
+
     if (containerRef.current) {
-      selectNavTimeout = setTimeout(() => {
-        observer.observe(containerRef.current);
-      }, 1000);
-    } else {
-      // deselect navigation link corresponding to section
-      // cancel timeout when section has left screen
-      clearTimeout(selectNavTimeout);
+      observer.observe(containerRef.current);
     }
 
     return () => {
-      // eslint-disable-next-line
-      if (containerRef.current) observer.unobserve(containerRef.current);
+      if (containerRef.current) {
+        observer.unobserve(containerRef.current);
+      }
     };
   }, []);
 
