@@ -94,6 +94,8 @@ const HowWeWork = () => {
 
   // Animation for title
   useEffect(() => {
+    gsap.set(titleInViewRef, { opacity: 0 });
+
     if (titleInView) {
       gsap.fromTo(
         titleRef.current,
@@ -110,10 +112,12 @@ const HowWeWork = () => {
         }
       );
     }
-  }, [titleInView]);
+  }, [titleInView, titleInViewRef]);
 
   // Animation for subtitle
   useEffect(() => {
+    gsap.set(subtitleInViewRef, { opacity: 0 });
+
     if (subtitleInView) {
       gsap.fromTo(
         subtitleRef.current,
@@ -130,10 +134,12 @@ const HowWeWork = () => {
         }
       );
     }
-  }, [subtitleInView]);
+  }, [subtitleInView, subtitleInViewRef]);
 
   // Animation for image
   useEffect(() => {
+    gsap.set(imageInViewRef, { opacity: 0 });
+
     if (imageInView) {
       gsap.fromTo(
         imageRef.current,
@@ -150,10 +156,12 @@ const HowWeWork = () => {
         }
       );
     }
-  }, [imageInView]);
+  }, [imageInView, imageInViewRef]);
 
   // Animation for button
   useEffect(() => {
+    gsap.set(buttonInViewRef, { opacity: 0 });
+
     if (buttonInView) {
       gsap.fromTo(
         buttonRef.current,
@@ -170,7 +178,7 @@ const HowWeWork = () => {
         }
       );
     }
-  }, [buttonInView]);
+  }, [buttonInView, buttonInViewRef]);
 
   // Animation for cards
   useEffect(() => {
@@ -205,7 +213,7 @@ const HowWeWork = () => {
     };
 
     const observerCards = new IntersectionObserver(observerCallback, {
-      threshold: [0.2, 0.3, 0.5,],
+      threshold: [0.2, 0.3, 0.5],
     });
 
     if (containerRef.current) {
