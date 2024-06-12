@@ -8,12 +8,13 @@ import Footer from "./pages/Footer";
 import { Element } from "react-scroll";
 import NavMenu from "./components/NavMenu";
 import { useState } from "react";
-
+import FixedBackground from "./components/FixedBackground";
 function App() {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
   return (
     <div className="App">
+      <FixedBackground />
       <BrowserRouter>
         <Header setIsNavOpen={setIsNavOpen} />
         <NavMenu isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} />
