@@ -88,19 +88,22 @@ const Cover = () => {
             </div>
           </div>
         </div>
-        <div className="z-[0]"> 
+        <div className="z-[0]" style={{ userSelect: "none" }}> 
           <img
             src={dnkLeft}
             alt="DNK"
             className="dnk-left transition-all duration-300 absolute bottom-[70%] right-[37%] md:bottom-[33%] md:right-[40%] lg:bottom-[25%] lg:right-[50%] xl:bottom-[15%] xl:right-[45%] 2xl:bottom-[7%] 3xl:right-[45%] z-[0]"
+            draggable="false"
           />
           <img
             src={dnkRight}
             alt="DNK"
             className="absolute top-[58%] left-[50%] xs:top-[42%] sm:top-[22%] md:top-[15%] md:left-[50%] lg:top-[5%] lg:left-[45%] xl:top-[-5%] 2xl:top-[-15%] z-[0]"
+            draggable="false"
           />
         </div>
       </div>
+      
     </div>
   );
 };

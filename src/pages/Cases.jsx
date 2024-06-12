@@ -77,7 +77,7 @@ const Cases = () => {
           opacity: 0,
         },
         {
-          duration: 2.5,
+          duration: 5,
           x: 0,
           opacity: 1,
           ease: "power3.out",

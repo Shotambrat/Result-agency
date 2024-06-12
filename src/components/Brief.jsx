@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
+import MapFooter from "./MapFooter";
 
 const Brief = () => {
   const { t } = useTranslation();
@@ -63,16 +64,7 @@ const Brief = () => {
   return (
     <div className="lg:mt-24 mb-14 relative flex justify-center items-end h-[62rem] lg:h-[32rem] 2xl:h-[35rem]">
     <div className="w-full h-[37rem] lg:h-full lg:absolute relative left-0 lg:top-0 z-0">
-        <iframe
-            title="Intermed Innovation"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5990.263666042327!2d69.28771283321369!3d41.349488163895295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38aef35418406693%3A0xf91e0631f842852c!2sINTERMED%20Innovation!5e0!3m2!1sru!2s!4v1717666382849!5m2!1sru!2s"
-            width="600"
-            height="450"
-            className="relative top-0 left-0 w-full h-full border-none"
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-        ></iframe>
+        <MapFooter />
     </div>
     <div className="absolute top-0 left-0 lg:relative w-full 3xl:w-[1500px] h-[32rem] lg:h-full flex items-center z-10" style={{ pointerEvents: 'none' }}>
         <div
