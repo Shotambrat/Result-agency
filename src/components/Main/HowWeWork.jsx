@@ -215,7 +215,7 @@ const HowWeWork = () => {
     };
 
     const observerCards = new IntersectionObserver(observerCallback, {
-      threshold: [0, 0.1, 0.2, 0.3, 0.5, 0.75, 1],
+      threshold: [0, 0.2, 0.3, 0.5, 1],
     });
 
     if (containerRef.current) {
