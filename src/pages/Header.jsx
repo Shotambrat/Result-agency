@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import Logo from "./../assets/img/logo.png";
-import LanLogo from "./../assets/img/Language icon.svg";
+// import LanLogo from "./../assets/img/Language icon.svg";
 import Menu from "./../assets/img/menu.svg";
 import { Link } from 'react-scroll';
 import { NavLink, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import FlagRus from "./../assets/img/FlagRus.png";
+import FlagUz from "./../assets/img/FlagUz.png";
 import i18n from "i18next";
 import cookies from "js-cookie";
 
@@ -13,6 +15,13 @@ const Header = ({ setIsNavOpen }) => {
   const [openLanguage, setOpenLanguage] = useState(false);
   const { t } = useTranslation();
   const location = useLocation();
+
+  const menuRef = useRef(null);
+  const handleClickOutside = (event) => {
+    if (menuRef.current && !menuRef.current.contains(event.target)) {
+      setOpenLanguage(false);
+    }
+  };
 
   const currentLanguage = cookies.get("i18next") || "ru";
 
@@ -23,7 +32,7 @@ const Header = ({ setIsNavOpen }) => {
       i18n.changeLanguage("ru");
     }
 
-    setOpenLanguage((prev) => !prev);
+    setOpenLanguage(false);
   }
 
   const [scrollTimeout, setScrollTimeout] = useState(null);
@@ -59,6 +68,13 @@ const Header = ({ setIsNavOpen }) => {
       if (scrollTimeout) clearTimeout(scrollTimeout);
     };
   }, [scrollTimeout]);
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <header className="header w-[100vw] h-[60px] lg:h-auto bg-white bg-opacity-30 backdrop-filter backdrop-blur-lg fixed top-0 z-20 py-0 lg:py-3 3xl:py-0">
@@ -120,122 +136,35 @@ const Header = ({ setIsNavOpen }) => {
               id="container-language"
             >
 
+          <div className="flex self-center items-start relative">
+            <button
+              onClick={() => setOpenLanguage((prev) => !prev)}
+              className="flex items-center border-[1px] border-solid border-[#191359] rounded-[48px] pl-4 pr-2 h-6 md:py-1 transition duration-300"
+            >
+              <p className="text-[#191359] text-[11px] font-light xs:text-[12px] md:text-[14px]">
+                {currentLanguage === "ru" ? "Русский" : "O'zbekcha"}
+              </p>
+              <img src={currentLanguage === "ru" ? FlagRus : FlagUz} alt="language flag" className="pl-2 w-7 h-auto" />
+            </button>
+            <div
+              ref={menuRef}
+              className={`absolute w-full bottom-[-100%] text-start pl-2 border-[1px] border-solid border-cases-border rounded-[48px] overflow-hidden transition-all duration-300 ease-in-out transform ${
+                openLanguage ? 'max-h-20 opacity-100 translate-y-0' : 'max-h-0 opacity-0 translate-y-[-10px]'
+              }`}
+            >
+              <button
+                onClick={handleChangeLanguage}
+                className="w-full flex items-center justify-evenly h-6"
+              >
+                <p className="text-[#191359] text-[11px] font-light xs:text-[12px] md:text-[14px]">
+                  {currentLanguage !== "ru" ? "Русский" : "O'zbekcha"}
+                </p>
+                <img src={currentLanguage !== "ru" ? FlagRus : FlagUz} alt="language flag" className=" w-5 h-auto" />
+              </button>
+            </div>
+          </div>
 
 
-
-
-{/* <div className="flex self-center items-start relative">
-      <button
-        onClick={() => setOpenLanguage((prev) => !prev)}
-        className="flex items-center border-[1px] border-solid border-[#191359] rounded-[48px] pl-4 pr-2 h-6 md:py-1 transition duration-300"
-      >
-        <p className="text-[#191359] text-[11px] font-light xs:text-[12px] md:text-[14px]">
-          {currentLanguage !== "ru" ? "O'zbekcha" : "Русский"}
-        </p>
-        <img 
-          src={currentLanguage === "ru" ? RussiaFlag : UzbekistanFlag} 
-          alt="language flag" 
-          className="pl-2 h-4 w-4 ml-2"
-        />
-      </button>
-      <div
-        className={`absolute w-full bottom-[-100%] text-start pl-2 border-[1px] border-solid border-cases-border rounded-[48px] overflow-hidden transition-all duration-300 ease-in-out transform ${
-          openLanguage ? 'max-h-10 opacity-100 translate-y-0' : 'max-h-0 opacity-0 translate-y-[-10px]'
-        }`}
-      >
-        <button
-          onClick={handleChangeLanguage}
-          className="w-full flex items-center h-6"
-        >
-          <p className="text-[#191359] text-[11px] font-light xs:text-[12px] md:text-[14px]">
-            {currentLanguage !== "ru" ? "Русский" : "O'zbekcha"}
-          </p>
-          <img 
-            src={currentLanguage === "ru" ? UzbekistanFlag : RussiaFlag} 
-            alt="language flag" 
-            className="pl-2 h-4 w-4 ml-2"
-          />
-        </button>
-      </div>
-    </div> */}
-
-              <div className="flex self-center items-start relative">
-                <button
-                  onClick={() => setOpenLanguage((prev) => !prev)}
-                  className="flex items-center border-[1px] border-solid border-[#191359] rounded-[48px] pl-4 pr-2 h-6 md:py-1 transition duration-300"
-                >
-                  <p className="text-[#191359] text-[11px] font-light xs:text-[12px] md:text-[14px]">
-                    {t("header-language")}
-                  </p>
-                  <img src={LanLogo} alt="language icon" className="pl-2" />
-                </button>
-                <div
-                  className={`absolute w-full bottom-[-100%] text-start pl-2 border-[1px] border-solid border-cases-border rounded-[48px] overflow-hidden transition-all duration-300 ease-in-out transform ${
-                    openLanguage ? 'max-h-10 opacity-100 translate-y-0' : 'max-h-0 opacity-0 translate-y-[-10px]'
-                  }`}
-                >
-                  <button
-                    onClick={handleChangeLanguage}
-                    className="w-full flex items-center h-6"
-                  >
-                    <p className="text-[#191359] text-[11px] font-light xs:text-[12px] md:text-[14px]">
-                      {currentLanguage !== "ru" ? "Русский" : "O'zbekcha"}
-                    </p>
-                  </button>
-                </div>
-              </div>
-
-                  {/* <div className="flex self-center items-start relative">
-                    <button
-                      onClick={() => setOpenLanguage((prev) => !prev)}
-                      className="flex items-center border-[1px] border-solid border-[#191359] rounded-[48px] pl-4 pr-2 h-6 md:py-1"
-                    >
-                      <p className="text-[#191359] text-[11px] font-light xs:text-[12px] md:text-[14px]">
-                        {t("header-language")}
-                      </p>
-                      <img src={LanLogo} alt="language icon" className="pl-2" />
-                    </button>
-                    <div
-                      className={`transition-all duration-300 ${
-                        openLanguage ? 'max-h-10 opacity-100' : 'max-h-0 opacity-0'
-                      } overflow-hidden absolute w-full bottom-[-100%] text-start pl-2 border-[1px] border-solid border-cases-border rounded-[48px] h-6`}
-                    >
-                      <button
-                        onClick={handleChangeLanguage}
-                        className="w-full flex items-center text-start"
-                      >
-                        <p className="text-[#191359] text-[11px] font-light xs:text-[12px] md:text-[14px]">
-                          {currentLanguage !== "ru" ? "Русский" : "O'zbekcha"}
-                        </p>
-                      </button>
-                    </div>
-                  </div> */}
-
-
-
-
-
-              {/* <div className="flex self-center items-start relative">
-                <button
-                  onClick={() => setOpenLanguage((prev) => !prev)}
-                  className="flex items-center border-[1px] border-solid border-[#191359] rounded-[48px] pl-4 pr-2 h-6 md:py-1 "
-                >
-                  <p className="text-[#191359] text-[11px] font-light xs:text-[12px] md:text-[14px]">
-                    {t("header-language")}
-                  </p>
-                  <img src={LanLogo} alt="language icon" className="pl-2" />
-                </button>
-                {openLanguage && (
-                  <button
-                    onClick={handleChangeLanguage}
-                    className="w-full flex items-center bottom-[-100%] absolute text-start pl-2 border-[1px] border-solid border-cases-border rounded-[48px] h-6"
-                  >
-                    <p className="text-[#191359] text-[11px] font-light xs:text-[12px] md:text-[14px]">
-                      {currentLanguage !== "ru" ? "Русский" : "O'zbekcha"}
-                    </p>
-                  </button>
-                )}
-              </div> */}
               <button
                 onClick={() => setIsNavOpen((prev) => !prev)}
                 className="ml-2 md:ml-4 lg:hidden "
