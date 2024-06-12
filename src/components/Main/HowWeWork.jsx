@@ -1,17 +1,10 @@
-import React, { useEffect, useRef, useState } from "react";
-import InternetWindow from "../../assets/img/howWorkComp.svg";
-import downArrow from "../../assets/img/down-arrow.svg";
 import { gsap } from "gsap";
+import React, { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
+import downArrow from "../../assets/img/down-arrow.svg";
+import InternetWindow from "../../assets/img/howWorkComp.svg";
 import Application from "../Modals/Application";
-
-const options = {
-  root: null,
-  rootMargin: "0px",
-  threshold: 0.1,
-};
-
-let selectNavTimeout;
+import { useInView } from "react-intersection-observer";
 
 const HowWeWork = () => {
   const { t } = useTranslation();
@@ -72,39 +65,170 @@ const HowWeWork = () => {
   ];
   let dataLength = data.length;
 
-  const itemRefs = useRef([]);
+  const titleRef = useRef();
+  const subtitleRef = useRef();
+  const imageRef = useRef();
+  const buttonRef = useRef();
+  const cardRefs = useRef([]);
   const containerRef = useRef();
 
+  const [titleInViewRef, titleInView] = useInView({
+    triggerOnce: true,
+    threshold: 0.5,
+  });
+
+  const [subtitleInViewRef, subtitleInView] = useInView({
+    triggerOnce: true,
+    threshold: 0.5,
+  });
+
+  const [imageInViewRef, imageInView] = useInView({
+    triggerOnce: true,
+    threshold: 0.5,
+  });
+
+  const [buttonInViewRef, buttonInView] = useInView({
+    triggerOnce: true,
+    threshold: 0.5,
+  });
+
+  // Animation for title
   useEffect(() => {
-    itemRefs.current.forEach((item) => {
+    if (titleInView) {
+      gsap.fromTo(
+        titleRef.current,
+        {
+          y: -50,
+          x: 0,
+          opacity: 0,
+        },
+        {
+          duration: 4,
+          y: 0,
+          opacity: 1,
+          ease: "power3.out",
+        }
+      );
+    }
+  }, [titleInView]);
+
+  // Animation for subtitle
+  useEffect(() => {
+    if (subtitleInView) {
+      gsap.fromTo(
+        subtitleRef.current,
+        {
+          x: 150,
+          y: 0,
+          opacity: 0,
+        },
+        {
+          duration: 4,
+          x: 0,
+          opacity: 1,
+          ease: "power3.out",
+        }
+      );
+    }
+  }, [subtitleInView]);
+
+  // Animation for image
+  useEffect(() => {
+    if (imageInView) {
+      gsap.fromTo(
+        imageRef.current,
+        {
+          x: -150,
+          y: 0,
+          opacity: 0,
+        },
+        {
+          duration: 4,
+          x: 0,
+          opacity: 1,
+          ease: "power3.out",
+        }
+      );
+    }
+  }, [imageInView]);
+
+  // Animation for button
+  useEffect(() => {
+    if (buttonInView) {
+      gsap.fromTo(
+        buttonRef.current,
+        {
+          x: 0,
+          y: 100,
+          opacity: 0,
+        },
+        {
+          duration: 4,
+          y: 0,
+          opacity: 1,
+          ease: "power3.out",
+        }
+      );
+    }
+  }, [buttonInView]);
+
+  // Animation for cards
+  useEffect(() => {
+    cardRefs.current.forEach((item) => {
       gsap.set(item, { opacity: 0 });
     });
 
-    // Animate to opacity 1 when the component mounts
-    const animateSteps = () => {
-      gsap.to(itemRefs.current, {
+    const showItems = () => {
+      gsap.to(cardRefs.current, {
         opacity: 1,
         duration: 4,
-        stagger: 0.3, // Stagger animation for each item
+        stagger: 0.7,
       });
     };
 
-    const observer = new IntersectionObserver(animateSteps, options);
+    const hideItems = () => {
+      gsap.to(cardRefs.current, {
+        opacity: 0,
+        duration: 3,
+        stagger: 0.2,
+      });
+    };
+
+    const observerCallback = (entries) => {
+      entries.forEach((entry) => {
+        if (
+          entry.isIntersecting &&
+          entry.intersectionRatio >=
+            `${
+              window.innerWidth >= 1024
+                ? 0.5
+                : window.innerWidth >= 768
+                ? 0.3
+                : 0.2
+            }`
+        ) {
+          showItems();
+        } else {
+          hideItems();
+        }
+      });
+    };
+
+    const observerCards = new IntersectionObserver(observerCallback, {
+      threshold: [0, 0.1, 0.2, 0.3, 0.5, 0.75, 1],
+    });
+
     if (containerRef.current) {
-      selectNavTimeout = setTimeout(() => {
-        observer.observe(containerRef.current);
-      }, 1000);
-    } else {
-      // deselect navigation link corresponding to section
-      // cancel timeout when section has left screen
-      clearTimeout(selectNavTimeout);
+      observerCards.observe(containerRef.current);
     }
 
     return () => {
-      // eslint-disable-next-line
-      if (containerRef.current) observer.unobserve(containerRef.current);
+      if (containerRef.current) {
+        // eslint-disable-next-line
+        observerCards.unobserve(containerRef.current);
+      }
     };
-  }, []);
+  }, [cardRefs]);
 
   return (
     <div
@@ -113,23 +237,45 @@ const HowWeWork = () => {
       }}
       className="rounded-[16px] lg:rounded-3xl overflow-hidden my-8 xs:px-8 sm:px-0 mx-[0.625rem] sm:mx-4 md:mx-10 xl:mx-20 2xl:mx-[6.875rem]  3xl:max-w-[1500px] 3xl:mx-auto lg:mt-[3rem]"
     >
-      <h2 className="text-[20px] xs:text-[24px] md:text-[30px] 2xl:text-[56px] font-bold text-center mt-4 xs:mt-6">
+      <h2
+        ref={(el) => {
+          titleRef.current = el;
+          titleInViewRef(el);
+        }}
+        className="text-[20px] xs:text-[24px] md:text-[30px] 2xl:text-[56px] font-bold text-center mt-4 xs:mt-6"
+      >
         {t("howWeWork-title")}
       </h2>
       <div className="grid grid-cols-5 sm:grid-cols-2 mt-6 justify-between sm:px-8 md:px-12 lg:px-[10%]">
         <img
+          ref={(el) => {
+            imageRef.current = el;
+            imageInViewRef(el);
+          }}
           src={InternetWindow}
           alt="internet-window"
           className="h-[6rem] xs:h-[8rem] sm:h-[12rem] lg:h-[16rem] 2xl:h-[24rem] col-span-2 sm:col-span-1 sm:row-span-2 mx-auto"
         />
-        <h3 className="text-how-we-work-color pr-2 xl:pr-16 text-[13px] xs:text-[15px] md:text-[20px] xl:text-[24px] 2xl:text-[32px] col-span-3 sm:col-span-1 leading-4 md:leading-6 2xl:leading-10">
+        <h3
+          ref={(el) => {
+            subtitleRef.current = el;
+            subtitleInViewRef(el);
+          }}
+          className="text-how-we-work-color pr-2 xl:pr-16 text-[13px] xs:text-[15px] md:text-[20px] xl:text-[24px] 2xl:text-[32px] col-span-3 sm:col-span-1 leading-4 md:leading-6 2xl:leading-10"
+        >
           {t("howWeWork-subtitle")}
         </h3>
         <div
           onClick={() => openModal()}
           className="col-span-5 text-center sm:text-left mt-4 sm:col-span-1"
         >
-          <button className="px-7 xs:px-10 sm:px-8 py-2 sm:py-4 bg-button-color text-white rounded-[24px] sm:rounded-full text-center text-[13px] xs:text-[15px] md:text-[18px] 2xl:text-[20px] font-normal">
+          <button
+            ref={(el) => {
+              buttonRef.current = el;
+              buttonInViewRef(el);
+            }}
+            className="px-7 xs:px-10 sm:px-8 py-2 sm:py-4 bg-button-color text-white rounded-[24px] sm:rounded-full text-center text-[13px] xs:text-[15px] md:text-[18px] 2xl:text-[20px] font-normal"
+          >
             {t("howWeWork-button")}
           </button>
         </div>
@@ -143,7 +289,7 @@ const HowWeWork = () => {
           return (
             <div
               key={index}
-              ref={(el) => (itemRefs.current[index] = el)}
+              ref={(el) => (cardRefs.current[index] = el)}
               className={`bg-white bg-opacity-40 ${data.order} relative px-[0.8125rem] lg:px-8 2xl:pl-0 2xl:pr-4 border-[1px] md:border-2 border-solid border-white rounded-[14px] lg:rounded-3xl`}
             >
               <div className="absolute top-[-12%] left-[calc(50%-1.25rem)] md:top-[calc(50%-1.25rem)] 2xl:top-[calc(50%-2rem)] md:left-[-1.3rem] 2xl:left-[-2.2rem] bg-footer-icon border-[4px] border-howWeWork-border w-10 h-10 2xl:w-16 2xl:h-16 rounded-full">
