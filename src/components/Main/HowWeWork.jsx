@@ -86,57 +86,58 @@ const HowWeWork = () => {
 
   const [buttonInViewRef, buttonInView] = useInView({
     triggerOnce: true,
-    threshold: 0.2,
+    threshold: 0,
   });
 
-  // Animation for title
-  gsap.set(titleRef.current, { y: -100, x: 0, opacity: 0 });
+  // start position animations
+  useEffect(() => {
+    // Animation for title
+    gsap.set(titleRef.current, { y: -100, x: 0, opacity: 0 });
+    // Animation for subtitle
+    gsap.set(subtitleRef.current, { x: 150, y: 0, opacity: 0 });
+    // Animation for image
+    gsap.set(imageRef.current, { x: -150, y: 0, opacity: 0 });
+    // Animation for button
+    gsap.set(buttonRef.current, { opacity: 0, y: 100, x: 0 });
+  }, []);
+
   useEffect(() => {
     if (titleContainerInView) {
       gsap.to(titleRef.current, {
-        duration: 4,
+        duration: 2,
         y: 0,
         opacity: 1,
-        ease: "power3.out",
+        // ease: "power3.out",
       });
     }
   }, [titleContainerInView]);
 
-  // Animation for subtitle
   useEffect(() => {
-    gsap.set(subtitleRef.current, { x: 150, y: 0, opacity: 0 });
     if (imageSubtitleInView) {
       gsap.to(subtitleRef.current, {
-        duration: 4,
+        duration: 2,
         x: 0,
-        opacity: 1,
-        ease: "power3.out",
+        opacity: 1, 
       });
     }
   }, [imageSubtitleInView]);
 
-  // Animation for image
-  gsap.set(imageRef.current, { x: -150, y: 0, opacity: 0 });
   useEffect(() => {
     if (imageSubtitleInView) {
       gsap.to(imageRef.current, {
-        duration: 4,
+        duration: 2,
         x: 0,
         opacity: 1,
-        ease: "power3.out",
       });
     }
   }, [imageSubtitleInView]);
 
-  // Animation for button
-  gsap.set(buttonRef.current, { opacity: 0, y: 100, x: 0 });
   useEffect(() => {
     if (buttonInView) {
       gsap.to(buttonRef.current, {
-        duration: 4,
+        duration: 2,
         y: 0,
         opacity: 1,
-        ease: "power3.out",
       });
     }
   }, [buttonInView]);
