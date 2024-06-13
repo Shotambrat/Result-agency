@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { useInView } from "react-intersection-observer";
 import logo_zaglushka_mob from "../../src/assets/img/logo_zaglushka_mob.png";
+
 import logoresbig from "../../src/assets/img/logoresbig.png";
 import logo_big_upside_down from "../../src/assets/img/logo_big_upside_down.png";
 import SwiperCases from "../components/Cases/OurCasesSlider";
@@ -194,7 +195,7 @@ const Cases = () => {
                 }}
                 className="flex justify-between gap-x-8 items-center lg:gap-x-0 lg:gap-y-4 lg:flex-col-reverse"
               >
-                <span className="ml-4 text-xl md:text-2xl lg:ml-0">
+                <span className="text-xl md:text-2xl lg:ml-0">
                   {t("cases-plan-ROI")}
                 </span>
                 <span className="font-bold text-4xl md:text-3xl lg:text-4xl xl:text-[40px] 2xl:text-[48px]">

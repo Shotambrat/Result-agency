@@ -12,11 +12,12 @@ export default function NavMenu({ isNavOpen, setIsNavOpen }) {
   }
 
   return (
-    <div
-      className={`fixed top-0 right-0 h-screen bg-white transition-transform duration-300 z-[100] ${
-        isNavOpen ? "transform translate-x-0" : "transform translate-x-full"
-      } w-full xxs:w-[65%] sm:w-[55%] md:w-[50%] lg:hidden flex flex-col items-center`}
-    >
+    
+<div
+  className={`fixed top-0 right-0 h-full bg-white transition-transform duration-300 z-[100] ${
+    isNavOpen ? "transform translate-x-0" : "transform translate-x-full"
+  } w-full xxs:w-[65%] sm:w-[55%] md:w-[50%] lg:hidden flex flex-col items-center`}
+>
       <div
         onClick={() => {
           setIsNavOpen((prev) => !prev);
@@ -25,7 +26,8 @@ export default function NavMenu({ isNavOpen, setIsNavOpen }) {
       >
         <img src={logoBack} alt="close" className="text-right w-12 h-12" />
       </div>
-      <nav className="mt-20 flex flex-col items-center space-y-12 text-[24px]">
+    <div className="max-h-full">
+      <nav className="mt-20 flex flex-col items-center space-y-12 text-[24px] max-h-[571px] ">
         <NavLink
           onClick={() => {
             setIsNavOpen((prev) => !prev);
@@ -69,6 +71,7 @@ export default function NavMenu({ isNavOpen, setIsNavOpen }) {
       <div className="flex justify-center gap-x-10 mt-12">
         <FooterSocial />
       </div>
+    </div>
     </div>
   );
 }

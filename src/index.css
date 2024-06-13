@@ -70,6 +70,17 @@ code {
   }
 }
 
+#scrollToTopButton {
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  opacity: 0;
+  visibility: hidden;
+}
+
+#scrollToTopButton.show {
+  opacity: 1;
+  visibility: visible;
+}
+
 /* :root {
   --swiper-navigation-color: #E49A38;
   --swiper-navigation-background-color: #E49A38;
