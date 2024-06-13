@@ -26,7 +26,7 @@ export default function Blog() {
         <AboutClient blogId={blogId}/>
         <Conclusions blogId={blogId}/>
       </div>
-      <div className="mt-[68px] ">
+      <div className=" mt-[68px] ">
         <UpButton />
       </div>
     </>

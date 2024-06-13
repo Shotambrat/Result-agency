@@ -2,25 +2,29 @@ import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay, Navigation } from "swiper/modules";
 import zaglushkaslider from "../../assets/img/zaglushka_slider.png";
-import { Modal } from "react-responsive-modal";
-
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import "swiper/swiper-bundle.css";
-import "react-responsive-modal/styles.css";
+
 
 const SwiperCases = () => {
-  const [open, setOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState("");
+  const [isZoomed, setIsZoomed] = useState(false);
 
   const handleOpenModal = (image) => {
     setSelectedImage(image);
-    setOpen(true);
+    setIsOpen(true);
   };
 
   const handleCloseModal = () => {
-    setOpen(false);
+    setIsOpen(false);
+    setIsZoomed(false); // Сбросить состояние увеличения при закрытии
+  };
+
+  const toggleZoom = () => {
+    setIsZoomed(!isZoomed);
   };
 
   return (
@@ -70,13 +74,19 @@ const SwiperCases = () => {
         style={navButtonStyle}
       ></div>
 
-      <Modal open={open} onClose={handleCloseModal} center>
-        <img
-          src={selectedImage}
-          alt="Full-screen"
-          className="w-full h-full object-contain"
-        />
-      </Modal>
+      {isOpen && (
+        <div className="modal-overlay" onClick={handleCloseModal}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <img
+              src={selectedImage}
+              alt="Full-screen"
+              className={`modal-image ${isZoomed ? "zoomed" : ""}`}
+              onClick={toggleZoom}
+            />
+            <button className="modal-close" onClick={handleCloseModal}>✕</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

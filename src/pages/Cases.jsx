@@ -253,7 +253,7 @@ const Cases = () => {
                 titleUl.current = el;
                 ulInViewRef(el);
               }}
-              class="list-disc  text-[24px] font-normal leading-[48px] list-inside  sm:text-[23px] sm:leading-[40px] sm:ml-8 sm:mt-0 lg:ml-0 lg:mt-0 lg:text-[24px] lg:leading-[48px]"
+              class=" list-disc  text-[24px] font-normal leading-[48px] list-inside  sm:text-[23px] sm:leading-[40px] sm:ml-8 sm:mt-0 lg:ml-0 lg:mt-0 lg:text-[24px] lg:leading-[48px]"
             >
               <li>{t("cases-request1")}</li>
               <li>{t("cases-request2")}</li>
@@ -262,13 +262,13 @@ const Cases = () => {
           </div>
         </div>
 
-        <div className="lg:grid lg:grid-cols-[30%_1fr]">
+        <div className=" lg:grid lg:grid-cols-[30%_1fr]">
           <div>
             {/*будет 1 колонка для грида при десктоп */}
-            <div class="rounded-[20px] min-h-[105px] border-[1px] flex justify-center items-center border-uslugi-text p-4 font-semibold text-cases-text text-[36px] mt-[54px] text-center s:max-w-[350px] mx-auto lg:text-[33px] lg:max-h-[125px] lg:max-w-[370px] 2xl:min-h-[120px]">
+            <div class="resultk rounded-[20px] min-h-[105px] border-[1px] flex justify-center items-center border-uslugi-text p-4 font-semibold text-cases-text text-[36px] mt-[54px] text-center s:max-w-[350px] mx-auto lg:text-[33px] lg:max-h-[125px] lg:max-w-[370px] 2xl:min-h-[120px]">
               {t("cases-results-title")}
             </div>
-            <div className="hidden w-full mb-14 lg:block">
+            <div className=" hidden w-full mb-14 lg:block">
               <img
                 src={logo_big_upside_down}
                 alt="logo_big"
@@ -350,7 +350,7 @@ const Cases = () => {
           </div>
         </div>
 
-        <div className="w-full flex self-center items-center justify-center content-center">
+        <div className="statistics w-full flex self-center items-center justify-center content-center">
           <SwiperCases />
         </div>
       </div>
