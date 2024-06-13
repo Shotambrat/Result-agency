@@ -22,9 +22,11 @@ export default function Blog() {
         </h1>
         <OurOffers />
         <AboutClient />
+        <div className="сonclusion">
         <Conclusions />
+        </div>
       </div>
-      <div className="mt-[68px] ">
+      <div className=" mt-[68px] ">
         <UpButton />
       </div>
     </>

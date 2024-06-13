@@ -133,6 +133,46 @@ const Header = ({ setIsNavOpen }) => {
                   </Link>
                 </div>
               )}
+
+
+              {(location.pathname === "/cases" ||
+                location.pathname === "/Cases" ) && (
+                <div>
+                  <Link
+                    to="resultk"
+                    smooth={true}
+                    duration={500}
+                    className="text-header-text hover:text-blue-700 px-3 py-2 rounded-md text-sm xl:text-lg font-medium cursor-pointer"
+                  >
+                    {t("header-result")}
+                  </Link>
+                  <Link
+                    to="statistics"
+                    smooth={true}
+                    duration={500}
+                    className="text-header-text hover:text-blue-700 px-3 py-2 rounded-md text-sm xl:text-lg font-medium cursor-pointer"
+                  >
+                    {t("header-statistics")}
+                  </Link>
+                </div>
+              )}
+              {(location.pathname === "/blog/1" ||
+                location.pathname === "/blog/2" ||
+                location.pathname === "/blog/3") && (
+                <div>
+                  <Link
+                    to="сonclusion"
+                    smooth={true}
+                    duration={500}
+                    className="text-header-text hover:text-blue-700 px-3 py-2 rounded-md text-sm xl:text-lg font-medium cursor-pointer"
+                  >
+                    {t("header-сonclusion")}
+                  </Link>
+                </div>
+              )}
+
+
+
               <Link
                 to="contacts"
                 smooth={true}
