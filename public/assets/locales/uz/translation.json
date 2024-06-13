@@ -157,6 +157,28 @@
 
   "cases-card-create": "Brifni to'ldiring",
 
+  "cases-requests-title": "Запросы",
+
+  "cases-plan-title1": "Наша стратегия ребрендинга ",
+  "cases-plan-application1": "Посещаемость сайта",
+  "cases-plan-application-count1": "+25%",
+  "cases-plan-ROI1": "Конверсия",
+  "cases-plan-ROI-count1": "+40%",
+  "cases-plan-client1": "Аудитория в соц. сетях",
+  "cases-plan-client-count1": "×2",
+  "cases-about-client-title1": "Prime Medical Center: до и после",
+  "cases-about-client-subtitle1": "Gunchamed, имея богатый опыт и высококвалифицированных специалистов, столкнулась с рядом проблем, препятствующих ее развитию. Устаревший веб-сайт, отсутствие комплексной маркетинговой стратегии и недостаточная активность в социальных сетях. После сотрудничества с нашим агентством, обновленный Prime Medical Center зарекомендовал себя в качестве ведущей компании в сфере медицинских услуг, добившись впечатляющих результатов. Целью проекта было не только освежить имидж клиники, но и повысить ее узнаваемость, привлечь новых клиентов и укрепить лояльность существующих.",
+  "cases-request1-1": "Разработка нового веб-сайта:",
+  "cases-request1-2": " Запуск рекламной кампании:",
+  "cases-request1-3": "Создание контента и продвижение в Instagram:",
+  "cases-results-title1": "Результаты",
+  "cases-results-card1-title1": "Посещаемость сайта",
+  "cases-results-card1-subtitle1": "+75% за 3 месяца.",
+  "cases-results-card2-title1": "Конверсия",
+  "cases-results-card2-subtitle1": "+30% благодаря рекламе и оптимизации",
+  "cases-results-card3-title1": "Обращения и записи на прием",
+  "cases-results-card3-subtitle1": "заметный рост благодаря привлечению клиентов.",
+
   "howWeWork-title": "Agentligimiz qanday ishlaydi",
   "howWeWork-subtitle": "Arizani to'ldiring va biznesingiz samaradorligini oshirish uchun mutaxassis maslahatini mutlaqo bepul oling!",
   "howWeWork-button": "Bepul maslahat olish",
@@ -228,27 +250,6 @@
   "back-button": "orqaga",
   "up-button": "yuqoriga",
   "moreDetails-button": "Batafsil",
-
-  "cases-plan-title": "Intermed Innovation uchun kontent reja",
-  "cases-plan-application": "Arizalar",
-  "cases-plan-ROI": "ROI",
-  "cases-plan-client": "Mijozlar",
-
-  "cases-about-client-title": "Mijoz haqida",
-  "cases-about-client-subtitle": "Lorem ipsum dolor sit amet consectetur. Et elit interdum eget maecenas molestie in ac quisque",
-
-  "cases-requests-title": "So'rovlar",
-  "cases-request1": "mashg'ulotlar",
-  "cases-request2": "press mashq qilish",
-  "cases-request3": "10000000km yugurish",
-
-  "cases-results-title": "Natijalar",
-  "cases-results-card1-title": "Biz bir xil takliflarni qilmaymiz",
-  "cases-results-card1-subtitle": "Lorem ipsum dolor sit amet consectetur. Diam nec sem a purus amet tellus. Eget a lacus amet aenean nisl sit.",
-  "cases-results-card2-title": "Biz bir xil takliflarni qilmaymiz",
-  "cases-results-card2-subtitle": "Lorem ipsum dolor sit amet consectetur. Diam nec sem a purus amet tellus. Eget a lacus amet aenean nisl sit.",
-  "cases-results-card3-title": "Biz bir xil takliflarni qilmaymiz",
-  "cases-results-card3-subtitle": "Lorem ipsum dolor sit amet consectetur. Diam nec sem a purus amet tellus. Eget a lacus amet aenean nisl sit.",
 
   "form-error-message": "Iltimos, bu maydonni to'ldiring."
 }
