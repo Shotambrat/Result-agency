@@ -1,8 +1,10 @@
-import React, { useRef, useEffect } from 'react';
-import Monitor from "../../assets/img/monitor.png";
+import React, { useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { gsap } from 'gsap';
+import { gsap } from "gsap";
+import blog1 from "../../assets/img/Blog/blog1.png";
+import blog2 from "../../assets/img/Blog/blog2.png";
+import blog3 from "../../assets/img/Blog/blog3.png";
 
 const MainArticle = () => {
   const { t } = useTranslation();
@@ -25,13 +27,13 @@ const MainArticle = () => {
           gsap.to(image, { scale: 1, duration: 0.3 });
         };
 
-        image.addEventListener('mouseenter', handleMouseEnter);
-        image.addEventListener('mouseleave', handleMouseLeave);
+        image.addEventListener("mouseenter", handleMouseEnter);
+        image.addEventListener("mouseleave", handleMouseLeave);
 
         // Cleanup function to remove event listeners
         return () => {
-          image.removeEventListener('mouseenter', handleMouseEnter);
-          image.removeEventListener('mouseleave', handleMouseLeave);
+          image.removeEventListener("mouseenter", handleMouseEnter);
+          image.removeEventListener("mouseleave", handleMouseLeave);
         };
       }
     });
@@ -45,23 +47,28 @@ const MainArticle = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-[0.625rem] gap-x-5">
         {articles.map((article, index) => (
           <div key={index} className="text-white">
-            <Link onClick={() => toTop()} to={`/blog/${index + 1}`} className="block">
+            <Link
+              onClick={() => toTop()}
+              to={`/blog/${index + 1}`}
+              className="block"
+            >
               <div className="p-4 bg-blog-themeBg rounded-[14.32px] lg:rounded-3xl cursor-pointer">
                 <div className="w-full h-auto mb-5 flex items-center justify-center">
                   <img
                     ref={(el) => (imageRefs.current[index] = el)}
-                    src={Monitor}
+                    // Image backenddan keladi shunda bu kod olib tashlanadi
+                    src={index === 0 ? blog1 : index === 1 ? blog2 : blog3}
                     alt="monitor"
                   />
                 </div>
                 <div>
                   <div className="h-[5rem] 2xl:h-[10rem] mb-4">
                     <div className="text-[18px] 2xl:text-[28px] 2xl:h-[10rem] font-medium overflow-y-hidden">
-                      {t(`new-articles-card${index + 1}-theme`)}
+                      {t(`blog-theme${index + 1}`)}
                     </div>
                   </div>
                   <button className="text-[15px] 2xl:text-[22px] font-medium border-[1px] 2xl:mb-4 border-white text-white bg-transparent py-1 px-8 rounded-full">
-                    {t(`new-articles-card${index + 1}-group`)}
+                    {t(`blog-group${index + 1}`)}
                   </button>
                 </div>
               </div>

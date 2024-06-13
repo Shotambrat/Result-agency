@@ -6,9 +6,11 @@ import AboutClient from "../components/Blog/AboutClient";
 import Conclusions from "../components/Blog/Conclusions";
 import Header from "./Header";
 import { useTranslation } from "react-i18next";
+import { useParams } from "react-router-dom";
 
 export default function Blog() {
   const { t } = useTranslation();
+  const {blogId} = useParams();
 
   return (
     <>
@@ -18,11 +20,11 @@ export default function Blog() {
       </div>
       <div className="mx-[0.625rem] sm:mx-8 md:mx-12 lg:mx-16 xl:mx-[6.5rem] 2xl:mx-40 3xl:max-w-[1500px] 3xl:mx-auto text-headings-color">
         <h1 className="py-14 xl:py-20 text-center text-[2rem] text-white font-semibold bg-blog-themeBg rounded-[26px]">
-          {t("blog-theme")}
+          {t(`blog-theme${blogId}`)}
         </h1>
-        <OurOffers />
-        <AboutClient />
-        <Conclusions />
+        <OurOffers blogId={blogId}/>
+        <AboutClient blogId={blogId}/>
+        <Conclusions blogId={blogId}/>
       </div>
       <div className="mt-[68px] ">
         <UpButton />

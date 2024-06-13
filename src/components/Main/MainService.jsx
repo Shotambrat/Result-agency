@@ -50,10 +50,6 @@ let data = [
 ];
 
 const MainService = () => {
-
-
-
-
   const imgRefs = useRef([]);
 
   const handleMouseEnter = (index) => {
@@ -63,9 +59,6 @@ const MainService = () => {
   const handleMouseLeave = (index) => {
     gsap.to(imgRefs.current[index], { scale: 1, x: 0, duration: 0.3 });
   };
-
-
-
 
   const { t } = useTranslation();
 

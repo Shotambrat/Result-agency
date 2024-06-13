@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-export default function Conclusions() {
+export default function Conclusions({ blogId }) {
   const { t } = useTranslation();
   return (
     <div
@@ -12,10 +12,14 @@ export default function Conclusions() {
       }}
     >
       <h2 className="pt-11 text-[31.17px] font-semibold md:text-left md:ml-11">
-        {t("blog-conclusions-title")}
+        {t(`blog-conclusions-title${blogId}`)}
       </h2>
-      <p className="font-[abel] mt-8 md:mt-6 mx-11 mb-14 text-[20px] text-left">
-        {t("blog-conclusions-subtitle")}
+      <p
+        dangerouslySetInnerHTML={{
+          __html: t(`blog-conclusions-subtitle${blogId}`),
+        }}
+        className="font-[abel] mt-8 md:mt-6 mx-11 mb-14 text-[20px] text-left"
+      >
       </p>
     </div>
   );
