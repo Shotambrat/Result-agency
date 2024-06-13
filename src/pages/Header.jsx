@@ -3,7 +3,7 @@ import { gsap } from "gsap";
 import Logo from "./../assets/img/logo.png";
 // import LanLogo from "./../assets/img/Language icon.svg";
 import Menu from "./../assets/img/menu.svg";
-import { Link } from 'react-scroll';
+import { Link } from "react-scroll";
 import { NavLink, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import FlagRus from "./../assets/img/FlagRus.png";
@@ -91,7 +91,11 @@ const Header = ({ setIsNavOpen }) => {
           </NavLink>
           <div className={`hidden lg:block`}>
             <div className="flex items-baseline space-x-4">
-            {(location.pathname === "/cases" || location.pathname === "/Cases" || location.pathname === "/blog/1" || location.pathname === "/blog/2" || location.pathname === "/blog/3") && (
+              {(location.pathname === "/cases" ||
+                location.pathname === "/Cases" ||
+                location.pathname === "/blog/1" ||
+                location.pathname === "/blog/2" ||
+                location.pathname === "/blog/3") && (
                 <NavLink
                   to="/"
                   smooth={true}
@@ -101,30 +105,34 @@ const Header = ({ setIsNavOpen }) => {
                   {t("header-aboutUs")}
                 </NavLink>
               )}
-              <Link
-                to="services"
-                smooth={true}
-                duration={500}
-                className="text-header-text hover:text-blue-700 px-3 py-2 rounded-md text-sm xl:text-lg font-medium cursor-pointer"
-              >
-                {t("header-services")}
-              </Link>
-              <Link
-                to="cases"
-                smooth={true}
-                duration={500}
-                className="text-header-text hover:text-blue-700 px-3 py-2 rounded-md text-sm xl:text-lg font-medium cursor-pointer"
-              >
-                {t("header-cases")}
-              </Link>
-              <Link
-                to="blog"
-                smooth={true}
-                duration={500}
-                className="text-header-text hover:text-blue-700 px-3 py-2 rounded-md text-sm xl:text-lg font-medium cursor-pointer"
-              >
-                {t("header-blog")}
-              </Link>
+              {location.pathname === "/" && (
+                <div>
+                  <Link
+                    to="services"
+                    smooth={true}
+                    duration={500}
+                    className="text-header-text hover:text-blue-700 px-3 py-2 rounded-md text-sm xl:text-lg font-medium cursor-pointer"
+                  >
+                    {t("header-services")}
+                  </Link>
+                  <Link
+                    to="cases"
+                    smooth={true}
+                    duration={500}
+                    className="text-header-text hover:text-blue-700 px-3 py-2 rounded-md text-sm xl:text-lg font-medium cursor-pointer"
+                  >
+                    {t("header-cases")}
+                  </Link>
+                  <Link
+                    to="blog"
+                    smooth={true}
+                    duration={500}
+                    className="text-header-text hover:text-blue-700 px-3 py-2 rounded-md text-sm xl:text-lg font-medium cursor-pointer"
+                  >
+                    {t("header-blog")}
+                  </Link>
+                </div>
+              )}
               <Link
                 to="contacts"
                 smooth={true}
@@ -143,35 +151,43 @@ const Header = ({ setIsNavOpen }) => {
               className="flex content-center ml-[1.1rem]"
               id="container-language"
             >
-
-          <div className="flex self-center items-start relative">
-            <button
-              onClick={() => setOpenLanguage((prev) => !prev)}
-              className="flex items-center border-[1px] border-solid border-[#191359] rounded-[48px] pl-4 pr-2 h-6 md:py-1 transition duration-300"
-            >
-              <p className="text-[#191359] text-[11px] font-light xs:text-[12px] md:text-[14px]">
-                {currentLanguage === "ru" ? "Русский" : "O'zbekcha"}
-              </p>
-              <img src={currentLanguage === "ru" ? FlagRus : FlagUz} alt="language flag" className="pl-2 w-7 h-auto" />
-            </button>
-            <div
-              ref={menuRef}
-              className={`absolute w-full bottom-[-100%] text-start pl-2 border-[1px] border-solid border-cases-border rounded-[48px] overflow-hidden transition-all duration-300 ease-in-out transform ${
-                openLanguage ? 'max-h-20 opacity-100 translate-y-0' : 'max-h-0 opacity-0 translate-y-[-10px]'
-              }`}
-            >
-              <button
-                onClick={handleChangeLanguage}
-                className="w-full flex items-center justify-evenly h-6"
-              >
-                <p className="text-[#191359] text-[11px] font-light xs:text-[12px] md:text-[14px]">
-                  {currentLanguage !== "ru" ? "Русский" : "O'zbekcha"}
-                </p>
-                <img src={currentLanguage !== "ru" ? FlagRus : FlagUz} alt="language flag" className=" w-5 h-auto" />
-              </button>
-            </div>
-          </div>
-
+              <div className="flex self-center items-start relative">
+                <button
+                  onClick={() => setOpenLanguage((prev) => !prev)}
+                  className="flex items-center border-[1px] border-solid border-[#191359] rounded-[48px] pl-4 pr-2 h-6 md:py-1 transition duration-300"
+                >
+                  <p className="text-[#191359] text-[11px] font-light xs:text-[12px] md:text-[14px]">
+                    {currentLanguage === "ru" ? "Русский" : "O'zbekcha"}
+                  </p>
+                  <img
+                    src={currentLanguage === "ru" ? FlagRus : FlagUz}
+                    alt="language flag"
+                    className="pl-2 w-7 h-auto"
+                  />
+                </button>
+                <div
+                  ref={menuRef}
+                  className={`absolute w-full bottom-[-100%] text-start pl-2 border-[1px] border-solid border-cases-border rounded-[48px] overflow-hidden transition-all duration-300 ease-in-out transform ${
+                    openLanguage
+                      ? "max-h-20 opacity-100 translate-y-0"
+                      : "max-h-0 opacity-0 translate-y-[-10px]"
+                  }`}
+                >
+                  <button
+                    onClick={handleChangeLanguage}
+                    className="w-full flex items-center justify-evenly h-6"
+                  >
+                    <p className="text-[#191359] text-[11px] font-light xs:text-[12px] md:text-[14px]">
+                      {currentLanguage !== "ru" ? "Русский" : "O'zbekcha"}
+                    </p>
+                    <img
+                      src={currentLanguage !== "ru" ? FlagRus : FlagUz}
+                      alt="language flag"
+                      className=" w-5 h-auto"
+                    />
+                  </button>
+                </div>
+              </div>
 
               <button
                 onClick={() => setIsNavOpen((prev) => !prev)}
