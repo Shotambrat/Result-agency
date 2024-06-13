@@ -5,13 +5,10 @@ const ScrollToTopButton = () => {
     const scrollToTopButton = document.getElementById("scrollToTopButton");
 
     const handleScroll = () => {
-      if (
-        document.body.scrollTop > 20 ||
-        document.documentElement.scrollTop > 20
-      ) {
-        scrollToTopButton.style.display = "block";
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        scrollToTopButton.classList.add("show");
       } else {
-        scrollToTopButton.style.display = "none";
+        scrollToTopButton.classList.remove("show");
       }
     };
 
@@ -31,7 +28,7 @@ const ScrollToTopButton = () => {
       id="scrollToTopButton"
       title="Go to top"
       onClick={scrollToTop}
-      className="fixed hidden transition-all duration-300 bottom-5 right-5 z-50 bg-keys_item-bg text-white p-3 rounded-full shadow-lg hover:bg-button-color items-center justify-center w-12 h-12"
+      className="fixed bottom-5 right-5 z-50 bg-keys_item-bg text-white p-3 rounded-full shadow-lg hover:bg-button-color flex items-center justify-center w-12 h-12"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

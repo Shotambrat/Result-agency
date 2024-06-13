@@ -45,8 +45,8 @@ const Cover = () => {
       style={{ backgroundImage: `url(${MainBg})` }}
       className=" w-full lg:h-screen flex justify-center items-center bg-cover bg-center relative overflow-hidden mb-8 lg:mb-12"
     >
-      <div className="3xl:max-w-[1500px] 3xl:mx-auto">
-        <div className="flex flex-col items-center justify-center mt-24 lg:mt-44 mb-20 lg:mb-40 xs:mx-14 sm:mx-[5rem] md:mx-[7rem] z-[3]">
+      <div className="3xl:max-w-[1500px] 3xl:mx-auto ">
+        <div className="flex flex-col items-center justify-center mt-24 lg:mt-44 mb-20 lg:mb-40 xs:mx-14 sm:mx-[5rem] md:mx-[7rem] ">
           <div className="flex flex-col items-center justify-center mt-12 lg:w-[900px] z-[3]">
             <h1 className="font-semibold text-[30px] xs:text-[44px] sm:text-[48px] md:text-[52px] lg:text-[48px] 2xl:text-[52px] text-headings-color lg:font-semibold text-center font-roboto-flex leading-9 xs:leading-[3rem]">
               {t("cover-title-first")} <br className="lg:hidden" />{" "}
@@ -59,11 +59,11 @@ const Cover = () => {
           <div className="flex items-center justify-center w-full mt-12 xs:mt-16 md:mt-20 lg:mt-24 z-10">
             <div
               ref={buttonRef}
-              className="relative inline-block rounded-[40px] w-full mx-3 sm:w-[70%] lg:w-[55%] z-10"
+              className="relative inline-block rounded-[40px] w-[75%] mx-3 sm:w-[70%] lg:w-[55%] z-10"
             >
               <button
                 onClick={openModal}
-                className="bg-opacity-55 backdrop-filter backdrop-blur-[2px] bg-white z-10 px-6 py-2 xl:py-4 pt-3 align-middle border border-solid text-black text-[20px] xs:text-[21px] 2xl:text-[22px] font-normal border-button-color rounded-[40px] text-center hover:bg-gradient-to-br w-full h-full focus:ring-2 focus:ring-offset-2 focus:ring-violet-200 active:animate-pulseText "
+                className="bg-opacity-55 backdrop-filter backdrop-blur-[2px] bg-white z-10 px-6 py-2 xl:py-4 align-middle border border-solid text-black text-[18.5px] xs:text-[21px] 2xl:text-[22px] font-normal border-button-color rounded-[40px] text-center hover:bg-gradient-to-br w-full h-full focus:ring-2 focus:ring-offset-2 focus:ring-violet-200 active:animate-pulseText "
               >
                 {t("cover-button")}
               </button>

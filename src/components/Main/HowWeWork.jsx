@@ -89,7 +89,7 @@ const HowWeWork = () => {
     threshold: 0,
   });
 
-  // start position animations
+  // Start point positions animations
   useEffect(() => {
     // Animation for title
     gsap.set(titleRef.current, { y: -100, x: 0, opacity: 0 });

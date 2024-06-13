@@ -137,20 +137,20 @@
 
   "cases-title": "Наши Кейсы",
 
-  "cases-card1-title": "Наши Кейсы",
-  "cases-card1-subtitle": "Lorem ipsum dolor sit amet consectetur. Hendrerit placerat ultricies erat donec.",
+  "cases-card1-title": "Prime Medical Center: веб-сайт и реклама",
+  "cases-card1-subtitle": "Как “G’uncha Med” прошла через ребрендинг, укрепив свои позиции в секторе",
 
-  "cases-card2-title": "Наши Кейсы",
-  "cases-card2-subtitle": "Lorem ipsum dolor sit amet consectetur. Hendrerit placerat ultricies erat donec.",
+  "cases-card2-title": "УЗИ-специалист Одил Алишерович: укрепление имиджа, разработка сообщества",
+  "cases-card2-subtitle": "История одного проекта, который стал известным на всю страну",
 
-  "cases-card3-title": "Наши Кейсы",
-  "cases-card3-subtitle": "Lorem ipsum dolor sit amet consectetur. Hendrerit placerat ultricies erat donec.",
+  "cases-card3-title": "ЛОР-врач Алишер Бахромович: укрепление и продвижение личного бренда",
+  "cases-card3-subtitle": "Проект продвижения именитого отоларинголога, чье имя теперь на слуху",
 
-  "cases-card4-title": "Наши Кейсы",
-  "cases-card4-subtitle": "Lorem ipsum dolor sit amet consectetur. Hendrerit placerat ultricies erat donec.",
+  "cases-card4-title": "Бариатричекий хирург Бахтиер Наджиюллаевич: Рекламная стратегия с Google Ads",
+  "cases-card4-subtitle": "Проект по привлечению трафика на сайт специалиста с помощью рекламной кампании Google Ads",
 
-  "cases-card5-title": "Наши Кейсы",
-  "cases-card5-subtitle": "Lorem ipsum dolor sit amet consectetur. Hendrerit placerat ultricies erat donec.",
+  "cases-card5-title": "Доктор Хашимов, Кардиохирург: разработка веб-сайта, укрепление личного бренда",
+  "cases-card5-subtitle": "Проект по продвижению деятельности кардиохирурга посредством медицинского цифрового маркетинга",
 
   "cases-card-create": "Заполнить бриф",
 
@@ -205,26 +205,26 @@
   "up-button": "наверх",
   "moreDetails-button": "Подробнее",
 
-  "cases-plan-title": "Контент-план для Intermed Innovation",
-  "cases-plan-application": "Заявок",
-  "cases-plan-ROI": "ROI",
-  "cases-plan-client": "Клиентов",
+  "cases-plan-title": "Наша стратегия ребрендинга ",
+  "cases-plan-application": "Посещаемость сайта",
+  "cases-plan-ROI": "Конверсия",
+  "cases-plan-client": "Аудитория в соц. сетях",
 
-  "cases-about-client-title": "О клиенте",
-  "cases-about-client-subtitle": "Lorem ipsum dolor sit amet consectetur. Et elit interdum eget maecenas molestie in ac quisque",
+  "cases-about-client-title": "Prime Medical Center: до и после",
+  "cases-about-client-subtitle": "Gunchamed, имея богатый опыт и высококвалифицированных специалистов, столкнулась с рядом проблем, препятствующих ее развитию. Устаревший веб-сайт, отсутствие комплексной маркетинговой стратегии и недостаточная активность в социальных сетях. После сотрудничества с нашим агентством, обновленный Prime Medical Center зарекомендовал себя в качестве ведущей компании в сфере медицинских услуг, добившись впечатляющих результатов. Целью проекта было не только освежить имидж клиники, но и повысить ее узнаваемость, привлечь новых клиентов и укрепить лояльность существующих.",
 
   "cases-requests-title": "Запросы",
-  "cases-request1": "отжумания",
-  "cases-request2": "пресс качат",
-  "cases-request3": "бег 10000000км",
+  "cases-request1": "Разработка нового веб-сайта:",
+  "cases-request2": " Запуск рекламной кампании:",
+  "cases-request3": "Создание контента и продвижение в Instagram:",
 
   "cases-results-title": "Результаты",
-  "cases-results-card1-title": "Мы не делаем однотипных предложений",
-  "cases-results-card1-subtitle": "Lorem ipsum dolor sit amet consectetur. Diam nec sem a purus amet tellus. Eget a lacus amet aenean nisl sit.",
-  "cases-results-card2-title": "Мы не делаем однотипных предложений",
-  "cases-results-card2-subtitle": "Lorem ipsum dolor sit amet consectetur. Diam nec sem a purus amet tellus. Eget a lacus amet aenean nisl sit.",
-  "cases-results-card3-title": "Мы не делаем однотипных предложений",
-  "cases-results-card3-subtitle": "Lorem ipsum dolor sit amet consectetur. Diam nec sem a purus amet tellus. Eget a lacus amet aenean nisl sit.",
+  "cases-results-card1-title": "Посещаемость сайта",
+  "cases-results-card1-subtitle": "+75% за 3 месяца.",
+  "cases-results-card2-title": "Конверсия",
+  "cases-results-card2-subtitle": "+30% благодаря рекламе и оптимизации",
+  "cases-results-card3-title": "Обращения и записи на прием",
+  "cases-results-card3-subtitle": "заметный рост благодаря привлечению клиентов.",
 
   "form-error-message": "Пожалуйста, заполните это поле."
 }

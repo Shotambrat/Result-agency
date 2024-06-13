@@ -89,7 +89,7 @@ const MainService = () => {
   return (
     <div className="mx-[0.625rem] sm:mx-4 md:mx-10 xl:mx-20 2xl:mx-[6.875rem] 3xl:max-w-[1500px] 3xl:mx-auto">
       <div
-        className="mt-6 sm:mt-8 rounded-[17px] lg:rounded-3xl text-center"
+        className="border-solid border-[3px] border-item-cases mt-6 sm:mt-8 rounded-[17px] lg:rounded-3xl text-center"
         style={{
           background:
             "linear-gradient(to bottom right, #D6D2FF 0%, #DBD9F1 28%, #EEEDFB 43%, #DBD8FF 74%, #CEDCFF 100%)",
@@ -162,7 +162,7 @@ const MainService = () => {
                     />
                   ) : (
     <div
-    className="relative rounded-[13.14px] lg:rounded-3xl h-[11rem] md:h-[18rem] lg:h-[21rem] xl:h-[24rem] 2xl:h-[30rem] bg-gradient-to-b from-[#EAE9FD] to-[#7F75FF] transition-transform duration-500 ease-in-out transform hover:scale-105"
+    className="relative rounded-[13.14px] lg:rounded-3xl h-[11rem] md:h-[18rem] lg:h-[21rem] xl:h-[24rem] 2xl:h-[30rem] bg-gradient-to-b from-[#EAE9FD] to-[#7F75FF] lg:transition-transform lg:duration-500 lg:ease-in-out transform lg:hover:scale-105"
     onClick={() => handleChangeCard(data.nameForFunction)}
     onMouseEnter={() => handleMouseEnter(index)}
     onMouseLeave={() => handleMouseLeave(index)}
