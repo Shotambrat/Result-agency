@@ -8,13 +8,15 @@ import MainArticle from "../components/Main/MainArticle";
 import ScrollToTopButton from "../components/Main/ScrollToTopButton";
 import { Element } from "react-scroll";
 
-
 const Main = () => {
   useEffect(() => {
     const scrollToTopButton = document.getElementById("scrollToTopButton");
 
     window.onscroll = function () {
-      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      if (
+        document.body.scrollTop > 20 ||
+        document.documentElement.scrollTop > 20
+      ) {
         scrollToTopButton.style.display = "block";
       } else {
         scrollToTopButton.style.display = "none";
@@ -38,7 +40,9 @@ const Main = () => {
       </Element>
       <HowWeWork />
       <OurPartners />
-      <MainArticle />
+      <Element name="blog">
+        <MainArticle />
+      </Element>
       <ScrollToTopButton />
     </div>
   );

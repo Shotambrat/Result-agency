@@ -3,6 +3,7 @@
   "header-services": "Услуги",
   "header-cases": "Наши кейсы",
   "header-contacts": "Контакты",
+  "header-blog": "Статьи",
   "header-language": "Русский",
 
   "cover-title-first": "МЕДИЦИНСКИЙ",
@@ -173,7 +174,7 @@
   "our-partnest-title": "Наши партнеры",
 
   "new-articles-title": "Новые статьи",
-  "new-articles-card1-theme": "Как социальные сети могут улучшить репутацию вашей клиники",
+  "new-articles-card1-theme": "Как социальные сети могут улучшить репутацию вашей компании",
   "new-articles-card1-group": "маркетинг",
   "new-articles-card2-theme": "Интерактивный опрос: оцените эффективность вашего маркетинга",
   "new-articles-card2-group": "маркетинг",
@@ -192,13 +193,13 @@
   "footer-motto": "Медицинский маркетинг & IT",
   "footer-adress": "Ташкент, ул.Чинабад, 10",
 
-  "blog-theme": "Тема блога",
-  "blog-title": "Мы не делаем однотипных предложений",
-  "blog-subtitle": "Lorem ipsum dolor sit amet consectetur. Et elit interdum eget maecenas molestie in ac quisque. Sit nam congue turpis tellus tellus mattis vulputate. Cursus eu auctor nam aliquet quam. Risus feugiat volutpat massa nunc quis erat fermentum elit magna. Aliquam duis lectus mauris nibh amet sed viverra. Arcu tellus est eget dictum nulla etiam.",
-  "blog-client-title": "Мы не делаем однотипных предложений",
-  "blog-client-subtitle": "Lorem ipsum dolor sit amet consectetur. Et elit interdum eget maecenas molestie in ac quisque. Sit nam congue turpis tellus tellus mattis vulputate. Cursus eu auctor nam aliquet quam. Risus feugiat volutpat massa nunc quis erat fermentum elit magna. Aliquam duis lectus mauris nibh amet sed viverra. Arcu tellus est eget dictum nulla etiam.",
+  "blog-theme": "Как социальные сети могут улучшить репутацию вашей компании",
+  "blog-title": "Зачем медицине социальные сети",
+  "blog-subtitle": "Социальные сети, как оказалось, могут сыграть первостепенную роль в медицинском маркетинге, предоставляя платформу для взаимодействия с текущими и потенциальными пациентами. Простые люди ежедневно листают соцсети, и это один из лучших способов для медицинских компаний демонстрировать свои навыки экспертизы, привлечь аудиторию и построить доверие. С помощью социальных сетей медицинские организации и отдельные их представители делятся полезной информацией, отвечают на вопросы и получают обратную связь от пациентов.",
+  "blog-client-title": "Стратегии для улучшения репутации через социальные сети",
+  "blog-client-subtitle": "Качественный контент – это основа любой успешной стратегии в социальных сетях, полезная, интересная, актуальная. Контент призван отражать опыт в области медицины и подчеркивать ценность услуг, которые предлагает целая клиника или отдельный врач. Взаимодействие с аудиторией является важным элементом для построения доверительных отношений и укрепления репутации компании, будь то комментарии, участие в дискуссиях, обратная связь. Демонстрируя заботу о клиентах, вы укрепляете репутацию как надежного и внимательного поставщика медицинских услуг. Важно поддерживать регулярное обновление контента и активность в социальных сетях. Алгоритмы современных социальных сетей построены таким образом, что они активно поддерживают активного пользователя. Иными словами, не стоит пропадать на неделю, другую, чтобы социальные сети, как и их пользователи, не заместили вас кем-то или чем-то другим. С другой стороны, постоянное присутствие позволяет оперативно реагировать на изменения в отрасли, общественное мнение или потребности клиентов.",
   "blog-conclusions-title": "Выводы",
-  "blog-conclusions-subtitle": "Lorem ipsum dolor sit amet consectetur. Et elit interdum eget maecenas molestie in ac quisque. Sit nam congue turpis tellus tellus mattis vulputate. Cursus eu auctor nam aliquet quam. Risus feugiat volutpat massa nunc quis erat fermentum elit magna. Aliquam duis lectus mauris nibh amet sed viverra. Arcu tellus est eget dictum nulla etiam.",
+  "blog-conclusions-subtitle": "Отзывы пациентов являются ценным источником информации для улучшения репутации  медицинской компании. Вы можете набирать отзывы через социальные сети, электронную почту или специализированные платформы. Важно уважительно относиться к отзывам пациентов, даже если они негативные. Ответы на них должны быть вежливыми и конструктивными, ведь это демонстрирует вашу готовность улучшать услуги.",
 
   "back-button": "назад",
   "up-button": "наверх",

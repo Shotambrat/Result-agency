@@ -91,7 +91,7 @@ const Header = ({ setIsNavOpen }) => {
           </NavLink>
           <div className={`hidden lg:block`}>
             <div className="flex items-baseline space-x-4">
-            {(location.pathname === "/cases" || location.pathname === "/Cases") && (
+            {(location.pathname === "/cases" || location.pathname === "/Cases" || location.pathname === "/blog/1" || location.pathname === "/blog/2" || location.pathname === "/blog/3") && (
                 <NavLink
                   to="/"
                   smooth={true}
@@ -116,6 +116,14 @@ const Header = ({ setIsNavOpen }) => {
                 className="text-header-text hover:text-blue-700 px-3 py-2 rounded-md text-sm xl:text-lg font-medium cursor-pointer"
               >
                 {t("header-cases")}
+              </Link>
+              <Link
+                to="blog"
+                smooth={true}
+                duration={500}
+                className="text-header-text hover:text-blue-700 px-3 py-2 rounded-md text-sm xl:text-lg font-medium cursor-pointer"
+              >
+                {t("header-blog")}
               </Link>
               <Link
                 to="contacts"
