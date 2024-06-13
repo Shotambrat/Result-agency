@@ -9,7 +9,7 @@ import blog3 from "../../assets/img/Blog/blog3.png";
 const MainArticle = () => {
   const { t } = useTranslation();
 
-  const articles = [{}, {}, {}];
+  const articles = [{image: blog1}, {image: blog2}, {image: blog3}];
 
   function toTop() {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -57,7 +57,7 @@ const MainArticle = () => {
                   <img
                     ref={(el) => (imageRefs.current[index] = el)}
                     // Image backenddan keladi shunda bu kod olib tashlanadi
-                    src={index === 0 ? blog1 : index === 1 ? blog2 : blog3}
+                    src={article.image}
                     alt="monitor"
                   />
                 </div>

@@ -21,7 +21,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/blog/:blogId" element={<Blog />}></Route>
-          <Route path="/cases" element={<Cases />}></Route>
+          <Route path="/cases/:caseId" element={<Cases />}></Route>
         </Routes>
         <Brief />
         {/* <MapFooter /> */}
