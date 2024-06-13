@@ -7,13 +7,13 @@ export default function AboutClient() {
   return (
     <>
       <div className="mt-16 xl:mt-[4.5rem] 2xl:mt-20">
-        <h6 className="pb-4 font-semibold text-md leading-5 xs:text-[24px] lg:text-[28px] xl:text-[32px]">
+        <h6 className="pb-4 font-semibold text-md leading-5 text-[20px] xs:text-[24px] lg:text-[28px] xl:text-[32px]">
           {t("blog-client-title")}
         </h6>
-        <p className="font-[abel] md:mt-4 text-[11px] xs:text-[14px] lg:text-[16px] xl:text-[18px] 2xl:text-[20px] font-regular">
+        <p className="font-[abel] md:mt-4 text-[14px] lg:text-[16px] xl:text-[18px] 2xl:text-[20px] font-regular">
           {t("blog-client-subtitle")}
         </p>
-        <p className="font-[abel] md:mt-4 text-[11px] xs:text-[14px] lg:text-[16px] xl:text-[18px] 2xl:text-[21px] font-regular">
+        <p className="font-[abel] md:mt-4 text-[14px] lg:text-[16px] xl:text-[18px] 2xl:text-[21px] font-regular">
           {t("blog-client-subtitle")}
         </p>
       </div>
