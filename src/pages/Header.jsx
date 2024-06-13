@@ -17,8 +17,15 @@ const Header = ({ setIsNavOpen }) => {
   const location = useLocation();
 
   const menuRef = useRef(null);
+  const activeLanguageRef = useRef(null);
+
   const handleClickOutside = (event) => {
-    if (menuRef.current && !menuRef.current.contains(event.target)) {
+    if (
+      menuRef.current &&
+      !menuRef.current.contains(event.target) &&
+      activeLanguageRef.current &&
+      !activeLanguageRef.current.contains(event.target)
+    ) {
       setOpenLanguage(false);
     }
   };
@@ -195,6 +202,7 @@ const Header = ({ setIsNavOpen }) => {
                 <button
                   onClick={() => setOpenLanguage((prev) => !prev)}
                   className="flex items-center border-[1px] border-solid border-[#191359] rounded-[48px] pl-4 pr-2 h-6 md:py-1 transition duration-300"
+                  ref={activeLanguageRef}
                 >
                   <p className="text-[#191359] text-[11px] font-light xs:text-[12px] md:text-[14px]">
                     {currentLanguage === "ru" ? "Русский" : "O'zbekcha"}
