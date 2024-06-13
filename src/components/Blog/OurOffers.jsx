@@ -10,10 +10,11 @@ export default function OurOffers({ blogId }) {
   return (
     <div className="mt-6 md:mt-10 lg:mt-14">
       {/* Background color bo'midi ob tashaladi */}
-      <div className="bg-[#D9D9D9] mb-8 md:mb-4 md:mr-[2.5rem] lg:mr-[4rem] h-[10rem] xs:h-[16rem] lg:h-[20rem] 3xl:h-[24rem] rounded-[10px] md:rounded-[16px] w-full md:w-[50%] lg:w-[45%] md:float-start">
+      <div className="bg-[#D9D9D9] mb-8 md:mb-4 md:mr-[2.5rem] rounded-[10px] md:rounded-[16px] w-full md:w-[50%] lg:w-[45%] md:float-start">
         <img
           src={blogId === "1" ? blog1 : blogId === "2" ? blog2 : blog3}
           alt="Blog client"
+          className="w-full h-full"
         />
       </div>
       <div className="font-[roboto-flex]">
