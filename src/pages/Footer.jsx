@@ -10,7 +10,7 @@ const Footer = () => {
       <FooterSocial />
 
       <a
-        href="tel: +998900228073"
+        href="tel: +998905092562"
         className="text-center text-lg mt-7 font-normal sm:mt-6 lg:mt-0 sm:order-2 col-span-3 lg:col-span-2 lg:order-6"
       >
         +998 (90) 509-25-62

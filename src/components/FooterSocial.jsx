@@ -7,13 +7,13 @@ export default function FooterSocial() {
   return (
     <>
       <a
-        href="#"
+        href="https://www.instagram.com/result_med?igsh=MWhuZ21jODkzNjJwYg=="
         className="bg-footer-icon h-[60px] w-[60px] rounded-[15px] flex sm:col-span-2 lg:col-span-1 lg:order-9 mx-auto lg:mt-0"
       >
         <img src={Insta} alt="social-icon" />
       </a>
       <a
-        href="#"
+        href="https://t.me/result_med"
         className="bg-footer-icon h-[60px] w-[60px] rounded-[15px] flex justify-center items-center lg:order-[10] sm:col-span-2 lg:col-span-1 mx-auto lg:mt-0"
       >
         <img src={Teleramm} alt="social-icon" />
