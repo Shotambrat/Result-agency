@@ -14,7 +14,7 @@ export default function AboutClient({ blogId }) {
         {blogId === "3" && <br />}
         {blogId === "3" && <AboutClientText blogId={blogId} num="3" />}
       </div>
-      <div className="mt-8 lg:mt-10  bg-[#D9D9D9] rounded-[10px] md:rounded-[16px]">
+      <div className="mt-8 lg:mt-10 rounded-[10px] md:rounded-[16px]">
       <img
           src={blogId === "1" ? blog1 : blogId === "2" ? blog2 : blog3}
           alt="Blog client"

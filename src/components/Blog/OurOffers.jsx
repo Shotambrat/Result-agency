@@ -23,7 +23,7 @@ export default function OurOffers({ blogId }) {
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
         }}
-        className="bg-[#D9D9D9] flex mb-8 md:mb-4 md:mr-[2.5rem] rounded-[10px] md:rounded-[16px] w-full md:w-[50%] lg:w-[45%] md:float-start h-auto"
+        className="flex mb-8 md:mb-4 md:mr-[2.5rem] rounded-[10px] md:rounded-[16px] w-full md:w-[50%] lg:w-[45%] md:float-start h-auto"
       >
         <div className="w-[60%]">
           <img
