@@ -1,7 +1,5 @@
 import React, { useEffect, useRef } from "react";
 import { useInView } from "react-intersection-observer";
-import logo_zaglushka_mob from "../../src/assets/img/logo_zaglushka_mob.png";
-
 import logoresbig from "../../src/assets/img/logoresbig.png";
 import logo_big_upside_down from "../../src/assets/img/logo_big_upside_down.png";
 import SwiperCases from "../components/Cases/OurCasesSlider";
@@ -12,6 +10,12 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom";
+import logo1 from "../assets/img/Prime.png";
+import logo2 from "../assets/img/Odil.png";
+import logo4 from "../assets/img/uzi.png";
+import logo3 from "../assets/img/Alisher.png";
+import logo5 from "../assets/img/Xayrillo.png";
+const images = [logo1, logo2, logo3, logo4, logo5];
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -164,7 +168,7 @@ const Cases = () => {
           {/* Левая колонка с логотипом */}
           <div className="flex items-center justify-center h-auto mb-4 lg:mb-0">
             <img
-              src={logo_zaglushka_mob}
+              src={images[caseId-1]}
               className="w-full rounded-[22px] lg:w-[320px] lg:h-[220px]"
               alt="social-icon"
             />
@@ -242,25 +246,25 @@ const Cases = () => {
           </div>
         </div>
 
-        <div class="flex flex-col gradient-item-cases rounded-[30px] border-item-cases p-8 shadow-md items-center mx-auto min-h-[343px] sm:w-4/5 sm:flex-row sm:justify-between sm:items-center sm:min-h-[250px] lg:flex lg:w-full lg:justify-between lg:min-h-[250px] 2xl:max-w-[1185px]">
+        <div className="flex flex-col gradient-item-cases rounded-[30px] border-item-cases p-8 shadow-md items-center mx-auto min-h-[343px] sm:w-4/5 sm:flex-row sm:justify-between sm:items-center sm:min-h-[250px] lg:flex lg:w-full lg:justify-between lg:min-h-[250px] 2xl:max-w-[1185px]">
           <div
             ref={(el) => {
               titleZapros.current = el;
               zaprosInViewRef(el);
             }}
-            class="text-uslugi-text flex flex-col items-center sm:items-start sm:justify-around lg:flex-1 lg:ml-8"
+            className="text-uslugi-text flex flex-col items-center sm:items-start sm:justify-around lg:flex-1 lg:ml-8"
           >
-            <h2 class="text-[35px] font-bold mb-4 sm:text-[30px] sm:mb-0 lg:text-[35px] lg:mb-0 lg:ml-[30%] 2xl:text-[43px]">
+            <h2 className="text-[35px] font-bold mb-4 sm:text-[30px] sm:mb-0 lg:text-[35px] lg:mb-0 lg:ml-[30%] 2xl:text-[43px]">
               {t(`cases-requests-title`)}
             </h2>
           </div>
-          <div class="mt-4 sm:mt-0 relative sm:block sm:ml-8 lg:flex-1 lg:flex ">
+          <div className="mt-4 sm:mt-0 relative sm:block sm:ml-8 lg:flex-1 lg:flex ">
             <ul
               ref={(el) => {
                 titleUl.current = el;
                 ulInViewRef(el);
               }}
-              class=" list-disc  text-[24px] font-normal leading-[48px] list-inside  sm:text-[23px] sm:leading-[40px] sm:ml-8 sm:mt-0 lg:ml-0 lg:mt-0 lg:text-[24px] lg:leading-[48px]"
+              className=" list-disc  text-[24px] font-normal leading-[48px] list-inside  sm:text-[23px] sm:leading-[40px] sm:ml-8 sm:mt-0 lg:ml-0 lg:mt-0 lg:text-[24px] lg:leading-[48px]"
             >
               <li>{t(`cases-request${caseId}-1`)}</li>
               <li>{t(`cases-request${caseId}-2`)}</li>
@@ -272,7 +276,7 @@ const Cases = () => {
         <div className=" lg:grid lg:grid-cols-[30%_1fr]">
           <div>
             {/*будет 1 колонка для грида при десктоп */}
-            <div class="resultk rounded-[20px] min-h-[105px] border-[1px] flex justify-center items-center border-uslugi-text p-4 font-semibold text-cases-text text-[36px] mt-[54px] text-center s:max-w-[350px] mx-auto lg:text-[33px] lg:max-h-[125px] lg:max-w-[370px] 2xl:min-h-[120px]">
+            <div className="resultk rounded-[20px] min-h-[105px] border-[1px] flex justify-center items-center border-uslugi-text p-4 font-semibold text-cases-text text-[36px] mt-[54px] text-center s:max-w-[350px] mx-auto lg:text-[33px] lg:max-h-[125px] lg:max-w-[370px] 2xl:min-h-[120px]">
               {t(`cases-results-title`)}
             </div>
             <div className="hidden w-full mb-14 lg:block">
@@ -358,7 +362,7 @@ const Cases = () => {
         </div>
 
         <div className="statistics w-full flex self-center items-center justify-center content-center">
-          <SwiperCases />
+          <SwiperCases caseId={caseId} />
         </div>
       </div>
       <div className="mb-[50px] mt-[60px] lg:mb-[30px] 3xl:ml-[9%]">
