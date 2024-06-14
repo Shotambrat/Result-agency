@@ -9,7 +9,7 @@ import blog3 from "../../assets/img/Blog/blog3.png";
 const MainArticle = () => {
   const { t } = useTranslation();
 
-  const articles = [{image: blog1}, {image: blog2}, {image: blog3}];
+  const articles = [{ image: blog1 }, { image: blog2 }, { image: blog3 }];
 
   function toTop() {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -52,8 +52,8 @@ const MainArticle = () => {
               to={`/blog/${index + 1}`}
               className="block"
             >
-              <div className="p-4 bg-blog-themeBg rounded-[14.32px] lg:rounded-3xl cursor-pointer">
-                <div className="w-full h-auto mb-5 flex items-center justify-center">
+              <div className="bg-blog-themeBg rounded-[14.32px] lg:rounded-3xl cursor-pointer">
+                <div className="w-full h-[14.375rem] mb-5 flex items-center justify-center rounded-t-[14.32px] lg:rounded-t-3xl">
                   <img
                     ref={(el) => (imageRefs.current[index] = el)}
                     // Image backenddan keladi shunda bu kod olib tashlanadi
@@ -61,7 +61,7 @@ const MainArticle = () => {
                     alt="monitor"
                   />
                 </div>
-                <div>
+                <div className="px-4 pb-4">
                   <div className="h-[5rem] 2xl:h-[10rem] mb-4">
                     <div className="text-[18px] 2xl:text-[28px] 2xl:h-[10rem] font-medium overflow-y-hidden">
                       {t(`blog-theme${index + 1}`)}

@@ -1,5 +1,8 @@
 import React from "react";
 import AboutClientText from "./AboutClientText";
+import blog1 from "../../assets/img/Blog/blogClient1.png";
+import blog2 from "../../assets/img/Blog/blogClient2.png";
+import blog3 from "../../assets/img/Blog/blogClient3.png";
 
 export default function AboutClient({ blogId }) {
   return (
@@ -11,8 +14,12 @@ export default function AboutClient({ blogId }) {
         {blogId === "3" && <br />}
         {blogId === "3" && <AboutClientText blogId={blogId} num="3" />}
       </div>
-      <div className="mt-8 lg:mt-10 h-[11rem] xs:h-[18rem] md:h-[22rem] lg:h-[28rem] xl:h-[36rem] 2xl:h-[44rem] bg-[#D9D9D9] rounded-[10px] md:rounded-[16px]">
-        {/* <img src="" alt="Blog client" /> */}
+      <div className="mt-8 lg:mt-10 rounded-[10px] md:rounded-[16px]">
+      <img
+          src={blogId === "1" ? blog1 : blogId === "2" ? blog2 : blog3}
+          alt="Blog client"
+          className="w-full h-full"
+        />
       </div>
     </>
   );
