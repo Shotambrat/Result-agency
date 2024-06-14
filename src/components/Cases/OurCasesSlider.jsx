@@ -6,12 +6,28 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import "swiper/swiper-bundle.css";
+import Prime1 from '../../assets/img/Slider/Prime1.png'
+import Prime2 from '../../assets/img/Slider/Prime2.png'
+import Prime3 from '../../assets/img/Slider/Prime3.png'
+import Odil1 from '../../assets/img/Slider/Odil1.png'
+import Odil2 from '../../assets/img/Slider/Odil2.png'
+import Alisher1 from '../../assets/img/Slider/Alisher1.png'
+import Alisher2 from '../../assets/img/Slider/Alisher2.png'
+import Xayrillo from '../../assets/img/Slider/Xayrillo.png'
+import uzi1 from '../../assets/img/Slider/uzi1.png'
+import uzi2 from '../../assets/img/Slider/uzi2.png'
+import uzi3 from '../../assets/img/Slider/uzi3.png'
 
-let data = [
-  
-]
 
-const SwiperCases = () => {
+let images = [
+  [Prime1, Prime2, Prime3],
+  [Odil1, Odil2],
+  [uzi1, uzi2, uzi3],
+  [Alisher1, Alisher2],
+  [Xayrillo],
+];
+
+const SwiperCases = ({caseId}) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState("");
   const [isZoomed, setIsZoomed] = useState(false);
@@ -50,12 +66,7 @@ const SwiperCases = () => {
         }}
         className="flex justify-center"
       >
-        {[
-          zaglushkaslider,
-          zaglushkaslider,
-          zaglushkaslider,
-          zaglushkaslider,
-        ].map((image, index) => (
+        {images[caseId-1].map((image, index) => (
           <SwiperSlide key={index}>
             <img
               src={image}

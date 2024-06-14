@@ -358,7 +358,7 @@ const Cases = () => {
         </div>
 
         <div className="statistics w-full flex self-center items-center justify-center content-center">
-          <SwiperCases />
+          <SwiperCases caseId={caseId}/>
         </div>
       </div>
       <div className="mb-[50px] mt-[60px] lg:mb-[30px] 3xl:ml-[9%]">
