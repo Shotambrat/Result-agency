@@ -143,7 +143,12 @@ const Header = ({ setIsNavOpen }) => {
 
 
               {(location.pathname === "/cases" ||
-                location.pathname === "/Cases" ) && (
+                location.pathname === "/cases/1" ||
+                location.pathname === "/cases/2" ||
+                location.pathname === "/cases/3" ||
+                location.pathname === "/cases/4" ||
+                location.pathname === "/cases/5" ||
+                location.pathname === "/cases/6" ) && (
                 <div>
                   <Link
                     to="resultk"

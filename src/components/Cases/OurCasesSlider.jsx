@@ -23,7 +23,7 @@ const SwiperCases = () => {
 
   const handleCloseModal = () => {
     setIsOpen(false);
-    setIsZoomed(false); // Сбросить состояние увеличения при закрытии
+    setIsZoomed(false); // Reset zoom state when closing
   };
 
   const toggleZoom = () => {
@@ -86,7 +86,9 @@ const SwiperCases = () => {
               className={`modal-image ${isZoomed ? "zoomed" : ""}`}
               onClick={toggleZoom}
             />
-            <button className="modal-close" onClick={handleCloseModal}>✕</button>
+            <button className="modal-close" onClick={handleCloseModal}>
+              ✕
+            </button>
           </div>
         </div>
       )}

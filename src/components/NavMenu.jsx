@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink } from 'react-router-dom';
 import FooterSocial from "./FooterSocial";
 import logoBack from "../assets/img/logoBackButton.svg";
 import { useTranslation } from "react-i18next";
@@ -34,6 +34,8 @@ export default function NavMenu({ isNavOpen, setIsNavOpen }) {
             toTop();
           }}
           to="/"
+          smooth={true}
+          duration={500}
         >
           {t("header-aboutUs")}
         </NavLink>
@@ -42,7 +44,7 @@ export default function NavMenu({ isNavOpen, setIsNavOpen }) {
             setIsNavOpen((prev) => !prev);
             toTop();
           }}
-          to="/"
+            to="services"
         >
           {t("header-services")}
         </NavLink>
@@ -51,7 +53,7 @@ export default function NavMenu({ isNavOpen, setIsNavOpen }) {
             setIsNavOpen((prev) => !prev);
             toTop();
           }}
-          to="/"
+          to="cases"
         >
           {t("header-cases")}
         </NavLink>
