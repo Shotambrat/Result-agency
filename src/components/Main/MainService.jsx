@@ -141,7 +141,7 @@ const MainService = () => {
 
       <div className="mt-[1.875rem] lg:mt-[3rem]">
         <div className="">
-          <h2 className="text-center md:text-left text-[28px] md:text-[32px] 2xl:text-[64px] font-bold">
+          <h2 className="text-center md:text-left text-[28px] md:text-[32px] 2xl:text-[64px] font-bold ">
             {t("service-title")}
           </h2>
           <div className="mt-4 grid grid-cols-2 sm:grid-cols-3 gap-x-[0.625rem] lg:gap-x-[1rem] xl:gap-x-6 gap-y-5 lg:gap-y-12">
@@ -170,7 +170,7 @@ const MainService = () => {
         dangerouslySetInnerHTML={{
           __html: t(`service-card${index + 1}-title`),
         }}
-        className="absolute left-[10%] bottom-[12%] font-medium text-[13px] sm:text-[15px] md:text-[18px] lg:text-[24px] xl:text-[28px] 2xl:text-[40px] text-white leading-5 xl:leading-7 2xl:leading-10"
+        className="absolute left-[10%] bottom-[12%] font-medium text-[13px] sm:text-[15px] md:text-[18px] lg:text-[24px] xl:text-[28px] 2xl:text-[40px] text-white leading-5 xl:leading-7 2xl:leading-10 cursor-pointer"
       ></p>
     </div>
                     // <div

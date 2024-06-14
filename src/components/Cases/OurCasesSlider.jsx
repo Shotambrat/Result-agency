@@ -7,6 +7,9 @@ import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import "swiper/swiper-bundle.css";
 
+let data = [
+  
+]
 
 const SwiperCases = () => {
   const [isOpen, setIsOpen] = useState(false);

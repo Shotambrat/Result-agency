@@ -275,7 +275,7 @@ const Cases = () => {
             <div class="resultk rounded-[20px] min-h-[105px] border-[1px] flex justify-center items-center border-uslugi-text p-4 font-semibold text-cases-text text-[36px] mt-[54px] text-center s:max-w-[350px] mx-auto lg:text-[33px] lg:max-h-[125px] lg:max-w-[370px] 2xl:min-h-[120px]">
               {t(`cases-results-title${caseId}`)}
             </div>
-            <div className=" hidden w-full mb-14 lg:block">
+            <div className="hidden w-full mb-14 lg:block">
               <img
                 src={logo_big_upside_down}
                 alt="logo_big"
