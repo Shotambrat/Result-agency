@@ -11,10 +11,12 @@ import BackButton from "../components/Blog/BackButton";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useTranslation } from "react-i18next";
+import { useParams } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Cases = () => {
+  const { caseId } = useParams();
   const titleRef = useRef(null);
   const titleStatic1 = useRef(null);
   const titleStatic2 = useRef(null);
@@ -88,7 +90,12 @@ const Cases = () => {
   }, [titleInView]);
 
   useEffect(() => {
-    if ((static1InView || static2InView || static3InView) && titleStatic1.current && titleStatic2.current && titleStatic3.current) {
+    if (
+      (static1InView || static2InView || static3InView) &&
+      titleStatic1.current &&
+      titleStatic2.current &&
+      titleStatic3.current
+    ) {
       gsap.fromTo(
         [titleStatic1.current, titleStatic2.current, titleStatic3.current],
         {
@@ -171,7 +178,7 @@ const Cases = () => {
               }}
               className="text-center text-xl font-semibold mb-4 mt-2 m:text-2xl md:mt-6 md:mb-8 md:text-3xl lg:text-[29px] lg:mb-[65px] xl:text-[35px] 2xl:text-[40px]"
             >
-              {t("cases-plan-title")}
+              {t(`cases-plan-title${caseId}`)}
             </h2>
             <div className="flex flex-col space-y-8 lg:flex-row lg:space-y-0 lg:space-x-8 lg:justify-around">
               <div
@@ -182,10 +189,10 @@ const Cases = () => {
                 className="flex justify-between gap-x-8 items-center flex-row lg:gap-x-0 lg:gap-y-4 lg:flex-col-reverse"
               >
                 <span className="text-xl md:text-2xl">
-                  {t("cases-plan-application")}
+                  {t(`cases-plan-application${caseId}`)}
                 </span>
                 <span className="font-bold text-4xl md:text-3xl lg:text-4xl xl:text-[40px] 2xl:text-[48px]">
-                  +25%
+                  {t(`cases-plan-application-count${caseId}`)}
                 </span>
               </div>
               <div
@@ -196,10 +203,10 @@ const Cases = () => {
                 className="flex justify-between gap-x-8 items-center lg:gap-x-0 lg:gap-y-4 lg:flex-col-reverse"
               >
                 <span className="text-xl md:text-2xl lg:ml-0">
-                  {t("cases-plan-ROI")}
+                  {t(`cases-plan-ROI${caseId}`)}
                 </span>
                 <span className="font-bold text-4xl md:text-3xl lg:text-4xl xl:text-[40px] 2xl:text-[48px]">
-                  +40%
+                  {t(`cases-plan-ROI-count${caseId}`)}
                 </span>
               </div>
               <div
@@ -210,10 +217,10 @@ const Cases = () => {
                 className="flex justify-between gap-x-8 items-center lg:gap-x-0 lg:gap-y-3 lg:flex-col-reverse"
               >
                 <span className="text-xl md:text-2xl">
-                  {t("cases-plan-client")}
+                  {t(`cases-plan-client${caseId}`)}
                 </span>
                 <span className="font-bold text-4xl mr-6 md:text-3xl lg:mr-0 lg:text-4xl xl:text-[40px] 2xl:text-[48px]">
-                  ×2
+                  {t(`cases-plan-client-count${caseId}`)}
                 </span>
               </div>
             </div>
@@ -222,10 +229,10 @@ const Cases = () => {
 
         <div className="text-uslugi-text inline-block mt-10 sm:mx-[15px]">
           <span className=" block font-semibold text-3xl mb-[7px] s:text-4xl lg:mb-[15px]">
-            {t("cases-about-client-title")}
+            {t(`cases-about-client-title${caseId}`)}
           </span>
           <span className="block text-[17px] sm:text-[18px]">
-            {t("cases-about-client-subtitle")}
+            {t(`cases-about-client-subtitle${caseId}`)}
           </span>
         </div>
 
@@ -244,7 +251,7 @@ const Cases = () => {
             class="text-uslugi-text flex flex-col items-center sm:items-start sm:justify-around lg:flex-1 lg:ml-8"
           >
             <h2 class="text-[35px] font-bold mb-4 sm:text-[30px] sm:mb-0 lg:text-[35px] lg:mb-0 lg:ml-[30%] 2xl:text-[43px]">
-              {t("cases-requests-title")}
+              {t(`cases-requests-title`)}
             </h2>
           </div>
           <div class="mt-4 sm:mt-0 relative sm:block sm:ml-8 lg:flex-1 lg:flex ">
@@ -255,9 +262,9 @@ const Cases = () => {
               }}
               class=" list-disc  text-[24px] font-normal leading-[48px] list-inside  sm:text-[23px] sm:leading-[40px] sm:ml-8 sm:mt-0 lg:ml-0 lg:mt-0 lg:text-[24px] lg:leading-[48px]"
             >
-              <li>{t("cases-request1")}</li>
-              <li>{t("cases-request2")}</li>
-              <li>{t("cases-request3")}</li>
+              <li>{t(`cases-request${caseId}-1`)}</li>
+              <li>{t(`cases-request${caseId}-2`)}</li>
+              <li>{t(`cases-request${caseId}-3`)}</li>
             </ul>
           </div>
         </div>
@@ -266,7 +273,7 @@ const Cases = () => {
           <div>
             {/*будет 1 колонка для грида при десктоп */}
             <div class="resultk rounded-[20px] min-h-[105px] border-[1px] flex justify-center items-center border-uslugi-text p-4 font-semibold text-cases-text text-[36px] mt-[54px] text-center s:max-w-[350px] mx-auto lg:text-[33px] lg:max-h-[125px] lg:max-w-[370px] 2xl:min-h-[120px]">
-              {t("cases-results-title")}
+              {t(`cases-results-title${caseId}`)}
             </div>
             <div className=" hidden w-full mb-14 lg:block">
               <img
@@ -303,10 +310,10 @@ const Cases = () => {
                 <div className="animated-block py-[15px] rounded-[12px] min-h-[147px] w-11/12 bg-footer-icon lg:bg-keys_item-bg p-1 2xl:py-[25px] 2xl:px-[20px] 2xl:max-w-[700px]">
                   <div className="ml-[36px] lg:ml-[10px]">
                     <span className="text-[17px] text-white font-medium l:text-[18px] sm:text-[19px] 2xl:text-[24px]">
-                      {t("cases-results-card1-title")}
+                      {t(`cases-results-card1-title${caseId}`)}
                     </span>
                     <p className="text-[13px] text-white mt-[5px] font-normal l:mt-[15px] sm:text-[15px] 2xl:text-[19px]">
-                      {t("cases-results-card1-subtitle")}
+                      {t(`cases-results-card1-subtitle${caseId}`)}
                     </p>
                   </div>
                 </div>
@@ -317,10 +324,10 @@ const Cases = () => {
                 <div className="animated-block py-[15px] rounded-[12px] min-h-[147px] w-11/12 bg-footer-icon lg:bg-keys_item-bg p-1 2xl:py-[25px] 2xl:px-[20px] 2xl:max-w-[700px]">
                   <div className="ml-[36px] lg:ml-[10px]">
                     <span className="text-[17px] text-white font-medium l:text-[18px] sm:text-[19px] 2xl:text-[24px]">
-                      {t("cases-results-card2-title")}
+                      {t(`cases-results-card2-title${caseId}`)}
                     </span>
                     <p className="text-[13px] text-white mt-[5px] font-normal l:mt-[15px] sm:text-[15px] 2xl:text-[19px]">
-                      {t("cases-results-card2-subtitle")}
+                      {t(`cases-results-card2-subtitle${caseId}`)}
                     </p>
                   </div>
                 </div>
@@ -331,10 +338,10 @@ const Cases = () => {
                 <div className="animated-block py-[15px] rounded-[12px] min-h-[147px] w-11/12 bg-footer-icon lg:bg-keys_item-bg p-1 2xl:py-[25px] 2xl:px-[20px] 2xl:max-w-[700px]">
                   <div className="ml-[36px] lg:ml-[10px]">
                     <span className="text-[17px] text-white font-medium l:text-[18px] sm:text-[19px] 2xl:text-[24px]">
-                      {t("cases-results-card3-title")}
+                      {t(`cases-results-card3-title${caseId}`)}
                     </span>
                     <p className="text-[13px] text-white mt-[5px] font-normal l:mt-[15px] sm:text-[15px] 2xl:text-[19px]">
-                      {t("cases-results-card3-subtitle")}
+                      {t(`cases-results-card3-subtitle${caseId}`)}
                     </p>
                   </div>
                 </div>

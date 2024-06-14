@@ -20,8 +20,8 @@ function App() {
         <NavMenu isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} />
         <Routes>
           <Route path="/" element={<Home />}></Route>
-          <Route path="/blog/:blog" element={<Blog />}></Route>
-          <Route path="/cases/:case" element={<Cases />}></Route>
+          <Route path="/blog/:blogId" element={<Blog />}></Route>
+          <Route path="/cases/:caseId" element={<Cases />}></Route>
         </Routes>
         <Brief />
         {/* <MapFooter /> */}
