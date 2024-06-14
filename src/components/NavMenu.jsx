@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import FooterSocial from "./FooterSocial";
 import logoBack from "../assets/img/logoBackButton.svg";
 import { useTranslation } from "react-i18next";
