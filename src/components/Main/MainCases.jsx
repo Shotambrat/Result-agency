@@ -40,10 +40,22 @@ const MainCases = () => {
                 />
               </div>
             </Link>
-            <h4 className="text-headings-color font-medium md:font-semibold text-[20px] md:text-[24px] mt-2">
+            {/* Mobile */}
+            <h4 className="text-headings-color font-medium md:font-semibold text-[19px] md:text-[24px] mt-2 lg:hidden">
+              {t(`cases-card${index + 1}-title-mobile`)}
+            </h4>
+            {/* Desktop */}
+            <h4 className="text-headings-color font-medium md:font-semibold text-[19px] md:text-[24px] mt-2 hidden lg:flex">
               {t(`cases-card${index + 1}-title`)}
             </h4>
-            <p className="text-headings-color font-regular text-[13px] md:text-[15px] mt-1">
+
+            {/* Mobile */}
+            <p className="text-headings-color font-regular text-[13px] md:text-[15px] mt-1 lg:hidden">
+              {t(`cases-card${index + 1}-subtitle-mobile`)}
+            </p>
+            {/* Desktop */}
+
+            <p className="text-headings-color font-regular text-[13px] md:text-[15px] mt-1 hidden lg:flex">
               {t(`cases-card${index + 1}-subtitle`)}
             </p>
           </div>
