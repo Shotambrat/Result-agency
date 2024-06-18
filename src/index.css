@@ -104,14 +104,3 @@ code {
   z-index: 1000;
 }
 
-.modal-content {
-  position: relative;
-  background: #fff;
-  padding: 20px;
-  border-radius: 10px;
-}
-
-.modal-image {
-  max-width: 100%;
-  height: auto;
-}

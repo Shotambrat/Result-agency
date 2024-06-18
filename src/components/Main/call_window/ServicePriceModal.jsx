@@ -16,7 +16,7 @@ export default function ServiceModal({
 
   return (
     <div className=" fixed inset-0 flex items-center justify-center z-[21] backdrop-blur-md shadow-md">
-      <div className='p-4 w-11/12 rounded-[11px] h-auto m:p-6 xs:px-7 xs:py-7 sm:px-9  2xl:p-10 2xl:w-3/4 lg:rounded-[41px] bg-gradient-to-b from-[#746FAE] to-[#8A66F0] flex items-start justify-center flex-col lg:px-9 lg:py-9 price-list'>
+      <div className='p-4 w-11/12 rounded-[11px] h-auto m:p-6 xs:px-7 xs:py-7 sm:px-9  2xl:p-10 2xl:w-3/4 lg:rounded-[41px] bg-gradient-to-b from-[#746FAE] to-[#8A66F0] flex items-start justify-center flex-col sm:max-h-[100vh] sm:overflow-y-auto lg:px-9 lg:py-9 price-list'>
       <div className=' w-full mb-[10px] l:flex l:w-full l:justify-between l:align-baseline l:flex-row-reverse'>
           <button className='block ml-[92%] bg-transparent border-none close-button l:ml-0' onClick={close}>
             <svg className='mb-[3px]   w-[18px] h-[20px] l:mb-[0px] xs:w-[23px] xs:h-[25px] lg:w-[30px] lg:h-[34px]            xl:w-[29px] xl:h-[31px] svg-img-close' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31 35" fill="none">
