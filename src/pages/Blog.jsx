@@ -24,9 +24,11 @@ export default function Blog() {
         </h1>
         <OurOffers blogId={blogId}/>
         <AboutClient blogId={blogId}/>
-        <Conclusions blogId={blogId}/>
+        <div className="conclusion">
+          <Conclusions blogId={blogId}/>
+        </div>
       </div>
-      <div className=" mt-[68px] ">
+      <div className="mt-[68px] ">
         <UpButton />
       </div>
     </>
