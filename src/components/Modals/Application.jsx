@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Modal from 'react-modal'
 import { useTranslation } from "react-i18next";
 
 const Application = ({ isOpen, onClose }) => {
@@ -68,7 +69,7 @@ const Application = ({ isOpen, onClose }) => {
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 z-[50] flex justify-center items-center top-0 z-[999]">
-      <div className="md:w-2/4 lg:w-1/3 lg:my-8 xl:w-2/5 2xl:w-1/4 bg-gradient-to-b from-[#746FAE] to-[#8A66F0] p-8 rounded-[20px] relative">
+      <div className="md:w-2/4 lg:w-1/3 lg:my-8 xl:w-2/5 2xl:w-1/4 bg-gradient-to-b from-[#746FAE] to-[#8A66F0] p-8 rounded-[20px] relative z-[999]">
         <button
           onClick={onClose}
           className="absolute top-0 right-0 m-4 text-white text-2xl"

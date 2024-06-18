@@ -89,7 +89,7 @@ code {
 }
 
 .custom-overlay {
-  background: rgba(0, 0, 0, 0.5); /* Adjust the transparency here */
+  background: rgba(0, 0, 0, 0.5); 
 }
 .modal-overlay {
   position: fixed;
@@ -104,3 +104,6 @@ code {
   z-index: 1000;
 }
 
+.swiper-button-next:after,.swiper-button-prev:after, .swiper-rtl .swiper-button-prev:after{
+  display: none;
+}
