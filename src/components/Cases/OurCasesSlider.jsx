@@ -91,8 +91,14 @@ const SwiperCases = ({ caseId }) => {
       </div>
 
       {isOpen && (
-        <div className="fixed inset-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center z-50" onClick={handleCloseModal}>
-          <div className="relative bg-white p-5 rounded-lg lg:px-[40px]" onClick={(e) => e.stopPropagation()}>
+        <div
+          className="fixed inset-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center z-50"
+          onClick={handleCloseModal}
+        >
+          <div
+            className="relative bg-white p-5 rounded-lg lg:px-[40px]"
+            onClick={(e) => e.stopPropagation()}
+          >
             <TransformWrapper>
               <TransformComponent>
                 <img

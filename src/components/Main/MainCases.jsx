@@ -41,14 +41,25 @@ const MainCases = () => {
                   className="w-full h-full object-cover rounded-[7.39px] lg:rounded-3xl"
                 />
               </div>
-            
-            <h4 className="text-headings-color font-medium md:font-semibold text-[20px] md:text-[24px] mt-2">
+            </Link>
+            {/* Mobile */}
+            <h4 className="text-headings-color font-medium md:font-semibold text-[19px] md:text-[24px] mt-2 lg:hidden">
+              {t(`cases-card${index + 1}-title-mobile`)}
+            </h4>
+            {/* Desktop */}
+            <h4 className="text-headings-color font-medium md:font-semibold text-[19px] md:text-[24px] mt-2 hidden lg:flex">
               {t(`cases-card${index + 1}-title`)}
             </h4>
-            <p className="text-headings-color font-regular text-[13px] md:text-[15px] mt-1">
+
+            {/* Mobile */}
+            <p className="text-headings-color font-regular text-[13px] md:text-[15px] mt-1 lg:hidden">
+              {t(`cases-card${index + 1}-subtitle-mobile`)}
+            </p>
+            {/* Desktop */}
+
+            <p className="text-headings-color font-regular text-[13px] md:text-[15px] mt-1 hidden lg:flex">
               {t(`cases-card${index + 1}-subtitle`)}
             </p>
-            </Link>
           </div>
         ))}
         <div>
@@ -57,15 +68,6 @@ const MainCases = () => {
           </div>
         </div>
       </div>
-      {/* <div className="lg:grid lg:grid-cols-3 lg:gap-4 mt-5">
-        {cases2.map((elem, index) => (
-          <div key={index} className="flex flex-col p-4">
-            <div className="h-56 bg-blue-800 w-full mb-4 rounded-[20px]"></div>
-            <h4 className="text-headings-color font-medium text-[20px]">{elem.title}</h4>
-            <p className="text-headings-color text-[24px]">{elem.description}</p>
-          </div>
-        ))}
-      </div> */}
     </div>
   );
 };

@@ -5,7 +5,7 @@ import SiteDev from "../../assets/img/SiteDev.svg";
 import Brand from "../../assets/img/brand.svg";
 import Ads from "../../assets/img/Ads.svg";
 import Bot from "../../assets/img/Bot.svg";
-import { gsap } from 'gsap';
+import { gsap } from "gsap";
 
 import ServiceModal from "./call_window/ServiceModal";
 import { useTranslation } from "react-i18next";
