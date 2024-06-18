@@ -12,12 +12,21 @@ import FixedBackground from "./components/FixedBackground";
 function App() {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
+  const openNavMenu = () => {
+    setIsNavOpen(true);
+    console.log('Clicked for open');
+  }
+
+  const closeNavMenu = () => {
+    setIsNavOpen(false);
+  }
+
   return (
     <div className="App">
       <FixedBackground />
       <BrowserRouter>
-        <Header setIsNavOpen={setIsNavOpen} />
-        <NavMenu isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} />
+        <Header handleOpen={openNavMenu} />
+        <NavMenu isNavOpen={isNavOpen} handleClose={closeNavMenu} />
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/blog/:blogId" element={<Blog />}></Route>
