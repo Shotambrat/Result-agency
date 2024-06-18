@@ -173,7 +173,7 @@ const Header = ({ setIsNavOpen }) => {
                 location.pathname === "/blog/3") && (
                 <div>
                   <Link
-                    to="сonclusion"
+                    to="conclusion"
                     smooth={true}
                     duration={500}
                     className="text-header-text hover:text-blue-700 px-3 py-2 rounded-md text-sm xl:text-lg font-medium cursor-pointer"
