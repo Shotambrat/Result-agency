@@ -21,9 +21,9 @@ export default function FooterSocial({ isNavOpen, handleClose }) {
         onClick={() => {
           isNavOpen && handleClose();
         }}
-        target="_blank"
         rel="noreferrer"
         href="https://t.me/result_med"
+        target="_blank"
         className="bg-footer-icon h-[60px] w-[60px] rounded-[15px] flex justify-center items-center lg:order-[10] sm:col-span-2 lg:col-span-1 mx-auto lg:mt-0"
       >
         <img src={Teleramm} alt="social-icon" />
@@ -32,9 +32,9 @@ export default function FooterSocial({ isNavOpen, handleClose }) {
         onClick={() => {
           isNavOpen && handleClose();
         }}
+        href="https://www.facebook.com/profile.php?id=61551538436032"
         target="_blank"
         rel="noreferrer"
-        href="https://www.facebook.com/people/Result-%D0%BC%D0%B5%D0%B4%D0%B8%D1%86%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%D0%B9-%D0%BC%D0%B0%D1%80%D0%BA%D0%B5%D1%82%D0%B8%D0%BD%D0%B3/61551538436032/?locale=ru_RU"
         className="bg-footer-icon h-[60px] w-[60px] rounded-[15px] flex justify-end items-end lg:order-[11] sm:col-span-2 lg:col-span-1 mx-auto lg:mt-0"
       >
         <img
