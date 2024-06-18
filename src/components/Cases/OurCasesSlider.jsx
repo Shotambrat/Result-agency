@@ -40,7 +40,7 @@ const SwiperCases = ({ caseId }) => {
   };
 
   return (
-    <div className="w-full sm:w-10/12 xl:w-full mx-auto mt-5 relative">
+    <div className="w-full sm:w-10/12 xl:w-full mx-auto mt-5 relative ">
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
@@ -64,7 +64,7 @@ const SwiperCases = ({ caseId }) => {
             <img
               src={image}
               alt={`slider-icon-${index}`}
-              className="mx-auto w-full sm:w-10/12 xl:max-w-[1025px] rounded-[28px] cursor-pointer"
+              className="mx-auto w-full sm:w-10/12 lg:w-[80%] xl:max-w-[925px]  rounded-[28px] cursor-pointer "
               onClick={() => handleOpenModal(image)}
             />
           </SwiperSlide>
@@ -73,21 +73,32 @@ const SwiperCases = ({ caseId }) => {
       <div className="swiper-pagination-custom w-24 h-4 rounded-full mx-auto mt-4 flex justify-center"></div>
 
       <div
-        className="swiper-button-next lg:!flex !hidden items-center justify-center"
-        style={navButtonStyle}
+        className="swiper-button-next lg:!flex !hidden items-center justify-center w-[60px] h-[60px]"
       >
-        {/* <img src="" alt="button next" /> */}
+        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 70 70" fill="none">
+          <circle cx="30" cy="30" r="30" fill="#7B72EB" fill-opacity="0.44"/>
+          <path d="M22.897 12.1768C22.2499 12.8277 21.8867 13.7083 21.8867 14.6262C21.8867 15.544 22.2499 16.4246 22.897 17.0755L35.1959 29.5481L22.897 41.847C22.2499 42.498 21.8867 43.3785 21.8867 44.2964C21.8867 45.2142 22.2499 46.0948 22.897 46.7458C23.22 47.0714 23.6042 47.3299 24.0276 47.5062C24.451 47.6826 24.9051 47.7734 25.3637 47.7734C25.8224 47.7734 26.2765 47.6826 26.6999 47.5062C27.1232 47.3299 27.5075 47.0714 27.8305 46.7458L42.5614 32.0149C42.887 31.6919 43.1455 31.3076 43.3218 30.8843C43.4982 30.4609 43.589 30.0068 43.589 29.5481C43.589 29.0895 43.4982 28.6354 43.3218 28.212C43.1455 27.7886 42.887 27.4044 42.5614 27.0814L27.8305 12.1768C27.5075 11.8512 27.1232 11.5927 26.6999 11.4163C26.2765 11.2399 25.8224 11.1491 25.3637 11.1491C24.9051 11.1491 24.451 11.2399 24.0276 11.4163C23.6042 11.5927 23.22 11.8512 22.897 12.1768Z" fill="white"/>
+          </svg>
       </div>
       <div
-        className="swiper-button-prev lg:!flex !hidden items-center justify-center"
-        style={navButtonStyle}
+        className="swiper-button-prev lg:!flex !hidden items-center justify-center w-[60px] h-[60px]"
       >
-        {/* <img src="" alt="button next" /> */}
+        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 70 70" fill="none">
+          <circle cx="30" cy="30" r="30" fill="#7B72EB" fill-opacity="0.44"/>
+          <path d="M37.103 12.044C37.7501 12.6949 38.1133 13.5755 38.1133 14.4933C38.1133 15.4112 37.7501 16.2918 37.103 16.9427L24.8041 29.4153L37.103 41.7142C37.7501 42.3652 38.1133 43.2457 38.1133 44.1636C38.1133 45.0814 37.7501 45.962 37.103 46.6129C36.78 46.9386 36.3958 47.197 35.9724 47.3734C35.549 47.5498 35.0949 47.6406 34.6363 47.6406C34.1776 47.6406 33.7235 47.5498 33.3001 47.3734C32.8768 47.197 32.4925 46.9386 32.1695 46.6129L17.4386 31.8821C17.113 31.5591 16.8545 31.1748 16.6782 30.7514C16.5018 30.3281 16.411 29.874 16.411 29.4153C16.411 28.9567 16.5018 28.5026 16.6782 28.0792C16.8545 27.6558 17.113 27.2716 17.4386 26.9486L32.1695 12.044C32.4925 11.7184 32.8768 11.4599 33.3001 11.2835C33.7235 11.1071 34.1776 11.0163 34.6363 11.0163C35.0949 11.0163 35.549 11.1071 35.9724 11.2835C36.3958 11.4599 36.78 11.7184 37.103 12.044Z" fill="white"/>
+        </svg>
+        
       </div>
 
       {isOpen && (
-        <div className="fixed inset-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center z-50" onClick={handleCloseModal}>
-          <div className="relative bg-white p-5 rounded-lg lg:px-[40px]" onClick={(e) => e.stopPropagation()}>
+        <div
+          className="fixed inset-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center z-50"
+          onClick={handleCloseModal}
+        >
+          <div
+            className="relative bg-white p-5 rounded-lg lg:px-[40px]"
+            onClick={(e) => e.stopPropagation()}
+          >
             <TransformWrapper>
               <TransformComponent>
                 <img
@@ -121,19 +132,6 @@ const SwiperCases = ({ caseId }) => {
       )}
     </div>
   );
-};
-
-const navButtonStyle = {
-  width: "50px",
-  height: "50px",
-  backgroundColor: "#7B72EB",
-  borderRadius: "50%",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  cursor: "pointer",
-  color: "white",
-  padding: '8px!important'
 };
 
 export default SwiperCases;
