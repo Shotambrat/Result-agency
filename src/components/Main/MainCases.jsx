@@ -41,7 +41,7 @@ const MainCases = () => {
                   className="w-full h-full object-cover rounded-[7.39px] lg:rounded-3xl"
                 />
               </div>
-            </Link>
+            
             {/* Mobile */}
             <h4 className="text-headings-color font-medium md:font-semibold text-[19px] md:text-[24px] mt-2 lg:hidden">
               {t(`cases-card${index + 1}-title-mobile`)}
@@ -60,6 +60,7 @@ const MainCases = () => {
             <p className="text-headings-color font-regular text-[13px] md:text-[15px] mt-1 hidden lg:flex">
               {t(`cases-card${index + 1}-subtitle`)}
             </p>
+            </Link>
           </div>
         ))}
         <div>
