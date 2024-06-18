@@ -117,9 +117,11 @@ const Cases = () => {
     }
   }, [static1InView, static2InView, static3InView]);
 
+
+  const isDesktop = window.innerWidth > 1024;
   useEffect(() => {
     //анимация "запрос"
-    if (zaprosInView && titleZapros.current) {
+    if (isDesktop && zaprosInView && titleZapros.current) {
       gsap.fromTo(
         titleZapros.current,
         {
@@ -130,7 +132,7 @@ const Cases = () => {
           duration: 2.5,
           y: 0,
           opacity: 1,
-          ease: "power3.out",
+          ease: 'power3.out',
         }
       );
     }
@@ -190,9 +192,9 @@ const Cases = () => {
                   titleStatic1.current = el;
                   static1InViewRef(el);
                 }}
-                className="flex justify-between gap-x-8 items-center flex-row lg:gap-x-0 lg:gap-y-4 lg:flex-col-reverse"
+                className="flex justify-between gap-x-3 items-center flex-row lg:gap-x-0 lg:gap-y-4 lg:flex-col-reverse"
               >
-                <span className="text-xl md:text-2xl">
+                <span className="text-[18px] md:text-2xl">
                   {t(`cases-plan-application${caseId}`)}
                 </span>
                 <span className="font-bold text-4xl md:text-3xl lg:text-4xl xl:text-[40px] 2xl:text-[48px]">
@@ -206,7 +208,7 @@ const Cases = () => {
                 }}
                 className="flex justify-between gap-x-8 items-center lg:gap-x-0 lg:gap-y-4 lg:flex-col-reverse"
               >
-                <span className="text-xl md:text-2xl lg:ml-0">
+                <span className="text-[18px] md:text-2xl lg:ml-0">
                   {t(`cases-plan-ROI${caseId}`)}
                 </span>
                 <span className="font-bold text-4xl md:text-3xl lg:text-4xl xl:text-[40px] 2xl:text-[48px]">
@@ -220,7 +222,7 @@ const Cases = () => {
                 }}
                 className="flex justify-between gap-x-8 items-center lg:gap-x-0 lg:gap-y-3 lg:flex-col-reverse"
               >
-                <span className="text-xl md:text-2xl">
+                <span className="text-[18px] md:text-2xl">
                   {t(`cases-plan-client${caseId}`)}
                 </span>
                 <span className="font-bold text-4xl mr-6 md:text-3xl lg:mr-0 lg:text-4xl xl:text-[40px] 2xl:text-[48px]">
