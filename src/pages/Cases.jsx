@@ -117,7 +117,6 @@ const Cases = () => {
     }
   }, [static1InView, static2InView, static3InView]);
 
-
   const isDesktop = window.innerWidth > 1024;
   useEffect(() => {
     //анимация "запрос"
@@ -132,7 +131,7 @@ const Cases = () => {
           duration: 2.5,
           y: 0,
           opacity: 1,
-          ease: 'power3.out',
+          ease: "power3.out",
         }
       );
     }
@@ -170,7 +169,7 @@ const Cases = () => {
           {/* Левая колонка с логотипом */}
           <div className="flex items-center justify-center h-auto mb-4 lg:mb-0">
             <img
-              src={images[caseId-1]}
+              src={images[caseId - 1]}
               className="w-full rounded-[22px] lg:w-[320px] lg:h-[220px]"
               alt="social-icon"
             />
@@ -313,47 +312,34 @@ const Cases = () => {
 
               {/* правый контейнер с сообщ */}
               <div className="relative flex flex-col items-end md:w-11/5 lg:w-10/12 lg:ml-[15%] 2xl:ml-[0%] 2xl:w-full">
-                <div className="animated-block py-[15px] rounded-[12px] min-h-[147px] w-11/12 bg-footer-icon lg:bg-keys_item-bg p-1 2xl:py-[25px] 2xl:px-[20px] 2xl:max-w-[700px]">
-                  <div className="ml-[36px] lg:ml-[10px]">
-                    <span className="text-[17px] text-white font-medium l:text-[18px] sm:text-[19px] 2xl:text-[24px]">
-                      {t(`cases-results-card1-title${caseId}`)}
-                    </span>
-                    <p className="text-[13px] text-white mt-[5px] font-normal l:mt-[15px] sm:text-[15px] 2xl:text-[19px]">
-                      {t(`cases-results-card1-subtitle${caseId}`)}
-                    </p>
-                  </div>
-                </div>
-                <div className="my-[21px] flex justify-end">
-                  <ButtonPodrobnee />
-                </div>
-
-                <div className="animated-block py-[15px] rounded-[12px] min-h-[147px] w-11/12 bg-footer-icon lg:bg-keys_item-bg p-1 2xl:py-[25px] 2xl:px-[20px] 2xl:max-w-[700px]">
-                  <div className="ml-[36px] lg:ml-[10px]">
-                    <span className="text-[17px] text-white font-medium l:text-[18px] sm:text-[19px] 2xl:text-[24px]">
-                      {t(`cases-results-card2-title${caseId}`)}
-                    </span>
-                    <p className="text-[13px] text-white mt-[5px] font-normal l:mt-[15px] sm:text-[15px] 2xl:text-[19px]">
-                      {t(`cases-results-card2-subtitle${caseId}`)}
-                    </p>
-                  </div>
-                </div>
-                <div className="my-[21px] flex justify-end">
-                  <ButtonPodrobnee />
-                </div>
-
-                <div className="animated-block py-[15px] rounded-[12px] min-h-[147px] w-11/12 bg-footer-icon lg:bg-keys_item-bg p-1 2xl:py-[25px] 2xl:px-[20px] 2xl:max-w-[700px]">
-                  <div className="ml-[36px] lg:ml-[10px]">
-                    <span className="text-[17px] text-white font-medium l:text-[18px] sm:text-[19px] 2xl:text-[24px]">
-                      {t(`cases-results-card3-title${caseId}`)}
-                    </span>
-                    <p className="text-[13px] text-white mt-[5px] font-normal l:mt-[15px] sm:text-[15px] 2xl:text-[19px]">
-                      {t(`cases-results-card3-subtitle${caseId}`)}
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="my-[21px] flex justify-end">
-                <ButtonPodrobnee />
+                {["", "", ""].map((item, index) => {
+                  return (
+                    <>
+                      <div className="animated-block py-[15px] rounded-[12px] min-h-[147px] w-11/12 bg-footer-icon lg:bg-keys_item-bg p-1 2xl:py-[25px] 2xl:px-[20px] 2xl:max-w-[700px]">
+                        <div className="ml-[36px] lg:ml-[10px]">
+                          <span className="text-[17px] text-white font-medium l:text-[18px] sm:text-[19px] 2xl:text-[24px]">
+                            {t(`cases-results-card${index+1}-title${caseId}`)}
+                          </span>
+                          <p
+                            dangerouslySetInnerHTML={{
+                              __html: t(
+                                `cases-results-card${
+                                  index + 1
+                                }-subtitle${caseId}`
+                              ),
+                            }}
+                            className="text-[13px] text-white mt-[5px] font-normal l:mt-[15px] sm:text-[15px] 2xl:text-[19px]"
+                          >
+                            {}
+                          </p>
+                        </div>
+                      </div>
+                      <div className="my-[21px] flex justify-end">
+                        <ButtonPodrobnee />
+                      </div>
+                    </>
+                  );
+                })}
               </div>
             </div>
             {/* Конец полосы с мессендж */}
