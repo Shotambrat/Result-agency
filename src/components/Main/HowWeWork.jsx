@@ -104,7 +104,7 @@ const HowWeWork = () => {
   useEffect(() => {
     if (titleContainerInView) {
       gsap.to(titleRef.current, {
-        duration: 2,
+        duration: 1,
         y: 0,
         opacity: 1,
         // ease: "power3.out",
@@ -115,9 +115,9 @@ const HowWeWork = () => {
   useEffect(() => {
     if (imageSubtitleInView) {
       gsap.to(subtitleRef.current, {
-        duration: 2,
+        duration: 1,
         x: 0,
-        opacity: 1, 
+        opacity: 1,
       });
     }
   }, [imageSubtitleInView]);
@@ -125,7 +125,7 @@ const HowWeWork = () => {
   useEffect(() => {
     if (imageSubtitleInView) {
       gsap.to(imageRef.current, {
-        duration: 2,
+        duration: 1,
         x: 0,
         opacity: 1,
       });
@@ -135,7 +135,7 @@ const HowWeWork = () => {
   useEffect(() => {
     if (buttonInView) {
       gsap.to(buttonRef.current, {
-        duration: 2,
+        duration: 1,
         y: 0,
         opacity: 1,
       });
@@ -151,8 +151,8 @@ const HowWeWork = () => {
     const showItems = () => {
       gsap.to(cardRefs.current, {
         opacity: 1,
-        duration: 3,
-        stagger: 0.4,
+        duration: 2,
+        stagger: 0.2,
       });
     };
 
