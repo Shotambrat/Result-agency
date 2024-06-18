@@ -12,7 +12,7 @@ const MainCases = () => {
   const { t } = useTranslation();
 
   function toTop() {
-    window.scrollTo({ top: 0 });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
   const cases1 = [
