@@ -4,7 +4,6 @@ import BackButton from "../components/Blog/BackButton";
 import OurOffers from "../components/Blog/OurOffers";
 import AboutClient from "../components/Blog/AboutClient";
 import Conclusions from "../components/Blog/Conclusions";
-import Header from "./Header";
 import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom";
 
@@ -14,7 +13,6 @@ export default function Blog() {
 
   return (
     <>
-      <Header />
       <div className="mt-24 lg:mt-28 3xl:mt-32 mb-8 lg:mb-10 2xl:mb-12 3xl:mb-14">
         <BackButton />
       </div>

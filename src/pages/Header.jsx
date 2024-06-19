@@ -11,7 +11,7 @@ import FlagUz from "./../assets/img/FlagUz.png";
 import i18n from "i18next";
 import cookies from "js-cookie";
 
-const Header = ({ setIsNavOpen }) => {
+const Header = ({ handleOpen }) => {
   const [openLanguage, setOpenLanguage] = useState(false);
   const { t } = useTranslation();
   const location = useLocation();
@@ -243,8 +243,11 @@ const Header = ({ setIsNavOpen }) => {
               </div>
 
               <button
-                onClick={() => setIsNavOpen((prev) => !prev)}
-                className="ml-2 md:ml-4 lg:hidden "
+                onClick={() => {
+                  console.log('Menu button clicked');
+                  handleOpen();
+                }}
+                className="ml-2 md:ml-4 lg:hidden"
               >
                 <img src={Menu} alt="Menu icon" className="w-8" />
               </button>

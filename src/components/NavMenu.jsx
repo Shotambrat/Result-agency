@@ -5,13 +5,9 @@ import FooterSocial from "./FooterSocial";
 import logoBack from "../assets/img/logoBackButton.svg";
 import { useTranslation } from "react-i18next";
 
-export default function NavMenu({ isNavOpen, setIsNavOpen }) {
+export default function NavMenu({ isNavOpen, handleClose }) {
   const { t } = useTranslation();
   const location = useLocation();
-
-  function handleClose() {
-    setIsNavOpen((prev) => !prev);
-  }
 
   return (
     <div
@@ -20,9 +16,7 @@ export default function NavMenu({ isNavOpen, setIsNavOpen }) {
       } w-full xxs:w-[65%] sm:w-[55%] md:w-[50%] lg:hidden flex flex-col items-center`}
     >
       <div
-        onClick={() => {
-          handleClose();
-        }}
+        onClick={handleClose}
         className="absolute top-4 right-4"
       >
         <img src={logoBack} alt="close" className="text-right w-12 h-12" />
@@ -44,7 +38,7 @@ export default function NavMenu({ isNavOpen, setIsNavOpen }) {
                 to="services"
                 smooth={true}
                 duration={500}
-                onClick={() => handleClose()}
+                onClick={handleClose}
               >
                 {t("header-services")}
               </Link>
@@ -55,7 +49,7 @@ export default function NavMenu({ isNavOpen, setIsNavOpen }) {
               to="cases"
               smooth={true}
               duration={500}
-              onClick={() => handleClose()}
+              onClick={handleClose}
             >
               {t("header-cases")}
             </Link>
@@ -65,7 +59,7 @@ export default function NavMenu({ isNavOpen, setIsNavOpen }) {
               to="blog"
               smooth={true}
               duration={500}
-              onClick={() => handleClose()}
+              onClick={handleClose}
             >
               {t("header-blog")}
             </Link>
@@ -83,7 +77,7 @@ export default function NavMenu({ isNavOpen, setIsNavOpen }) {
                 to="resultk"
                 smooth={true}
                 duration={500}
-                onClick={() => handleClose()}
+                onClick={handleClose}
               >
                 {t("header-result")}
               </Link>
@@ -101,7 +95,7 @@ export default function NavMenu({ isNavOpen, setIsNavOpen }) {
                 to="statistics"
                 smooth={true}
                 duration={500}
-                onClick={() => handleClose()}
+                onClick={handleClose}
               >
                 {t("header-statistics")}
               </Link>
@@ -115,7 +109,7 @@ export default function NavMenu({ isNavOpen, setIsNavOpen }) {
                 to="сonclusion"
                 smooth={true}
                 duration={500}
-                onClick={() => handleClose()}
+                onClick={handleClose}
               >
                 {t("header-сonclusion")}
               </Link>
@@ -125,14 +119,12 @@ export default function NavMenu({ isNavOpen, setIsNavOpen }) {
             to="contacts"
             smooth={true}
             duration={500}
-            onClick={() => handleClose()}
+            onClick={handleClose}
           >
             {t("header-contacts")}
           </Link>
           <a
-            onClick={() => {
-              handleClose();
-            }}
+            onClick={handleClose}
             href="Tel:+998900228073"
             className="text-center"
           >
