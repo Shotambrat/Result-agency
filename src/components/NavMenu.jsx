@@ -106,7 +106,7 @@ export default function NavMenu({ isNavOpen, handleClose }) {
             location.pathname === "/blog/3") && (
             <div>
               <Link
-                to="сonclusion"
+                to="conclusion"
                 smooth={true}
                 duration={500}
                 onClick={handleClose}
