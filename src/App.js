@@ -14,7 +14,6 @@ function App() {
 
   const openNavMenu = () => {
     setIsNavOpen(true);
-    console.log('Clicked for open');
   }
 
   const closeNavMenu = () => {

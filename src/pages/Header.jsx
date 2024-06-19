@@ -243,10 +243,7 @@ const Header = ({ handleOpen }) => {
               </div>
 
               <button
-                onClick={() => {
-                  console.log('Menu button clicked');
-                  handleOpen();
-                }}
+                onClick={handleOpen}
                 className="ml-2 md:ml-4 lg:hidden"
               >
                 <img src={Menu} alt="Menu icon" className="w-8" />
