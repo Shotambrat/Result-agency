@@ -10,11 +10,11 @@ export default function ServiceModal({
 }) {
   const { t } = useTranslation();
 
-  let liStyle = "text-[14px] list-disc text-left text-white font-light m:text-[14.5px] l:my-[2px] s:text-[15px] xs:text-[17px] sm:text-[18.5px] md:text-[19.5px] lg:text-[21.5px] xl:text-[23px] 2xl:my-[0px]"
-  console.log(defaultNumber);
+  let liStyle = "text-[14px] list-disc text-left text-white font-light m:text-[14.5px] l:my-[2px] s:text-[15px] xs:text-[17px] sm:text-[18.5px] md:text-[19.5px] lg:text-[21.5px] xl:text-[23px] 2xl:my-[0px]";
+  
   return (
     <div className="fixed inset-0 flex items-center justify-center z-[21] backdrop-blur-md shadow-md">
-      <div className='h-auto overflow-y-auto p-4 w-11/12 rounded-[11px] m:p-6 xs:px-7 xs:py-7 sm:px-9 2xl:p-10 2xl:w-3/4 lg:rounded-[41px] bg-gradient-to-b from-[#746FAE] to-[#8A66F0] flex items-start justify-center flex-col sm:overflow-y-auto lg:px-9 lg:py-9 price-list'>
+      <div className='h-[90%] max-h-[90vh] overflow-y-auto p-4 w-11/12 rounded-[11px] m:p-6 xs:px-7 xs:py-7 sm:px-9 2xl:p-10 2xl:w-3/4 lg:rounded-[41px] bg-gradient-to-b from-[#746FAE] to-[#8A66F0] flex items-start justify-center flex-col sm:overflow-y-auto lg:px-9 lg:py-9 price-list'>
         <div className='w-full mb-[10px] flex justify-between align-baseline flex-row-reverse'>
           <button className='block bg-transparent border-none close-button ml-0' onClick={close}>
             <svg className='mb-[3px] w-[18px] h-[20px] l:mb-[0px] xs:w-[23px] xs:h-[25px] lg:w-[30px] lg:h-[34px] xl:w-[29px] xl:h-[31px] svg-img-close' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31 35" fill="none">
@@ -25,7 +25,7 @@ export default function ServiceModal({
             {t(`service-card-title-${name}-${defaultNumber}`)}
           </span>
         </div>
-        <ul className='h-auto ml-[7.3px] m:ml-[10px] lg:p-4 lg:px-8 s:ml-[15px] xs:ml-[20px]'>
+        <ul className='h-full ml-[7.3px] m:ml-[10px] lg:p-4 lg:px-8 s:ml-[15px] xs:ml-[20px] overflow-y-auto'>
           <li className={liStyle}>
             {t(`service-card-${modal}-title${defaultNumber}`)}
           </li>
@@ -96,11 +96,8 @@ export default function ServiceModal({
                     <td class="border px-4 py-2">{t(`service-modal-smm-content-${defaultNumber}-18`)}</td>
                   </tr>
                   {
-
                     defaultNumber === 1 ? (
-                      <div>
-
-                      </div>
+                      <div></div>
                     ) : (
                       <>
                         <tr class="bg-keys_item-bg">
@@ -131,7 +128,6 @@ export default function ServiceModal({
               <li className={liStyle}>{t(`service-modal-${modal}-domen${defaultNumber}`)}</li>
             </div>
           )}
-
           <li className={liStyle}>{t(`service-modal-${modal}-expCode${defaultNumber}`)}</li>
         </ul>
       </div>
