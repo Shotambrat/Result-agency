@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Modal from 'react-modal'
 import { useTranslation } from "react-i18next";
 
 const Application = ({ isOpen, onClose }) => {

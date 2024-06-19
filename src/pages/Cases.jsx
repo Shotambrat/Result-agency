@@ -297,10 +297,10 @@ const Cases = () => {
               <div className="absolute ml-[2%]  m:ml-[3%] l:ml-[3.5%] s:ml-[4%] xs:ml-[4.6%] xxs:ml-[5%] sm:ml-[6%] md:ml-[6.2%] ">
                 <div className="flex mt-[50px] justify-center items-center min-h-full ">
                   <div className="relative z-10 flex flex-col items-center ">
-                    <div
+                    {/* <div
                       className="absolute left-1/2 transform -translate-x-1/2 w-[5px] bg-footer-icon xxs:w-[7px] lg:w-[10px]"
                       style={{ top: "0", bottom: "0" }}
-                    ></div>
+                    ></div> */}
                     <div className="relative flex flex-col gap-[190px]  items-center lg:gap-[185px]">
                       <div className="relative w-[40px] h-[40px] bg-footer-icon rounded-full border-4 border-white z-10 lg:w-[55px] lg:h-[55px]"></div>
                       <div className="relative w-[40px] h-[40px] bg-footer-icon rounded-full border-4 border-white z-10 lg:w-[55px] lg:h-[55px]"></div>
@@ -316,23 +316,24 @@ const Cases = () => {
                   return (
                     <>
                       <div className="animated-block py-[15px] rounded-[12px] min-h-[147px] w-11/12 bg-footer-icon lg:bg-keys_item-bg p-1 2xl:py-[25px] 2xl:px-[20px] 2xl:max-w-[700px]">
-                        <div className="ml-[36px] lg:ml-[10px]">
-                          <span className="text-[17px] text-white font-medium l:text-[18px] sm:text-[19px] 2xl:text-[24px]">
-                            {t(`cases-results-card${index+1}-title${caseId}`)}
-                          </span>
-                          <p
-                            dangerouslySetInnerHTML={{
-                              __html: t(
-                                `cases-results-card${
-                                  index + 1
-                                }-subtitle${caseId}`
-                              ),
-                            }}
-                            className="text-[13px] text-white mt-[5px] font-normal l:mt-[15px] sm:text-[15px] 2xl:text-[19px]"
-                          >
-                            {}
-                          </p>
-                        </div>
+
+                          <div className="ml-[36px] lg:ml-[10px]">
+                            <span className="text-[17px] text-white font-medium l:text-[18px] sm:text-[19px] 2xl:text-[24px]">
+                              {t(`cases-results-card${index+1}-title${caseId}`)}
+                            </span>
+                            <p
+                              dangerouslySetInnerHTML={{
+                                __html: t(
+                                  `cases-results-card${
+                                    index + 1
+                                  }-subtitle${caseId}`
+                                ),
+                              }}
+                              className="text-[13px] text-white mt-[5px] font-normal l:mt-[15px] sm:text-[15px] 2xl:text-[19px]"
+                            >
+                              {}
+                            </p>
+                          </div>
                       </div>
                       <div className="my-[21px] flex justify-end">
                         <ButtonPodrobnee />

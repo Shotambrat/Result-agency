@@ -11,6 +11,8 @@ const Cover = () => {
   const buttonRef = useRef(null);
   const [circlePos, setCirclePos] = useState({ x: -50, y: -50, opacity: 0 });
 
+  const [modalActive, setModalActive] = useState(true)
+
   const openModal = () => setModalOpen(true);
   const closeModal = () => setModalOpen(false);
 
@@ -66,6 +68,16 @@ const Cover = () => {
               >
                 {t("cover-button")}
               </button>
+
+
+
+
+
+
+
+
+
+
 
               <Application isOpen={isModalOpen} onClose={closeModal} />
 
