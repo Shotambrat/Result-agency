@@ -16,36 +16,42 @@ let data = [
     nameForFunction: "smm",
     img: Smm,
     style: "order-1 md:order-1",
+    iterationNumber: 3
   },
   {
     name: `Разработка <br/> сайтов`,
     nameForFunction: "sites",
     img: SiteDev,
     style: "order-2 md:order-2",
+    iterationNumber: 5
   },
   {
     name: "Запуск <br /> рекламы",
     nameForFunction: "ads",
     img: Ads,
     style: "order-5 md:order-3",
+    iterationNumber: 2
   },
   {
     name: "Seo",
     nameForFunction: "seo",
     img: Seo,
     style: "order-3 md:order-4",
+    iterationNumber: 2
   },
   {
     name: "Разработка <br /> Telegram-ботов",
     nameForFunction: "bot",
     img: Bot,
     style: "order-4 md:order-5",
+    iterationNumber: 1
   },
   {
     name: "Брендинг",
     nameForFunction: "brand",
     img: Brand,
     style: "order-6 md:order-6",
+    iterationNumber: 2
   },
 ];
 
@@ -152,6 +158,8 @@ const MainService = () => {
                     <ServiceModal
                       close={handleChangeCard}
                       name={data.nameForFunction}
+                      modal={index}
+                      iterationNumber={data.iterationNumber}
                     />
                   ) : (
             <div

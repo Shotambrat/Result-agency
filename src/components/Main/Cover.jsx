@@ -67,8 +67,6 @@ const Cover = () => {
                 {t("cover-button")}
               </button>
 
-              <Application isOpen={isModalOpen} onClose={closeModal} />
-
               <div
                 style={{ pointerEvents: "none" }}
                 className="cursor-pointer absolute top-0 left-0 rounded-[40px] w-full h-full overflow-hidden -z-10"
@@ -103,6 +101,13 @@ const Cover = () => {
           />
         </div>
       </div>
+
+      {/* Модальное окно */}
+      {isModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+          <Application isOpen={isModalOpen} onClose={closeModal} />
+        </div>
+      )}
     </div>
   );
 };
