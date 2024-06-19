@@ -44,7 +44,7 @@ let data = [
     nameForFunction: "bot",
     img: Bot,
     style: "order-4 md:order-5",
-    iterationNumber: 1
+    iterationNumber: 3
   },
   {
     name: "Брендинг",

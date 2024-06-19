@@ -67,7 +67,7 @@ export default function ServiceModal({ close, name, modal, iterationNumber }) {
       ) : null}
 
       <div className="rounded-xl bg-[#e0e0ff] lg:rounded-3xl h-[11rem] md:h-[18rem] lg:h-[21rem] xl:h-[24rem] 2xl:h-[30rem]">
-        <div className="h-full grid grid-cols-1 grid-rows-5 relative text-left px-2 m:px-2 l:px-1.5 xs:px-1 py-1 l:py-1.5 lg:py-4 xl:py-6 2xl:py-8">
+        <div className="h-full grid grid-cols-1 grid-rows-4  relative text-left px-2 m:px-2 l:px-1.5 xs:px-1 py-1 l:py-1.5 lg:py-4 xl:py-6 2xl:py-8">
           {new Array(iterationNumber).fill("").map((elem, index) => (
             <p
               className="lg:hover:underline text-[10.5px] py-[1.5px] cursor-pointer text-left font-semibold text-purpleText inline-block m:py-[0.5px] m:text-[11px] l:text-[12.5px] l:py-[0px] s:py-[3px] xs:text-[14px] xs:py-[3px] xs:px-[4.5px] sm:py-[2px] sm:px-[4px] sm:text-[13px] md:text-[16.5px] md:px-[7px] md:py-[5px] lg:text-[18px] lg:px-[13px] lg:py-[7px] xl:py-[10px] xl:px-[20px] xl:text-[19px] 2xl:text-[25px]"

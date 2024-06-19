@@ -27,9 +27,9 @@ export default function ServiceModal({
         </div>
         <ul className='h-auto ml-[7.3px] m:ml-[10px] lg:p-4 lg:px-8 s:ml-[15px] xs:ml-[20px]'>
           <li className={liStyle}>
-            ◻️ {t(`service-card-${modal}-title${defaultNumber}`)}
+            {t(`service-card-${modal}-title${defaultNumber}`)}
           </li>
-          <li className={liStyle}>💵 {t(`service-modal-${modal}-price${defaultNumber}`)}</li>
+          <li className={liStyle}>{t(`service-modal-${modal}-price${defaultNumber}`)}</li>
           <li className={liStyle}>{t(`service-modal-${modal}-size${defaultNumber}`)}</li>
           <li className={liStyle}>{t(`service-modal-${modal}-duration${defaultNumber}`)}</li>
           {
