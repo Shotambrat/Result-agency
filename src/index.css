@@ -108,20 +108,22 @@ code {
   display: none;
 }
 
-.custom-scrollbar::-webkit-scrollbar {
-  width: 8px;
+::-webkit-scrollbar {
+  width: 18px; /* Width of the scrollbar */
 }
 
-.custom-scrollbar::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 10px;
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Background of the scrollbar track */
 }
 
-.custom-scrollbar::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 10px;
+::-webkit-scrollbar-thumb {
+  background: rgba(123, 114, 235, 0.8);
+  border-radius: 5rem; /* Roundness of the scrollbar thumb */
+  border: 3px solid #f1f1f1; /* Padding around thumb */
 }
 
-.custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: #555;
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(123, 114, 235);
+
 }
+
