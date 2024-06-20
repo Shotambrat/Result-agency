@@ -32,7 +32,7 @@ export default function ServiceModal({
             {t(`service-card-title-${name}-${defaultNumber}`)}
           </span>
         </div>
-        <ul className='h-full w-auto ml-[7.3px] m:ml-[10px] lg:p-4 lg:px-8 s:ml-[15px] xs:ml-[20px] custom-scrollbar overflow-y-auto'>
+        <ul className='service-price-modal h-full w-auto ml-[7.3px] m:ml-[10px] lg:p-4 lg:px-8 s:ml-[15px] xs:ml-[20px] custom-scrollbar overflow-y-auto'>
           <li className={liStyle}>
             {t(`service-card-${modal}-title${defaultNumber}`)}
           </li>

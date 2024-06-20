@@ -127,3 +127,15 @@ code {
 
 }
 
+.service-price-modal::-webkit-scrollbar-track {
+  border-radius: 5rem;
+}
+
+.service-price-modal::-webkit-scrollbar-thumb {
+  background: red;
+}
+
+.service-price-modal::-webkit-scrollbar-thumb:hover {
+  background: green;
+
+}
