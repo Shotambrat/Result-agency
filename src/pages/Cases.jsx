@@ -185,7 +185,7 @@ const Cases = () => {
             >
               {t(`cases-plan-title${caseId}`)}
             </h2>
-            <div className="flex flex-col space-y-8 lg:flex-row lg:space-y-0 lg:space-x-8 lg:justify-around">
+            <div className="flex flex-col space-y-8 s:mx-[2.2%] xs:mx-[5.2%] lg:mx-[0%] lg:flex-row lg:space-y-0 lg:space-x-8 lg:justify-around">
               <div
                 ref={(el) => {
                   titleStatic1.current = el;
@@ -193,10 +193,10 @@ const Cases = () => {
                 }}
                 className="flex justify-between gap-x-3 items-center flex-row lg:gap-x-0 lg:gap-y-4 lg:flex-col-reverse"
               >
-                <span className="text-[18px] md:text-2xl">
+                <span className="text-[17px] m:text-[18px] md:text-2xl">
                   {t(`cases-plan-application${caseId}`)}
                 </span>
-                <span className="font-bold text-4xl md:text-3xl lg:text-4xl xl:text-[40px] 2xl:text-[48px]">
+                <span className="font-bold text-3xl m:text-4xl md:text-3xl lg:text-4xl xl:text-[40px] 2xl:text-[48px]">
                   {t(`cases-plan-application-count${caseId}`)}
                 </span>
               </div>
@@ -207,10 +207,10 @@ const Cases = () => {
                 }}
                 className="flex justify-between gap-x-8 items-center lg:gap-x-0 lg:gap-y-4 lg:flex-col-reverse"
               >
-                <span className="text-[18px] md:text-2xl lg:ml-0">
+                <span className="text-[17px] m:text-[18px] md:text-2xl lg:ml-0">
                   {t(`cases-plan-ROI${caseId}`)}
                 </span>
-                <span className="font-bold text-4xl md:text-3xl lg:text-4xl xl:text-[40px] 2xl:text-[48px]">
+                <span className="font-bold text-3xl m:text-4xl md:text-3xl lg:text-4xl xl:text-[40px] 2xl:text-[48px]">
                   {t(`cases-plan-ROI-count${caseId}`)}
                 </span>
               </div>
@@ -221,10 +221,10 @@ const Cases = () => {
                 }}
                 className="flex justify-between gap-x-8 items-center lg:gap-x-0 lg:gap-y-3 lg:flex-col-reverse"
               >
-                <span className="text-[18px] md:text-2xl">
+                <span className="text-[17px] m:text-[18px] md:text-2xl">
                   {t(`cases-plan-client${caseId}`)}
                 </span>
-                <span className="font-bold text-4xl mr-6 md:text-3xl lg:mr-0 lg:text-4xl xl:text-[40px] 2xl:text-[48px]">
+                <span className="font-bold text-3xl m:text-4xl md:text-3xl lg:mr-0 lg:text-4xl xl:text-[40px] 2xl:text-[48px]">
                   {t(`cases-plan-client-count${caseId}`)}
                 </span>
               </div>
