@@ -112,8 +112,10 @@ code {
   width: 18px; /* Width of the scrollbar */
 }
 
-::-webkit-scrollbar-track {
-  background: #f1f1f1; /* Background of the scrollbar track */
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+
 }
 
 ::-webkit-scrollbar-thumb {
@@ -131,10 +133,12 @@ code {
   border-radius: 5rem;
 }
 
+/* Service-price-modaldagi scroll rangi */
 .service-price-modal::-webkit-scrollbar-thumb {
   background: red;
 }
 
+/* Service-price-modaldagi scroll hover rangi */
 .service-price-modal::-webkit-scrollbar-thumb:hover {
   background: green;
 
