@@ -152,19 +152,24 @@ export default function ServiceModal({
 ) : (
             <div>
               <li className={liStyle}>{t(`service-modal-${modal}-completion${defaultNumber}`)}</li>
-              {!(name === 'brand' && defaultNumber === 1) && (
+              {!(name == 'brand' && defaultNumber == 1) && (
                 <>
                   <li className={liStyle}>{t(`service-modal-${modal}-seo${defaultNumber}`)}</li>
                   <li className={liStyle}>{t(`service-modal-${modal}-integration${defaultNumber}`)}</li>
                 </>
               )}
-              {(name !== 'ads' || defaultNumber !== 2) && (
+              {(name !== 'ads' || defaultNumber !== 2 ) && (
                 <>
                   <li className={liStyle}>{t(`service-modal-${modal}-indexation${defaultNumber}`)}</li>
+                  {!(name == 'brand' && defaultNumber == 1) && (
                   <li className={liStyle}>{t(`service-modal-${modal}-seo${defaultNumber}`)}</li>
+                  )}
                 </>
               )}
+              {!(name == 'brand' && defaultNumber == 1) && (
+               
               <li className={liStyle}>{t(`service-modal-${modal}-integration${defaultNumber}`)}</li>
+              )}
               {(name === 'seo' && defaultNumber == 2) && (
                 <li className={liStyle}>{t(`service-modal-${modal}-actual${defaultNumber}`)}</li>
               )}
