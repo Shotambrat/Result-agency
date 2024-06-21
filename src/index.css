@@ -40,7 +40,7 @@ code {
   content: "";
   grid-area: 1 / 1 / 2 / 2;
   background: inherit;
-  filter: blur(10px); /* Adjust the blur amount as needed */
+  filter: blur(10px); 
 }
 
 .container-with-blur > *:not(:first-child) {

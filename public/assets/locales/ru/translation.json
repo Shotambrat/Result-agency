@@ -1,4 +1,11 @@
 {
+  "cover-form-service": "Выберите услугу",
+  "cover-form-site": "Разработка сайтов",
+  "cover-form-ads": "Запуск рекламы",
+  "cover-form-brending": "Брендинг",
+  "cover-form-tgbot": "Telegram-боты",
+  "cover-form-others": "Другое",
+
   "header-aboutUs": "О нас",
   "header-services": "Услуги",
   "header-cases": "Наши кейсы",
@@ -65,12 +72,12 @@
   "service-modal-0-price1": "250$",
   "service-modal-0-duration1": "1 неделя(при быстром получении запрашиваемой информации от клиента)",
   "service-modal-0-condition1": "Пакет услуг :",
-  "service-modal-0-expCode1": "после выполнения услуг проект передается заказчику, проводится инструктаж о том как вести его в самостоятельно",
+  "service-modal-0-first1": "после выполнения услуг проект передается заказчику, проводится инструктаж о том как вести его в самостоятельно",
 
   "service-card-0-title2": "Запуск и ведение маркетинга в социальных сетях",
   "service-modal-0-price2": "600$",
   "service-modal-0-condition2": "Пакет услуг:",
-  "service-modal-0-expCode2": "предоставление ежемесячного отчета по рекламным кампаниям",
+  "service-modal-0-first2": "предоставление ежемесячного отчета по рекламным кампаниям",
 
   "service-card-0-title3": "Запуск и ведение маркетинга в социальных сетях",
   "service-modal-0-price3": "1200$",
@@ -164,9 +171,9 @@
 "service-modal-smm-preimushestva-3": "наибольшее количество публикаций для достижения быстрого результата",
   
   "service-card-1-title1": "Статичный сайт для специалиста или небольшой клиники",
-  "service-modal-1-price1": "цена: 300$",
-  "service-modal-1-size1": "размер: 1 страница",
-  "service-modal-1-duration1": "срок: 1 месяц (при быстром получении запрашиваемой информации от клиента)",
+  "service-modal-1-price1": "Цена: 300$",
+  "service-modal-1-size1": "Размер: 1 страница",
+  "service-modal-1-duration1": "Срок: 1 месяц (при быстром получении запрашиваемой информации от клиента)",
   "service-modal-1-services1": "Пакет услуг:",
   "service-modal-1-webDev1": "Разработка сайта",
   "service-modal-1-condition1": "Заполнение контентом на 2 языках",
@@ -179,9 +186,9 @@
   "service-modal-1-expCode1": "Экспорт кода (при желании заказчика)",
 
   "service-card-1-title2": "Гибкий сайт для специалиста или небольшой клиники разработанный на платформе Tilda.",
-  "service-modal-1-price2": "цена: 200$",
-  "service-modal-1-size2": " размер: 1 страница",
-  "service-modal-1-duration2": "срок: 2 недели (при быстром получении запрашиваемой информации от клиента)",
+  "service-modal-1-price2": "Цена: 200$",
+  "service-modal-1-size2": " Размер: 1 страница",
+  "service-modal-1-duration2": "Срок: 2 недели (при быстром получении запрашиваемой информации от клиента)",
   "service-modal-1-services2": "Пакет услуг:",
   "service-modal-1-webDev2": "Разработка сайта на конструкторе Tilda",
   "service-modal-1-edit2": "Заполнение контентом на 2 языках",
@@ -196,9 +203,9 @@
   "service-modal-1-expCode2": "Стильный и понятный дизайн",
 
   "service-card-1-title3": "Гибкий многостраничный сайт для специалиста или клиники",
-  "service-modal-1-price3": "600$",
-  "service-modal-1-size3": "размер: 5 страниц",
-  "service-modal-1-duration3": "срок: 1 месяц (при быстром получении запрашиваемой информации от клиента)",
+  "service-modal-1-price3": "Цена: 600$",
+  "service-modal-1-size3": "Размер: 5 страниц",
+  "service-modal-1-duration3": "Срок: 1 месяц (при быстром получении запрашиваемой информации от клиента)",
   "service-modal-1-services3": "Пакет услуг:",
   "service-modal-1-webDev3": "Разработка сайта",
   "service-modal-1-edit3": "Разработка административной панели",
@@ -214,9 +221,9 @@
   "service-modal-1-expCode3": "Возможность менять актуальную информацию (о врачах, услугах и ценах)",
 
   "service-card-1-title4": "Гибкий сайт для специалиста или небольшой клиники разработанный на платформе Tilda.",
-  "service-modal-1-price4": "цена: 500$",
-  "service-modal-1-size4": "размер: 5 страниц",
-  "service-modal-1-duration4": "срок: 2 недели (при быстром получении запрашиваемой информации от клиента)",
+  "service-modal-1-price4": "Цена: 500$",
+  "service-modal-1-size4": "Размер: 5 страниц",
+  "service-modal-1-duration4": "Срок: 2 недели (при быстром получении запрашиваемой информации от клиента)",
   "service-modal-1-services4": "Пакет услуг:",
   "service-modal-1-webDev4": "Разработка сайта на конструкторе Tilda",
   "service-modal-1-edit4": "Заполнение контентом на 2 языках",
@@ -240,9 +247,10 @@
   "service-modal-1-design5": "Индексация в Google",
   "service-modal-1-condition5": "Хостинг на 3 месяца",
   "service-modal-1-completion5": "Доменное имя на 1 год",
-  "service-modal-1-integration5": "Экспорт кода",
-  "service-modal-1-indexation5": "Преимущества:",
-  "service-modal-1-seo5": "Возможность разработать любой сайт исходя из предпочтений и пожеланий заказчика",
+  "service-modal-1-seo5": "Экспорт кода",
+  "service-modal-1-integration5": "Преимущества:",
+  "service-modal-1-indexation5": "Возможность разработать любой сайт исходя из предпочтений и пожеланий заказчика",
+
 
 
 
@@ -270,11 +278,12 @@
   "service-modal-2-webDev2": "разработка до 2ух креативов",
   "service-modal-2-condition2": "создание рекламных объявлений",
   "service-modal-2-completion2": "определение целевой аудитории",
+  "service-modal-2-seo2": "оптимизация и мониторинг рекламных кампаний",
   "service-modal-2-integration2": "предоставление ежемесячного отчета по рекламным кампаниям",
 
 
   "service-card-3-title1": "Поднятие в поисковых выдачах Google и Yandex",
-  "service-modal-3-price1": "цена: 350$",
+  "service-modal-3-price1": "Цена: 350$",
   "service-modal-3-size1": "Пакет услуг:",
   "service-modal-3-duration1": "технический аудит сайта",
   "service-modal-3-services1": "индексация сайта в Google и Yandex",
@@ -306,7 +315,7 @@
 
  
 
-  "service-card-4-title1": "цена: 200$",
+  "service-card-4-title1": "Цена: 200$",
   "service-modal-4-price1": " Срок: 2 недели",
   "service-modal-4-size1": "Пакет услуг:",
   "service-modal-4-duration1": "Разработка базового чат-бота",
@@ -314,15 +323,15 @@
   "service-modal-4-webDev1": "Добавление до 50 услуг/товаров",
   "service-modal-4-condition1": "Сбор заявок",
   "service-modal-4-completion1": "Обычные кнопки",
-  "service-modal-4-indexation1": "Настройка автоответов",
-  "service-modal-4-seo1": "Общие условия для всех тарифов:",
-  "service-modal-4-integration1": "Поддержка на 1 месяц",
+  "service-modal-4-seo1": "Поддержка на 1 месяц",
+  "service-modal-4-integration1": "Настройка автоответов",
+  "service-modal-4-indexation1": "Общие условия для всех тарифов:",
   "service-modal-4-hosting1": "Быстрая разработка при оперативном получении всей необходимой информации от клиента",
   "service-modal-4-domen1": "Возможность дальнейшего расширения функционала (по договоренности)",
   "service-modal-4-expCode1": "Экспорт кода (по желанию заказчика)",
 
 
-  "service-card-4-title2": "цена: 500$",
+  "service-card-4-title2": "Цена: 500$",
   "service-modal-4-price2": "Срок: 1 месяц",
   "service-modal-4-size2": "Пакет услуг:",
   "service-modal-4-duration2": "Все услуги из тарифа Start",
@@ -333,25 +342,29 @@
   "service-modal-4-indexation2": "Неограниченное количество услуг/товаров",
   "service-modal-4-seo2": "Поддержка на 3 месяца",
   "service-modal-4-integration2": "Поддержка до 10 категорий",
+  
   "service-modal-4-hosting2": "Настройка аналитики взаимодействий",
   "service-modal-4-domen2": "Админ панель для управления контентом и пользователями",
-  "service-modal-4-botspeed2": "Общие условия для всех тарифов:",
+  "service-modal-4-expCode2": "Общие условия для всех тарифов:",
+  "service-modal-4-botspeed2": "Экспорт кода (по желанию заказчика)",
   "service-modal-4-botupdate2": "Быстрая разработка при оперативном получении всей необходимой информации от клиента",
   "service-modal-4-botexp2": "Возможность дальнейшего расширения функционала (по договоренности)",
-  "service-modal-4-expCode2": "Экспорт кода (по желанию заказчика)",
+
 
 
   "service-card-4-title3": "800$",
   "service-modal-4-price3": "Срок: 1,5 месяца",
   "service-modal-4-size3": "Пакет услуг:",
   "service-modal-4-duration3": "Все услуги из тарифа Medium",
-  "service-modal-4-services3": "Возможность оплаты через бота",
-  "service-modal-4-webDev3": "Подробная аналитика и отчеты по взаимодействиям пользователей",
-  "service-modal-4-condition3": "Интеграция с CRM системой",
+  "service-modal-4-services3": "Интеграция с CRM системой",
+  "service-modal-4-webDev3": "Возможность оплаты через бота",
+  "service-modal-4-condition3": "Подробная аналитика и отчеты по взаимодействиям пользователей",
   "service-modal-4-completion3": "Многоязычная поддержка (до 3 языков)",
-  "service-modal-4-indexation3": "Админ панель с расширенными функциями управления и отчетности",
-  "service-modal-4-seo3": "Дизайн кастомных кнопок",
-  "service-modal-4-integration3": "Поддержка и обновление на 6 месяцев",
+
+  "service-modal-4-seo3": "Админ панель с расширенными функциями управления и отчетности",
+  
+  "service-modal-4-integration3": "Дизайн кастомных кнопок",
+  "service-modal-4-indexation3": "Поддержка и обновление на 6 месяцев",
   "service-modal-4-hosting3": "Общие условия для всех тарифов:",
   "service-modal-4-domen3": "Быстрая разработка при оперативном получении всей необходимой информации от клиента",
   "service-modal-4-botexp3": "Возможность дальнейшего расширения функционала (по договоренности)",
@@ -373,13 +386,14 @@
   "service-modal-5-price2": "Цена: 200$",
   "service-modal-5-size2": "Пакет услуг:",
   "service-modal-5-duration2": "Дизайн логотипа в двух вариантах",
-  "service-modal-5-services2": "Типографика (подбор шрифта)",
-  "service-modal-5-webDev2": "Дизайн униформы",
-  "service-modal-5-condition2": "Дизайн блокнота",
-  "service-modal-5-completion2": "Дизайн корпоративного пакета",
-  "service-modal-5-indexation2": "Дизайн фирменного бланка",
-  "service-modal-5-seo2": "Разработка фирменного слогана",
-  "service-modal-5-integration2": "Руководство по использованию фирменного стиля",
+  "service-modal-5-services2": "Дизайн визитки",
+  "service-modal-5-webDev2": "Типографика (подбор шрифта)",
+  "service-modal-5-condition2": "Дизайн униформы",
+  "service-modal-5-completion2": "Дизайн блокнота",
+  "service-modal-5-indexation2": "Дизайн корпоративного пакета",
+  "service-modal-5-seo2": "Дизайн фирменного бланка",
+  "service-modal-5-integration2": "Разработка фирменного слогана",
+  "service-modal-5-brendstyle2": "Руководство по использованию фирменного стиля",
 
 
 

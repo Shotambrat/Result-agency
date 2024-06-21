@@ -33,7 +33,9 @@ export default function ServiceModal({
           </span>
         </div>
         <ul className='h-full w-auto ml-[7.3px] m:ml-[10px] lg:p-4 lg:px-8 s:ml-[15px] xs:ml-[20px] custom-scrollbar overflow-y-auto'>
-<li className={liStyle}>{t(`service-card-${modal}-title${defaultNumber}`)}</li>
+        <li className={liStyle}>{t(`service-card-${modal}-title${defaultNumber}`)}</li>
+
+        
 <li className={liStyle}>{t(`service-modal-${modal}-price${defaultNumber}`)}</li>
 {!(name === 'smm' && (defaultNumber == 1 || defaultNumber == 2 || defaultNumber == 3)) && (
   <li className={liStyle}>{t(`service-modal-${modal}-size${defaultNumber}`)}</li>
@@ -148,28 +150,32 @@ export default function ServiceModal({
         }
       </tbody>
     </table>
-  </div>
+    {/* <ul>
+        {(name === 'smm' && (defaultNumber === 1 || defaultNumber === 2)) && (
+          <li className={liStyle}>{t(`service-modal-${modal}-first${defaultNumber}`)}</li>
+        )}
+      </ul> */}
+    </div>
 ) : (
             <div>
               <li className={liStyle}>{t(`service-modal-${modal}-completion${defaultNumber}`)}</li>
+
               {!(name == 'brand' && defaultNumber == 1) && (
                 <>
                   <li className={liStyle}>{t(`service-modal-${modal}-seo${defaultNumber}`)}</li>
                   <li className={liStyle}>{t(`service-modal-${modal}-integration${defaultNumber}`)}</li>
                 </>
               )}
+
+
+
               {(name !== 'ads' || defaultNumber !== 2 ) && (
                 <>
                   <li className={liStyle}>{t(`service-modal-${modal}-indexation${defaultNumber}`)}</li>
-                  {!(name == 'brand' && defaultNumber == 1) && (
-                  <li className={liStyle}>{t(`service-modal-${modal}-seo${defaultNumber}`)}</li>
-                  )}
                 </>
               )}
-              {!(name == 'brand' && defaultNumber == 1) && (
-               
-              <li className={liStyle}>{t(`service-modal-${modal}-integration${defaultNumber}`)}</li>
-              )}
+
+
               {(name === 'seo' && defaultNumber == 2) && (
                 <li className={liStyle}>{t(`service-modal-${modal}-actual${defaultNumber}`)}</li>
               )}
@@ -179,12 +185,21 @@ export default function ServiceModal({
                   <li className={liStyle}>{t(`service-modal-${modal}-domen${defaultNumber}`)}</li>
                 </>
               )}
-              {(name === 'bot' && defaultNumber === 1) && (
+              {(name === 'bot' && defaultNumber === 2 || name === 'seo' && defaultNumber === 2 || name === 'sites' && defaultNumber === 2 || name === 'bot' && defaultNumber === 1 ) && (
                 <>
                   <li className={liStyle}>{t(`service-modal-${modal}-hosting${defaultNumber}`)}</li>
                   <li className={liStyle}>{t(`service-modal-${modal}-domen${defaultNumber}`)}</li>
                   <li className={liStyle}>{t(`service-modal-${modal}-expCode${defaultNumber}`)}</li>
                 </>
+              )}
+              {(name === 'sites' && defaultNumber === 1 ) && (
+                <>
+                  <li className={liStyle}>{t(`service-modal-${modal}-domen${defaultNumber}`)}</li>
+                  <li className={liStyle}>{t(`service-modal-${modal}-expCode${defaultNumber}`)}</li>
+                </>
+              )}
+              {(name === 'seo' && defaultNumber === 1) && (
+                <li className={liStyle}>{t(`service-modal-${modal}-hosting${defaultNumber}`)}</li>
               )}
               {(name === 'bot' && defaultNumber === 2) && (
                 <>
@@ -198,11 +213,22 @@ export default function ServiceModal({
                   <li className={liStyle}>{t(`service-modal-${modal}-botexp${defaultNumber}`)}</li>
                 </>
               )}
+              {(name === 'brand' && defaultNumber === 2) && (
+                <li className={liStyle}>{t(`service-modal-${modal}-brendstyle${defaultNumber}`)}</li>
+              )}
             </div>
           )}
+          <ul>
+        {(name === 'smm' && (defaultNumber === 1 || defaultNumber === 2)) && (
+          <>
+          <li className={liStyle}>{t(`service-modal-${modal}-first${defaultNumber}`)}</li>
+          </>
+        )}
+      </ul>
           {name !== 'ads' && !(name === 'sites' && defaultNumber === 5) && name !== 'seo' && defaultNumber !== 1 && name !== 'brand' && defaultNumber !== 2 && (
             <li className={liStyle}>{t(`service-modal-${modal}-expCode${defaultNumber}`)}</li>
           )}
+
         </ul>
       </div>
     </div>
