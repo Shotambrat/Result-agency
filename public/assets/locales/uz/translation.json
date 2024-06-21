@@ -1,4 +1,13 @@
 {
+  "cover-form-service": "Выберите услугу",
+  "cover-form-site": "Разработка сайтов",
+  "cover-form-ads": "Запуск рекламы",
+  "cover-form-brending": "Брендинг",
+  "cover-form-tgbot": "Telegram-боты",
+  "cover-form-others": "Другое",
+
+
+
   "header-aboutUs": "Biz haqimizda",
   "header-services": "Xizmatlar",
   "header-cases": "Bizning ishlarimiz",

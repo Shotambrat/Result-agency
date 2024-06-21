@@ -1,48 +1,68 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
-// import axios from 'axios';
+import axios from 'axios';
 import toast, { Toaster } from 'react-hot-toast';
 
 const Application = ({ isOpen, onClose }) => {
   const { t } = useTranslation();
-  const notify = () => toast.success(t('zayavca-success'));
 
+  const notify = () => toast.success(t('zayavca-success'));
   const [inputValue, setInputValue] = useState("");
+  const [selectedOption, setSelectedOption] = useState("");
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
-  const [isFocused, setIsFocused] = useState(false);
-  const [selectedOption, setSelectedOption] = useState("");
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const handleDropdownClick = () => {
-    setIsDropdownOpen(!isDropdownOpen);
-  };
 
   const formatValue = (value) => {
     if (!value) return "";
+
     let formattedValue = "+998(";
+
     for (let i = 0; i < Math.min(9, value.length); i++) {
       if (i === 2) formattedValue += ")";
       if (i === 5 || i === 7) formattedValue += "-";
       formattedValue += value[i];
     }
+
     return formattedValue;
   };
 
   const handleChangePhone = (event) => {
     let { value } = event.target;
     let numbersOnly = value.replace(/[^\d]/g, "");
+
     if (numbersOnly.startsWith("998")) {
       numbersOnly = numbersOnly.substring(3);
     }
+
     setPhone(numbersOnly);
   };
 
-  const handleFocus = () => setIsFocused(true);
-  const handleBlur = () => setIsFocused(false);
-  const displayValue = isFocused || phone ? formatValue(phone) : "";
+  const getFormattedPhone = () => {
+    return formatValue(phone);
+  };
 
   const handleSubmit = async (e) => {
-    notify();
+    e.preventDefault();
+
+    const formData = new FormData();
+    formData.append("name", inputValue);
+    formData.append("selectedOption", selectedOption);
+    formData.append("phone", phone);
+    formData.append("message", message);
+
+    try {
+      const response = await axios.post("../../ajax.php", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+      const result = await response.text();
+      console.log("Form submitted:", result);
+      notify(); // Уведомление об успешной отправке
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      notify(); // Уведомление об ошибке
+    }
   };
 
   if (!isOpen) return null;
@@ -79,7 +99,7 @@ const Application = ({ isOpen, onClose }) => {
               value={selectedOption}
               onChange={(e) => setSelectedOption(e.target.value)}
               style={{ fontSize: "18px" }}
-              className="bg-transparent border-b-2 border-white text-white placeholder-white focus:border-green-500 focus:outline-none focus:border-b-[3px] pb-2 custom-select "
+              className="bg-transparent border-b-2 border-white text-white placeholder-white focus:border-green-500 focus:outline-none focus:border-b-[3px] pb-2 custom-select"
             >
               <option value="usluga" disabled>{t("cover-form-service")}</option>
               <option value="SMM">SMM</option>
@@ -95,10 +115,8 @@ const Application = ({ isOpen, onClose }) => {
               name="phone"
               placeholder={t("cover-form-phone")}
               required
-              value={displayValue}
+              value={getFormattedPhone()}
               onChange={handleChangePhone}
-              onFocus={handleFocus}
-              onBlur={handleBlur}
               style={{ fontSize: "18px" }}
               className="bg-transparent border-b-2 border-white text-white placeholder-white focus:border-green-500 focus:outline-none focus:border-b-[3px] pb-2"
             />

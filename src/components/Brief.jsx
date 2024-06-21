@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
+import axios from 'axios';
 import toast, { Toaster } from 'react-hot-toast';
 import MapFooter from "./MapFooter";
 
@@ -11,17 +12,19 @@ const Brief = () => {
   const [phone, setPhone] = useState("");
   const [time, setTime] = useState("");
   const [result, setResult] = useState("");
-  const [isFocused, setIsFocused] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const formatValue = (value) => {
     if (!value) return "";
 
     let formattedValue = "+998(";
+
     for (let i = 0; i < Math.min(9, value.length); i++) {
       if (i === 2) formattedValue += ")";
       if (i === 5 || i === 7) formattedValue += "-";
       formattedValue += value[i];
     }
+
     return formattedValue;
   };
 
@@ -36,29 +39,34 @@ const Brief = () => {
     setPhone(numbersOnly);
   };
 
-  const handleFocus = () => setIsFocused(true);
-  const handleBlur = () => setIsFocused(false);
-  const displayValue = isFocused || phone ? formatValue(phone) : "";
-
-  const handleInvalid = (e) => {
-    e.target.setCustomValidity('');
-    if (!e.target.validity.valid) {
-      e.target.setCustomValidity(t("form-error-message"));
-    }
+  const getFormattedPhone = () => {
+    return formatValue(phone);
   };
 
-  const handleInput = (e) => {
-    e.target.setCustomValidity('');
-  };
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const form = e.target;
-    if (form.checkValidity()) {
-      // Implement form submission logic here
-      notify();
-    } else {
-      form.reportValidity(); // This will trigger the custom validation messages
+    
+    if (isSubmitting) return; // Предотвращение повторной отправки
+    
+
+    const formData = new FormData();
+    formData.append("name", inputValue);
+    formData.append("phone", phone);
+    formData.append("time", time);
+    formData.append("result", result);
+
+    try {
+      const response = await axios.post("../../ajax.php", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+      const result = await response.text();
+      console.log("Form submitted:", result);
+      notify(); // Уведомление об успешной отправке
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      notify(); // Уведомление об ошибке
     }
   };
 
@@ -96,8 +104,6 @@ const Brief = () => {
                   placeholder={t("brief-form-name")}
                   required
                   value={inputValue}
-                  onInvalid={handleInvalid}
-                  onInput={handleInput}
                   onChange={(e) => setInputValue(e.target.value)}
                   className="text-[15px] 2xl:text-[20px] bg-transparent border-b-4 border-white text-white placeholder-white focus:border-green-500 focus:outline-none focus:border-b-[3px] pb-2"
                   style={{ pointerEvents: 'auto' }}
@@ -107,12 +113,8 @@ const Brief = () => {
                   name="phone"
                   placeholder={t("brief-form-phone")}
                   required
-                  value={displayValue}
+                  value={getFormattedPhone()}
                   onChange={handleChangePhone}
-                  onFocus={handleFocus}
-                  onBlur={handleBlur}
-                  onInvalid={handleInvalid}
-                  onInput={handleInput}
                   className="text-[15px] 2xl:text-[20px] bg-transparent border-b-4 border-white text-white placeholder-white focus:border-green-500 focus:outline-none focus:border-b-[3px] pb-2"
                   style={{ pointerEvents: 'auto' }}
                 />
@@ -123,8 +125,6 @@ const Brief = () => {
                   required
                   value={time}
                   onChange={(e) => setTime(e.target.value)}
-                  onInvalid={handleInvalid}
-                  onInput={handleInput}
                   className="text-[15px] 2xl:text-[20px] bg-transparent border-b-4 border-white text-white placeholder-white focus:border-green-500 focus:outline-none focus:border-b-[3px] pb-2"
                   style={{ pointerEvents: 'auto' }}
                 />
@@ -134,13 +134,10 @@ const Brief = () => {
                   required
                   value={result}
                   onChange={(e) => setResult(e.target.value)}
-                  onInvalid={handleInvalid}
-                  onInput={handleInput}
                   className="text-[15px] 2xl:text-[20px] bg-transparent border-b-4 border-white text-white placeholder-white focus:border-green-500 focus:outline-none focus:border-b-[3px]"
                   style={{ pointerEvents: 'auto' }}
                 />
                 <button
-                onClick={handleSubmit}
                   type="submit"
                   className="mt-4 sm:mr-auto sm:ml-2 sm:px-16 bg-gray-300 bg-opacity-30 border-2 text-white py-2 rounded-full hover:bg-gray-200 hover:text-uslugi-text transition-colors"
                   style={{ pointerEvents: 'auto' }}
@@ -160,4 +157,3 @@ const Brief = () => {
 };
 
 export default Brief;
-

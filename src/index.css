@@ -152,3 +152,25 @@ code {
   background-color: gray;/* раскрывающейся формы */
   border: 30px;
 }
+
+
+/* scrollbar for modal */
+.custom-modal-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  border: 30px;
+}
+
+.custom-modal-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.custom-modal-scrollbar::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* For Firefox */
+.custom-modal-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #ffffff #b8b8b8;
+}
