@@ -135,12 +135,12 @@ code {
 
 /* Service-price-modaldagi scroll rangi */
 .service-price-modal::-webkit-scrollbar-thumb {
-  background: red;
+  background: gray;
 }
 
 /* Service-price-modaldagi scroll hover rangi */
 .service-price-modal::-webkit-scrollbar-thumb:hover {
-  background: green;
+  background: gray;
 }
 
 .custom-select {
