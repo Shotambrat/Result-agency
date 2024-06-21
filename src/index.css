@@ -111,7 +111,7 @@ code {
 ::-webkit-scrollbar {
   width: 18px; /* Width of the scrollbar */
 }
-
+/* 
 .custom-scrollbar::-webkit-scrollbar-track {
   background: #f1f1f1;
   border-radius: 10px;
@@ -127,7 +127,7 @@ code {
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(123, 114, 235);
 
-}
+} */
 
 /* Service-price-modal scrollbar */
 .service-price-modal::-webkit-scrollbar {

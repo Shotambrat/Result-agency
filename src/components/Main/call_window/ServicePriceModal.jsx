@@ -21,7 +21,7 @@ export default function ServiceModal({
   
   return (
     <div onClick={handleClickOutside} className="fixed inset-0 flex items-center justify-center z-[21] backdrop-blur-md shadow-md">
-      <div ref={modalRef} className='max-h-[90vh] overflow-y-auto custom-scrollbar p-4 w-11/12 rounded-[11px] m:p-6 xs:px-7 xs:py-7 sm:px-9 2xl:p-10 2xl:w-3/4 lg:rounded-[41px] bg-gradient-to-b from-[#746FAE] to-[#8A66F0] flex items-start justify-center flex-col sm:overflow-y-auto lg:px-9 lg:py-9 price-list'>
+      <div ref={modalRef} className='max-h-[90vh] lg:overflow-y-auto custom-scrollbar p-4 w-11/12 rounded-[11px] m:p-6 xs:px-7 xs:py-7 sm:px-9 2xl:p-10 2xl:w-3/4 lg:rounded-[41px] bg-gradient-to-b from-[#746FAE] to-[#8A66F0] flex items-start justify-center flex-col sm:overflow-y-auto lg:px-9 lg:py-9 price-list'>
         <div className='w-full mb-[10px] flex justify-between align-baseline flex-row-reverse'>
           <button className='block bg-transparent border-none close-button ml-0' onClick={close}>
             <svg className='mb-[3px] w-[18px] h-[20px] l:mb-[0px] xs:w-[23px] xs:h-[25px] lg:w-[30px] lg:h-[34px] xl:w-[29px] xl:h-[31px] svg-img-close' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31 35" fill="none">
@@ -32,7 +32,7 @@ export default function ServiceModal({
             {t(`service-card-title-${name}-${defaultNumber}`)}
           </span>
         </div>
-        <ul className='list-disc service-price-modal h-full w-auto ml-[7.3px] m:ml-[10px] lg:p-4 lg:px-8 s:ml-[15px] xs:ml-[20px] custom-scrollbar overflow-y-auto'>
+        <ul className='list-disc lg:service-price-modal h-full w-auto ml-[7.3px] m:ml-[10px] lg:p-4 lg:px-8 s:ml-[15px] xs:ml-[20px] lg:custom-scrollbar overflow-y-auto'>
         <li className={liStyle}>{t(`service-card-${modal}-title${defaultNumber}`)}</li>
         <li className={liStyle}>{t(`service-modal-${modal}-price${defaultNumber}`)}</li>
             {!(name === 'smm' && (defaultNumber == 1 || defaultNumber == 2 || defaultNumber == 3)) && (
