@@ -129,35 +129,32 @@ code {
 
 }
 
+/* Service-price-modal scrollbar */
+.service-price-modal::-webkit-scrollbar {
+  width: 12px; 
+  height: 5px; 
+}
+
 .service-price-modal::-webkit-scrollbar-track {
   border-radius: 5rem;
+  background: #f1f1f1;
 }
 
-/* Service-price-modaldagi scroll rangi */
 .service-price-modal::-webkit-scrollbar-thumb {
-  background: gray;
+  background: rgb(189, 186, 186);
 }
 
-/* Service-price-modaldagi scroll hover rangi */
 .service-price-modal::-webkit-scrollbar-thumb:hover {
   background: gray;
 }
 
+/* Custom select styles */
 .custom-select {
-  background-color: transparent; 
+  background-color: transparent;
 }
 
-/* до раскрытия */
 .custom-select option {
-  background-color: gray;/* раскрывающейся формы */
-  border: 30px;
-}
-
-
-/* scrollbar for modal */
-.custom-modal-scrollbar::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  background-color: gray;
   border: 30px;
 }
 
@@ -172,5 +169,5 @@ code {
 /* For Firefox */
 .custom-modal-scrollbar {
   scrollbar-width: thin;
-  scrollbar-color: #ffffff #b8b8b8;
+  scrollbar-color: #888 #f1f1f1;
 }
