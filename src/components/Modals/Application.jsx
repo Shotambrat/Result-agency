@@ -1,76 +1,47 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
-import axios from 'axios';
 import toast, { Toaster } from 'react-hot-toast';
 
 const Application = ({ isOpen, onClose }) => {
   const { t } = useTranslation();
+  const notify = () => toast.success(t('zayavca-success'));
 
-
-  const notify = () => toast.success(t('zayavca-success'))
   const [inputValue, setInputValue] = useState("");
-  const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
   const [isFocused, setIsFocused] = useState(false);
+  const [selectedOption, setSelectedOption] = useState("");
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const handleDropdownClick = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
 
   const formatValue = (value) => {
     if (!value) return "";
-
     let formattedValue = "+998(";
-
-    // Добавляем цифры согласно шаблону
     for (let i = 0; i < Math.min(9, value.length); i++) {
       if (i === 2) formattedValue += ")";
       if (i === 5 || i === 7) formattedValue += "-";
       formattedValue += value[i];
     }
-
     return formattedValue;
   };
-
 
   const handleChangePhone = (event) => {
     let { value } = event.target;
     let numbersOnly = value.replace(/[^\d]/g, "");
-
     if (numbersOnly.startsWith("998")) {
       numbersOnly = numbersOnly.substring(3);
     }
-
     setPhone(numbersOnly);
   };
 
   const handleFocus = () => setIsFocused(true);
-
   const handleBlur = () => setIsFocused(false);
-
   const displayValue = isFocused || phone ? formatValue(phone) : "";
 
   const handleSubmit = async (e) => {
     notify();
-    // e.preventDefault();
-
-    // const formData = new FormData();
-    // formData.append("name", inputValue);
-    // formData.append("email", email);
-    // formData.append("phone", phone);
-    // formData.append("message", message);
-
-    // try {
-    //   const response = await axios.post("../../ajax.php", formData, {
-    //     headers: {
-    //       "Content-Type": "multipart/form-data",
-    //     },
-    //   });
-    //   console.log("clicked")
-    //   const result = await response.text();
-    //   console.log("Form submitted:", result);
-    //   return notify();
-    // } catch (error) {
-    //   console.error("Error submitting form:", error);
-    //   return notify();
-    // }
   };
 
   if (!isOpen) return null;
@@ -101,16 +72,23 @@ const Application = ({ isOpen, onClose }) => {
               style={{ fontSize: "18px" }}
               className="bg-transparent border-b-2 border-white text-white placeholder-white focus:border-green-500 focus:outline-none focus:border-b-[3px] pb-2"
             />
-            <input
-              type="email"
-              name="email"
-              placeholder={t("cover-form-email")}
+            <select
+              name="service"
               required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              value={selectedOption}
+              onChange={(e) => setSelectedOption(e.target.value)}
               style={{ fontSize: "18px" }}
-              className="bg-transparent border-b-2 border-white text-white placeholder-white focus:border-green-500 focus:outline-none focus:border-b-[3px] pb-2"
-            />
+              className="bg-transparent border-b-2 border-white text-white placeholder-white focus:border-green-500 focus:outline-none focus:border-b-[3px] pb-2 custom-select "
+            >
+              <option value="usluga" disabled>{t("cover-form-service")}</option>
+              <option value="SMM">SMM</option>
+              <option value="Разработка сайтов">{t("cover-form-site")}</option>
+              <option value="Запуск рекламы">{t("cover-form-ads")}</option>
+              <option value="SEO">SEO</option>
+              <option value="Брендинг">{t("cover-form-brending")}</option>
+              <option value="Telegram-бот">{t("cover-form-tgbot")}</option>
+              <option value="другое">{t("cover-form-others")}</option>
+            </select>
             <input
               type="text"
               name="phone"
