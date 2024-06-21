@@ -40,7 +40,7 @@ code {
   content: "";
   grid-area: 1 / 1 / 2 / 2;
   background: inherit;
-  filter: blur(10px); /* Adjust the blur amount as needed */
+  filter: blur(10px); 
 }
 
 .container-with-blur > *:not(:first-child) {
@@ -120,8 +120,8 @@ code {
 
 ::-webkit-scrollbar-thumb {
   background: rgba(123, 114, 235, 0.8);
-  border-radius: 5rem; /* Roundness of the scrollbar thumb */
-  border: 3px solid #f1f1f1; /* Padding around thumb */
+  border-radius: 5rem; 
+  border: 3px solid #f1f1f1; 
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -141,5 +141,14 @@ code {
 /* Service-price-modaldagi scroll hover rangi */
 .service-price-modal::-webkit-scrollbar-thumb:hover {
   background: green;
+}
 
+.custom-select {
+  background-color: transparent; 
+}
+
+/* до раскрытия */
+.custom-select option {
+  background-color: gray;/* раскрывающейся формы */
+  border: 30px;
 }

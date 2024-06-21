@@ -57,6 +57,7 @@ export default function ServiceModal({
           <li className={liStyle}>
             {t(`service-card-${modal}-title${defaultNumber}`)}
           </li>
+
           <li className={liStyle}>
             {t(`service-modal-${modal}-price${defaultNumber}`)}
           </li>
@@ -75,12 +76,14 @@ export default function ServiceModal({
           )}
           {name === "smm" ? (
             <ul>
-              <p className={liStyle}>{t(`service-advantages`)}</p>
+              <p className={liStyle}>Преимущества:</p>
               <li className={liStyle}>
                 {t(`service-modal-smm-preimushestva-${defaultNumber}`)}
               </li>
               {defaultNumber == 1 && (
-                <li className={liStyle}>{t(`service-client-self`)}</li>
+                <li className={liStyle}>
+                  в дальнейшем клиент сможет вести блог самостоятельно
+                </li>
               )}
               {defaultNumber != 1 &&
                 defaultNumber != 2 &&
@@ -97,7 +100,7 @@ export default function ServiceModal({
               <li></li>
             </ul>
           ) : ["sites", "ads", "seo", "bot", "brand"].includes(name) ? (
-            <ul>
+            <ul >
               <li className={liStyle}>
                 {t(`service-modal-${modal}-services${defaultNumber}`)}
               </li>
@@ -147,9 +150,7 @@ export default function ServiceModal({
                 </thead>
                 <tbody>
                   <tr className="bg-keys_item-bg text-white">
-                    <td className="border px-4 py-2">
-                      {t("smm-content-plan")}
-                    </td>
+                    <td className="border px-4 py-2">Контент-план</td>
                     <td className="border px-4 py-2">
                       {t(`service-modal-smm-content-${defaultNumber}-1`)}
                     </td>
@@ -161,9 +162,7 @@ export default function ServiceModal({
                     </td>
                   </tr>
                   <tr className="bg-keys_item-bg text-white">
-                    <td className="border px-4 py-2">
-                      {t("smm-publications")}
-                    </td>
+                    <td className="border px-4 py-2">Публикации</td>
                     <td className="border px-4 py-2">
                       {t(`service-modal-smm-content-${defaultNumber}-4`)}
                     </td>
@@ -175,7 +174,7 @@ export default function ServiceModal({
                     </td>
                   </tr>
                   <tr className="bg-keys_item-bg text-white">
-                    <td className="border px-4 py-2">{t("smm-stories")}</td>
+                    <td className="border px-4 py-2">Истории</td>
                     <td className="border px-4 py-2">
                       {t(`service-modal-smm-content-${defaultNumber}-7`)}
                     </td>
@@ -187,7 +186,7 @@ export default function ServiceModal({
                     </td>
                   </tr>
                   <tr className="bg-keys_item-bg text-white">
-                    <td className="border px-4 py-2">{t("smm-icons")}</td>
+                    <td className="border px-4 py-2">Иконки</td>
                     <td className="border px-4 py-2">
                       {t(`service-modal-smm-content-${defaultNumber}-10`)}
                     </td>
@@ -199,9 +198,7 @@ export default function ServiceModal({
                     </td>
                   </tr>
                   <tr className="bg-keys_item-bg text-white">
-                    <td className="border px-4 py-2">
-                      {t("smm-filling-update")}
-                    </td>
+                    <td className="border px-4 py-2">Наполнение актуального</td>
                     <td className="border px-4 py-2">
                       {t(`service-modal-smm-content-${defaultNumber}-13`)}
                     </td>
@@ -213,7 +210,7 @@ export default function ServiceModal({
                     </td>
                   </tr>
                   <tr className="bg-keys_item-bg text-white">
-                    <td className="border px-4 py-2">{t("smm-start-add")}</td>
+                    <td className="border px-4 py-2">Запуск рекламы</td>
                     <td className="border px-4 py-2">
                       {t(`service-modal-smm-content-${defaultNumber}-16`)}
                     </td>
@@ -230,7 +227,7 @@ export default function ServiceModal({
                     <>
                       <tr className="bg-keys_item-bg text-white">
                         <td className="border px-4 py-2">
-                          {t(`smm-register-accounts`)}
+                          Оформление аккаунтов
                         </td>
                         <td className="border px-4 py-2">
                           {t(`service-modal-smm-content-${defaultNumber}-19`)}
@@ -243,10 +240,7 @@ export default function ServiceModal({
                         </td>
                       </tr>
                       <tr className="bg-keys_item-bg text-white">
-                        <td className="border px-4 py-2">
-                          {" "}
-                          {t(`smm-photo-video`)}
-                        </td>
+                        <td className="border px-4 py-2">Фото-видеосъемка</td>
                         <td className="border px-4 py-2">
                           {t(`service-modal-smm-content-${defaultNumber}-22`)}
                         </td>
@@ -261,39 +255,37 @@ export default function ServiceModal({
                   )}
                 </tbody>
               </table>
+              {/* <ul>
+        {(name === 'smm' && (defaultNumber === 1 || defaultNumber === 2)) && (
+          <li className={liStyle}>{t(`service-modal-${modal}-first${defaultNumber}`)}</li>
+        )}
+      </ul> */}
             </div>
           ) : (
             <div>
               <li className={liStyle}>
                 {t(`service-modal-${modal}-completion${defaultNumber}`)}
               </li>
+
               {!(name == "brand" && defaultNumber == 1) && (
                 <>
                   <li className={liStyle}>
-                    {t(`service-modal-${modal}-seo${defaultNumber}`)}
+                    {t(`service-modal-${modal}-edit${defaultNumber}`)}
                   </li>
                   <li className={liStyle}>
-                    {t(`service-modal-${modal}-integration${defaultNumber}`)}
+                    {t(`service-modal-${modal}-design${defaultNumber}`)}
                   </li>
                 </>
               )}
+
               {(name !== "ads" || defaultNumber !== 2) && (
                 <>
                   <li className={liStyle}>
                     {t(`service-modal-${modal}-indexation${defaultNumber}`)}
                   </li>
-                  {!(name == "brand" && defaultNumber == 1) && (
-                    <li className={liStyle}>
-                      {t(`service-modal-${modal}-seo${defaultNumber}`)}
-                    </li>
-                  )}
                 </>
               )}
-              {!(name == "brand" && defaultNumber == 1) && (
-                <li className={liStyle}>
-                  {t(`service-modal-${modal}-integration${defaultNumber}`)}
-                </li>
-              )}
+
               {name === "seo" && defaultNumber == 2 && (
                 <li className={liStyle}>
                   {t(`service-modal-${modal}-actual${defaultNumber}`)}
@@ -327,7 +319,10 @@ export default function ServiceModal({
                   </li>
                 </>
               )}
-              {name === "bot" && defaultNumber === 2 && (
+              {((name === "bot" && defaultNumber === 2) ||
+                (name === "seo" && defaultNumber === 2) ||
+                (name === "sites" && defaultNumber === 2) ||
+                (name === "bot" && defaultNumber === 1)) && (
                 <>
                   <li className={liStyle}>
                     {t(`service-modal-${modal}-botspeed${defaultNumber}`)}
@@ -340,15 +335,44 @@ export default function ServiceModal({
                   </li>
                 </>
               )}
-              {name === "bot" && defaultNumber === 3 && (
+              {name === "sites" && defaultNumber === 1 && (
+                <>
+                  <li className={liStyle}>
+                    {t(`service-modal-${modal}-domen${defaultNumber}`)}
+                  </li>
+                  <li className={liStyle}>
+                    {t(`service-modal-${modal}-expCode${defaultNumber}`)}
+                  </li>
+                </>
+              )}
+              {name === "seo" && defaultNumber === 1 && (
+                <li className={liStyle}>
+                  {t(`service-modal-${modal}-hosting${defaultNumber}`)}
+                </li>
+              )}
+              {name === "bot" && defaultNumber === 2 && (
                 <>
                   <li className={liStyle}>
                     {t(`service-modal-${modal}-botexp${defaultNumber}`)}
                   </li>
                 </>
               )}
+              {name === "brand" && defaultNumber === 2 && (
+                <li className={liStyle}>
+                  {t(`service-modal-${modal}-brendstyle${defaultNumber}`)}
+                </li>
+              )}
             </div>
           )}
+          <ul>
+            {name === "smm" && (defaultNumber === 1 || defaultNumber === 2) && (
+              <>
+                <li className={liStyle}>
+                  {t(`service-modal-${modal}-first${defaultNumber}`)}
+                </li>
+              </>
+            )}
+          </ul>
           {name !== "ads" &&
             !(name === "sites" && defaultNumber === 5) &&
             name !== "seo" &&
