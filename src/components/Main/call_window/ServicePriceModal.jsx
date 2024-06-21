@@ -21,7 +21,7 @@ export default function ServiceModal({
   
   return (
     <div onClick={handleClickOutside} className="fixed inset-0 flex items-center justify-center z-[21] backdrop-blur-md shadow-md">
-      <div ref={modalRef} className='max-h-[90vh] overflow-y-auto custom-scrollbar p-4 w-11/12 rounded-[11px] m:p-6 xs:px-7 xs:py-7 sm:px-9 2xl:p-10 2xl:w-3/4 lg:rounded-[41px] bg-gradient-to-b from-[#746FAE] to-[#8A66F0] flex items-start justify-center flex-col sm:overflow-y-auto lg:px-9 lg:py-9 price-list'>
+      <div ref={modalRef} className='max-h-[90vh] overflow-y-auto custom-modal-scrollbar p-4 w-11/12 rounded-[11px] m:p-6 xs:px-7 xs:py-7 sm:px-9 2xl:p-10 2xl:w-3/4 lg:rounded-[41px] bg-gradient-to-b from-[#746FAE] to-[#8A66F0] flex items-start justify-center flex-col sm:overflow-y-auto lg:px-9 lg:py-9 price-list'>
         <div className='w-full mb-[10px] flex justify-between align-baseline flex-row-reverse'>
           <button className='block bg-transparent border-none close-button ml-0' onClick={close}>
             <svg className='mb-[3px] w-[18px] h-[20px] l:mb-[0px] xs:w-[23px] xs:h-[25px] lg:w-[30px] lg:h-[34px] xl:w-[29px] xl:h-[31px] svg-img-close' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31 35" fill="none">
@@ -32,131 +32,124 @@ export default function ServiceModal({
             {t(`service-card-title-${name}-${defaultNumber}`)}
           </span>
         </div>
-        <ul className='h-full w-auto ml-[7.3px] m:ml-[10px] lg:p-4 lg:px-8 s:ml-[15px] xs:ml-[20px] custom-scrollbar overflow-y-auto'>
+        <ul className='h-full w-auto ml-[7.3px] m:ml-[10px] lg:p-4 lg:px-8 s:ml-[15px] xs:ml-[20px] custom-modal-scrollbar overflow-y-auto'>
         <li className={liStyle}>{t(`service-card-${modal}-title${defaultNumber}`)}</li>
+        <li className={liStyle}>{t(`service-modal-${modal}-price${defaultNumber}`)}</li>
+            {!(name === 'smm' && (defaultNumber == 1 || defaultNumber == 2 || defaultNumber == 3)) && (
+              <li className={liStyle}>{t(`service-modal-${modal}-size${defaultNumber}`)}</li>
+            )}
+            {!(name === 'smm' && (defaultNumber == 2 || defaultNumber == 3)) && (
+              <li className={liStyle}>{t(`service-modal-${modal}-duration${defaultNumber}`)}</li>
+            )}
+            {
+              name === 'smm' ? (
+                <ul>
+                  <p className={liStyle}>Преимущества:</p>
+                  <li className={liStyle}>{t(`service-modal-smm-preimushestva-${defaultNumber}`)}</li>
+                  {defaultNumber == 1 && (
+                    <li className={liStyle}>в дальнейшем клиент сможет вести блог самостоятельно</li>
+                  )}
+                  {(defaultNumber != 1 && defaultNumber != 2 && defaultNumber != 3) && (
+                    <>
+                      <li className={liStyle}>{t(`service-modal-${modal}-services${defaultNumber}`)}</li>
+                      <li className={liStyle}>{t(`service-modal-${modal}-webDev${defaultNumber}`)}</li>
+                    </>
+                  )}
+                  <li></li>
+                </ul>
+              ) : (
+                ['sites', 'ads', 'seo', 'bot', 'brand'].includes(name) ? (
+                  <ul>
+                    <li className={liStyle}>{t(`service-modal-${modal}-services${defaultNumber}`)}</li>
+                    <li className={liStyle}>{t(`service-modal-${modal}-webDev${defaultNumber}`)}</li>
+                    {(name === 'sites' && [2, 3, 4, 5].includes(defaultNumber)) && (
+                      <>
+                        <li className={liStyle}>{t(`service-modal-${modal}-edit${defaultNumber}`)}</li>
+                        <li className={liStyle}>{t(`service-modal-${modal}-design${defaultNumber}`)}</li>
+                      </>
+                    )}
+                    {(name === 'sites' && defaultNumber === 3) && (
+                      <li className={liStyle}>{t(`service-modal-${modal}-blog${defaultNumber}`)}</li>
+                    )}
+                    <li></li>
+                  </ul>
+                ) : null
+              )
+            }
+            <li className={liStyle}>{t(`service-modal-${modal}-condition${defaultNumber}`)}</li>
 
-        
-<li className={liStyle}>{t(`service-modal-${modal}-price${defaultNumber}`)}</li>
-{!(name === 'smm' && (defaultNumber == 1 || defaultNumber == 2 || defaultNumber == 3)) && (
-  <li className={liStyle}>{t(`service-modal-${modal}-size${defaultNumber}`)}</li>
-)}
-{!(name === 'smm' && (defaultNumber == 2 || defaultNumber == 3)) && (
-  <li className={liStyle}>{t(`service-modal-${modal}-duration${defaultNumber}`)}</li>
-)}
-{
-  name === 'smm' ? (
-    <ul>
-      <p className={liStyle}>Преимущества:</p>
-      <li className={liStyle}>{t(`service-modal-smm-preimushestva-${defaultNumber}`)}</li>
-      {defaultNumber == 1 && (
-        <li className={liStyle}>в дальнейшем клиент сможет вести блог самостоятельно</li>
-      )}
-      {(defaultNumber != 1 && defaultNumber != 2 && defaultNumber != 3) && (
-        <>
-          <li className={liStyle}>{t(`service-modal-${modal}-services${defaultNumber}`)}</li>
-          <li className={liStyle}>{t(`service-modal-${modal}-webDev${defaultNumber}`)}</li>
-        </>
-      )}
-      <li></li>
-    </ul>
-  ) : (
-    ['sites', 'ads', 'seo', 'bot', 'brand'].includes(name) ? (
-      <ul>
-        <li className={liStyle}>{t(`service-modal-${modal}-services${defaultNumber}`)}</li>
-        <li className={liStyle}>{t(`service-modal-${modal}-webDev${defaultNumber}`)}</li>
-        {(name === 'sites' && [2, 3, 4, 5].includes(defaultNumber)) && (
-          <>
-            <li className={liStyle}>{t(`service-modal-${modal}-edit${defaultNumber}`)}</li>
-            <li className={liStyle}>{t(`service-modal-${modal}-design${defaultNumber}`)}</li>
-          </>
-        )}
-        {(name === 'sites' && defaultNumber === 3) && (
-          <li className={liStyle}>{t(`service-modal-${modal}-blog${defaultNumber}`)}</li>
-        )}
-        <li></li>
-      </ul>
-    ) : null
-  )
-}
-<li className={liStyle}>{t(`service-modal-${modal}-condition${defaultNumber}`)}</li>
-
-{name === 'smm' ? (
-  <div className="h-auto overflow-x-scroll custom-scrollbar w-[260px] lg:w-full lg:overflow-x-auto l:w-[300px] s:w-[350px] xxs:w-[430px] sm:w-[490px] md:w-[620px]">
-    <table className="table-auto border-collapse w-full max-w-2xl">
-      <thead>
-        <tr className="bg-keys_item-bg text-white">
-          <th className="px-4 py-2">{t(`service-modal-smm-title-1`)}</th>
-          <th className="px-4 py-2">{t(`service-modal-smm-title-2`)}</th>
-          <th className="px-4 py-2">{t(`service-modal-smm-title-3`)}</th>
-          <th className="px-4 py-2">{t(`service-modal-smm-title-4`)}</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr className="bg-keys_item-bg text-white">
-          <td className="border px-4 py-2">Контент-план</td>
-          <td className="border px-4 py-2">{t(`service-modal-smm-content-${defaultNumber}-1`)}</td>
-          <td className="border px-4 py-2">{t(`service-modal-smm-content-${defaultNumber}-2`)}</td>
-          <td className="border px-4 py-2">{t(`service-modal-smm-content-${defaultNumber}-3`)}</td>
-        </tr>
-        <tr className="bg-keys_item-bg text-white">
-          <td className="border px-4 py-2">Публикации</td>
-          <td className="border px-4 py-2">{t(`service-modal-smm-content-${defaultNumber}-4`)}</td>
-          <td className="border px-4 py-2">{t(`service-modal-smm-content-${defaultNumber}-5`)}</td>
-          <td className="border px-4 py-2">{t(`service-modal-smm-content-${defaultNumber}-6`)}</td>
-        </tr>
-        <tr className="bg-keys_item-bg text-white">
-          <td className="border px-4 py-2">Истории</td>
-          <td className="border px-4 py-2">{t(`service-modal-smm-content-${defaultNumber}-7`)}</td>
-          <td className="border px-4 py-2">{t(`service-modal-smm-content-${defaultNumber}-8`)}</td>
-          <td className="border px-4 py-2">{t(`service-modal-smm-content-${defaultNumber}-9`)}</td>
-        </tr>
-        <tr className="bg-keys_item-bg text-white">
-          <td className="border px-4 py-2">Иконки</td>
-          <td className="border px-4 py-2">{t(`service-modal-smm-content-${defaultNumber}-10`)}</td>
-          <td className="border px-4 py-2">{t(`service-modal-smm-content-${defaultNumber}-11`)}</td>
-          <td className="border px-4 py-2">{t(`service-modal-smm-content-${defaultNumber}-12`)}</td>
-        </tr>
-        <tr className="bg-keys_item-bg text-white">
-          <td className="border px-4 py-2">Наполнение актуального</td>
-          <td className="border px-4 py-2">{t(`service-modal-smm-content-${defaultNumber}-13`)}</td>
-          <td class="border px-4 py-2">{t(`service-modal-smm-content-${defaultNumber}-14`)}</td>
-          <td class="border px-4 py-2">{t(`service-modal-smm-content-${defaultNumber}-15`)}</td>
-        </tr>
-        <tr className="bg-keys_item-bg text-white">
-          <td className="border px-4 py-2">Запуск рекламы</td>
-          <td className="border px-4 py-2">{t(`service-modal-smm-content-${defaultNumber}-16`)}</td>
-          <td className="border px-4 py-2">{t(`service-modal-smm-content-${defaultNumber}-17`)}</td>
-          <td className="border px-4 py-2">{t(`service-modal-smm-content-${defaultNumber}-18`)}</td>
-        </tr>
-        {
-          defaultNumber === 1 ? (
-            <div></div>
-          ) : (
-            <>
-              <tr className="bg-keys_item-bg text-white">
-                <td className="border px-4 py-2">Оформление аккаунтов</td>
-                <td className="border px-4 py-2">{t(`service-modal-smm-content-${defaultNumber}-19`)}</td>
-                <td className="border px-4 py-2">{t(`service-modal-smm-content-${defaultNumber}-20`)}</td>
-                <td className="border px-4 py-2">{t(`service-modal-smm-content-${defaultNumber}-21`)}</td>
-              </tr>
-              <tr className="bg-keys_item-bg text-white">
-                <td className="border px-4 py-2">Фото-видеосъемка</td>
-                <td className="border px-4 py-2">{t(`service-modal-smm-content-${defaultNumber}-22`)}</td>
-                <td className="border px-4 py-2">{t(`service-modal-smm-content-${defaultNumber}-23`)}</td>
-                <td className="border px-4 py-2">{t(`service-modal-smm-content-${defaultNumber}-24`)}</td>
-              </tr>
-            </>
-          )
-        }
-      </tbody>
-    </table>
-    {/* <ul>
-        {(name === 'smm' && (defaultNumber === 1 || defaultNumber === 2)) && (
-          <li className={liStyle}>{t(`service-modal-${modal}-first${defaultNumber}`)}</li>
-        )}
-      </ul> */}
-    </div>
-) : (
+            {name === 'smm' ? (
+              <div className="h-auto overflow-x-scroll custom-modal-scrollbar w-[260px] lg:w-full lg:overflow-x-auto l:w-[300px] s:w-[350px] xxs:w-[430px] sm:w-[490px] md:w-[620px]">
+                <table className="table-auto border-collapse w-full max-w-2xl">
+                  <thead>
+                    <tr className="bg-keys_item-bg text-white">
+                      <th className="px-4 py-2">{t(`service-modal-smm-title-1`)}</th>
+                      <th className="px-4 py-2">{t(`service-modal-smm-title-2`)}</th>
+                      <th className="px-4 py-2">{t(`service-modal-smm-title-3`)}</th>
+                      <th className="px-4 py-2">{t(`service-modal-smm-title-4`)}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="bg-keys_item-bg text-white">
+                      <td className="border px-4 py-2">Контент-план</td>
+                      <td className="border px-4 py-2">{t(`service-modal-smm-content-${defaultNumber}-1`)}</td>
+                      <td className="border px-4 py-2">{t(`service-modal-smm-content-${defaultNumber}-2`)}</td>
+                      <td className="border px-4 py-2">{t(`service-modal-smm-content-${defaultNumber}-3`)}</td>
+                    </tr>
+                    <tr className="bg-keys_item-bg text-white">
+                      <td className="border px-4 py-2">Публикации</td>
+                      <td className="border px-4 py-2">{t(`service-modal-smm-content-${defaultNumber}-4`)}</td>
+                      <td className="border px-4 py-2">{t(`service-modal-smm-content-${defaultNumber}-5`)}</td>
+                      <td className="border px-4 py-2">{t(`service-modal-smm-content-${defaultNumber}-6`)}</td>
+                    </tr>
+                    <tr className="bg-keys_item-bg text-white">
+                      <td className="border px-4 py-2">Истории</td>
+                      <td className="border px-4 py-2">{t(`service-modal-smm-content-${defaultNumber}-7`)}</td>
+                      <td className="border px-4 py-2">{t(`service-modal-smm-content-${defaultNumber}-8`)}</td>
+                      <td className="border px-4 py-2">{t(`service-modal-smm-content-${defaultNumber}-9`)}</td>
+                    </tr>
+                    <tr className="bg-keys_item-bg text-white">
+                      <td className="border px-4 py-2">Иконки</td>
+                      <td className="border px-4 py-2">{t(`service-modal-smm-content-${defaultNumber}-10`)}</td>
+                      <td className="border px-4 py-2">{t(`service-modal-smm-content-${defaultNumber}-11`)}</td>
+                      <td className="border px-4 py-2">{t(`service-modal-smm-content-${defaultNumber}-12`)}</td>
+                    </tr>
+                    <tr className="bg-keys_item-bg text-white">
+                      <td className="border px-4 py-2">Наполнение актуального</td>
+                      <td className="border px-4 py-2">{t(`service-modal-smm-content-${defaultNumber}-13`)}</td>
+                      <td class="border px-4 py-2">{t(`service-modal-smm-content-${defaultNumber}-14`)}</td>
+                      <td class="border px-4 py-2">{t(`service-modal-smm-content-${defaultNumber}-15`)}</td>
+                    </tr>
+                    <tr className="bg-keys_item-bg text-white">
+                      <td className="border px-4 py-2">Запуск рекламы</td>
+                      <td className="border px-4 py-2">{t(`service-modal-smm-content-${defaultNumber}-16`)}</td>
+                      <td className="border px-4 py-2">{t(`service-modal-smm-content-${defaultNumber}-17`)}</td>
+                      <td className="border px-4 py-2">{t(`service-modal-smm-content-${defaultNumber}-18`)}</td>
+                    </tr>
+                    {
+                      defaultNumber === 1 ? (
+                        <div></div>
+                      ) : (
+                        <>
+                          <tr className="bg-keys_item-bg text-white">
+                            <td className="border px-4 py-2">Оформление аккаунтов</td>
+                            <td className="border px-4 py-2">{t(`service-modal-smm-content-${defaultNumber}-19`)}</td>
+                            <td className="border px-4 py-2">{t(`service-modal-smm-content-${defaultNumber}-20`)}</td>
+                            <td className="border px-4 py-2">{t(`service-modal-smm-content-${defaultNumber}-21`)}</td>
+                          </tr>
+                          <tr className="bg-keys_item-bg text-white">
+                            <td className="border px-4 py-2">Фото-видеосъемка</td>
+                            <td className="border px-4 py-2">{t(`service-modal-smm-content-${defaultNumber}-22`)}</td>
+                            <td className="border px-4 py-2">{t(`service-modal-smm-content-${defaultNumber}-23`)}</td>
+                            <td className="border px-4 py-2">{t(`service-modal-smm-content-${defaultNumber}-24`)}</td>
+                          </tr>
+                        </>
+                      )
+                    }
+                  </tbody>
+                </table>
+                </div>
+            ) : (
             <div>
               <li className={liStyle}>{t(`service-modal-${modal}-completion${defaultNumber}`)}</li>
 
