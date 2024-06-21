@@ -28,7 +28,8 @@ export default function NavMenu({ isNavOpen, handleClose }) {
             location.pathname === "/blog/1" ||
             location.pathname === "/blog/2" ||
             location.pathname === "/blog/3") && (
-            <NavLink to="/" smooth={true} duration={500}>
+            <NavLink to="/" smooth={true} duration={500}
+            onClick={handleClose}>
               {t("header-aboutUs")}
             </NavLink>
           )}
