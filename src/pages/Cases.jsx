@@ -4,7 +4,7 @@ import logoresbig from "../../src/assets/img/logoresbig.png";
 import logo_big_upside_down from "../../src/assets/img/logo_big_upside_down.png";
 import SwiperCases from "../components/Cases/OurCasesSlider";
 import ToTopButton from "../components/Blog/ToTopButton";
-import ButtonPodrobnee from "../components/Cases/ButtonPodrobnee";
+// import ButtonPodrobnee from "../components/Cases/ButtonPodrobnee";
 import BackButton from "../components/Blog/BackButton";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -135,6 +135,7 @@ const Cases = () => {
         }
       );
     }
+    // eslint-disable-next-line
   }, [zaprosInView]);
 
   useEffect(() => {
@@ -242,9 +243,9 @@ const Cases = () => {
         </div>
 
         <div className="mb-[51px] mt-[21px] flex justify-end ">
-          <div>
+          {/* <div>
             <ButtonPodrobnee />
-          </div>
+          </div> */}
         </div>
 
         <div className="flex flex-col gradient-item-cases rounded-[30px] border-item-cases p-8 shadow-md items-center mx-auto min-h-[343px] sm:w-4/5 sm:flex-row sm:justify-between sm:items-center sm:min-h-[250px] lg:flex lg:w-full lg:justify-between lg:min-h-[250px] 2xl:max-w-[1185px]">
@@ -319,7 +320,11 @@ const Cases = () => {
                           </span>
                           <p
                             dangerouslySetInnerHTML={{
-                              __html: t(`cases-results-card${index + 1}-subtitle${caseId}`),
+                              __html: t(
+                                `cases-results-card${
+                                  index + 1
+                                }-subtitle${caseId}`
+                              ),
                             }}
                             className="text-[13px] text-white mt-[5px] font-normal l:mt-[15px] sm:text-[15px] 2xl:text-[19px]"
                           >
@@ -328,7 +333,7 @@ const Cases = () => {
                         </div>
                       </div>
                       <div className="my-[21px] flex justify-end">
-                        <ButtonPodrobnee />
+                        {/* <ButtonPodrobnee /> */}
                       </div>
                     </>
                   );

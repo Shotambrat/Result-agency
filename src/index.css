@@ -108,8 +108,8 @@ code {
   display: none;
 }
 
-.custom-scrollbar::-webkit-scrollbar {
-  width: 8px;
+::-webkit-scrollbar {
+  width: 18px; /* Width of the scrollbar */
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
@@ -118,18 +118,21 @@ code {
 
 }
 
-.custom-scrollbar::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 10px;
+::-webkit-scrollbar-thumb {
+  background: rgba(123, 114, 235, 0.8);
+  border-radius: 5rem; 
+  border: 3px solid #f1f1f1; 
 }
 
-.custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: #555;
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(123, 114, 235);
+
 }
 
 .custom-select {
   background-color: transparent; 
 }
+
 /* до раскрытия */
 .custom-select option {
   background-color: gray;/* раскрывающейся формы */
