@@ -128,9 +128,9 @@ code {
 }
 
 .custom-select {
-  background-color: transparent; /* до раскрытия */
+  background-color: transparent; 
 }
-
+/* до раскрытия */
 .custom-select option {
   background-color: gray;/* раскрывающейся формы */
   border: 30px;
