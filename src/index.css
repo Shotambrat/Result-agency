@@ -129,6 +129,20 @@ code {
 
 }
 
+.service-price-modal::-webkit-scrollbar-track {
+  border-radius: 5rem;
+}
+
+/* Service-price-modaldagi scroll rangi */
+.service-price-modal::-webkit-scrollbar-thumb {
+  background: gray;
+}
+
+/* Service-price-modaldagi scroll hover rangi */
+.service-price-modal::-webkit-scrollbar-thumb:hover {
+  background: gray;
+}
+
 .custom-select {
   background-color: transparent; 
 }
