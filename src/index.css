@@ -107,11 +107,11 @@ code {
 .swiper-button-next:after,.swiper-button-prev:after, .swiper-rtl .swiper-button-prev:after{
   display: none;
 }
-
+/*
 ::-webkit-scrollbar {
-  width: 18px; /* Width of the scrollbar */
+  width: 18px; 
 }
-/* 
+
 .custom-scrollbar::-webkit-scrollbar-track {
   background: #f1f1f1;
   border-radius: 10px;
@@ -128,6 +128,18 @@ code {
   background: rgba(123, 114, 235);
 
 } */
+@media (min-width: 1024px) {
+  ::-webkit-scrollbar-thumb {
+    background: #ffffff;
+    border-radius: 5rem; 
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px; 
+    border-radius: 5rem;
+    background: rgb(216, 214, 214);
+  }
+}
 
 /* Service-price-modal scrollbar */
 .service-price-modal::-webkit-scrollbar {
