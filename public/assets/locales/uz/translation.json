@@ -1,13 +1,4 @@
 {
-  "cover-form-service": "Выберите услугу",
-  "cover-form-site": "Разработка сайтов",
-  "cover-form-ads": "Запуск рекламы",
-  "cover-form-brending": "Брендинг",
-  "cover-form-tgbot": "Telegram-боты",
-  "cover-form-others": "Другое",
-
-
-
   "header-aboutUs": "Biz haqimizda",
   "header-services": "Xizmatlar",
   "header-cases": "Bizning ishlarimiz",
@@ -29,6 +20,12 @@
   "cover-form-phone": "Telefon",
   "cover-form-message": "Xabaringiz",
   "cover-form-button": "Qayta qo'ng'iroq qilishni so'rang",
+  "cover-form-service": "Xizmatni tanlang",
+  "cover-form-site": "Saytlar yaratish",
+  "cover-form-ads": "Reklamani ishga tushirish",
+  "cover-form-brending": "Brending",
+  "cover-form-tgbot": "Telegram-botlar",
+  "cover-form-others": "Boshqalar",
 
   "service-info-title": "Taqdim qilingan natijalar",
   "service-info-cart1-title": "26",
@@ -278,9 +275,9 @@
   "service-modal-1-design5": "Google'da indeksatsiya",
   "service-modal-1-condition5": "3 oylik hosting",
   "service-modal-1-completion5": "1 yillik domen nomi",
-  "service-modal-1-integration5": "Kodni eksport qilish",
-  "service-modal-1-indexation5": "Afzalliklar:",
-  "service-modal-1-seo5": "Buyurtmachining istaklari va afzalliklariga ko‘ra har qanday veb-saytni yaratish imkoniyati",
+  "service-modal-1-seo5": "Kodni eksport qilish",
+  "service-modal-1-integration5": "Afzalliklar:",
+  "service-modal-1-indexation5": "Buyurtmachining istaklari va afzalliklariga ko‘ra har qanday veb-saytni yaratish imkoniyati",
 
   "service-card-2-title1": "Google va Yandex reklama tarmoqlarida reklama tadbirlarini sozlash va ishga tushirish",
   "service-modal-2-price1": "Narxi: 100$ (+50$ har oyda)",
