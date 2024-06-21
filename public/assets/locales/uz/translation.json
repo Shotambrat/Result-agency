@@ -20,6 +20,12 @@
   "cover-form-phone": "Telefon",
   "cover-form-message": "Xabaringiz",
   "cover-form-button": "Qayta qo'ng'iroq qilishni so'rang",
+  "cover-form-service": "Xizmatni tanlang",
+  "cover-form-site": "Saytlar yaratish",
+  "cover-form-ads": "Reklama ishga tushirish",
+  "cover-form-brending": "Brending",
+  "cover-form-tgbot": "Telegram-botlar",
+  "cover-form-others": "Boshqalar",
 
   "service-info-title": "Taqdim qilingan natijalar",
   "service-info-cart1-title": "26",
