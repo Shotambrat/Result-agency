@@ -69,18 +69,18 @@
   "service-card-title-brand-2": "Брендбук standart",
 
   "service-card-0-title1": "Запуск странички в социальных сетях с последующей передачей заказчику",
-  "service-modal-0-price1": "250$",
-  "service-modal-0-duration1": "1 неделя(при быстром получении запрашиваемой информации от клиента)",
+  "service-modal-0-price1": "Цена: 250$",
+  "service-modal-0-duration1": "Срок: 1 неделя(при быстром получении запрашиваемой информации от клиента)",
   "service-modal-0-condition1": "Пакет услуг :",
   "service-modal-0-first1": "после выполнения услуг проект передается заказчику, проводится инструктаж о том как вести его в самостоятельно",
 
   "service-card-0-title2": "Запуск и ведение маркетинга в социальных сетях",
-  "service-modal-0-price2": "600$",
+  "service-modal-0-price2": "Цена: 600$",
   "service-modal-0-condition2": "Пакет услуг:",
   "service-modal-0-first2": "предоставление ежемесячного отчета по рекламным кампаниям",
 
   "service-card-0-title3": "Запуск и ведение маркетинга в социальных сетях",
-  "service-modal-0-price3": "1200$",
+  "service-modal-0-price3": "Цена: 1200$",
   "service-modal-0-condition3": " Пакет услуг:",
   "service-modal-0-expCode3": "предоставление ежемесячного отчета по рекламным кампаниям",
 
@@ -249,8 +249,8 @@
   "service-modal-1-expCode4": "Стильный и понятный дизайн",
 
   "service-card-1-title5": "Разработка любого другого сайта исходя из вашего ТЗ",
-  "service-modal-1-price5": "цена: от 200$",
-  "service-modal-1-size5": "срок: от 2 недель (при быстром получении запрашиваемой информации от клиента)",
+  "service-modal-1-price5": "Цена: от 200$",
+  "service-modal-1-size5": "Срок: от 2 недель (при быстром получении запрашиваемой информации от клиента)",
   "service-modal-1-duration5": "Пакет услуг:",
   "service-modal-1-services5": "Разработка сайта",
   "service-modal-1-webDev5": "Заполнение контентом",
@@ -268,7 +268,7 @@
 
 
   "service-card-2-title1": "Настройка и запуск рекламных кампаний в рекламных сетях Google и Yandex",
-  "service-modal-2-price1": "цена: 100$ (+50$ ежемесячно)",
+  "service-modal-2-price1": "Цена: 100$ (+50$ ежемесячно)",
   "service-modal-2-size1": "Пакет услуг:",
   "service-modal-2-duration1": "открытие личного кабинета в одной из сетей",
   "service-modal-2-condition1": "настройка до 5 кампаний",
@@ -282,7 +282,7 @@
 
 
   "service-card-2-title2": "Настройка и запуск рекламных кампаний в сетях Instagram и Facebook",
-  "service-modal-2-price2": "цена: 100$ (+50$ ежемесячно)",
+  "service-modal-2-price2": "Цена: 100$ (+50$ ежемесячно)",
   "service-modal-2-size2": "Пакет услуг:",
   "service-modal-2-duration2": "открытие личного кабинета",
   "service-modal-2-services2": "настройка до 5 кампаний",
@@ -309,7 +309,7 @@
 
 
   "service-card-3-title2": "Поднятие в поисковых выдачах Google и Yandex",
-  "service-modal-3-price2": "цена: 250$ ежемесячно",
+  "service-modal-3-price2": "Цена: 250$ ежемесячно",
   "service-modal-3-size2": "Пакет услуг:",
   "service-modal-3-duration2": "технический аудит сайта",
   "service-modal-3-condition2": "индексация сайта в Google и Yandex",
@@ -327,7 +327,7 @@
  
 
   "service-card-4-title1": "Цена: 200$",
-  "service-modal-4-price1": " Срок: 2 недели",
+  "service-modal-4-price1": "Срок: 2 недели",
   "service-modal-4-size1": "Пакет услуг:",
   "service-modal-4-duration1": "Разработка базового чат-бота",
   "service-modal-4-services1": "Поддержка до 5 категорий",

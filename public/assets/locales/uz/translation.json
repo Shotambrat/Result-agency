@@ -78,7 +78,7 @@
   "smm-photo-video": "Foto va video tasvirga olish",
 
   "service-card-0-title1": "Ijtimoiy tarmoqlarda sahifa ishga tushirish va keyinchalik buyurtmachiga topshirish",
-  "service-modal-0-price1": "250$",
+  "service-modal-0-price1": "Narxi: 250$",
   "service-modal-0-size1": "1 sahifa",
   "service-advantages": "Afzalliklar:",
   "service-client-self": "Kelajakda mijoz blogni mustaqil yuritishi mumkin.",
@@ -94,7 +94,7 @@
   "service-modal-0-first1": "xizmatlar bajarilgandan so‘ng loyihani buyurtmachiga topshirish, qanday qilib uni mustaqil yuritish bo‘yicha ko‘rsatmalar berish",
 
   "service-card-0-title2": "Ijtimoiy tarmoqlarda marketingni ishga tushirish va yuritish",
-  "service-modal-0-price2": "600$",
+  "service-modal-0-price2": "Narxi: 600$",
   "service-modal-0-size2": "Afzalliklar:",
 
   "service-modal-0-condition2": "Xizmatlar paketi",
@@ -102,7 +102,7 @@
   "service-modal-0-first2": "Har oylik reklama kampaniyalari bo‘yicha hisobot taqdim etish",
 
   "service-card-0-title3": "Ijtimoiy tarmoqlarda marketingni ishga tushirish va yuritish",
-  "service-modal-0-price3": "1200$",
+  "service-modal-0-price3": "Narxi: 1200$",
   "service-modal-0-size3": "Afzalliklar:",
   "service-modal-0-duration3": "Tezkor natijalarga erishish uchun eng ko‘p sonli publikatsiyalar",
   "service-modal-0-condition3": "Xizmatlar paketi",
@@ -231,7 +231,7 @@
   "service-modal-1-expCode2": "Zamonaviy va tushunarli dizayn",
 
   "service-card-1-title3": "Mutaxassis yoki klinika uchun moslashuvchan ko'p sahifali sayt.",
-  "service-modal-1-price3": "600$",
+  "service-modal-1-price3": "Narxi: 600$",
   "service-modal-1-size3": "Hajmi: 5 sahifa",
   "service-modal-1-duration3": "muddat: 1 oy (mijozdan kerakli ma'lumotlarni tez olib berilishi sharti bilan)",
   "service-modal-1-services3": "Xizmatlar paketi:",
@@ -364,7 +364,7 @@
   "service-modal-4-botexp2": "Возможность дальнейшего расширения функционала (по договоренности)",
   "service-modal-4-expCode2": "Kodni eksport qilish (по желанию заказчика)",
 
-  "service-card-4-title3": "800$",
+  "service-card-4-title3": "Narxi: 800$",
   "service-modal-4-price3": "muddat: 1,5 oyа",
   "service-modal-4-size3": "Xizmatlar paketi:",
   "service-modal-4-duration3": "Все xizmatlar из тарифа Medium",

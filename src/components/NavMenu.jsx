@@ -24,7 +24,12 @@ export default function NavMenu({ isNavOpen, handleClose }) {
       <div className="max-h-full">
         <nav className="mt-20 flex flex-col items-center space-y-12 text-[24px] max-h-[571px] ">
           {(location.pathname === "/cases" ||
-            location.pathname === "/Cases" ||
+            location.pathname === "/cases/1" ||
+            location.pathname === "/cases/2" ||
+            location.pathname === "/cases/3" ||
+            location.pathname === "/cases/4" ||
+            location.pathname === "/cases/5" ||
+            location.pathname === "/cases/6" ||
             location.pathname === "/blog/1" ||
             location.pathname === "/blog/2" ||
             location.pathname === "/blog/3") && (

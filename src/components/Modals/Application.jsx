@@ -8,7 +8,7 @@ const Application = ({ isOpen, onClose }) => {
 
   const notify = () => toast.success(t('zayavca-success'));
   const [inputValue, setInputValue] = useState("");
-  const [selectedOption, setSelectedOption] = useState("");
+  const [selectedOption, setSelectedOption] = useState("usluga"); // Cпросить у Абдухокима , было без "usluga"
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
 
@@ -93,23 +93,23 @@ const Application = ({ isOpen, onClose }) => {
               style={{ fontSize: "18px" }}
               className="bg-transparent border-b-2 border-white text-white placeholder-white focus:border-green-500 focus:outline-none focus:border-b-[3px] pb-2"
             />
-            <select
-              name="service"
-              required
-              value={selectedOption}
-              onChange={(e) => setSelectedOption(e.target.value)}
-              style={{ fontSize: "18px" }}
-              className="bg-transparent border-b-2 border-white text-white placeholder-white focus:border-green-500 focus:outline-none focus:border-b-[3px] pb-2 custom-select"
-            >
-              <option value="usluga" disabled>{t("cover-form-service")}</option>
-              <option value="SMM">SMM</option>
-              <option value="Разработка сайтов">{t("cover-form-site")}</option>
-              <option value="Запуск рекламы">{t("cover-form-ads")}</option>
-              <option value="SEO">SEO</option>
-              <option value="Брендинг">{t("cover-form-brending")}</option>
-              <option value="Telegram-бот">{t("cover-form-tgbot")}</option>
-              <option value="другое">{t("cover-form-others")}</option>
-            </select>
+             <select
+      name="service"
+      required
+      value={selectedOption}
+      onChange={(e) => setSelectedOption(e.target.value)}
+      style={{ fontSize: "18px" }}
+      className="bg-transparent border-b-2 border-white text-white placeholder-white focus:border-green-500 focus:outline-none focus:border-b-[3px] pb-2 custom-select"
+    >
+      <option value="usluga" disabled>{t("cover-form-service")}</option>
+      <option value="SMM">SMM</option>
+      <option value="Разработка сайтов">{t("cover-form-site")}</option>
+      <option value="Запуск рекламы">{t("cover-form-ads")}</option>
+      <option value="SEO">SEO</option>
+      <option value="Брендинг">{t("cover-form-brending")}</option>
+      <option value="Telegram-бот">{t("cover-form-tgbot")}</option>
+      <option value="другое">{t("cover-form-others")}</option>
+    </select>
             <input
               type="text"
               name="phone"
