@@ -24,6 +24,7 @@ const MainCases = () => {
   ];
 
   return (
+  <>
     <div className="mt-8 lg:mt-[3rem] mx-[0.625rem] sm:mx-4 md:mx-10 xl:mx-20 2xl:mx-[6.875rem] 3xl:max-w-[1500px] 3xl:mx-auto">
       <h2 className="text-headings-color text-[20px] xs:text-[24px] md:text-[30px] 2xl:text-[56px] text-center md:text-left font-semibold lg:font-bold mb-4">
         {t("cases-title")}
@@ -70,6 +71,7 @@ const MainCases = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

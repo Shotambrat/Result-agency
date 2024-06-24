@@ -1,13 +1,8 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import { Helmet } from "react-helmet-async";
 
-export default function ServiceModal({
-  defaultNumber,
-  data,
-  close,
-  modal,
-  name
-}) {
+export default function ServiceModal({ defaultNumber, data, close, modal, name }) {
   const { t } = useTranslation();
   const modalRef = useRef(null);
 
@@ -17,9 +12,22 @@ export default function ServiceModal({
     }
   };
 
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+
   let liStyle = "text-[14px] list-disc text-left text-white font-light m:text-[14.5px] l:my-[2px] s:text-[15px] xs:text-[17px] sm:text-[18.5px] md:text-[19.5px] lg:text-[21.5px] xl:text-[23px] 2xl:my-[0px]";
   
   return (
+    <>
+      <Helmet>
+        <title>{t(`ServiceModal-seo-title${modal}`)}</title>
+        <meta name="description" content={t(`ServiceModal-seo-description${modal}`)} />
+      </Helmet>
     <div onClick={handleClickOutside} className="fixed inset-0 flex items-center justify-center z-[21] backdrop-blur-md shadow-md">
       <div ref={modalRef} className='max-h-[90vh] lg:overflow-y-auto custom-scrollbar p-4 w-11/12 rounded-[11px] m:p-6 xs:px-7 xs:py-7 sm:px-9 2xl:p-10 2xl:w-3/4 lg:rounded-[41px] bg-gradient-to-b from-[#746FAE] to-[#8A66F0] flex items-start justify-center flex-col sm:overflow-y-auto lg:px-9 lg:py-9 price-list'>
         <div className='w-full mb-[10px] flex justify-between align-baseline flex-row-reverse'>
@@ -225,5 +233,6 @@ export default function ServiceModal({
         </ul>
       </div>
     </div>
+    </>
   );
 }

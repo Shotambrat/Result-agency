@@ -8,7 +8,7 @@ const Application = ({ isOpen, onClose }) => {
 
   const notify = () => toast.success(t('zayavca-success'));
   const [inputValue, setInputValue] = useState("");
-  const [selectedOption, setSelectedOption] = useState("usluga"); // Cпросить у Абдухокима , было без "usluga"
+  const [selectedOption, setSelectedOption] = useState("usluga");
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
 

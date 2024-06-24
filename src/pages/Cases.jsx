@@ -15,6 +15,7 @@ import logo2 from "../assets/img/Odil.png";
 import logo4 from "../assets/img/uzi.png";
 import logo3 from "../assets/img/Alisher.png";
 import logo5 from "../assets/img/Xayrillo.png";
+import {Helmet} from "react-helmet-async";
 const images = [logo1, logo2, logo3, logo4, logo5];
 
 gsap.registerPlugin(ScrollTrigger);
@@ -159,7 +160,13 @@ const Cases = () => {
 
   const { t } = useTranslation();
 
+
   return (
+    <>
+    <Helmet>
+      <title>{t(`cases-seo-title${caseId}`)}</title>
+      <meta name="description" content={t(`cases-seo-description${caseId}`)} />
+    </Helmet>
     <div>
       {/* будет кнопка назад */}
       <div className="mt-[120px] mb-[30px] lg:mt-[110px] lg:mb-[51px] 3xl:ml-[9%]">
@@ -355,6 +362,7 @@ const Cases = () => {
         <ToTopButton />
       </div>
     </div>
+    </>
   );
 };
 

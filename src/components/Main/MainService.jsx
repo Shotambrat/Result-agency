@@ -85,7 +85,10 @@ const MainService = () => {
   const iconRefs = useRef([]);
   iconRefs.current = [];
 
+
+
   return (
+  <>
     <div className="mx-[0.625rem] sm:mx-4 md:mx-10 xl:mx-20 2xl:mx-[6.875rem] 3xl:max-w-[1500px] 3xl:mx-auto">
       <div
         className="border-solid border-[3px] border-item-cases mt-6 sm:mt-8 rounded-[17px] lg:rounded-3xl text-center"
@@ -189,6 +192,7 @@ const MainService = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

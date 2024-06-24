@@ -41,10 +41,13 @@ const Cover = () => {
   }, []);
 
   return (
+    <>
+    
     <div
       style={{ backgroundImage: `url(${MainBg})` }}
       className="w-full lg:h-screen flex justify-center items-center bg-cover bg-center relative overflow-hidden mb-8 lg:mb-12"
     >
+      
       <div className="3xl:max-w-[1500px] 3xl:mx-auto">
         <div className="flex flex-col items-center justify-center mt-24 lg:mt-44 mb-20 lg:mb-40 xs:mx-14 sm:mx-[5rem] md:mx-[7rem]">
           <div className="flex flex-col items-center justify-center mt-12 lg:w-[900px] z-[3]">
@@ -109,6 +112,7 @@ const Cover = () => {
         </div>
       )}
     </div>
+    </>
   );
 };
 
