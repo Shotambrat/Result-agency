@@ -285,6 +285,7 @@ const Cases = () => {
         <div className=" lg:grid lg:grid-cols-[30%_1fr]">
           <div>
             <a
+            target="_blank"
             href={t(`cases-link${caseId}`)}
             className="resultk rounded-[20px] min-h-[105px] min-w-[290px] border-[1px] flex justify-center items-center border-uslugi-text p-4 font-semibold text-cases-text text-[36px] mt-[54px] text-center s:max-w-[350px] mx-auto lg:text-[33px] lg:max-h-[125px] lg:max-w-[370px] 2xl:min-h-[120px] hover:text-footer-icon transition duration-300 ease-in-out"
             >
