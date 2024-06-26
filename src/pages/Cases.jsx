@@ -14,7 +14,7 @@ import logo1 from "../assets/img/Prime.png";
 import logo2 from "../assets/img/Odil.png";
 import logo4 from "../assets/img/uzi.png";
 import logo3 from "../assets/img/Alisher.png";
-import logo5 from "../assets/img/Xayrillo.png";
+import logo5 from "../assets/img/Akhmedov.png";
 import {Helmet} from "react-helmet-async";
 const images = [logo1, logo2, logo3, logo4, logo5];
 
@@ -284,10 +284,16 @@ const Cases = () => {
 
         <div className=" lg:grid lg:grid-cols-[30%_1fr]">
           <div>
-            {/*будет 1 колонка для грида при десктоп */}
-            <div className="resultk rounded-[20px] min-h-[105px] border-[1px] flex justify-center items-center border-uslugi-text p-4 font-semibold text-cases-text text-[36px] mt-[54px] text-center s:max-w-[350px] mx-auto lg:text-[33px] lg:max-h-[125px] lg:max-w-[370px] 2xl:min-h-[120px]">
+            <a
+            target="_blank"
+            href={t(`cases-link${caseId}`)}
+            className="resultk rounded-[20px] min-h-[105px] min-w-[290px] border-[1px] flex justify-center items-center border-uslugi-text p-4 font-semibold text-cases-text text-[36px] mt-[54px] text-center s:max-w-[350px] mx-auto lg:text-[33px] lg:max-h-[125px] lg:max-w-[370px] 2xl:min-h-[120px] hover:text-footer-icon transition duration-300 ease-in-out"
+            >
+            <button className="w-full h-full">
               {t(`cases-results-title`)}
-            </div>
+            </button>
+            </a>
+            {/*будет 1 колонка для грида при десктоп */}
             <div className="hidden w-full mb-14 lg:block">
               <img
                 src={logo_big_upside_down}

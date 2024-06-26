@@ -6,7 +6,7 @@ import case1 from "../../assets/img/case1.png";
 import case4 from "../../assets/img/case2.png";
 import case3 from "../../assets/img/case3.png";
 import case2 from "../../assets/img/case4.png";
-import case5 from "../../assets/img/case5.png";
+import case5 from "../../assets/img/Akhmedov.png";
 
 const MainCases = () => {
   const { t } = useTranslation();
@@ -44,7 +44,7 @@ const MainCases = () => {
               </div>
             
             {/* Mobile */}
-            <h4 className="text-headings-color font-medium md:font-semibold text-[19px] md:text-[24px] mt-2 lg:hidden">
+            <h4 className="text-headings-color font-medium md:font-semibold text-[18px] md:text-[24px] mt-2 lg:hidden">
               {t(`cases-card${index + 1}-title-mobile`)}
             </h4>
             {/* Desktop */}
@@ -53,21 +53,30 @@ const MainCases = () => {
             </h4>
 
             {/* Mobile */}
-            <p className="text-headings-color font-regular text-[13px] md:text-[15px] mt-1 lg:hidden">
+            {/* <p className="text-headings-color font-regular text-[13px] md:text-[15px] mt-1 lg:hidden">
               {t(`cases-card${index + 1}-subtitle-mobile`)}
-            </p>
+            </p> */}
             {/* Desktop */}
-
+{/* 
             <p className="text-headings-color font-regular text-[13px] md:text-[15px] mt-1 hidden lg:flex">
               {t(`cases-card${index + 1}-subtitle`)}
-            </p>
+            </p> */}
             </Link>
           </div>
         ))}
         <div>
-          <div className="rounded-[7.39px] text-[14px] md:text-xl lg:text-2xl lg:rounded-3xl h-[6.5rem] xs:h-36 md:h-40 lg:h-56 xl:h-[15rem] 2xl:h-[17rem] 3xl:h-[19rem] cursor-pointer border-[1px] border-solid border-[#d3d2e4] flex justify-center items-center">
+          {/* <div className="rounded-[7.39px] text-[14px] md:text-xl lg:text-2xl lg:rounded-3xl h-[6.5rem] xs:h-36 md:h-40 lg:h-56 xl:h-[15rem] 2xl:h-[17rem] 3xl:h-[19rem] cursor-pointer border-[1px] border-solid border-[#d3d2e4] flex justify-center items-center">
             {t("cases-card-create")}
-          </div>
+          </div> */}
+          <a
+            target="_blank"
+            href={t(`mainCases-brief`)}
+            className="rounded-[7.39px] text-[14px] md:text-xl lg:text-2xl lg:rounded-3xl h-[6.5rem] xs:h-36 md:h-40 lg:h-56 xl:h-[15rem] 2xl:h-[17rem] 3xl:h-[19rem] cursor-pointer border-[1px] border-solid border-[#d3d2e4] flex justify-center items-center"
+            >
+            <button className="w-full h-full">
+              {t("cases-card-create")}
+            </button>
+            </a>
         </div>
       </div>
     </div>

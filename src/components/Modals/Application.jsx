@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import axios from 'axios';
 import toast, { Toaster } from 'react-hot-toast';
@@ -11,6 +11,19 @@ const Application = ({ isOpen, onClose }) => {
   const [selectedOption, setSelectedOption] = useState("usluga");
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
+  const [isFormValid, setIsFormValid] = useState(false);
+
+  useEffect(() => {
+    checkFormValidity();
+  }, [inputValue, selectedOption, phone, message]);
+
+  const checkFormValidity = () => {
+    if (inputValue && selectedOption !== "usluga" && phone && message) {
+      setIsFormValid(true);
+    } else {
+      setIsFormValid(false);
+    }
+  };
 
   const formatValue = (value) => {
     if (!value) return "";
@@ -59,9 +72,11 @@ const Application = ({ isOpen, onClose }) => {
       const result = await response.text();
       console.log("Form submitted:", result);
       notify(); // Уведомление об успешной отправке
+      onClose();
     } catch (error) {
       console.error("Error submitting form:", error);
       notify(); // Уведомление об ошибке
+      onClose();
     }
   };
 
@@ -132,6 +147,7 @@ const Application = ({ isOpen, onClose }) => {
               <button
                 onClick={handleSubmit}
                 className="mt-4 bg-gray-300 bg-opacity-30 border-2 text-white py-2 px-2 xs:px-8 rounded-full hover:bg-gray-200 hover:text-uslugi-text transition-colors"
+                disabled={!isFormValid}
               >
                 {t("cover-form-button")}
               </button>

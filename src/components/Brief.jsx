@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import axios from 'axios';
 import toast, { Toaster } from 'react-hot-toast';
@@ -7,12 +7,27 @@ import MapFooter from "./MapFooter";
 const Brief = () => {
   const { t } = useTranslation();
 
-  const notify = () => toast.success(t('zayavca-success'));
+  const notifySuccess = () => toast.success(t('zayavca-success'));
+  const notifyError = () => toast.error(t('fill-form-warning'));
+
   const [inputValue, setInputValue] = useState("");
   const [phone, setPhone] = useState("");
   const [time, setTime] = useState("");
   const [result, setResult] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isFormValid, setIsFormValid] = useState(false);
+
+  useEffect(() => {
+    checkFormValidity();
+  }, [inputValue, phone, time, result]);
+
+  const checkFormValidity = () => {
+    if (inputValue && phone && time && result) {
+      setIsFormValid(true);
+    } else {
+      setIsFormValid(false);
+    }
+  };
 
   const formatValue = (value) => {
     if (!value) return "";
@@ -46,8 +61,13 @@ const Brief = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-    if (isSubmitting) return; // Предотвращение повторной отправки
-    
+    if (isSubmitting) return; // Prevent double submission
+    if (!isFormValid) {
+      notifyError(); // Show warning if form is not valid
+      return;
+    }
+
+    setIsSubmitting(true); // Disable further submissions until the current one is done
 
     const formData = new FormData();
     formData.append("name", inputValue);
@@ -63,10 +83,12 @@ const Brief = () => {
       });
       const result = await response.text();
       console.log("Form submitted:", result);
-      notify(); // Уведомление об успешной отправке
+      notifySuccess(); // Notify of successful submission
     } catch (error) {
       console.error("Error submitting form:", error);
-      notify(); // Уведомление об ошибке
+      notifyError(); // Notify of error
+    } finally {
+      setIsSubmitting(false); // Re-enable submissions
     }
   };
 
@@ -139,7 +161,8 @@ const Brief = () => {
                 />
                 <button
                   type="submit"
-                  className="mt-4 sm:mr-auto sm:ml-2 sm:px-16 bg-gray-300 bg-opacity-30 border-2 text-white py-2 rounded-full hover:bg-gray-200 hover:text-uslugi-text transition-colors"
+                  disabled={!isFormValid || isSubmitting}
+                  className={`mt-4 sm:mr-auto sm:ml-2 sm:px-16 py-2 rounded-full transition-colors ${isFormValid ? 'bg-gray-300 bg-opacity-30 border-2 text-white hover:bg-gray-200 hover:text-uslugi-text' : 'bg-gray-200 text-gray-500 border-gray-500 cursor-not-allowed'}`}
                   style={{ pointerEvents: 'auto' }}
                 >
                   {t("brief-form-button")}

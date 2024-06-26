@@ -13,7 +13,8 @@ import Odil1 from "../../assets/img/Slider/Odil1.png";
 import Odil2 from "../../assets/img/Slider/Odil2.png";
 import Alisher1 from "../../assets/img/Slider/Alisher1.png";
 import Alisher2 from "../../assets/img/Slider/Alisher2.png";
-import Xayrillo from "../../assets/img/Slider/Xayrillo.png";
+import Akhmedov1 from "../../assets/img/Slider/Akhmedov_slider1.png";
+import Akhmedov2 from "../../assets/img/Slider/Akhmedov_slider2.png";
 import uzi1 from "../../assets/img/Slider/uzi1.png";
 import uzi2 from "../../assets/img/Slider/uzi2.png";
 import uzi3 from "../../assets/img/Slider/uzi3.png";
@@ -23,7 +24,7 @@ let images = [
   [Odil1, Odil2],
   [Alisher1, Alisher2],
   [uzi1, uzi2, uzi3],
-  [Xayrillo],
+  [Akhmedov1, Akhmedov2],
 ];
 
 const SwiperCases = ({ caseId }) => {
