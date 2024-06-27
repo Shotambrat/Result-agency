@@ -6,7 +6,9 @@ import toast, { Toaster } from 'react-hot-toast';
 const Application = ({ isOpen, onClose }) => {
   const { t } = useTranslation();
 
-  const notify = () => toast.success(t('zayavca-success'));
+  const notifySuccess = () => toast.success(t('zayavca-success'));
+  const notifyError = () => toast.error(t('zayavca-error'));
+
   const [inputValue, setInputValue] = useState("");
   const [selectedOption, setSelectedOption] = useState("usluga");
   const [phone, setPhone] = useState("");
@@ -64,18 +66,17 @@ const Application = ({ isOpen, onClose }) => {
     formData.append("message", message);
 
     try {
-      const response = await axios.post("../../ajax.php", formData, {
+      const response = await axios.post("/ajax.php", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
       });
-      const result = await response.text();
-      console.log("Form submitted:", result);
-      notify(); // Уведомление об успешной отправке
+      console.log("Form submitted:", response.data);
+      notifySuccess();
       onClose();
     } catch (error) {
       console.error("Error submitting form:", error);
-      notify(); // Уведомление об ошибке
+      notifyError();
       onClose();
     }
   };
