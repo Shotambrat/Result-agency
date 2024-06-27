@@ -58,37 +58,44 @@ const Brief = () => {
     return formatValue(phone);
   };
 
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+    
+  //   if (isSubmitting) return; // Prevent double submission
+  //   if (!isFormValid) {
+  //     notifyError(); // Show warning if form is not valid
+  //     return;
+  //   }
+
+  //   setIsSubmitting(true); // Disable further submissions until the current one is done
+
+  //   const formData = new FormData();
+  //   formData.append("name", inputValue);
+  //   formData.append("phone", phone);
+  //   formData.append("time", time);
+  //   formData.append("result", result);
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    if (isSubmitting) return; // Prevent double submission
-    if (!isFormValid) {
-      notifyError(); // Show warning if form is not valid
-      return;
-    }
 
-    setIsSubmitting(true); // Disable further submissions until the current one is done
-
-    const formData = new FormData();
-    formData.append("name", inputValue);
-    formData.append("phone", phone);
-    formData.append("time", time);
-    formData.append("result", result);
+    const tgBotToken = "7274329911:AAGdW7ppyWoVE3n4dby4mIjntK6FstZCeFw";  // Замените на ваш токен
+    const chatId = "-1002166615539";  // Замените на ваш ID чата
+    const text = `
+      Name: ${inputValue}\n
+      Phone: ${phone}\n
+      Time: ${time}\n
+      Message: ${result}
+    `;
 
     try {
-      const response = await axios.post("../../ajax.php", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
+      const response = await axios.post(`https://api.telegram.org/bot${tgBotToken}/sendMessage`, {
+        chat_id: chatId,
+        text: text
       });
-      const result = await response.text();
-      console.log("Form submitted:", result);
-      notifySuccess(); // Notify of successful submission
+      console.log("Form submitted:", response.data);
+      notifySuccess();
     } catch (error) {
       console.error("Error submitting form:", error);
-      notifyError(); // Notify of error
-    } finally {
-      setIsSubmitting(false); // Re-enable submissions
+      notifyError();
     }
   };
 
