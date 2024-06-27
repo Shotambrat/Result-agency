@@ -15,6 +15,7 @@
   "cover-button": "Ariza qoldiring",
 
   "zayavca-success": "Arizangiz qabul qilindi. Siz bilan yaqin orada bog'lanamiz.",
+  "zayavca-error":"Server bilan nimadir boldi.Iltimos keyinroq yana bir unirib koring",
   "cover-form-name": "Ism",
   "cover-form-email": "Elektron pochta",
   "cover-form-phone": "Telefon",

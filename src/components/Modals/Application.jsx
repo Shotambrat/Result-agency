@@ -59,17 +59,19 @@ const Application = ({ isOpen, onClose }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const formData = new FormData();
-    formData.append("name", inputValue);
-    formData.append("selectedOption", selectedOption);
-    formData.append("phone", phone);
-    formData.append("message", message);
+    const tgBotToken = "7274329911:AAGdW7ppyWoVE3n4dby4mIjntK6FstZCeFw";  // Замените на ваш токен
+    const chatId = "-1002166615539";  // Замените на ваш ID чата
+    const text = `
+      Name: ${inputValue}\n
+      Service: ${selectedOption}\n
+      Phone: ${phone}\n
+      Message: ${message}
+    `;
 
     try {
-      const response = await axios.post("/ajax.php", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
+      const response = await axios.post(`https://api.telegram.org/bot${tgBotToken}/sendMessage`, {
+        chat_id: chatId,
+        text: text
       });
       console.log("Form submitted:", response.data);
       notifySuccess();
@@ -109,23 +111,23 @@ const Application = ({ isOpen, onClose }) => {
               style={{ fontSize: "18px" }}
               className="bg-transparent border-b-2 border-white text-white placeholder-white focus:border-green-500 focus:outline-none focus:border-b-[3px] pb-2"
             />
-             <select
-      name="service"
-      required
-      value={selectedOption}
-      onChange={(e) => setSelectedOption(e.target.value)}
-      style={{ fontSize: "18px" }}
-      className="bg-transparent border-b-2 border-white text-white placeholder-white focus:border-green-500 focus:outline-none focus:border-b-[3px] pb-2 custom-select"
-    >
-      <option value="usluga" disabled>{t("cover-form-service")}</option>
-      <option value="SMM">SMM</option>
-      <option value="Разработка сайтов">{t("cover-form-site")}</option>
-      <option value="Запуск рекламы">{t("cover-form-ads")}</option>
-      <option value="SEO">SEO</option>
-      <option value="Брендинг">{t("cover-form-brending")}</option>
-      <option value="Telegram-бот">{t("cover-form-tgbot")}</option>
-      <option value="другое">{t("cover-form-others")}</option>
-    </select>
+            <select
+              name="service"
+              required
+              value={selectedOption}
+              onChange={(e) => setSelectedOption(e.target.value)}
+              style={{ fontSize: "18px" }}
+              className="bg-transparent border-b-2 border-white text-white placeholder-white focus:border-green-500 focus:outline-none focus:border-b-[3px] pb-2 custom-select"
+            >
+              <option value="usluga" disabled>{t("cover-form-service")}</option>
+              <option value="SMM">SMM</option>
+              <option value="Разработка сайтов">{t("cover-form-site")}</option>
+              <option value="Запуск рекламы">{t("cover-form-ads")}</option>
+              <option value="SEO">SEO</option>
+              <option value="Брендинг">{t("cover-form-brending")}</option>
+              <option value="Telegram-бот">{t("cover-form-tgbot")}</option>
+              <option value="другое">{t("cover-form-others")}</option>
+            </select>
             <input
               type="text"
               name="phone"
