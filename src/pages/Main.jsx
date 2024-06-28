@@ -96,12 +96,12 @@ const Main = () => {
           <meta property="og:description" content={t('descriptionmain')} />
           <meta property="og:type" content="website" />
           <meta property="og:url" content="https://result-me.uz" />
-          <meta property="og:image" content="/favicon.svg" />
+          <meta property="og:image" content="../../public/favicon.svg" />
           <meta property="og:site_name" content="Result Agency" />
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:title" content={t('titlemain')} />
           <meta name="twitter:description" content={t('descriptionmain')} />
-          <meta name="twitter:image" content="%PUBLIC_URL%/favicon.svg" />
+          <meta name="twitter:image" content="../../public/favicon.svg" />
         </Helmet>
     <div>
       <Element name="home">
