@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import Blog from "./pages/Blog";
 import Home from "./pages/Home";
 import Header from "./pages/Header";
@@ -9,6 +9,8 @@ import { Element } from "react-scroll";
 import NavMenu from "./components/NavMenu";
 import { useState } from "react";
 import FixedBackground from "./components/FixedBackground";
+import cookies from "js-cookie";
+
 function App() {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
@@ -27,12 +29,12 @@ function App() {
         <Header handleOpen={openNavMenu} />
         <NavMenu isNavOpen={isNavOpen} handleClose={closeNavMenu} />
         <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/blog/:blogId" element={<Blog />}></Route>
-          <Route path="/cases/:caseId" element={<Cases />}></Route>
+          <Route path="/" element={<Navigate to={`/${cookies.get("i18next") || "ru"}`} />} />
+          <Route path="/:lang" element={<Home />} />
+          <Route path="/:lang/blog/:blogId" element={<Blog />} />
+          <Route path="/:lang/cases/:caseId" element={<Cases />} />
         </Routes>
         <Brief />
-        {/* <MapFooter /> */}
         <Element name="contacts">
           <Footer />
         </Element>

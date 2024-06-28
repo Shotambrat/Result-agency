@@ -1,13 +1,17 @@
 import React from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation, useParams } from "react-router-dom";
 import { Link } from "react-scroll";
 import FooterSocial from "./FooterSocial";
 import logoBack from "../assets/img/logoBackButton.svg";
 import { useTranslation } from "react-i18next";
+import cookies from "js-cookie";
 
 export default function NavMenu({ isNavOpen, handleClose }) {
   const { t } = useTranslation();
   const location = useLocation();
+  const { lang } = useParams();
+
+  const currentLanguage = cookies.get("i18next") || "ru";
 
   return (
     <div
@@ -23,23 +27,20 @@ export default function NavMenu({ isNavOpen, handleClose }) {
       </div>
       <div className="max-h-full">
         <nav className="mt-20 flex flex-col items-center space-y-12 text-[24px] max-h-[571px] ">
-          {(location.pathname === "/cases" ||
-            location.pathname === "/cases/1" ||
-            location.pathname === "/cases/2" ||
-            location.pathname === "/cases/3" ||
-            location.pathname === "/cases/4" ||
-            location.pathname === "/cases/5" ||
-            location.pathname === "/cases/6" ||
-            location.pathname === "/blog/1" ||
-            location.pathname === "/blog/2" ||
-            location.pathname === "/blog/3") && (
-            <NavLink to="/" smooth={true} duration={500}
-            onClick={handleClose}>
+          {(location.pathname.includes("/cases") ||
+            location.pathname.includes("/blog")) && (
+            <NavLink 
+              to={`/${currentLanguage}`} 
+              smooth={true} 
+              duration={500}
+              onClick={handleClose}
+            >
               {t("header-aboutUs")}
             </NavLink>
           )}
-          {location.pathname === "/" && (
-            <div>
+
+          {location.pathname === `/${currentLanguage}` && (
+            <>
               <Link
                 to="services"
                 smooth={true}
@@ -48,37 +49,26 @@ export default function NavMenu({ isNavOpen, handleClose }) {
               >
                 {t("header-services")}
               </Link>
-            </div>
+              <Link
+                to="cases"
+                smooth={true}
+                duration={500}
+                onClick={handleClose}
+              >
+                {t("header-cases")}
+              </Link>
+              <Link
+                to="blog"
+                smooth={true}
+                duration={500}
+                onClick={handleClose}
+              >
+                {t("header-blog")}
+              </Link>
+            </>
           )}
-          {location.pathname === "/" && (
-            <Link
-              to="cases"
-              smooth={true}
-              duration={500}
-              onClick={handleClose}
-            >
-              {t("header-cases")}
-            </Link>
-          )}
-          {location.pathname === "/" && (
-            <Link
-              to="blog"
-              smooth={true}
-              duration={500}
-              onClick={handleClose}
-            >
-              {t("header-blog")}
-            </Link>
-          )}
-
-          {(location.pathname === "/cases" ||
-            location.pathname === "/cases/1" ||
-            location.pathname === "/cases/2" ||
-            location.pathname === "/cases/3" ||
-            location.pathname === "/cases/4" ||
-            location.pathname === "/cases/5" ||
-            location.pathname === "/cases/6") && (
-            <div>
+          {location.pathname.includes("/cases") && (
+            <>
               <Link
                 to="resultk"
                 smooth={true}
@@ -87,16 +77,6 @@ export default function NavMenu({ isNavOpen, handleClose }) {
               >
                 {t("header-result")}
               </Link>
-            </div>
-          )}
-          {(location.pathname === "/cases" ||
-            location.pathname === "/cases/1" ||
-            location.pathname === "/cases/2" ||
-            location.pathname === "/cases/3" ||
-            location.pathname === "/cases/4" ||
-            location.pathname === "/cases/5" ||
-            location.pathname === "/cases/6") && (
-            <div>
               <Link
                 to="statistics"
                 smooth={true}
@@ -105,21 +85,17 @@ export default function NavMenu({ isNavOpen, handleClose }) {
               >
                 {t("header-statistics")}
               </Link>
-            </div>
+            </>
           )}
-          {(location.pathname === "/blog/1" ||
-            location.pathname === "/blog/2" ||
-            location.pathname === "/blog/3") && (
-            <div>
-              <Link
-                to="conclusion"
-                smooth={true}
-                duration={500}
-                onClick={handleClose}
-              >
-                {t("header-сonclusion")}
-              </Link>
-            </div>
+          {location.pathname.includes("/blog") && (
+            <Link
+              to="conclusion"
+              smooth={true}
+              duration={500}
+              onClick={handleClose}
+            >
+              {t("header-сonclusion")}
+            </Link>
           )}
           <Link
             to="contacts"

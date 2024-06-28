@@ -1,10 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import Logo from "./../assets/img/logo.png";
-// import LanLogo from "./../assets/img/Language icon.svg";
 import Menu from "./../assets/img/menu.svg";
-import { Link } from "react-scroll";
-import { NavLink, useLocation } from "react-router-dom";
+import { Link as ScrollLink } from "react-scroll";
+import { NavLink, useLocation, useNavigate, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import FlagRus from "./../assets/img/FlagRus.png";
 import FlagUz from "./../assets/img/FlagUz.png";
@@ -15,6 +14,8 @@ const Header = ({ handleOpen }) => {
   const [openLanguage, setOpenLanguage] = useState(false);
   const { t } = useTranslation();
   const location = useLocation();
+  const navigate = useNavigate();
+  const { lang } = useParams();
 
   const menuRef = useRef(null);
   const activeLanguageRef = useRef(null);
@@ -33,11 +34,12 @@ const Header = ({ handleOpen }) => {
   const currentLanguage = cookies.get("i18next") || "ru";
 
   function handleChangeLanguage() {
-    if (currentLanguage === "ru") {
-      i18n.changeLanguage("uz");
-    } else {
-      i18n.changeLanguage("ru");
-    }
+    const newLanguage = currentLanguage === "ru" ? "uz" : "ru";
+    i18n.changeLanguage(newLanguage);
+    cookies.set("i18next", newLanguage);
+
+    const newPath = `/${newLanguage}${location.pathname.replace(/^\/(ru|uz)/, '')}`;
+    navigate(newPath, { replace: true });
 
     setOpenLanguage(false);
   }
@@ -49,18 +51,14 @@ const Header = ({ handleOpen }) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Check if the user is at the top of the page
       if (window.scrollY === 0) {
         gsap.to(".header", { y: 0, opacity: 1, duration: 0.5 });
         if (scrollTimeout) clearTimeout(scrollTimeout);
       } else {
-        // Cancel the previous timeout if it exists
         if (scrollTimeout) clearTimeout(scrollTimeout);
 
-        // Hide the header
         gsap.to(".header", { y: -100, opacity: 0, duration: 0.5 });
 
-        // Set a timeout to show the header after 2 seconds of inactivity
         const timeout = setTimeout(() => {
           gsap.to(".header", { y: 0, opacity: 1, duration: 0.5 });
         }, 2000);
@@ -87,7 +85,7 @@ const Header = ({ handleOpen }) => {
     <header className="header w-[100vw] h-[60px] lg:h-auto bg-white bg-opacity-30 backdrop-filter backdrop-blur-lg fixed top-0 z-20 py-0 lg:py-3 3xl:py-0">
       <div className="lg:max-w-7xl mx-auto px-[0.625rem] sm:px-6 lg:px-[3rem]">
         <div className="flex items-center content-center justify-between h-16 3xl:h-24">
-          <NavLink to="/" className="flex items-center" onClick={toTop}>
+          <NavLink to={`/${currentLanguage}`} className="flex items-center" onClick={toTop}>
             <div className="flex-shrink-0">
               <img
                 className="w-[5.45rem] h-[3.125rem] xs:w-[7.5rem] xs:h-[4rem] lg:h-[94px] lg:w-[169px]"
@@ -96,103 +94,86 @@ const Header = ({ handleOpen }) => {
               />
             </div>
           </NavLink>
-          <div className={`hidden lg:block`}>
+          <div className="hidden lg:block">
             <div className="flex items-baseline space-x-4">
               {(location.pathname === "/cases" ||
                 location.pathname === "/Cases" ||
-                location.pathname === "/blog/1" ||
-                location.pathname === "/blog/2" ||
-                location.pathname === "/blog/3") && (
+                location.pathname.includes("/blog")) && (
                 <NavLink
-                  to="/"
-                  smooth={true}
-                  duration={500}
+                  to={`/${currentLanguage}`}
                   className="text-header-text hover:text-blue-700 px-3 py-2 rounded-md text-sm xl:text-lg font-medium cursor-pointer"
                 >
                   {t("header-aboutUs")}
                 </NavLink>
               )}
-              {location.pathname === "/" && (
+              {location.pathname === `/${currentLanguage}` && (
                 <div>
-                  <Link
+                  <ScrollLink
                     to="services"
                     smooth={true}
                     duration={500}
                     className="text-header-text hover:text-blue-700 px-3 py-2 rounded-md text-sm xl:text-lg font-medium cursor-pointer"
                   >
                     {t("header-services")}
-                  </Link>
-                  <Link
+                  </ScrollLink>
+                  <ScrollLink
                     to="cases"
                     smooth={true}
                     duration={500}
                     className="text-header-text hover:text-blue-700 px-3 py-2 rounded-md text-sm xl:text-lg font-medium cursor-pointer"
                   >
                     {t("header-cases")}
-                  </Link>
-                  <Link
+                  </ScrollLink>
+                  <ScrollLink
                     to="blog"
                     smooth={true}
                     duration={500}
                     className="text-header-text hover:text-blue-700 px-3 py-2 rounded-md text-sm xl:text-lg font-medium cursor-pointer"
                   >
                     {t("header-blog")}
-                  </Link>
+                  </ScrollLink>
                 </div>
               )}
-
-
-              {(location.pathname === "/cases" ||
-                location.pathname === "/cases/1" ||
-                location.pathname === "/cases/2" ||
-                location.pathname === "/cases/3" ||
-                location.pathname === "/cases/4" ||
-                location.pathname === "/cases/5" ||
-                location.pathname === "/cases/6" ) && (
+              {location.pathname.includes("/cases") && (
                 <div>
-                  <Link
+                  <ScrollLink
                     to="resultk"
                     smooth={true}
                     duration={500}
                     className="text-header-text hover:text-blue-700 px-3 py-2 rounded-md text-sm xl:text-lg font-medium cursor-pointer"
                   >
                     {t("header-result")}
-                  </Link>
-                  <Link
+                  </ScrollLink>
+                  <ScrollLink
                     to="statistics"
                     smooth={true}
                     duration={500}
                     className="text-header-text hover:text-blue-700 px-3 py-2 rounded-md text-sm xl:text-lg font-medium cursor-pointer"
                   >
                     {t("header-statistics")}
-                  </Link>
+                  </ScrollLink>
                 </div>
               )}
-              {(location.pathname === "/blog/1" ||
-                location.pathname === "/blog/2" ||
-                location.pathname === "/blog/3") && (
+              {location.pathname.includes("/blog") && (
                 <div>
-                  <Link
+                  <ScrollLink
                     to="conclusion"
                     smooth={true}
                     duration={500}
                     className="text-header-text hover:text-blue-700 px-3 py-2 rounded-md text-sm xl:text-lg font-medium cursor-pointer"
                   >
                     {t("header-сonclusion")}
-                  </Link>
+                  </ScrollLink>
                 </div>
               )}
-
-
-
-              <Link
+              <ScrollLink
                 to="contacts"
                 smooth={true}
                 duration={500}
                 className="text-header-text hover:text-blue-700 px-3 py-2 rounded-md text-sm xl:text-lg font-medium cursor-pointer"
               >
                 {t("header-contacts")}
-              </Link>
+              </ScrollLink>
             </div>
           </div>
           <div className="ml-4 flex items-center md:ml-6 xl:text-lg">
@@ -241,7 +222,6 @@ const Header = ({ handleOpen }) => {
                   </button>
                 </div>
               </div>
-
               <button
                 onClick={handleOpen}
                 className="ml-2 md:ml-4 lg:hidden"

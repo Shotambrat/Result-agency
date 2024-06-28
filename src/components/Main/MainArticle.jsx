@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { gsap } from "gsap";
 import blog1 from "../../assets/img/Blog/blog1.png";
@@ -8,6 +8,7 @@ import blog3 from "../../assets/img/Blog/blog3.png";
 
 const MainArticle = () => {
   const { t } = useTranslation();
+  const { lang } = useParams();
 
   const articles = [{ image: blog1 }, { image: blog2 }, { image: blog3 }];
 
@@ -49,7 +50,7 @@ const MainArticle = () => {
           <div key={index} className="text-white">
             <Link
               onClick={() => toTop()}
-              to={`/blog/${index + 1}`}
+              to={`/${lang}/blog/${index + 1}`}
               className="block"
             >
               <div className="bg-blog-themeBg rounded-[14.32px] lg:rounded-3xl cursor-pointer">

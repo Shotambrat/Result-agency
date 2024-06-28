@@ -228,7 +228,7 @@ const HowWeWork = () => {
           ref={(el) => {
             subtitleRef.current = el;
           }}
-          className="text-how-we-work-color pr-2 xl:pr-16 text-[13px] xs:text-[15px] md:text-[20px] xl:text-[24px] 2xl:text-[32px] col-span-3 sm:col-span-1 leading-4 md:leading-6 2xl:leading-10"
+          className="text-how-we-work-color l:mt-[3%] lg:mt-[10%] pr-2 xl:pr-16 text-[13px] xs:text-[15px] md:text-[20px] xl:text-[24px] 2xl:text-[29px] col-span-3 sm:col-span-1 leading-4 md:leading-6 2xl:leading-10"
         >
           {t("howWeWork-subtitle")}
         </h3>
