@@ -16,11 +16,11 @@ function App() {
 
   const openNavMenu = () => {
     setIsNavOpen(true);
-  }
+  };
 
   const closeNavMenu = () => {
     setIsNavOpen(false);
-  }
+  };
 
   return (
     <div className="App">
