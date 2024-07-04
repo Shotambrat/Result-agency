@@ -15,9 +15,8 @@ export default function NavMenu({ isNavOpen, handleClose }) {
 
   return (
     <div
-      className={`fixed top-0 right-0 h-full bg-white transition-transform duration-300 z-[100] ${
-        isNavOpen ? "transform translate-x-0" : "transform translate-x-full"
-      } w-full xxs:w-[65%] sm:w-[55%] md:w-[50%] lg:hidden flex flex-col items-center`}
+      className={`fixed top-0 right-0 h-full bg-white transition-transform duration-300 z-[100] ${isNavOpen ? "transform translate-x-0" : "transform translate-x-full"
+        } w-full xxs:w-[65%] sm:w-[55%] md:w-[50%] lg:hidden flex flex-col items-center`}
     >
       <div
         onClick={handleClose}
@@ -29,15 +28,15 @@ export default function NavMenu({ isNavOpen, handleClose }) {
         <nav className="mt-20 flex flex-col items-center space-y-12 text-[24px] max-h-[571px] ">
           {(location.pathname.includes("/cases") ||
             location.pathname.includes("/blog")) && (
-            <NavLink 
-              to={`/${currentLanguage}`} 
-              smooth={true} 
-              duration={500}
-              onClick={handleClose}
-            >
-              {t("header-aboutUs")}
-            </NavLink>
-          )}
+              <NavLink
+                to={`/${currentLanguage}`}
+                smooth={true}
+                duration={500}
+                onClick={handleClose}
+              >
+                {t("header-aboutUs")}
+              </NavLink>
+            )}
 
           {location.pathname === `/${currentLanguage}` && (
             <>
