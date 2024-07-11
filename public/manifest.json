@@ -3,17 +3,17 @@
   "name": "Create React App Sample",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "/assets/favicon.svg",
       "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "type": "image/svg+xml"
     },
     {
-      "src": "ogfavicon192.png",
+      "src": "/assets/ogfavicon192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "ogfavicon512.png",
+      "src": "/assets/ogfavicon512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
