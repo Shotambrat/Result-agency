@@ -32,9 +32,9 @@ const MainCases = () => {
       <div className="grid grid-cols-2 sm:grid-cols-3 p-[0.625rem] sm:p-0 gap-x-[0.625rem] lg:gap-x-[1rem] xl:gap-x-6 gap-y-5">
         {cases1.map((elem, index) => (
           <div key={index} className="">
-            <Link 
-              onClick={toTop} 
-              to={`/${lang}/cases/${index + 1}`} 
+            <Link
+              onClick={toTop}
+              to={`/${lang}/cases/${index + 1}`}
               className="block"
             >
               <div className="rounded-[7.39px] lg:rounded-3xl h-[6.5rem] xs:h-36 md:h-40 lg:h-56 xl:h-[15rem] 2xl:h-[17rem] 3xl:h-[19rem] border-[1px] border-solid border-cases-border">
@@ -44,7 +44,7 @@ const MainCases = () => {
                   className="w-full h-full object-cover rounded-[7.39px] lg:rounded-3xl"
                 />
               </div>
-              
+
               {/* Mobile */}
               <h4 className="text-headings-color font-medium md:font-semibold text-[18px] md:text-[24px] mt-2 lg:hidden">
                 {t(`cases-card${index + 1}-title-mobile`)}

@@ -99,13 +99,13 @@ const Header = ({ handleOpen }) => {
               {(location.pathname === "/cases" ||
                 location.pathname === "/Cases" ||
                 location.pathname.includes("/blog")) && (
-                <NavLink
-                  to={`/${currentLanguage}`}
-                  className="text-header-text hover:text-blue-700 px-3 py-2 rounded-md text-sm xl:text-lg font-medium cursor-pointer"
-                >
-                  {t("header-aboutUs")}
-                </NavLink>
-              )}
+                  <NavLink
+                    to={`/${currentLanguage}`}
+                    className="text-header-text hover:text-blue-700 px-3 py-2 rounded-md text-sm xl:text-lg font-medium cursor-pointer"
+                  >
+                    {t("header-aboutUs")}
+                  </NavLink>
+                )}
               {location.pathname === `/${currentLanguage}` && (
                 <div>
                   <ScrollLink
@@ -201,11 +201,10 @@ const Header = ({ handleOpen }) => {
                 </button>
                 <div
                   ref={menuRef}
-                  className={`absolute w-full bottom-[-100%] text-start pl-2 border-[1px] border-solid border-cases-border rounded-[48px] overflow-hidden transition-all duration-300 ease-in-out transform ${
-                    openLanguage
+                  className={`absolute w-full bottom-[-100%] text-start pl-2 border-[1px] border-solid border-cases-border rounded-[48px] overflow-hidden transition-all duration-300 ease-in-out transform ${openLanguage
                       ? "max-h-20 opacity-100 translate-y-0"
                       : "max-h-0 opacity-0 translate-y-[-10px]"
-                  }`}
+                    }`}
                 >
                   <button
                     onClick={handleChangeLanguage}

@@ -14,7 +14,7 @@ import Prime from "../../assets/img/Prime_MedicalCenter_logo.svg";
 import { useTranslation } from "react-i18next";
 
 const OurPartners = () => {
-const { t } = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <div className="mx-[0.625rem] sm:mx-4 md:mx-10 xl:mx-20 2xl:mx-[6.875rem] 3xl:max-w-[1500px] 3xl:mx-auto lg:mt-[3rem] border-2 border-[#4A448E] border-opacity-40 border-solid rounded-[14.67px] lg:rounded-3xl">
@@ -33,7 +33,7 @@ const { t } = useTranslation();
         </div>
 
         <div className="order-2">
-        <a
+          <a
             target="_blank"
             rel="noreferrer"
             href="https://apteka.uz/uz/"
@@ -63,7 +63,7 @@ const { t } = useTranslation();
         </div>
 
         <div className="order-5">
-        <a
+          <a
             target="_blank"
             rel="noreferrer"
             href="https://www.prom.uz/"
@@ -98,12 +98,12 @@ const { t } = useTranslation();
             rel="noreferrer"
             href="#"
           >
-          <img src={Megahertz} alt="Megahertz" className="mx-auto" />
+            <img src={Megahertz} alt="Megahertz" className="mx-auto" />
           </a>
         </div>
 
         <div className="order-9 md:order-11">
-        <a
+          <a
             target="_blank"
             rel="noreferrer"
             href="https://med24.uz/"
@@ -123,21 +123,21 @@ const { t } = useTranslation();
         </div>
 
         <div className="order-11 md:order-8">
-        <a
-          target="_blank"
-          rel="noreferrer"
-          href="https://zordoc.uz/"
-        >
-          <img src={ZorDoc} alt="Serdsebiyenye" className="mx-auto" />
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://zordoc.uz/"
+          >
+            <img src={ZorDoc} alt="Serdsebiyenye" className="mx-auto" />
           </a>
-          
+
         </div>
         <div className="order-12">
-        <a
-          target="_blank"
-          rel="noreferrer"
-          href="https://pmcenter.uz/"
-        >
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://pmcenter.uz/"
+          >
             <img src={Prime} alt="Prime" className="mx-auto md:h-14 lg:h-16 xl:h-18 2xl:h-24" />
           </a>
         </div>

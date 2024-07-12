@@ -57,23 +57,6 @@ const Brief = () => {
   const getFormattedPhone = () => {
     return formatValue(phone);
   };
-
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-    
-  //   if (isSubmitting) return; // Prevent double submission
-  //   if (!isFormValid) {
-  //     notifyError(); // Show warning if form is not valid
-  //     return;
-  //   }
-
-  //   setIsSubmitting(true); // Disable further submissions until the current one is done
-
-  //   const formData = new FormData();
-  //   formData.append("name", inputValue);
-  //   formData.append("phone", phone);
-  //   formData.append("time", time);
-  //   formData.append("result", result);
   const handleSubmit = async (e) => {
     e.preventDefault();
 

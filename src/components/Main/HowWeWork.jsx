@@ -161,13 +161,12 @@ const HowWeWork = () => {
         if (
           entry.isIntersecting &&
           entry.intersectionRatio >=
-            `${
-              window.innerWidth >= 1024
-                ? 0.5
-                : window.innerWidth >= 768
-                ? 0.3
-                : 0.2
-            }`
+          `${window.innerWidth >= 1024
+            ? 0.5
+            : window.innerWidth >= 768
+              ? 0.3
+              : 0.2
+          }`
         ) {
           showItems();
         }
@@ -271,9 +270,8 @@ const HowWeWork = () => {
                 {t(`howWeWork-card${index + 1}-subtitle`)}
               </p>
               <div
-                className={`absolute bottom-[-40px] left-[calc(50%-8px)] ${
-                  dataLength === index + 1 ? "hidden" : data.style
-                }`}
+                className={`absolute bottom-[-40px] left-[calc(50%-8px)] ${dataLength === index + 1 ? "hidden" : data.style
+                  }`}
               >
                 <img src={downArrow} alt="down arrow" className="w-4" />
               </div>

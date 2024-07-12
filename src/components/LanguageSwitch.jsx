@@ -3,43 +3,43 @@ import { gsap } from "gsap";
 
 const LanguageSwitch = () => {
 
-    const switchRef = useRef(null); // Для доступа к DOM элементу '.switch'
+  const switchRef = useRef(null); 
 
-    useEffect(() => {
-      const animate = gsap.timeline({ paused: true });
-      const animateBackground = gsap.timeline({ paused: true });
-      let toggle = true;
-  
-      animateBackground
-        .to("body", 0.1, { backgroundImage: "none", backgroundColor: "#111" }, 0.2)
-        .set(switchRef.current, { boxShadow: "0 0 10px rgba(255, 255, 255, 0.2)" })
-        .to(".text p", 0.1, { color: "#FFF" }, 0.2);
-  
-      animate
-        .to(".toggle-button", 0.2, { scale: 0.7 }, 0)
-        .set(".toggle", { backgroundColor: "#FFF" })
-        .set(".circle", { display: "none" })
-        .to(".moon-mask", 0.2, { y: 20, x: -10 }, 0.2)
-        .to(".toggle-button", 0.2, { y: 49 }, 0.2)
-        .to(".toggle-button", 0.2, { scale: 0.9 });
-  
-      switchRef.current.addEventListener("click", () => {
-        if (toggle) {
-          animate.restart();
-          animateBackground.restart();
-        } else {
-          animate.reverse();
-          animateBackground.reverse();
-        }
-        toggle = !toggle;
-      });
-  
-      // Очистка эффекта
-      return () => {
-        animate.kill();
-        animateBackground.kill();
-      };
-    }, []);
+  useEffect(() => {
+    const animate = gsap.timeline({ paused: true });
+    const animateBackground = gsap.timeline({ paused: true });
+    let toggle = true;
+
+    animateBackground
+      .to("body", 0.1, { backgroundImage: "none", backgroundColor: "#111" }, 0.2)
+      .set(switchRef.current, { boxShadow: "0 0 10px rgba(255, 255, 255, 0.2)" })
+      .to(".text p", 0.1, { color: "#FFF" }, 0.2);
+
+    animate
+      .to(".toggle-button", 0.2, { scale: 0.7 }, 0)
+      .set(".toggle", { backgroundColor: "#FFF" })
+      .set(".circle", { display: "none" })
+      .to(".moon-mask", 0.2, { y: 20, x: -10 }, 0.2)
+      .to(".toggle-button", 0.2, { y: 49 }, 0.2)
+      .to(".toggle-button", 0.2, { scale: 0.9 });
+
+    switchRef.current.addEventListener("click", () => {
+      if (toggle) {
+        animate.restart();
+        animateBackground.restart();
+      } else {
+        animate.reverse();
+        animateBackground.reverse();
+      }
+      toggle = !toggle;
+    });
+
+    // Очистка эффекта
+    return () => {
+      animate.kill();
+      animateBackground.kill();
+    };
+  }, []);
 
   return (
     <div>
