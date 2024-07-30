@@ -19,12 +19,20 @@ import uzi1 from "../../assets/img/Slider/uzi1.png";
 import uzi2 from "../../assets/img/Slider/uzi2.png";
 import uzi3 from "../../assets/img/Slider/uzi3.png";
 
+import imed1 from "../../assets/img/Slider/uzi3.png";
+import imed2 from "../../assets/img/Slider/uzi3.png";
+
+import mrj1 from "../../assets/img/Slider/uzi3.png";
+import mrj2 from "../../assets/img/Slider/uzi3.png";
+
 let images = [
   [Prime1, Prime2, Prime3],
   [Odil1, Odil2],
   [Alisher1, Alisher2],
   [uzi1, uzi2, uzi3],
   [Akhmedov1, Akhmedov2],
+  [imed1, imed2],
+  [mrj1, mrj2],
 ];
 
 const SwiperCases = ({ caseId }) => {
