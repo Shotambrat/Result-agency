@@ -15,9 +15,8 @@ import logo2 from "../assets/img/Odil.png";
 import logo4 from "../assets/img/uzi.png";
 import logo3 from "../assets/img/Alisher.png";
 import logo5 from "../assets/img/Akhmedov.png";
-import logo6 from "../assets/img/Akhmedov.png";
 import {Helmet} from "react-helmet-async";
-const images = [logo1, logo2, logo3, logo4, logo5, logo6]; //logo6,logo7
+const images = [logo1, logo2, logo3, logo4, logo5]; //logo6,logo7
 
 gsap.registerPlugin(ScrollTrigger);
 

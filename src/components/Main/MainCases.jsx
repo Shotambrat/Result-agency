@@ -7,8 +7,8 @@ import case4 from "../../assets/img/case2.png";
 import case3 from "../../assets/img/case3.png";
 import case2 from "../../assets/img/case4.png";
 import case5 from "../../assets/img/Akhmedov.png";
-import case6 from "../../assets/img/Akhmedov.png";
-import case7 from "../../assets/img/Akhmedov.png";
+// import case6 from "../../assets/img/Akhmedov.png";
+// import case7 from "../../assets/img/Akhmedov.png";
 
 const MainCases = () => {
   const { t } = useTranslation();
@@ -24,8 +24,8 @@ const MainCases = () => {
     { image: case3 },
     { image: case4 },
     { image: case5 },
-    { image: case6 },
-    { image: case7 },
+    // { image: case6 },
+    // { image: case7 },
   ];
 
   return (
