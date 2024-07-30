@@ -15,8 +15,8 @@ import logo2 from "../assets/img/Odil.png";
 import logo4 from "../assets/img/uzi.png";
 import logo3 from "../assets/img/Alisher.png";
 import logo5 from "../assets/img/Akhmedov.png";
-import { Helmet } from "react-helmet-async";
-const images = [logo1, logo2, logo3, logo4, logo5];
+import {Helmet} from "react-helmet-async";
+const images = [logo1, logo2, logo3, logo4, logo5]; //logo6,logo7
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -249,11 +249,8 @@ const Cases = () => {
             </span>
           </div>
 
-          <div className="mb-[51px] mt-[21px] flex justify-end ">
-            {/* <div>
-            <ButtonPodrobnee />
-          </div> */}
-          </div>
+        <div className="mb-[51px] mt-[21px] flex justify-end ">
+        </div>
 
           <div className="flex flex-col gradient-item-cases rounded-[30px] border-item-cases p-8 shadow-md items-center mx-auto min-h-[343px] sm:w-4/5 sm:flex-row sm:justify-between sm:items-center sm:min-h-[250px] lg:flex lg:w-full lg:justify-between lg:min-h-[250px] 2xl:max-w-[1185px]">
             <div

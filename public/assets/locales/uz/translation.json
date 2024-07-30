@@ -42,7 +42,7 @@
   "service-card1-title": "SMM",
   "service-card2-title": "Saytlar <br> yaratish",
   "service-card3-title": "Reklamani <br> ishga tushirish",
-  "service-card4-title": "Seo",
+  "service-card4-title": "SEO",
   "service-card5-title": "Telegram-botlarni <br> yaratish",
   "service-card6-title": "Brending",
 
@@ -713,5 +713,11 @@
   "cases-seo-description4": "Result Agency Baxtiyor Najiyullayevich uchun Google Ads orqali maqsadli reklama kampaniyasini boshladi. Natijada, veb-sayt trafikining sezilarli oshishi va konsultatsiyaga yozilishlar sonining ko'payishi kuzatildi.",
 
   "cases-seo-title5": "Psixoterapevt doktor Akxmedov: Raqamli marketing strategiyasi orqali nufuzni oshirish va bemorlarni jalb qilish",
-  "cases-seo-description5": "Result Agency doktor Akxmedov uchun tibbiy raqamli marketing strategiyasini ishlab chiqdi, shu jumladan veb-saytni yangilash, SEO optimallashtirish va ijtimoiy media hamda Google Ads reklama kampaniyalarini boshlash. Natijada, uning nufuzi va bemorlar soni sezilarli darajada oshdi."
+  "cases-seo-description5": "Result Agency doktor Akxmedov uchun tibbiy raqamli marketing strategiyasini ishlab chiqdi, shu jumladan veb-saytni yangilash, SEO optimallashtirish va ijtimoiy media hamda Google Ads reklama kampaniyalarini boshlash. Natijada, uning nufuzi va bemorlar soni sezilarli darajada oshdi.",
+
+  "cases-seo-title6": "Intermed Innovation tibbiy asbob-uskunalar va reagentlarni sotish",
+  "cases-seo-description6": "Intermed Innovation diagnostika va tibbiy asbob-uskunalarni yetkazib berishga ixtisoslashgan. Ular ultratovush apparatlari, analizatorlar, rentgen nurlari, MRI va KT kabi turli xil mahsulotlarni taklif qilishadi",
+
+  "cases-seo-title7": "MRJ Trade tibbiy asbob-uskunalarining ishonchli distribyutori",
+  "cases-seo-description7": "bozorni sinab ko'rish va MRJ Trade bilan ijobiy birinchi taassurot qoldirish: veb-saytni ishlab chiqish, SEO optimallashtirish va sotishni boshlash uchun reklamalarni ishga tushirish"
 }
